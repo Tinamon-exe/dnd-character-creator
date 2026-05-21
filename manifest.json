@@ -1,0 +1,11 @@
+{
+	"id": "dnd-character-creator",
+	"name": "DnD Character creator",
+	"version": "0.0.1",
+    "minAppVersion": "1.5.0",
+	"description": "Create a Character",
+	"author": "Tinamon",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
