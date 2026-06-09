@@ -1,3 +1,5 @@
+import { Shield, Zap, Brain, Heart, Target, Info, Check } from 'lucide-react';
+
 export const BACKGROUND_DATA: Record<string, any> = {
   acolyte: { skills: ['insight', 'religion'], equipment: ['Holy symbol', 'Prayer book', '5 sticks of incense', 'Vestments'] },
   charlatan: { skills: ['deception', 'sleight-of-hand'], equipment: ['Fine clothes', 'Disguise kit', 'Tools of the con'] },
@@ -291,50 +293,102 @@ export const SPELL_DATA: Record<string, any> = {
   ]
 };
 
+
 export const RACE_DATA: Record<string, any> = {
-  human: { bonuses: { str: 1, dex: 1, con: 1, int: 1, wis: 1, cha: 1 }, speed: 30, languages: ['Common', 'One extra'] },
+  human: { 
+    name: 'Human', 
+    description: 'Versatile and ambitious, humans are the most common race.', 
+    image: 'https://images.unsplash.com/photo-1773216344329-06f965a2355a?auto=format&fit=crop&q=80&w=400',
+    bonuses: { str: 1, dex: 1, con: 1, int: 1, wis: 1, cha: 1 }, 
+    speed: 30, 
+    languages: ['Common', 'One extra'] 
+  },
   elf: { 
+    name: 'Elf',
+    description: 'Magical and graceful, elves live in places of ethereal beauty.',
+    image: 'https://images.unsplash.com/photo-1615672968547-811b8e470371?auto=format&fit=crop&q=80&w=400',
     bonuses: { dex: 2 }, 
     speed: 30, 
     languages: ['Common', 'Elvish'],
     subraces: {
-      'high-elf': { bonuses: { int: 1 }, cantrips: ['mage-hand'] },
-      'wood-elf': { bonuses: { wis: 1 }, speed: 35 },
-      'drow': { bonuses: { cha: 1 }, cantrips: ['dancing-lights'] }
+      'high-elf': { name : 'High Elf' , bonuses: { int: 1 }, cantrips: ['mage-hand'] },
+      'wood-elf': { name: 'Wood Elf',  bonuses: { wis: 1 }, speed: 35 },
+      'drow': { name: 'Dark Elf (Drow)' , bonuses: { cha: 1 }, cantrips: ['dancing-lights'] }
     }
   },
   dwarf: { 
+    name: 'Dwarf',
+    description: 'Bold and hardy, dwarves are skilled warriors and miners.',
+    image: 'https://images.unsplash.com/photo-1532714973334-71d839b1ebea?auto=format&fit=crop&q=80&w=400',
     bonuses: { con: 2 }, 
     speed: 25, 
     languages: ['Common', 'Dwarvish'],
     subraces: {
-      'hill-dwarf': { bonuses: { wis: 1 } },
-      'mountain-dwarf': { bonuses: { str: 2 } }
+      'hill-dwarf': { name: 'Hill Dwarf', bonuses: { wis: 1 } },
+      'mountain-dwarf': { name: 'Mountain Dwarf', bonuses: { str: 2 } }
     }
   },
   halfling: { 
+    name: 'Halfling',
+    description: 'Small and practical, halflings survive by avoiding notice.',
+    image: 'https://images.unsplash.com/photo-1516726817505-f5ed825624d8?auto=format&fit=crop&q=80&w=400',
     bonuses: { dex: 2 }, 
     speed: 25, 
     languages: ['Common', 'Halfling'],
     subraces: {
-      'lightfoot': { bonuses: { cha: 1 } },
-      'stout': { bonuses: { con: 1 } }
+      'lightfoot': { name: 'Lightfoot', bonuses: { cha: 1 } },
+      'stout': { name: 'Stout', bonuses: { con: 1 } }
     }
   },
-  dragonborn: { bonuses: { str: 2, cha: 1 }, speed: 30, languages: ['Common', 'Draconic'] },
+  dragonborn: { 
+    name: 'Dragonborn',
+    description: 'Proud and draconic, they carry dragon blood in their veins.',
+    image: 'https://images.unsplash.com/photo-1529981188441-8a2e6fe30103?auto=format&fit=crop&q=80&w=400',
+    bonuses: { str: 2, cha: 1 }, 
+    speed: 30, 
+    languages: ['Common', 'Draconic'] 
+  },
   gnome: { 
+    name: 'Gnome',
+    description: 'Small inventors with an innate spark of magic.',
+    image: 'https://images.unsplash.com/photo-1615672968547-811b8e470371?auto=format&fit=crop&q=80&w=400',
     bonuses: { int: 2 }, 
     speed: 25, 
     languages: ['Common', 'Gnomish'],
     subraces: {
-      'forest-gnome': { bonuses: { dex: 1 }, cantrips: ['minor-illusion'] },
-      'rock-gnome': { bonuses: { con: 1 } }
+      'forest-gnome': { name: 'Forest Gnome', bonuses: { dex: 1 }, cantrips: ['minor-illusion'] },
+      'rock-gnome': { name: 'Rock Gnome', bonuses: { con: 1 } }
     }
   },
-  'half-elf': { bonuses: { cha: 2, any1: 1, any2: 1 }, speed: 30, languages: ['Common', 'Elvish', 'One extra'] },
-  'half-orc': { bonuses: { str: 2, con: 1 }, speed: 30, languages: ['Common', 'Orc'] },
-  tiefling: { bonuses: { cha: 2, int: 1 }, speed: 30, languages: ['Common', 'Infernal'], cantrips: ['thaumaturgy'] }
+  'half-elf': { 
+    name: 'Half-Elf',
+    description: 'Walking between two worlds, half-elves combine the best qualities of humans and elves.',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400',
+    bonuses: { cha: 2, any1: 1, any2: 1 }, 
+    speed: 30, 
+    languages: ['Common', 'Elvish', 'One extra'] 
+  },
+  'half-orc': { 
+    name: 'Half-Orc',
+    description: 'Possessing powerful physique and fierce determination, half-orcs thrive in adversity.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
+    bonuses: { str: 2, con: 1 }, 
+    speed: 30, 
+    languages: ['Common', 'Orc'] 
+  },
+  tiefling: { 
+    name: 'Tiefling',
+    description: 'Marked by infernal heritage, tieflings are met with suspicion.',
+    image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=400',
+    bonuses: { cha: 2, int: 1 }, 
+    speed: 30, 
+    languages: ['Common', 'Infernal'], 
+    cantrips: ['thaumaturgy'] 
+  }
 };
+
+
+
 
 export const EQUIPMENT_DATA: Record<string, any> = {
   'Leather Armor': { cost: '10 gp', weight: '10 lb.', properties: 'AC 11 + Dex' },
@@ -412,4 +466,39 @@ export const FEAT_DATA: string[] = [
   'Mobile', 'Moderately Armored', 'Mounted Combatant', 'Observant', 'Polearm Master', 'Resilient', 
   'Ritual Caster', 'Savage Attacker', 'Sentinel', 'Sharpshooter', 'Shield Master', 'Skilled', 
   'Skulker', 'Spell Sniper', 'Tavern Brawler', 'Tough', 'War Caster', 'Weapon Master'
+];
+
+export const SKILLS = [
+  { id: 'athletics',      name: 'Athletics',       stat: 'STR', icon: Shield },
+  { id: 'acrobatics',     name: 'Acrobatics',      stat: 'DEX', icon: Zap    },
+  { id: 'sleight-of-hand',name: 'Sleight of Hand', stat: 'DEX', icon: Zap    },
+  { id: 'stealth',        name: 'Stealth',         stat: 'DEX', icon: Zap    },
+  { id: 'arcana',         name: 'Arcana',          stat: 'INT', icon: Brain  },
+  { id: 'history',        name: 'History',         stat: 'INT', icon: Brain  },
+  { id: 'investigation',  name: 'Investigation',   stat: 'INT', icon: Brain  },
+  { id: 'nature',         name: 'Nature',          stat: 'INT', icon: Brain  },
+  { id: 'religion',       name: 'Religion',        stat: 'INT', icon: Brain  },
+  { id: 'animal-handling',name: 'Animal Handling', stat: 'WIS', icon: Heart  },
+  { id: 'insight',        name: 'Insight',         stat: 'WIS', icon: Heart  },
+  { id: 'medicine',       name: 'Medicine',        stat: 'WIS', icon: Heart  },
+  { id: 'perception',     name: 'Perception',      stat: 'WIS', icon: Heart  },
+  { id: 'survival',       name: 'Survival',        stat: 'WIS', icon: Heart  },
+  { id: 'deception',      name: 'Deception',       stat: 'CHA', icon: Target },
+  { id: 'intimidation',   name: 'Intimidation',    stat: 'CHA', icon: Target },
+  { id: 'performance',    name: 'Performance',     stat: 'CHA', icon: Target },
+  { id: 'persuasion',     name: 'Persuasion',      stat: 'CHA', icon: Target },
+];
+
+export const POINT_COSTS: Record<number, number> = {
+  8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 7, 15: 9,
+  16: 12, 17: 15, 18: 19, 19: 23, 20: 28,
+};
+
+export const STATS = [
+  { id: 'str', name: 'Strength',     icon: '💪', description: 'Physical might and athletic training.'                    },
+  { id: 'dex', name: 'Dexterity',    icon: '🏹', description: 'Agility, reflexes, and balance.'                         },
+  { id: 'con', name: 'Constitution', icon: '🛡️', description: 'Endurance, health, and vital force.'                     },
+  { id: 'int', name: 'Intelligence', icon: '🧠', description: 'Mental acuity, information recall, and analytical skill.' },
+  { id: 'wis', name: 'Wisdom',       icon: '🦉', description: 'Awareness, intuition, and insight.'                      },
+  { id: 'cha', name: 'Charisma',     icon: '✨', description: 'Confidence, eloquence, and leadership.'                  },
 ];
