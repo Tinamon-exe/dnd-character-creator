@@ -1,4 +1,4 @@
-import { Shield, Zap, Brain, Heart, Target, Info, Check } from 'lucide-react';
+import { Shield, Zap, Brain, Heart, Target, SportShoe , ShieldHalf , BicepsFlexed, Drama , BookOpen, Music, Swords, Skull, Info, Check, icons } from 'lucide-react';
 
 export const BACKGROUND_DATA: Record<string, any> = {
   acolyte: { skills: ['insight', 'religion'], equipment: ['Holy symbol', 'Prayer book', '5 sticks of incense', 'Vestments'] },
@@ -18,6 +18,7 @@ export const BACKGROUND_DATA: Record<string, any> = {
 
 export const CLASS_DATA: Record<string, any> = {
   barbarian: {
+    name: 'Barbarian',
     hitDie: 12,
     saves: ['str', 'con'],
     armorProf: ['light', 'medium', 'shields'],
@@ -25,9 +26,14 @@ export const CLASS_DATA: Record<string, any> = {
     skillCount: 2,
     skillPool: ['animal-handling', 'athletics', 'intimidation', 'nature', 'perception', 'survival'],
     equipment: ['Greataxe', 'Two Handaxes', "Explorer's Pack", 'Four Javelins'],
-    startingGold: '2d4 x 10'
+    startingGold: '2d4 x 10',
+    icon: Zap,
+    description: 'A fierce warrior of primitive background who can enter a battle rage.',
+    primary: ['str'],
+    subclasses: ['Path of the Berserker', 'Path of the Totem Warrior']
   },
   bard: {
+    name: 'Bard',
     hitDie: 8,
     saves: ['dex', 'cha'],
     armorProf: ['light'],
@@ -41,9 +47,14 @@ export const CLASS_DATA: Record<string, any> = {
       cantrips: 2, 
       spells: 4, 
       slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 } 
-    }
+    },
+    icon: Music,
+    description: 'An inspiring magician whose power echoes the music of creation.',
+    primary: ['cha'],
+    subclasses: ['College of Lore', 'College of Valor']
   },
   cleric: {
+    name: 'Cleric',
     hitDie: 8,
     saves: ['wis', 'cha'],
     armorProf: ['light', 'medium', 'shields'],
@@ -57,9 +68,14 @@ export const CLASS_DATA: Record<string, any> = {
       cantrips: 3, 
       spells: 'wis-mod-plus-level', 
       slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 } 
-    }
+    },
+    icon: Heart,
+    description: 'A priestly champion who wields divine magic in service of a higher power.',
+    primary: ['wis'],
+    subclasses: ['Life Domain', 'Light Domain', 'War Domain']
   },
   druid: {
+    name: 'Druid',
     hitDie: 8,
     saves: ['int', 'wis'],
     armorProf: ['light', 'medium', 'shields'],
@@ -73,9 +89,14 @@ export const CLASS_DATA: Record<string, any> = {
       cantrips: 2, 
       spells: 'wis-mod-plus-level', 
       slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 } 
-    }
+    },
+    icon: Heart,
+    description: 'A priest of the Old Faith, wielding the powers of nature and adopting animal forms.',
+    primary: ['wis'],
+    subclasses: ['Circle of the Land', 'Circle of the Moon']
   },
   fighter: {
+    name: 'Fighter',
     hitDie: 10,
     saves: ['str', 'con'],
     armorProf: ['light', 'medium', 'heavy', 'shields'],
@@ -83,9 +104,14 @@ export const CLASS_DATA: Record<string, any> = {
     skillCount: 2,
     skillPool: ['acrobatics', 'animal-handling', 'athletics', 'history', 'insight', 'intimidation', 'perception', 'survival'],
     equipment: ['Chain Mail', 'Longsword', 'Shield', 'Light Crossbow', "Dungeoneer's Pack", '20 Bolts'],
-    startingGold: '5d4 x 10'
+    startingGold: '5d4 x 10',
+    icon: Swords,
+    description: 'A master of martial combat, skilled with a variety of weapons and armor.',
+    primary: ['str', 'dex'],
+    subclasses: ['Champion', 'Battle Master', 'Eldritch Knight']
   },
   monk: {
+    name: 'Monk',
     hitDie: 8,
     saves: ['str', 'dex'],
     armorProf: [],
@@ -93,9 +119,14 @@ export const CLASS_DATA: Record<string, any> = {
     skillCount: 2,
     skillPool: ['acrobatics', 'athletics', 'history', 'insight', 'religion', 'stealth'],
     equipment: ['Shortsword', "Dungeoneer's Pack", '10 Darts'],
-    startingGold: '5d4'
+    startingGold: '5d4',
+    icon: Zap,
+    description: 'A master of martial arts, harnessing the power of the body in pursuit of spiritual perfection.',
+    primary: ['dex', 'wis'],
+    subclasses: ['Way of the Open Hand', 'Way of Shadow', 'Way of the Four Elements']
   },
   paladin: {
+    name: 'Paladin',
     hitDie: 10,
     saves: ['wis', 'cha'],
     armorProf: ['light', 'medium', 'heavy', 'shields'],
@@ -110,9 +141,14 @@ export const CLASS_DATA: Record<string, any> = {
       spells: 'cha-mod-plus-half-level', 
       slots: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, 
       levelAvailable: 2 
-    }
+    },
+    icon: Shield,
+    description: 'A holy warrior bound to a sacred oath.',
+    primary: ['str', 'cha'],
+    subclasses: ['Oath of Devotion', 'Oath of the Ancients', 'Oath of Vengeance']
   },
   ranger: {
+    name: 'Ranger',
     hitDie: 10,
     saves: ['str', 'dex'],
     armorProf: ['light', 'medium', 'shields'],
@@ -127,9 +163,14 @@ export const CLASS_DATA: Record<string, any> = {
       spells: 2, 
       slots: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }, 
       levelAvailable: 2 
-    }
+    },
+    icon: Target,
+    description: 'A warrior who combats threats on the edges of civilization.',
+    primary: ['dex', 'wis'],
+    subclasses: ['Hunter', 'Beast Master']
   },
   rogue: {
+    name: 'Rogue',
     hitDie: 8,
     saves: ['dex', 'int'],
     armorProf: ['light'],
@@ -137,9 +178,14 @@ export const CLASS_DATA: Record<string, any> = {
     skillCount: 4,
     skillPool: ['acrobatics', 'athletics', 'deception', 'insight', 'intimidation', 'investigation', 'perception', 'performance', 'persuasion', 'sleight-of-hand', 'stealth'],
     equipment: ['Rapier', 'Shortbow', "Burglar's Pack", 'Leather Armor', 'Dagger', 'Dagger', "Thieves' Tools", '20 Arrows'],
-    startingGold: '4d4 x 10'
+    startingGold: '4d4 x 10',
+    icon: Skull,
+    description: 'A scoundrel who uses stealth and trickery to overcome obstacles and enemies.',
+    primary: ['dex'],
+    subclasses: ['Thief', 'Assassin', 'Arcane Trickster']
   },
   sorcerer: {
+    name: 'Sorcerer',
     hitDie: 6,
     saves: ['con', 'cha'],
     armorProf: [],
@@ -153,9 +199,14 @@ export const CLASS_DATA: Record<string, any> = {
       cantrips: 4, 
       spells: 2, 
       slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 } 
-    }
+    },
+    icon: Zap,
+    description: 'A spellcaster who draws on inborn magic from a gift or bloodline.',
+    primary: ['cha'],
+    subclasses: ['Draconic Bloodline', 'Wild Magic']
   },
   warlock: {
+    name: 'Warlock',
     hitDie: 8,
     saves: ['wis', 'cha'],
     armorProf: ['light'],
@@ -170,9 +221,14 @@ export const CLASS_DATA: Record<string, any> = {
       spells: 2, 
       slots: { 1: 1, 2: 0, 3: 0, 4: 0, 5: 0 },
       isPactMagic: true
-    }
+    },
+    icon: Skull,
+    description: 'A wielder of magic that is derived from a bargain with an extraplanar entity.',
+    primary: ['cha'],
+    subclasses: ['The Archfey', 'The Fiend', 'The Great Old One']
   },
   wizard: {
+    name: 'Wizard',
     hitDie: 6,
     saves: ['int', 'wis'],
     armorProf: [],
@@ -186,7 +242,11 @@ export const CLASS_DATA: Record<string, any> = {
       cantrips: 3, 
       spells: 'int-mod-plus-level', 
       slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 } 
-    }
+    },
+    icon: BookOpen,
+    description: 'A scholarly magic-user capable of wielding cosom-altering powers.',
+    primary: ['int'],
+    subclasses: ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation']
   }
 };
 
@@ -495,10 +555,10 @@ export const POINT_COSTS: Record<number, number> = {
 };
 
 export const STATS = [
-  { id: 'str', name: 'Strength',     icon: '💪', description: 'Physical might and athletic training.'                    },
-  { id: 'dex', name: 'Dexterity',    icon: '🏹', description: 'Agility, reflexes, and balance.'                         },
-  { id: 'con', name: 'Constitution', icon: '🛡️', description: 'Endurance, health, and vital force.'                     },
-  { id: 'int', name: 'Intelligence', icon: '🧠', description: 'Mental acuity, information recall, and analytical skill.' },
-  { id: 'wis', name: 'Wisdom',       icon: '🦉', description: 'Awareness, intuition, and insight.'                      },
-  { id: 'cha', name: 'Charisma',     icon: '✨', description: 'Confidence, eloquence, and leadership.'                  },
+  { id: 'str', name: 'Strength',     icon: '💪', description: 'Physical might and athletic training.'                   , lucid_icon: BicepsFlexed},
+  { id: 'dex', name: 'Dexterity',    icon: '🏹', description: 'Agility, reflexes, and balance.'                         , lucid_icon: SportShoe},
+  { id: 'con', name: 'Constitution', icon: '🛡️', description: 'Endurance, health, and vital force.'                     , lucid_icon: ShieldHalf},
+  { id: 'int', name: 'Intelligence', icon: '🧠', description: 'Mental acuity, information recall, and analytical skill.', lucid_icon: Brain},
+  { id: 'wis', name: 'Wisdom',       icon: '🦉', description: 'Awareness, intuition, and insight.'                      , lucid_icon: Target},
+  { id: 'cha', name: 'Charisma',     icon: '✨', description: 'Confidence, eloquence, and leadership.'                  , lucid_icon: Drama},
 ];

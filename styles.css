@@ -2,21 +2,52 @@
 	box-sizing: border-box;
 }
 
+/* Fix the modal height and keep the "X" button pinned */
+.modal.dnd-character-modal {
+    max-height: 85vh; /* Or 90vh */
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevent the modal box itself from scrolling */
+}
 
-.dnd-character-modal .modal {
+/* Make the content area the scrollable part */
+.modal.dnd-character-modal .modal-content.dnd-character-modal-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0; /* Removing padding allows the sticky nav to sit flush */
+    position: relative;
+}
+
+/* Ensure the close button stays on top of your sticky nav */
+.modal.dnd-character-modal .modal-close-button {
+    z-index: 100;
+}
+
+/* Overrides Obsidians width limitations */
+.dnd-character-modal .modal-content > div {
+	width: 100% !important;
+}
+
+
+
+/* --------------------------------------- BEFORE CHANGING TO modalEl (from contentEl) -------------------------------------- */
+
+/* .dnd-character-modal .modal {
 	width: 90vw !important;
 	max-width: 1400px !important;
 	height: 90vh !important;
-}
+} */
 
 /* Content area */
-.dnd-character-modal .modal-content {
+/* .dnd-character-modal .modal-content {
 	height: 100%;
 	padding: 0;
     display: flex;
 	flex-direction: column;
-}
+} */
 
+/* 
 .dnd-character-modal nav {
 	display: flex;
 	align-items: center;
@@ -29,17 +60,11 @@
 	gap: 0.5rem !important;
 	height: 2.5rem !important;
 	line-height: 1 !important;
-}
+} */
+
 
 
 /* .dnd-character-modal nav button {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	line-height: 1;
-} */
-
-.dnd-character-modal nav button {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -48,11 +73,13 @@
   padding: 0 0.75rem !important;
   line-height: 1 !important;
   margin: 0 !important;
-}
+} */
 
-.dnd-character-modal nav > div {
+/* .dnd-character-modal nav > div {
 	display: flex !important;
-}
+}  */
+
+/* --------------------------------------- END: BEFORE CHANGING TO modalEl (from contentEl) -------------------------------------- */
 
 .modal-content {
 	display: flex;
@@ -64,9 +91,7 @@
 	gap: 0.5rem!important;
 }
 
-.dnd-character-modal .modal-content > div {
-	width: 100% !important;
-}
+
 
 
 @custom-variant dark (&:is(.dark *));

@@ -26,18 +26,6 @@ async function saveCharacters(app: any, chars: any[]) {
   else await app.vault.create(STORAGE_FILE, content);
 }
 
-// const SKILL_LIST = [
-//   { id:'athletics',       stat:'str' }, { id:'acrobatics',      stat:'dex' },
-//   { id:'sleight-of-hand', stat:'dex' }, { id:'stealth',         stat:'dex' },
-//   { id:'arcana',          stat:'int' }, { id:'history',         stat:'int' },
-//   { id:'investigation',   stat:'int' }, { id:'nature',          stat:'int' },
-//   { id:'religion',        stat:'int' }, { id:'animal-handling', stat:'wis' },
-//   { id:'insight',         stat:'wis' }, { id:'medicine',        stat:'wis' },
-//   { id:'perception',      stat:'wis' }, { id:'survival',        stat:'wis' },
-//   { id:'deception',       stat:'cha' }, { id:'intimidation',    stat:'cha' },
-//   { id:'performance',     stat:'cha' }, { id:'persuasion',      stat:'cha' },
-// ];
-
 const TABS = [
   { id:'overview',  label:'⚔️ Combat'  },
   { id:'spells',    label:'✨ Spells'  },

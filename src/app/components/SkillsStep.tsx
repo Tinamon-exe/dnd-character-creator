@@ -1,30 +1,10 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Shield, Zap, Brain, Heart, Target, Info, Check } from 'lucide-react';
-import { CLASS_DATA, RACE_DATA, BACKGROUND_DATA , SKILLS} from '../utils/dnd-data';
-
-// const SKILLS = [
-//   { id: 'athletics',      name: 'Athletics',       stat: 'STR', icon: Shield },
-//   { id: 'acrobatics',     name: 'Acrobatics',      stat: 'DEX', icon: Zap    },
-//   { id: 'sleight-of-hand',name: 'Sleight of Hand', stat: 'DEX', icon: Zap    },
-//   { id: 'stealth',        name: 'Stealth',         stat: 'DEX', icon: Zap    },
-//   { id: 'arcana',         name: 'Arcana',          stat: 'INT', icon: Brain  },
-//   { id: 'history',        name: 'History',         stat: 'INT', icon: Brain  },
-//   { id: 'investigation',  name: 'Investigation',   stat: 'INT', icon: Brain  },
-//   { id: 'nature',         name: 'Nature',          stat: 'INT', icon: Brain  },
-//   { id: 'religion',       name: 'Religion',        stat: 'INT', icon: Brain  },
-//   { id: 'animal-handling',name: 'Animal Handling', stat: 'WIS', icon: Heart  },
-//   { id: 'insight',        name: 'Insight',         stat: 'WIS', icon: Heart  },
-//   { id: 'medicine',       name: 'Medicine',        stat: 'WIS', icon: Heart  },
-//   { id: 'perception',     name: 'Perception',      stat: 'WIS', icon: Heart  },
-//   { id: 'survival',       name: 'Survival',        stat: 'WIS', icon: Heart  },
-//   { id: 'deception',      name: 'Deception',       stat: 'CHA', icon: Target },
-//   { id: 'intimidation',   name: 'Intimidation',    stat: 'CHA', icon: Target },
-//   { id: 'performance',    name: 'Performance',     stat: 'CHA', icon: Target },
-//   { id: 'persuasion',     name: 'Persuasion',      stat: 'CHA', icon: Target },
-// ];
+import { Shield, Zap, Brain, Heart, Target, Info, Check, LucideIcon } from 'lucide-react';
+import { CLASS_DATA, RACE_DATA, BACKGROUND_DATA , SKILLS, STATS} from '../utils/dnd-data';
 
 export function SkillsStep() {
+
   const { watch, setValue } = useFormContext();
   const formData = watch();
 
@@ -132,7 +112,7 @@ export function SkillsStep() {
           const isFromPool    = classSkillPool.includes(skill.id);
           const isSelected    = (formData.skills || []).includes(skill.id);
           const isDisabled    = (!isSelected && remaining === 0) || isAuto || (!isFromPool && !isSelected);
-          const Icon          = skill.icon;
+          const Icon =  STATS.find( (stat) => stat.id.toUpperCase() === skill.stat )?.lucid_icon || Info;
 
           return (
             <div

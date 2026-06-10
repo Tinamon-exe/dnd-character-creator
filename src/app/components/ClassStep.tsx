@@ -1,30 +1,6 @@
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Shield, Swords, Music, Zap, Skull, BookOpen, Target, Heart } from 'lucide-react';
-
-const CLASSES = [
-  {
-    id: 'barbarian', name: 'Barbarian', icon: Zap, description: 'A fierce warrior of primitive background who can enter a battle rage.', primary: 'Strength',
-    subclasses: ['Path of the Berserker', 'Path of the Totem Warrior']
-  },
-  {
-    id: 'bard', name: 'Bard', icon: Music, description: 'An inspiring magician whose power echoes the music of creation.', primary: 'Charisma',
-    subclasses: ['College of Lore', 'College of Valor']
-  },
-  {
-    id: 'cleric', name: 'Cleric', icon: Heart, description: 'A priestly champion who wields divine magic in service of a higher power.', primary: 'Wisdom',
-    subclasses: ['Life Domain', 'Light Domain', 'War Domain']
-  },
-  { id: 'druid', name: 'Druid', icon: Heart, description: 'A priest of the Old Faith, wielding the powers of nature and adopting animal forms.', primary: 'Wisdom', subclasses: ['Circle of the Land', 'Circle of the Moon'] },
-  { id: 'fighter', name: 'Fighter', icon: Swords, description: 'A master of martial combat, skilled with a variety of weapons and armor.', primary: 'Strength or Dexterity', subclasses: ['Champion', 'Battle Master', 'Eldritch Knight'] },
-  { id: 'monk', name: 'Monk', icon: Zap, description: 'A master of martial arts, harnessing the power of the body in pursuit of spiritual perfection.', primary: 'Dexterity & Wisdom', subclasses: ['Way of the Open Hand', 'Way of Shadow', 'Way of the Four Elements'] },
-  { id: 'paladin', name: 'Paladin', icon: Shield, description: 'A holy warrior bound to a sacred oath.', primary: 'Strength & Charisma', subclasses: ['Oath of Devotion', 'Oath of the Ancients', 'Oath of Vengeance'] },
-  { id: 'ranger', name: 'Ranger', icon: Target, description: 'A warrior who combats threats on the edges of civilization.', primary: 'Dexterity & Wisdom', subclasses: ['Hunter', 'Beast Master'] },
-  { id: 'rogue', name: 'Rogue', icon: Skull, description: 'A scoundrel who uses stealth and trickery to overcome obstacles and enemies.', primary: 'Dexterity', subclasses: ['Thief', 'Assassin', 'Arcane Trickster'] },
-  { id: 'sorcerer', name: 'Sorcerer', icon: Zap, description: 'A spellcaster who draws on inborn magic from a gift or bloodline.', primary: 'Charisma', subclasses: ['Draconic Bloodline', 'Wild Magic'] },
-  { id: 'warlock', name: 'Warlock', icon: Skull, description: 'A wielder of magic that is derived from a bargain with an extraplanar entity.', primary: 'Charisma', subclasses: ['The Archfey', 'The Fiend', 'The Great Old One'] },
-  { id: 'wizard', name: 'Wizard', icon: BookOpen, description: 'A scholarly magic-user capable of wielding cosom-altering powers.', primary: 'Intelligence', subclasses: ['Abjuration', 'Conjuration', 'Divination', 'Enchantment', 'Evocation', 'Illusion', 'Necromancy', 'Transmutation'] },
-];
+import { CLASS_DATA ,STATS} from '../utils/dnd-data';
 
 export function ClassStep() {
   const { watch, setValue, register } = useFormContext();
@@ -32,7 +8,7 @@ export function ClassStep() {
   const currentClass = watch('class');
   const level = watch('level') || 1;
 
-  const selectedClass = CLASSES.find((c) => c.id === currentClass);
+  const selectedClass = CLASS_DATA[currentClass];
 
   const getSubclassLevel = (classId: string) => {
     if (['cleric', 'sorcerer', 'warlock'].includes(classId)) return 1;
@@ -60,19 +36,22 @@ export function ClassStep() {
           gap: '12px',
         }}
       >
-        {CLASSES.map((cls) => {
+        {Object.entries(CLASS_DATA).map(([id, cls]) => { 
           const Icon = cls.icon;
-          const isSelected = currentClass === cls.id;
+          const isSelected = currentClass === id;
+        // })}
+        // {CLASSES.map((cls) => {
+        //   const Icon = cls.icon;
+        //   const isSelected = currentClass === cls.id;
 
           return (
             <div
               key={cls.id}
               onClick={() => {
-                setValue('class', cls.id);
+                setValue('class', id);
                 setValue('subclass', '');
               }}
               style={{
-                // display: 'flex',
                 alignItems: 'center',
                 gap: '0.75rem',
                 padding: '0.625rem 0.75rem',
@@ -86,17 +65,6 @@ export function ClassStep() {
                   : 'var(--background-primary)',
                 transition: 'border-color 0.15s, background 0.15s',
                 position: 'relative',
-                // borderRadius: '12px',
-                // border: isSelected
-                //   ? '2px solid var(--interactive-accent)'
-                //   : '1px solid var(--background-modifier-border)',
-                // backgroundColor: isSelected
-                //   ? 'var(--background-modifier-hover)'
-                //   : 'var(--background-primary)',
-                // padding: '16px',
-
-                // cursor: 'pointer',
-                // transition: 'all 0.15s ease',
               }}
             >
               <div
@@ -143,7 +111,7 @@ export function ClassStep() {
                         whiteSpace: 'nowrap',
                       }}
                     >
-                      {cls.primary}
+                      {cls.primary?.map((statId:any) => STATS.find((stat) => stat.id === statId)?.name).join(' & ')}
                     </span>
                   </div>
 
@@ -200,12 +168,6 @@ export function ClassStep() {
             disabled={!isSubclassAvailable}
             style={{
               width: '100%',
-              // padding: '8px 12px',
-              // borderRadius: '8px',
-              // border:
-              //   '1px solid var(--background-modifier-border)',
-              // background: 'var(--background-primary)',
-
               padding: '0.5rem 0.75rem',
               borderRadius: '0.375rem',
               border: '1px solid var(--background-modifier-border)',
@@ -229,7 +191,7 @@ export function ClassStep() {
                 )}`}
             </option>
 
-            {selectedClass.subclasses.map((sub) => (
+            {selectedClass.subclasses.map((sub: string ) => (
               <option
                 key={sub}
                 value={sub.toLowerCase().replace(/\s+/g, '-')}

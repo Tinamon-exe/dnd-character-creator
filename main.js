@@ -517,7 +517,7 @@ var require_react_development = __commonJS({
           }
           return element;
         };
-        function createElement15(type, config, children) {
+        function createElement7(type, config, children) {
           var propName;
           var props = {};
           var key = null;
@@ -585,7 +585,7 @@ var require_react_development = __commonJS({
           var newElement = ReactElement(oldElement.type, newKey, oldElement.ref, oldElement._self, oldElement._source, oldElement._owner, oldElement.props);
           return newElement;
         }
-        function cloneElement6(element, config, children) {
+        function cloneElement2(element, config, children) {
           if (element === null || element === void 0) {
             throw new Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
           }
@@ -633,7 +633,7 @@ var require_react_development = __commonJS({
           }
           return ReactElement(element.type, key, ref, self, source, owner, props);
         }
-        function isValidElement4(object) {
+        function isValidElement2(object) {
           return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
         }
         var SEPARATOR = ".";
@@ -698,7 +698,7 @@ var require_react_development = __commonJS({
                 return c;
               });
             } else if (mappedChild != null) {
-              if (isValidElement4(mappedChild)) {
+              if (isValidElement2(mappedChild)) {
                 {
                   if (mappedChild.key && (!_child || _child.key !== mappedChild.key)) {
                     checkKeyStringCoercion(mappedChild.key);
@@ -762,9 +762,9 @@ var require_react_development = __commonJS({
             return children;
           }
           var result = [];
-          var count3 = 0;
+          var count = 0;
           mapIntoArray(children, result, "", "", function(child) {
-            return func.call(context, child, count3++);
+            return func.call(context, child, count++);
           });
           return result;
         }
@@ -786,12 +786,12 @@ var require_react_development = __commonJS({
           }) || [];
         }
         function onlyChild(children) {
-          if (!isValidElement4(children)) {
+          if (!isValidElement2(children)) {
             throw new Error("React.Children.only expected to receive a single React element child.");
           }
           return children;
         }
-        function createContext4(defaultValue) {
+        function createContext3(defaultValue) {
           var context = {
             $$typeof: REACT_CONTEXT_TYPE,
             // As a workaround to support multiple concurrent renderers, we categorize
@@ -978,7 +978,7 @@ var require_react_development = __commonJS({
           }
           return lazyType2;
         }
-        function forwardRef20(render) {
+        function forwardRef8(render) {
           {
             if (render != null && render.$$typeof === REACT_MEMO_TYPE) {
               error("forwardRef requires a render function but received a `memo` component. Instead of forwardRef(memo(...)), use memo(forwardRef(...)).");
@@ -1077,7 +1077,7 @@ var require_react_development = __commonJS({
           }
           return dispatcher;
         }
-        function useContext4(Context) {
+        function useContext3(Context) {
           var dispatcher = resolveDispatcher();
           {
             if (Context._context !== void 0) {
@@ -1091,35 +1091,35 @@ var require_react_development = __commonJS({
           }
           return dispatcher.useContext(Context);
         }
-        function useState16(initialState) {
+        function useState7(initialState) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useState(initialState);
         }
-        function useReducer3(reducer, initialArg, init) {
+        function useReducer(reducer, initialArg, init) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useReducer(reducer, initialArg, init);
         }
-        function useRef10(initialValue) {
+        function useRef(initialValue) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useRef(initialValue);
         }
-        function useEffect14(create, deps) {
+        function useEffect(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useEffect(create, deps);
         }
-        function useInsertionEffect2(create, deps) {
+        function useInsertionEffect(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useInsertionEffect(create, deps);
         }
-        function useLayoutEffect4(create, deps) {
+        function useLayoutEffect(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useLayoutEffect(create, deps);
         }
-        function useCallback7(callback, deps) {
+        function useCallback2(callback, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useCallback(callback, deps);
         }
-        function useMemo5(create, deps) {
+        function useMemo2(create, deps) {
           var dispatcher = resolveDispatcher();
           return dispatcher.useMemo(create, deps);
         }
@@ -1141,7 +1141,7 @@ var require_react_development = __commonJS({
           var dispatcher = resolveDispatcher();
           return dispatcher.useDeferredValue(value);
         }
-        function useId3() {
+        function useId2() {
           var dispatcher = resolveDispatcher();
           return dispatcher.useId();
         }
@@ -1517,11 +1517,11 @@ var require_react_development = __commonJS({
           if (isArray(node)) {
             for (var i2 = 0; i2 < node.length; i2++) {
               var child = node[i2];
-              if (isValidElement4(child)) {
+              if (isValidElement2(child)) {
                 validateExplicitKey(child, parentType);
               }
             }
-          } else if (isValidElement4(node)) {
+          } else if (isValidElement2(node)) {
             if (node._store) {
               node._store.validated = true;
             }
@@ -1532,7 +1532,7 @@ var require_react_development = __commonJS({
                 var iterator = iteratorFn.call(node);
                 var step;
                 while (!(step = iterator.next()).done) {
-                  if (isValidElement4(step.value)) {
+                  if (isValidElement2(step.value)) {
                     validateExplicitKey(step.value, parentType);
                   }
                 }
@@ -1616,7 +1616,7 @@ var require_react_development = __commonJS({
               error("React.createElement: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", typeString, info);
             }
           }
-          var element = createElement15.apply(this, arguments);
+          var element = createElement7.apply(this, arguments);
           if (element == null) {
             return element;
           }
@@ -1655,7 +1655,7 @@ var require_react_development = __commonJS({
           return validatedFactory;
         }
         function cloneElementWithValidation(element, props, children) {
-          var newElement = cloneElement6.apply(this, arguments);
+          var newElement = cloneElement2.apply(this, arguments);
           for (var i2 = 2; i2 < arguments.length; i2++) {
             validateChildKeys(arguments[i2], newElement.type);
           }
@@ -1855,14 +1855,14 @@ var require_react_development = __commonJS({
         var createElement$1 = createElementWithValidation;
         var cloneElement$1 = cloneElementWithValidation;
         var createFactory = createFactoryWithValidation;
-        var Children7 = {
+        var Children2 = {
           map: mapChildren,
           forEach: forEachChildren,
           count: countChildren,
           toArray,
           only: onlyChild
         };
-        exports.Children = Children7;
+        exports.Children = Children2;
         exports.Component = Component;
         exports.Fragment = REACT_FRAGMENT_TYPE;
         exports.Profiler = REACT_PROFILER_TYPE;
@@ -1872,29 +1872,29 @@ var require_react_development = __commonJS({
         exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
         exports.act = act;
         exports.cloneElement = cloneElement$1;
-        exports.createContext = createContext4;
+        exports.createContext = createContext3;
         exports.createElement = createElement$1;
         exports.createFactory = createFactory;
         exports.createRef = createRef;
-        exports.forwardRef = forwardRef20;
-        exports.isValidElement = isValidElement4;
+        exports.forwardRef = forwardRef8;
+        exports.isValidElement = isValidElement2;
         exports.lazy = lazy;
         exports.memo = memo;
         exports.startTransition = startTransition;
         exports.unstable_act = act;
-        exports.useCallback = useCallback7;
-        exports.useContext = useContext4;
+        exports.useCallback = useCallback2;
+        exports.useContext = useContext3;
         exports.useDebugValue = useDebugValue;
         exports.useDeferredValue = useDeferredValue;
-        exports.useEffect = useEffect14;
-        exports.useId = useId3;
+        exports.useEffect = useEffect;
+        exports.useId = useId2;
         exports.useImperativeHandle = useImperativeHandle;
-        exports.useInsertionEffect = useInsertionEffect2;
-        exports.useLayoutEffect = useLayoutEffect4;
-        exports.useMemo = useMemo5;
-        exports.useReducer = useReducer3;
-        exports.useRef = useRef10;
-        exports.useState = useState16;
+        exports.useInsertionEffect = useInsertionEffect;
+        exports.useLayoutEffect = useLayoutEffect;
+        exports.useMemo = useMemo2;
+        exports.useReducer = useReducer;
+        exports.useRef = useRef;
+        exports.useState = useState7;
         exports.useSyncExternalStore = useSyncExternalStore;
         exports.useTransition = useTransition;
         exports.version = ReactVersion;
@@ -2390,9 +2390,9 @@ var require_react_dom_development = __commonJS({
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React50 = require_react();
+        var React23 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React50.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React23.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -2441,7 +2441,7 @@ var require_react_dom_development = __commonJS({
         var HostPortal = 4;
         var HostComponent = 5;
         var HostText = 6;
-        var Fragment8 = 7;
+        var Fragment3 = 7;
         var Mode = 8;
         var ContextConsumer = 9;
         var ContextProvider = 10;
@@ -2495,7 +2495,7 @@ var require_react_dom_development = __commonJS({
             allNativeEvents.add(dependencies[i2]);
           }
         }
-        var canUseDOM2 = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
+        var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
         var hasOwnProperty = Object.prototype.hasOwnProperty;
         function typeName(value) {
           {
@@ -3598,7 +3598,7 @@ var require_react_dom_development = __commonJS({
               return "DehydratedFragment";
             case ForwardRef:
               return getWrappedName$1(type, type.render, "ForwardRef");
-            case Fragment8:
+            case Fragment3:
               return "Fragment";
             case HostComponent:
               return type;
@@ -3999,7 +3999,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React50.Children.forEach(props.children, function(child) {
+                React23.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -5545,7 +5545,7 @@ var require_react_dom_development = __commonJS({
           return listener;
         }
         var passiveBrowserEventsSupported = false;
-        if (canUseDOM2) {
+        if (canUseDOM) {
           try {
             var options = {};
             Object.defineProperty(options, "passive", {
@@ -7985,13 +7985,13 @@ var require_react_dom_development = __commonJS({
         var SyntheticWheelEvent = createSyntheticEvent(WheelEventInterface);
         var END_KEYCODES = [9, 13, 27, 32];
         var START_KEYCODE = 229;
-        var canUseCompositionEvent = canUseDOM2 && "CompositionEvent" in window;
+        var canUseCompositionEvent = canUseDOM && "CompositionEvent" in window;
         var documentMode = null;
-        if (canUseDOM2 && "documentMode" in document) {
+        if (canUseDOM && "documentMode" in document) {
           documentMode = document.documentMode;
         }
-        var canUseTextInputEvent = canUseDOM2 && "TextEvent" in window && !documentMode;
-        var useFallbackCompositionData = canUseDOM2 && (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11);
+        var canUseTextInputEvent = canUseDOM && "TextEvent" in window && !documentMode;
+        var useFallbackCompositionData = canUseDOM && (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11);
         var SPACEBAR_CODE = 32;
         var SPACEBAR_CHAR = String.fromCharCode(SPACEBAR_CODE);
         function registerEvents() {
@@ -8185,7 +8185,7 @@ var require_react_dom_development = __commonJS({
           return false;
         }
         function isEventSupported(eventNameSuffix) {
-          if (!canUseDOM2) {
+          if (!canUseDOM) {
             return false;
           }
           var eventName = "on" + eventNameSuffix;
@@ -8237,7 +8237,7 @@ var require_react_dom_development = __commonJS({
           }
         }
         var isInputEventSupported = false;
-        if (canUseDOM2) {
+        if (canUseDOM) {
           isInputEventSupported = isEventSupported("input") && (!document.documentMode || document.documentMode > 9);
         }
         function startWatchingForValueChange(target, targetInst) {
@@ -8669,7 +8669,7 @@ var require_react_dom_development = __commonJS({
             setOffsets(input, offsets);
           }
         }
-        var skipSelectionChangeEvent = canUseDOM2 && "documentMode" in document && document.documentMode <= 11;
+        var skipSelectionChangeEvent = canUseDOM && "documentMode" in document && document.documentMode <= 11;
         function registerEvents$3() {
           registerTwoPhaseEvent("onSelect", ["focusout", "contextmenu", "dragend", "focusin", "keydown", "keyup", "mousedown", "mouseup", "selectionchange"]);
         }
@@ -8777,7 +8777,7 @@ var require_react_dom_development = __commonJS({
         };
         var prefixedEventNames = {};
         var style = {};
-        if (canUseDOM2) {
+        if (canUseDOM) {
           style = document.createElement("div").style;
           if (!("AnimationEvent" in window)) {
             delete vendorPrefixes.animationend.animation;
@@ -9293,7 +9293,7 @@ var require_react_dom_development = __commonJS({
               possibleRegistrationNames
             });
           };
-          canDiffStyleForHydrationWarning = canUseDOM2 && !document.documentMode;
+          canDiffStyleForHydrationWarning = canUseDOM && !document.documentMode;
           warnForPropDifference = function(propName, serverValue, clientValue) {
             if (didWarnInvalidHydration) {
               return;
@@ -9423,7 +9423,7 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        function createElement15(type, props, rootContainerElement, parentNamespace) {
+        function createElement7(type, props, rootContainerElement, parentNamespace) {
           var isCustomComponentTag;
           var ownerDocument = getOwnerDocumentFromRootContainer(rootContainerElement);
           var domElement;
@@ -10293,7 +10293,7 @@ var require_react_dom_development = __commonJS({
             }
             parentNamespace = hostContextDev.namespace;
           }
-          var domElement = createElement15(type, props, rootContainerInstance, parentNamespace);
+          var domElement = createElement7(type, props, rootContainerInstance, parentNamespace);
           precacheFiberNode(internalInstanceHandle, domElement);
           updateFiberProps(domElement, props);
           return domElement;
@@ -12027,7 +12027,7 @@ var require_react_dom_development = __commonJS({
             }
           }
           function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-            if (current2 === null || current2.tag !== Fragment8) {
+            if (current2 === null || current2.tag !== Fragment3) {
               var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
               created.return = returnFiber;
               return created;
@@ -12430,7 +12430,7 @@ var require_react_dom_development = __commonJS({
               if (child.key === key) {
                 var elementType = element.type;
                 if (elementType === REACT_FRAGMENT_TYPE) {
-                  if (child.tag === Fragment8) {
+                  if (child.tag === Fragment3) {
                     deleteRemainingChildren(returnFiber, child.sibling);
                     var existing = useFiber(child, element.props.children);
                     existing.return = returnFiber;
@@ -17906,7 +17906,7 @@ var require_react_dom_development = __commonJS({
               var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
               return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
             }
-            case Fragment8:
+            case Fragment3:
               return updateFragment(current2, workInProgress2, renderLanes2);
             case Mode:
               return updateMode(current2, workInProgress2, renderLanes2);
@@ -17972,7 +17972,7 @@ var require_react_dom_development = __commonJS({
         var updateHostComponent$1;
         var updateHostText$1;
         {
-          appendAllChildren = function(parent, workInProgress2, needsVisibilityToggle, isHidden2) {
+          appendAllChildren = function(parent, workInProgress2, needsVisibilityToggle, isHidden) {
             var node = workInProgress2.child;
             while (node !== null) {
               if (node.tag === HostComponent || node.tag === HostText) {
@@ -18178,7 +18178,7 @@ var require_react_dom_development = __commonJS({
             case SimpleMemoComponent:
             case FunctionComponent:
             case ForwardRef:
-            case Fragment8:
+            case Fragment3:
             case Mode:
             case Profiler:
             case ContextConsumer:
@@ -19162,7 +19162,7 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        function hideOrUnhideAllChildren(finishedWork, isHidden2) {
+        function hideOrUnhideAllChildren(finishedWork, isHidden) {
           var hostSubtreeRoot = null;
           {
             var node = finishedWork;
@@ -19172,7 +19172,7 @@ var require_react_dom_development = __commonJS({
                   hostSubtreeRoot = node;
                   try {
                     var instance = node.stateNode;
-                    if (isHidden2) {
+                    if (isHidden) {
                       hideInstance(instance);
                     } else {
                       unhideInstance(node.stateNode, node.memoizedProps);
@@ -19185,7 +19185,7 @@ var require_react_dom_development = __commonJS({
                 if (hostSubtreeRoot === null) {
                   try {
                     var _instance3 = node.stateNode;
-                    if (isHidden2) {
+                    if (isHidden) {
                       hideTextInstance(_instance3);
                     } else {
                       unhideTextInstance(_instance3, node.memoizedProps);
@@ -19784,9 +19784,9 @@ var require_react_dom_development = __commonJS({
               if (offscreenFiber.flags & Visibility) {
                 var offscreenInstance = offscreenFiber.stateNode;
                 var newState = offscreenFiber.memoizedState;
-                var isHidden2 = newState !== null;
-                offscreenInstance.isHidden = isHidden2;
-                if (isHidden2) {
+                var isHidden = newState !== null;
+                offscreenInstance.isHidden = isHidden;
+                if (isHidden) {
                   var wasHidden = offscreenFiber.alternate !== null && offscreenFiber.alternate.memoizedState !== null;
                   if (!wasHidden) {
                     markCommitTimeOfFallback();
@@ -19890,8 +19890,8 @@ var require_react_dom_development = __commonJS({
             var fiber = nextEffect;
             var firstChild = fiber.child;
             if (fiber.tag === OffscreenComponent && isModernRoot) {
-              var isHidden2 = fiber.memoizedState !== null;
-              var newOffscreenSubtreeIsHidden = isHidden2 || offscreenSubtreeIsHidden;
+              var isHidden = fiber.memoizedState !== null;
+              var newOffscreenSubtreeIsHidden = isHidden || offscreenSubtreeIsHidden;
               if (newOffscreenSubtreeIsHidden) {
                 commitLayoutMountEffects_complete(subtreeRoot, root2, committedLanes);
                 continue;
@@ -19993,8 +19993,8 @@ var require_react_dom_development = __commonJS({
                 break;
               }
               case OffscreenComponent: {
-                var isHidden2 = fiber.memoizedState !== null;
-                if (isHidden2) {
+                var isHidden = fiber.memoizedState !== null;
+                if (isHidden) {
                   disappearLayoutEffects_complete(subtreeRoot);
                   continue;
                 }
@@ -20030,8 +20030,8 @@ var require_react_dom_development = __commonJS({
             var fiber = nextEffect;
             var firstChild = fiber.child;
             if (fiber.tag === OffscreenComponent) {
-              var isHidden2 = fiber.memoizedState !== null;
-              if (isHidden2) {
+              var isHidden = fiber.memoizedState !== null;
+              if (isHidden) {
                 reappearLayoutEffects_complete(subtreeRoot);
                 continue;
               }
@@ -20901,7 +20901,7 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        function flushSync3(fn) {
+        function flushSync2(fn) {
           if (rootWithPendingPassiveEffects !== null && rootWithPendingPassiveEffects.tag === LegacyRoot && (executionContext & (RenderContext | CommitContext)) === NoContext) {
             flushPassiveEffects();
           }
@@ -21967,7 +21967,7 @@ var require_react_dom_development = __commonJS({
             }
             var staleFamilies = update.staleFamilies, updatedFamilies = update.updatedFamilies;
             flushPassiveEffects();
-            flushSync3(function() {
+            flushSync2(function() {
               scheduleFibersWithFamiliesRecursively(root2.current, updatedFamilies, staleFamilies);
             });
           }
@@ -21978,7 +21978,7 @@ var require_react_dom_development = __commonJS({
               return;
             }
             flushPassiveEffects();
-            flushSync3(function() {
+            flushSync2(function() {
               updateContainer(element, root2, null, null);
             });
           }
@@ -22439,7 +22439,7 @@ var require_react_dom_development = __commonJS({
           return fiber;
         }
         function createFiberFromFragment(elements, mode, lanes, key) {
-          var fiber = createFiber(Fragment8, elements, key, mode);
+          var fiber = createFiber(Fragment3, elements, key, mode);
           fiber.lanes = lanes;
           return fiber;
         }
@@ -22772,7 +22772,7 @@ var require_react_dom_development = __commonJS({
               break;
             }
             case SuspenseComponent: {
-              flushSync3(function() {
+              flushSync2(function() {
                 var root3 = enqueueConcurrentRenderForLane(fiber, SyncLane);
                 if (root3 !== null) {
                   var eventTime = requestEventTime();
@@ -23101,7 +23101,7 @@ var require_react_dom_development = __commonJS({
                 error("Attempted to synchronously unmount a root while React was already rendering. React cannot finish unmounting the root until the current render has completed, which may lead to a race condition.");
               }
             }
-            flushSync3(function() {
+            flushSync2(function() {
               updateContainer(null, root2, null, null);
             });
             unmarkContainerAsRoot(container);
@@ -23276,7 +23276,7 @@ var require_react_dom_development = __commonJS({
             markContainerAsRoot(root2.current, container);
             var rootContainerElement = container.nodeType === COMMENT_NODE ? container.parentNode : container;
             listenToAllSupportedEvents(rootContainerElement);
-            flushSync3();
+            flushSync2();
             return root2;
           } else {
             var rootSibling;
@@ -23307,7 +23307,7 @@ var require_react_dom_development = __commonJS({
             markContainerAsRoot(_root.current, container);
             var _rootContainerElement = container.nodeType === COMMENT_NODE ? container.parentNode : container;
             listenToAllSupportedEvents(_rootContainerElement);
-            flushSync3(function() {
+            flushSync2(function() {
               updateContainer(initialChildren, _root, parentComponent, callback);
             });
             return _root;
@@ -23435,7 +23435,7 @@ var require_react_dom_development = __commonJS({
                 error("unmountComponentAtNode(): The node you're attempting to unmount was rendered by another copy of React.");
               }
             }
-            flushSync3(function() {
+            flushSync2(function() {
               legacyRenderSubtreeIntoContainer(null, null, container, false, function() {
                 container._reactRootContainer = null;
                 unmarkContainerAsRoot(container);
@@ -23467,7 +23467,7 @@ var require_react_dom_development = __commonJS({
           }
         }
         setRestoreImplementation(restoreControlledState$3);
-        setBatchingImplementation(batchedUpdates$1, discreteUpdates, flushSync3);
+        setBatchingImplementation(batchedUpdates$1, discreteUpdates, flushSync2);
         function createPortal$1(children, container) {
           var key = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null;
           if (!isValidContainer(container)) {
@@ -23506,7 +23506,7 @@ var require_react_dom_development = __commonJS({
               error("flushSync was called from inside a lifecycle method. React cannot flush when React is already rendering. Consider moving this call to a scheduler task or micro task.");
             }
           }
-          return flushSync3(fn);
+          return flushSync2(fn);
         }
         var foundDevTools = injectIntoDevTools({
           findFiberByHostInstance: getClosestInstanceFromNode,
@@ -23515,7 +23515,7 @@ var require_react_dom_development = __commonJS({
           rendererPackageName: "react-dom"
         });
         {
-          if (!foundDevTools && canUseDOM2 && window.top === window.self) {
+          if (!foundDevTools && canUseDOM && window.top === window.self) {
             if (navigator.userAgent.indexOf("Chrome") > -1 && navigator.userAgent.indexOf("Edge") === -1 || navigator.userAgent.indexOf("Firefox") > -1) {
               var protocol = window.location.protocol;
               if (/^(https?|file):$/.test(protocol)) {
@@ -25329,21 +25329,51 @@ var init_zod = __esm({
   }
 });
 
-// node_modules/lucide-react/dist/esm/shared/src/utils.js
-var toKebabCase, mergeClasses;
-var init_utils = __esm({
-  "node_modules/lucide-react/dist/esm/shared/src/utils.js"() {
-    toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+// node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.mjs
+var mergeClasses;
+var init_mergeClasses = __esm({
+  "node_modules/lucide-react/dist/esm/shared/src/utils/mergeClasses.mjs"() {
     mergeClasses = (...classes) => classes.filter((className, index, array) => {
-      return Boolean(className) && array.indexOf(className) === index;
-    }).join(" ");
+      return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
+    }).join(" ").trim();
   }
 });
 
-// node_modules/lucide-react/dist/esm/defaultAttributes.js
+// node_modules/lucide-react/dist/esm/shared/src/utils/toKebabCase.mjs
+var toKebabCase;
+var init_toKebabCase = __esm({
+  "node_modules/lucide-react/dist/esm/shared/src/utils/toKebabCase.mjs"() {
+    toKebabCase = (string) => string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+  }
+});
+
+// node_modules/lucide-react/dist/esm/shared/src/utils/toCamelCase.mjs
+var toCamelCase;
+var init_toCamelCase = __esm({
+  "node_modules/lucide-react/dist/esm/shared/src/utils/toCamelCase.mjs"() {
+    toCamelCase = (string) => string.replace(
+      /^([A-Z])|[\s-_]+(\w)/g,
+      (match, p1, p2) => p2 ? p2.toUpperCase() : p1.toLowerCase()
+    );
+  }
+});
+
+// node_modules/lucide-react/dist/esm/shared/src/utils/toPascalCase.mjs
+var toPascalCase;
+var init_toPascalCase = __esm({
+  "node_modules/lucide-react/dist/esm/shared/src/utils/toPascalCase.mjs"() {
+    init_toCamelCase();
+    toPascalCase = (string) => {
+      const camelCase = toCamelCase(string);
+      return camelCase.charAt(0).toUpperCase() + camelCase.slice(1);
+    };
+  }
+});
+
+// node_modules/lucide-react/dist/esm/defaultAttributes.mjs
 var defaultAttributes;
 var init_defaultAttributes = __esm({
-  "node_modules/lucide-react/dist/esm/defaultAttributes.js"() {
+  "node_modules/lucide-react/dist/esm/defaultAttributes.mjs"() {
     defaultAttributes = {
       xmlns: "http://www.w3.org/2000/svg",
       width: 24,
@@ -25358,38 +25388,69 @@ var init_defaultAttributes = __esm({
   }
 });
 
-// node_modules/lucide-react/dist/esm/Icon.js
-var import_react2, Icon;
+// node_modules/lucide-react/dist/esm/shared/src/utils/hasA11yProp.mjs
+var hasA11yProp;
+var init_hasA11yProp = __esm({
+  "node_modules/lucide-react/dist/esm/shared/src/utils/hasA11yProp.mjs"() {
+    hasA11yProp = (props) => {
+      for (const prop in props) {
+        if (prop.startsWith("aria-") || prop === "role" || prop === "title") {
+          return true;
+        }
+      }
+      return false;
+    };
+  }
+});
+
+// node_modules/lucide-react/dist/esm/context.mjs
+var import_react2, LucideContext, useLucideContext;
+var init_context = __esm({
+  "node_modules/lucide-react/dist/esm/context.mjs"() {
+    "use strict";
+    "use client";
+    import_react2 = __toESM(require_react(), 1);
+    LucideContext = (0, import_react2.createContext)({});
+    useLucideContext = () => (0, import_react2.useContext)(LucideContext);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/Icon.mjs
+var import_react3, Icon;
 var init_Icon = __esm({
-  "node_modules/lucide-react/dist/esm/Icon.js"() {
-    import_react2 = __toESM(require_react());
+  "node_modules/lucide-react/dist/esm/Icon.mjs"() {
+    "use strict";
+    "use client";
+    import_react3 = __toESM(require_react(), 1);
     init_defaultAttributes();
-    init_utils();
-    Icon = (0, import_react2.forwardRef)(
-      ({
-        color = "currentColor",
-        size = 24,
-        strokeWidth = 2,
-        absoluteStrokeWidth,
-        className = "",
-        children,
-        iconNode,
-        ...rest
-      }, ref) => {
-        return (0, import_react2.createElement)(
+    init_hasA11yProp();
+    init_mergeClasses();
+    init_context();
+    Icon = (0, import_react3.forwardRef)(
+      ({ color, size, strokeWidth, absoluteStrokeWidth, className = "", children, iconNode, ...rest }, ref) => {
+        const {
+          size: contextSize = 24,
+          strokeWidth: contextStrokeWidth = 2,
+          absoluteStrokeWidth: contextAbsoluteStrokeWidth = false,
+          color: contextColor = "currentColor",
+          className: contextClass = ""
+        } = useLucideContext() ?? {};
+        const calculatedStrokeWidth = absoluteStrokeWidth ?? contextAbsoluteStrokeWidth ? Number(strokeWidth ?? contextStrokeWidth) * 24 / Number(size ?? contextSize) : strokeWidth ?? contextStrokeWidth;
+        return (0, import_react3.createElement)(
           "svg",
           {
             ref,
             ...defaultAttributes,
-            width: size,
-            height: size,
-            stroke: color,
-            strokeWidth: absoluteStrokeWidth ? Number(strokeWidth) * 24 / Number(size) : strokeWidth,
-            className: mergeClasses("lucide", className),
+            width: size ?? contextSize ?? defaultAttributes.width,
+            height: size ?? contextSize ?? defaultAttributes.height,
+            stroke: color ?? contextColor,
+            strokeWidth: calculatedStrokeWidth,
+            className: mergeClasses("lucide", contextClass, className),
+            ...!children && !hasA11yProp(rest) && { "aria-hidden": "true" },
             ...rest
           },
           [
-            ...iconNode.map(([tag, attrs]) => (0, import_react2.createElement)(tag, attrs)),
+            ...iconNode.map(([tag, attrs]) => (0, import_react3.createElement)(tag, attrs)),
             ...Array.isArray(children) ? children : [children]
           ]
         );
@@ -25398,52 +25459,59 @@ var init_Icon = __esm({
   }
 });
 
-// node_modules/lucide-react/dist/esm/createLucideIcon.js
-var import_react3, createLucideIcon;
+// node_modules/lucide-react/dist/esm/createLucideIcon.mjs
+var import_react4, createLucideIcon;
 var init_createLucideIcon = __esm({
-  "node_modules/lucide-react/dist/esm/createLucideIcon.js"() {
-    import_react3 = __toESM(require_react());
-    init_utils();
+  "node_modules/lucide-react/dist/esm/createLucideIcon.mjs"() {
+    import_react4 = __toESM(require_react(), 1);
+    init_mergeClasses();
+    init_toKebabCase();
+    init_toPascalCase();
     init_Icon();
     createLucideIcon = (iconName, iconNode) => {
-      const Component = (0, import_react3.forwardRef)(
-        ({ className, ...props }, ref) => (0, import_react3.createElement)(Icon, {
+      const Component = (0, import_react4.forwardRef)(
+        ({ className, ...props }, ref) => (0, import_react4.createElement)(Icon, {
           ref,
           iconNode,
-          className: mergeClasses(`lucide-${toKebabCase(iconName)}`, className),
+          className: mergeClasses(
+            `lucide-${toKebabCase(toPascalCase(iconName))}`,
+            `lucide-${iconName}`,
+            className
+          ),
           ...props
         })
       );
-      Component.displayName = `${iconName}`;
+      Component.displayName = toPascalCase(iconName);
       return Component;
     };
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/backpack.js
-var Backpack;
+// node_modules/lucide-react/dist/esm/icons/backpack.mjs
+var __iconNode, Backpack;
 var init_backpack = __esm({
-  "node_modules/lucide-react/dist/esm/icons/backpack.js"() {
+  "node_modules/lucide-react/dist/esm/icons/backpack.mjs"() {
     init_createLucideIcon();
-    Backpack = createLucideIcon("Backpack", [
+    __iconNode = [
       [
         "path",
-        { d: "M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z", key: "wvr1b5" }
+        { d: "M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z", key: "1ol0lm" }
       ],
-      ["path", { d: "M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2", key: "donm21" }],
-      ["path", { d: "M8 21v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5", key: "xk3gvk" }],
       ["path", { d: "M8 10h8", key: "c7uz4u" }],
-      ["path", { d: "M8 18h8", key: "1no2b1" }]
-    ]);
+      ["path", { d: "M8 18h8", key: "1no2b1" }],
+      ["path", { d: "M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6", key: "1fr6do" }],
+      ["path", { d: "M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2", key: "donm21" }]
+    ];
+    Backpack = createLucideIcon("backpack", __iconNode);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/badge-plus.js
-var BadgePlus;
+// node_modules/lucide-react/dist/esm/icons/badge-plus.mjs
+var __iconNode2, BadgePlus;
 var init_badge_plus = __esm({
-  "node_modules/lucide-react/dist/esm/icons/badge-plus.js"() {
+  "node_modules/lucide-react/dist/esm/icons/badge-plus.mjs"() {
     init_createLucideIcon();
-    BadgePlus = createLucideIcon("BadgePlus", [
+    __iconNode2 = [
       [
         "path",
         {
@@ -25453,332 +25521,406 @@ var init_badge_plus = __esm({
       ],
       ["line", { x1: "12", x2: "12", y1: "8", y2: "16", key: "10p56q" }],
       ["line", { x1: "8", x2: "16", y1: "12", y2: "12", key: "1jonct" }]
-    ]);
+    ];
+    BadgePlus = createLucideIcon("badge-plus", __iconNode2);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/bar-chart.js
-var BarChart;
-var init_bar_chart = __esm({
-  "node_modules/lucide-react/dist/esm/icons/bar-chart.js"() {
+// node_modules/lucide-react/dist/esm/icons/biceps-flexed.mjs
+var __iconNode3, BicepsFlexed;
+var init_biceps_flexed = __esm({
+  "node_modules/lucide-react/dist/esm/icons/biceps-flexed.mjs"() {
     init_createLucideIcon();
-    BarChart = createLucideIcon("BarChart", [
-      ["line", { x1: "12", x2: "12", y1: "20", y2: "10", key: "1vz5eb" }],
-      ["line", { x1: "18", x2: "18", y1: "20", y2: "4", key: "cun8e5" }],
-      ["line", { x1: "6", x2: "6", y1: "20", y2: "16", key: "hq0ia6" }]
-    ]);
+    __iconNode3 = [
+      [
+        "path",
+        {
+          d: "M12.409 13.017A5 5 0 0 1 22 15c0 3.866-4 7-9 7-4.077 0-8.153-.82-10.371-2.462-.426-.316-.631-.832-.62-1.362C2.118 12.723 2.627 2 10 2a3 3 0 0 1 3 3 2 2 0 0 1-2 2c-1.105 0-1.64-.444-2-1",
+          key: "1pmlyh"
+        }
+      ],
+      ["path", { d: "M15 14a5 5 0 0 0-7.584 2", key: "5rb254" }],
+      ["path", { d: "M9.964 6.825C8.019 7.977 9.5 13 8 15", key: "kbvsx9" }]
+    ];
+    BicepsFlexed = createLucideIcon("biceps-flexed", __iconNode3);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/book-open.js
-var BookOpen;
+// node_modules/lucide-react/dist/esm/icons/book-open.mjs
+var __iconNode4, BookOpen;
 var init_book_open = __esm({
-  "node_modules/lucide-react/dist/esm/icons/book-open.js"() {
+  "node_modules/lucide-react/dist/esm/icons/book-open.mjs"() {
     init_createLucideIcon();
-    BookOpen = createLucideIcon("BookOpen", [
-      ["path", { d: "M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z", key: "vv98re" }],
-      ["path", { d: "M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z", key: "1cyq3y" }]
-    ]);
+    __iconNode4 = [
+      ["path", { d: "M12 7v14", key: "1akyts" }],
+      [
+        "path",
+        {
+          d: "M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z",
+          key: "ruj8y"
+        }
+      ]
+    ];
+    BookOpen = createLucideIcon("book-open", __iconNode4);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/book.js
-var Book;
+// node_modules/lucide-react/dist/esm/icons/book.mjs
+var __iconNode5, Book;
 var init_book = __esm({
-  "node_modules/lucide-react/dist/esm/icons/book.js"() {
+  "node_modules/lucide-react/dist/esm/icons/book.mjs"() {
     init_createLucideIcon();
-    Book = createLucideIcon("Book", [
-      ["path", { d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20", key: "t4utmx" }]
-    ]);
+    __iconNode5 = [
+      [
+        "path",
+        {
+          d: "M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20",
+          key: "k3hazp"
+        }
+      ]
+    ];
+    Book = createLucideIcon("book", __iconNode5);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/brain.js
-var Brain;
+// node_modules/lucide-react/dist/esm/icons/brain.mjs
+var __iconNode6, Brain;
 var init_brain = __esm({
-  "node_modules/lucide-react/dist/esm/icons/brain.js"() {
+  "node_modules/lucide-react/dist/esm/icons/brain.mjs"() {
     init_createLucideIcon();
-    Brain = createLucideIcon("Brain", [
-      [
-        "path",
-        {
-          d: "M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z",
-          key: "l5xja"
-        }
-      ],
-      [
-        "path",
-        {
-          d: "M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z",
-          key: "ep3f8r"
-        }
-      ],
-      ["path", { d: "M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4", key: "1p4c4q" }],
-      ["path", { d: "M17.599 6.5a3 3 0 0 0 .399-1.375", key: "tmeiqw" }],
-      ["path", { d: "M6.003 5.125A3 3 0 0 0 6.401 6.5", key: "105sqy" }],
-      ["path", { d: "M3.477 10.896a4 4 0 0 1 .585-.396", key: "ql3yin" }],
-      ["path", { d: "M19.938 10.5a4 4 0 0 1 .585.396", key: "1qfode" }],
-      ["path", { d: "M6 18a4 4 0 0 1-1.967-.516", key: "2e4loj" }],
-      ["path", { d: "M19.967 17.484A4 4 0 0 1 18 18", key: "159ez6" }]
-    ]);
+    __iconNode6 = [
+      ["path", { d: "M12 18V5", key: "adv99a" }],
+      ["path", { d: "M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4", key: "1e3is1" }],
+      ["path", { d: "M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5", key: "1gqd8o" }],
+      ["path", { d: "M17.997 5.125a4 4 0 0 1 2.526 5.77", key: "iwvgf7" }],
+      ["path", { d: "M18 18a4 4 0 0 0 2-7.464", key: "efp6ie" }],
+      ["path", { d: "M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517", key: "1gq6am" }],
+      ["path", { d: "M6 18a4 4 0 0 1-2-7.464", key: "k1g0md" }],
+      ["path", { d: "M6.003 5.125a4 4 0 0 0-2.526 5.77", key: "q97ue3" }]
+    ];
+    Brain = createLucideIcon("brain", __iconNode6);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/camera.js
-var Camera;
+// node_modules/lucide-react/dist/esm/icons/camera.mjs
+var __iconNode7, Camera;
 var init_camera = __esm({
-  "node_modules/lucide-react/dist/esm/icons/camera.js"() {
+  "node_modules/lucide-react/dist/esm/icons/camera.mjs"() {
     init_createLucideIcon();
-    Camera = createLucideIcon("Camera", [
+    __iconNode7 = [
       [
         "path",
         {
-          d: "M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z",
-          key: "1tc9qg"
+          d: "M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z",
+          key: "18u6gg"
         }
       ],
       ["circle", { cx: "12", cy: "13", r: "3", key: "1vg3eu" }]
-    ]);
+    ];
+    Camera = createLucideIcon("camera", __iconNode7);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/check.js
-var Check;
+// node_modules/lucide-react/dist/esm/icons/chart-no-axes-column-increasing.mjs
+var __iconNode8, ChartNoAxesColumnIncreasing;
+var init_chart_no_axes_column_increasing = __esm({
+  "node_modules/lucide-react/dist/esm/icons/chart-no-axes-column-increasing.mjs"() {
+    init_createLucideIcon();
+    __iconNode8 = [
+      ["path", { d: "M5 21v-6", key: "1hz6c0" }],
+      ["path", { d: "M12 21V9", key: "uvy0l4" }],
+      ["path", { d: "M19 21V3", key: "11j9sm" }]
+    ];
+    ChartNoAxesColumnIncreasing = createLucideIcon("chart-no-axes-column-increasing", __iconNode8);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/check.mjs
+var __iconNode9, Check;
 var init_check = __esm({
-  "node_modules/lucide-react/dist/esm/icons/check.js"() {
+  "node_modules/lucide-react/dist/esm/icons/check.mjs"() {
     init_createLucideIcon();
-    Check = createLucideIcon("Check", [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]]);
+    __iconNode9 = [["path", { d: "M20 6 9 17l-5-5", key: "1gmf2c" }]];
+    Check = createLucideIcon("check", __iconNode9);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/chevron-left.js
-var ChevronLeft;
+// node_modules/lucide-react/dist/esm/icons/chevron-left.mjs
+var __iconNode10, ChevronLeft;
 var init_chevron_left = __esm({
-  "node_modules/lucide-react/dist/esm/icons/chevron-left.js"() {
+  "node_modules/lucide-react/dist/esm/icons/chevron-left.mjs"() {
     init_createLucideIcon();
-    ChevronLeft = createLucideIcon("ChevronLeft", [
-      ["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]
-    ]);
+    __iconNode10 = [["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]];
+    ChevronLeft = createLucideIcon("chevron-left", __iconNode10);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/chevron-right.js
-var ChevronRight;
+// node_modules/lucide-react/dist/esm/icons/chevron-right.mjs
+var __iconNode11, ChevronRight;
 var init_chevron_right = __esm({
-  "node_modules/lucide-react/dist/esm/icons/chevron-right.js"() {
+  "node_modules/lucide-react/dist/esm/icons/chevron-right.mjs"() {
     init_createLucideIcon();
-    ChevronRight = createLucideIcon("ChevronRight", [
-      ["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]
-    ]);
+    __iconNode11 = [["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]];
+    ChevronRight = createLucideIcon("chevron-right", __iconNode11);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/chevron-up.js
-var ChevronUp;
+// node_modules/lucide-react/dist/esm/icons/chevron-up.mjs
+var __iconNode12, ChevronUp;
 var init_chevron_up = __esm({
-  "node_modules/lucide-react/dist/esm/icons/chevron-up.js"() {
+  "node_modules/lucide-react/dist/esm/icons/chevron-up.mjs"() {
     init_createLucideIcon();
-    ChevronUp = createLucideIcon("ChevronUp", [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]]);
+    __iconNode12 = [["path", { d: "m18 15-6-6-6 6", key: "153udz" }]];
+    ChevronUp = createLucideIcon("chevron-up", __iconNode12);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/circle-alert.js
-var CircleAlert;
+// node_modules/lucide-react/dist/esm/icons/circle-alert.mjs
+var __iconNode13, CircleAlert;
 var init_circle_alert = __esm({
-  "node_modules/lucide-react/dist/esm/icons/circle-alert.js"() {
+  "node_modules/lucide-react/dist/esm/icons/circle-alert.mjs"() {
     init_createLucideIcon();
-    CircleAlert = createLucideIcon("CircleAlert", [
+    __iconNode13 = [
       ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
       ["line", { x1: "12", x2: "12", y1: "8", y2: "12", key: "1pkeuh" }],
       ["line", { x1: "12", x2: "12.01", y1: "16", y2: "16", key: "4dfq90" }]
-    ]);
+    ];
+    CircleAlert = createLucideIcon("circle-alert", __iconNode13);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/circle-check.js
-var CircleCheck;
+// node_modules/lucide-react/dist/esm/icons/circle-check.mjs
+var __iconNode14, CircleCheck;
 var init_circle_check = __esm({
-  "node_modules/lucide-react/dist/esm/icons/circle-check.js"() {
+  "node_modules/lucide-react/dist/esm/icons/circle-check.mjs"() {
     init_createLucideIcon();
-    CircleCheck = createLucideIcon("CircleCheck", [
+    __iconNode14 = [
       ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
       ["path", { d: "m9 12 2 2 4-4", key: "dzmm74" }]
-    ]);
+    ];
+    CircleCheck = createLucideIcon("circle-check", __iconNode14);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/coins.js
-var Coins;
+// node_modules/lucide-react/dist/esm/icons/coins.mjs
+var __iconNode15, Coins;
 var init_coins = __esm({
-  "node_modules/lucide-react/dist/esm/icons/coins.js"() {
+  "node_modules/lucide-react/dist/esm/icons/coins.mjs"() {
     init_createLucideIcon();
-    Coins = createLucideIcon("Coins", [
-      ["circle", { cx: "8", cy: "8", r: "6", key: "3yglwk" }],
-      ["path", { d: "M18.09 10.37A6 6 0 1 1 10.34 18", key: "t5s6rm" }],
-      ["path", { d: "M7 6h1v4", key: "1obek4" }],
-      ["path", { d: "m16.71 13.88.7.71-2.82 2.82", key: "1rbuyh" }]
-    ]);
+    __iconNode15 = [
+      ["path", { d: "M13.744 17.736a6 6 0 1 1-7.48-7.48", key: "bq4yh3" }],
+      ["path", { d: "M15 6h1v4", key: "11y1tn" }],
+      ["path", { d: "m6.134 14.768.866-.5 2 3.464", key: "17snzx" }],
+      ["circle", { cx: "16", cy: "8", r: "6", key: "14bfc9" }]
+    ];
+    Coins = createLucideIcon("coins", __iconNode15);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/download.js
-var Download;
+// node_modules/lucide-react/dist/esm/icons/download.mjs
+var __iconNode16, Download;
 var init_download = __esm({
-  "node_modules/lucide-react/dist/esm/icons/download.js"() {
+  "node_modules/lucide-react/dist/esm/icons/download.mjs"() {
     init_createLucideIcon();
-    Download = createLucideIcon("Download", [
+    __iconNode16 = [
+      ["path", { d: "M12 15V3", key: "m9g1x1" }],
       ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-      ["polyline", { points: "7 10 12 15 17 10", key: "2ggqvy" }],
-      ["line", { x1: "12", x2: "12", y1: "15", y2: "3", key: "1vk2je" }]
-    ]);
+      ["path", { d: "m7 10 5 5 5-5", key: "brsn70" }]
+    ];
+    Download = createLucideIcon("download", __iconNode16);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/eye.js
-var Eye;
-var init_eye = __esm({
-  "node_modules/lucide-react/dist/esm/icons/eye.js"() {
+// node_modules/lucide-react/dist/esm/icons/drama.mjs
+var __iconNode17, Drama;
+var init_drama = __esm({
+  "node_modules/lucide-react/dist/esm/icons/drama.mjs"() {
     init_createLucideIcon();
-    Eye = createLucideIcon("Eye", [
-      ["path", { d: "M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z", key: "rwhkz3" }],
-      ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
-    ]);
-  }
-});
-
-// node_modules/lucide-react/dist/esm/icons/file-code.js
-var FileCode;
-var init_file_code = __esm({
-  "node_modules/lucide-react/dist/esm/icons/file-code.js"() {
-    init_createLucideIcon();
-    FileCode = createLucideIcon("FileCode", [
-      ["path", { d: "M10 12.5 8 15l2 2.5", key: "1tg20x" }],
-      ["path", { d: "m14 12.5 2 2.5-2 2.5", key: "yinavb" }],
-      ["path", { d: "M14 2v4a2 2 0 0 0 2 2h4", key: "tnqrlb" }],
-      ["path", { d: "M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z", key: "1mlx9k" }]
-    ]);
-  }
-});
-
-// node_modules/lucide-react/dist/esm/icons/heart.js
-var Heart;
-var init_heart = __esm({
-  "node_modules/lucide-react/dist/esm/icons/heart.js"() {
-    init_createLucideIcon();
-    Heart = createLucideIcon("Heart", [
+    __iconNode17 = [
+      ["path", { d: "M10 11h.01", key: "d2at3l" }],
+      ["path", { d: "M14 6h.01", key: "k028ub" }],
+      ["path", { d: "M18 6h.01", key: "1v4wsw" }],
+      ["path", { d: "M6.5 13.1h.01", key: "1748ia" }],
+      ["path", { d: "M22 5c0 9-4 12-6 12s-6-3-6-12c0-2 2-3 6-3s6 1 6 3", key: "172yzv" }],
+      ["path", { d: "M17.4 9.9c-.8.8-2 .8-2.8 0", key: "1obv0w" }],
       [
         "path",
         {
-          d: "M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z",
-          key: "c3ymky"
+          d: "M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7",
+          key: "rqjl8i"
         }
-      ]
-    ]);
+      ],
+      ["path", { d: "M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4", key: "1mr6wy" }]
+    ];
+    Drama = createLucideIcon("drama", __iconNode17);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/info.js
-var Info;
-var init_info = __esm({
-  "node_modules/lucide-react/dist/esm/icons/info.js"() {
+// node_modules/lucide-react/dist/esm/icons/eye.mjs
+var __iconNode18, Eye;
+var init_eye = __esm({
+  "node_modules/lucide-react/dist/esm/icons/eye.mjs"() {
     init_createLucideIcon();
-    Info = createLucideIcon("Info", [
+    __iconNode18 = [
+      [
+        "path",
+        {
+          d: "M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0",
+          key: "1nclc0"
+        }
+      ],
+      ["circle", { cx: "12", cy: "12", r: "3", key: "1v7zrd" }]
+    ];
+    Eye = createLucideIcon("eye", __iconNode18);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/file-code.mjs
+var __iconNode19, FileCode;
+var init_file_code = __esm({
+  "node_modules/lucide-react/dist/esm/icons/file-code.mjs"() {
+    init_createLucideIcon();
+    __iconNode19 = [
+      [
+        "path",
+        {
+          d: "M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z",
+          key: "1oefj6"
+        }
+      ],
+      ["path", { d: "M14 2v5a1 1 0 0 0 1 1h5", key: "wfsgrz" }],
+      ["path", { d: "M10 12.5 8 15l2 2.5", key: "1tg20x" }],
+      ["path", { d: "m14 12.5 2 2.5-2 2.5", key: "yinavb" }]
+    ];
+    FileCode = createLucideIcon("file-code", __iconNode19);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/heart.mjs
+var __iconNode20, Heart;
+var init_heart = __esm({
+  "node_modules/lucide-react/dist/esm/icons/heart.mjs"() {
+    init_createLucideIcon();
+    __iconNode20 = [
+      [
+        "path",
+        {
+          d: "M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5",
+          key: "mvr1a0"
+        }
+      ]
+    ];
+    Heart = createLucideIcon("heart", __iconNode20);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/info.mjs
+var __iconNode21, Info;
+var init_info = __esm({
+  "node_modules/lucide-react/dist/esm/icons/info.mjs"() {
+    init_createLucideIcon();
+    __iconNode21 = [
       ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
       ["path", { d: "M12 16v-4", key: "1dtifu" }],
       ["path", { d: "M12 8h.01", key: "e9boi3" }]
-    ]);
+    ];
+    Info = createLucideIcon("info", __iconNode21);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/library.js
-var Library;
+// node_modules/lucide-react/dist/esm/icons/library.mjs
+var __iconNode22, Library;
 var init_library = __esm({
-  "node_modules/lucide-react/dist/esm/icons/library.js"() {
+  "node_modules/lucide-react/dist/esm/icons/library.mjs"() {
     init_createLucideIcon();
-    Library = createLucideIcon("Library", [
+    __iconNode22 = [
       ["path", { d: "m16 6 4 14", key: "ji33uf" }],
       ["path", { d: "M12 6v14", key: "1n7gus" }],
       ["path", { d: "M8 8v12", key: "1gg7y9" }],
       ["path", { d: "M4 4v16", key: "6qkkli" }]
-    ]);
+    ];
+    Library = createLucideIcon("library", __iconNode22);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/loader-circle.js
-var LoaderCircle;
+// node_modules/lucide-react/dist/esm/icons/loader-circle.mjs
+var __iconNode23, LoaderCircle;
 var init_loader_circle = __esm({
-  "node_modules/lucide-react/dist/esm/icons/loader-circle.js"() {
+  "node_modules/lucide-react/dist/esm/icons/loader-circle.mjs"() {
     init_createLucideIcon();
-    LoaderCircle = createLucideIcon("LoaderCircle", [
-      ["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]
-    ]);
+    __iconNode23 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+    LoaderCircle = createLucideIcon("loader-circle", __iconNode23);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/minus.js
-var Minus;
+// node_modules/lucide-react/dist/esm/icons/minus.mjs
+var __iconNode24, Minus;
 var init_minus = __esm({
-  "node_modules/lucide-react/dist/esm/icons/minus.js"() {
+  "node_modules/lucide-react/dist/esm/icons/minus.mjs"() {
     init_createLucideIcon();
-    Minus = createLucideIcon("Minus", [["path", { d: "M5 12h14", key: "1ays0h" }]]);
+    __iconNode24 = [["path", { d: "M5 12h14", key: "1ays0h" }]];
+    Minus = createLucideIcon("minus", __iconNode24);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/move.js
-var Move;
+// node_modules/lucide-react/dist/esm/icons/move.mjs
+var __iconNode25, Move;
 var init_move = __esm({
-  "node_modules/lucide-react/dist/esm/icons/move.js"() {
+  "node_modules/lucide-react/dist/esm/icons/move.mjs"() {
     init_createLucideIcon();
-    Move = createLucideIcon("Move", [
-      ["polyline", { points: "5 9 2 12 5 15", key: "1r5uj5" }],
-      ["polyline", { points: "9 5 12 2 15 5", key: "5v383o" }],
-      ["polyline", { points: "15 19 12 22 9 19", key: "g7qi8m" }],
-      ["polyline", { points: "19 9 22 12 19 15", key: "tpp73q" }],
-      ["line", { x1: "2", x2: "22", y1: "12", y2: "12", key: "1dnqot" }],
-      ["line", { x1: "12", x2: "12", y1: "2", y2: "22", key: "7eqyqh" }]
-    ]);
+    __iconNode25 = [
+      ["path", { d: "M12 2v20", key: "t6zp3m" }],
+      ["path", { d: "m15 19-3 3-3-3", key: "11eu04" }],
+      ["path", { d: "m19 9 3 3-3 3", key: "1mg7y2" }],
+      ["path", { d: "M2 12h20", key: "9i4pu4" }],
+      ["path", { d: "m5 9-3 3 3 3", key: "j64kie" }],
+      ["path", { d: "m9 5 3-3 3 3", key: "l8vdw6" }]
+    ];
+    Move = createLucideIcon("move", __iconNode25);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/music.js
-var Music;
+// node_modules/lucide-react/dist/esm/icons/music.mjs
+var __iconNode26, Music;
 var init_music = __esm({
-  "node_modules/lucide-react/dist/esm/icons/music.js"() {
+  "node_modules/lucide-react/dist/esm/icons/music.mjs"() {
     init_createLucideIcon();
-    Music = createLucideIcon("Music", [
+    __iconNode26 = [
       ["path", { d: "M9 18V5l12-2v13", key: "1jmyc2" }],
       ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
       ["circle", { cx: "18", cy: "16", r: "3", key: "1hluhg" }]
-    ]);
+    ];
+    Music = createLucideIcon("music", __iconNode26);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/package.js
-var Package;
+// node_modules/lucide-react/dist/esm/icons/package.mjs
+var __iconNode27, Package;
 var init_package = __esm({
-  "node_modules/lucide-react/dist/esm/icons/package.js"() {
+  "node_modules/lucide-react/dist/esm/icons/package.mjs"() {
     init_createLucideIcon();
-    Package = createLucideIcon("Package", [
-      ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }],
+    __iconNode27 = [
       [
         "path",
         {
-          d: "M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z",
-          key: "hh9hay"
+          d: "M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z",
+          key: "1a0edw"
         }
       ],
-      ["path", { d: "m3.3 7 8.7 5 8.7-5", key: "g66t2b" }],
-      ["path", { d: "M12 22V12", key: "d0xqtd" }]
-    ]);
+      ["path", { d: "M12 22V12", key: "d0xqtd" }],
+      ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
+      ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }]
+    ];
+    Package = createLucideIcon("package", __iconNode27);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/pen.js
-var Pen;
+// node_modules/lucide-react/dist/esm/icons/pen.mjs
+var __iconNode28, Pen;
 var init_pen = __esm({
-  "node_modules/lucide-react/dist/esm/icons/pen.js"() {
+  "node_modules/lucide-react/dist/esm/icons/pen.mjs"() {
     init_createLucideIcon();
-    Pen = createLucideIcon("Pen", [
+    __iconNode28 = [
       [
         "path",
         {
@@ -25786,16 +25928,17 @@ var init_pen = __esm({
           key: "1a8usu"
         }
       ]
-    ]);
+    ];
+    Pen = createLucideIcon("pen", __iconNode28);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/pencil.js
-var Pencil;
+// node_modules/lucide-react/dist/esm/icons/pencil.mjs
+var __iconNode29, Pencil;
 var init_pencil = __esm({
-  "node_modules/lucide-react/dist/esm/icons/pencil.js"() {
+  "node_modules/lucide-react/dist/esm/icons/pencil.mjs"() {
     init_createLucideIcon();
-    Pencil = createLucideIcon("Pencil", [
+    __iconNode29 = [
       [
         "path",
         {
@@ -25804,28 +25947,30 @@ var init_pencil = __esm({
         }
       ],
       ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
-    ]);
+    ];
+    Pencil = createLucideIcon("pencil", __iconNode29);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/plus.js
-var Plus;
+// node_modules/lucide-react/dist/esm/icons/plus.mjs
+var __iconNode30, Plus;
 var init_plus = __esm({
-  "node_modules/lucide-react/dist/esm/icons/plus.js"() {
+  "node_modules/lucide-react/dist/esm/icons/plus.mjs"() {
     init_createLucideIcon();
-    Plus = createLucideIcon("Plus", [
+    __iconNode30 = [
       ["path", { d: "M5 12h14", key: "1ays0h" }],
       ["path", { d: "M12 5v14", key: "s699le" }]
-    ]);
+    ];
+    Plus = createLucideIcon("plus", __iconNode30);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/save.js
-var Save;
+// node_modules/lucide-react/dist/esm/icons/save.mjs
+var __iconNode31, Save;
 var init_save = __esm({
-  "node_modules/lucide-react/dist/esm/icons/save.js"() {
+  "node_modules/lucide-react/dist/esm/icons/save.mjs"() {
     init_createLucideIcon();
-    Save = createLucideIcon("Save", [
+    __iconNode31 = [
       [
         "path",
         {
@@ -25835,16 +25980,17 @@ var init_save = __esm({
       ],
       ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
       ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
-    ]);
+    ];
+    Save = createLucideIcon("save", __iconNode31);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/scroll-text.js
-var ScrollText;
+// node_modules/lucide-react/dist/esm/icons/scroll-text.mjs
+var __iconNode32, ScrollText;
 var init_scroll_text = __esm({
-  "node_modules/lucide-react/dist/esm/icons/scroll-text.js"() {
+  "node_modules/lucide-react/dist/esm/icons/scroll-text.mjs"() {
     init_createLucideIcon();
-    ScrollText = createLucideIcon("ScrollText", [
+    __iconNode32 = [
       ["path", { d: "M15 12h-5", key: "r7krc0" }],
       ["path", { d: "M15 8h-5", key: "1khuty" }],
       ["path", { d: "M19 17V5a2 2 0 0 0-2-2H4", key: "zz82l3" }],
@@ -25855,28 +26001,49 @@ var init_scroll_text = __esm({
           key: "1ph1d7"
         }
       ]
-    ]);
+    ];
+    ScrollText = createLucideIcon("scroll-text", __iconNode32);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/search.js
-var Search;
+// node_modules/lucide-react/dist/esm/icons/search.mjs
+var __iconNode33, Search;
 var init_search = __esm({
-  "node_modules/lucide-react/dist/esm/icons/search.js"() {
+  "node_modules/lucide-react/dist/esm/icons/search.mjs"() {
     init_createLucideIcon();
-    Search = createLucideIcon("Search", [
-      ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }],
-      ["path", { d: "m21 21-4.3-4.3", key: "1qie3q" }]
-    ]);
+    __iconNode33 = [
+      ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
+      ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
+    ];
+    Search = createLucideIcon("search", __iconNode33);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/shield.js
-var Shield;
-var init_shield = __esm({
-  "node_modules/lucide-react/dist/esm/icons/shield.js"() {
+// node_modules/lucide-react/dist/esm/icons/shield-half.mjs
+var __iconNode34, ShieldHalf;
+var init_shield_half = __esm({
+  "node_modules/lucide-react/dist/esm/icons/shield-half.mjs"() {
     init_createLucideIcon();
-    Shield = createLucideIcon("Shield", [
+    __iconNode34 = [
+      [
+        "path",
+        {
+          d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+          key: "oel41y"
+        }
+      ],
+      ["path", { d: "M12 22V2", key: "zs6s6o" }]
+    ];
+    ShieldHalf = createLucideIcon("shield-half", __iconNode34);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/shield.mjs
+var __iconNode35, Shield;
+var init_shield = __esm({
+  "node_modules/lucide-react/dist/esm/icons/shield.mjs"() {
+    init_createLucideIcon();
+    __iconNode35 = [
       [
         "path",
         {
@@ -25884,66 +26051,79 @@ var init_shield = __esm({
           key: "oel41y"
         }
       ]
-    ]);
+    ];
+    Shield = createLucideIcon("shield", __iconNode35);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/skull.js
-var Skull;
+// node_modules/lucide-react/dist/esm/icons/skull.mjs
+var __iconNode36, Skull;
 var init_skull = __esm({
-  "node_modules/lucide-react/dist/esm/icons/skull.js"() {
+  "node_modules/lucide-react/dist/esm/icons/skull.mjs"() {
     init_createLucideIcon();
-    Skull = createLucideIcon("Skull", [
-      ["circle", { cx: "9", cy: "12", r: "1", key: "1vctgf" }],
-      ["circle", { cx: "15", cy: "12", r: "1", key: "1tmaij" }],
-      ["path", { d: "M8 20v2h8v-2", key: "ded4og" }],
+    __iconNode36 = [
       ["path", { d: "m12.5 17-.5-1-.5 1h1z", key: "3me087" }],
-      ["path", { d: "M16 20a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20", key: "xq9p5u" }]
-    ]);
-  }
-});
-
-// node_modules/lucide-react/dist/esm/icons/sparkles.js
-var Sparkles;
-var init_sparkles = __esm({
-  "node_modules/lucide-react/dist/esm/icons/sparkles.js"() {
-    init_createLucideIcon();
-    Sparkles = createLucideIcon("Sparkles", [
       [
         "path",
         {
-          d: "M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z",
-          key: "4pj2yx"
+          d: "M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z",
+          key: "1o5pge"
         }
       ],
-      ["path", { d: "M20 3v4", key: "1olli1" }],
-      ["path", { d: "M22 5h-4", key: "1gvqau" }],
-      ["path", { d: "M4 17v2", key: "vumght" }],
-      ["path", { d: "M5 18H3", key: "zchphs" }]
-    ]);
+      ["circle", { cx: "15", cy: "12", r: "1", key: "1tmaij" }],
+      ["circle", { cx: "9", cy: "12", r: "1", key: "1vctgf" }]
+    ];
+    Skull = createLucideIcon("skull", __iconNode36);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/sword.js
-var Sword;
-var init_sword = __esm({
-  "node_modules/lucide-react/dist/esm/icons/sword.js"() {
+// node_modules/lucide-react/dist/esm/icons/sparkles.mjs
+var __iconNode37, Sparkles;
+var init_sparkles = __esm({
+  "node_modules/lucide-react/dist/esm/icons/sparkles.mjs"() {
     init_createLucideIcon();
-    Sword = createLucideIcon("Sword", [
-      ["polyline", { points: "14.5 17.5 3 6 3 3 6 3 17.5 14.5", key: "1hfsw2" }],
-      ["line", { x1: "13", x2: "19", y1: "19", y2: "13", key: "1vrmhu" }],
-      ["line", { x1: "16", x2: "20", y1: "16", y2: "20", key: "1bron3" }],
-      ["line", { x1: "19", x2: "21", y1: "21", y2: "19", key: "13pww6" }]
-    ]);
+    __iconNode37 = [
+      [
+        "path",
+        {
+          d: "M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z",
+          key: "1s2grr"
+        }
+      ],
+      ["path", { d: "M20 2v4", key: "1rf3ol" }],
+      ["path", { d: "M22 4h-4", key: "gwowj6" }],
+      ["circle", { cx: "4", cy: "20", r: "2", key: "6kqj1y" }]
+    ];
+    Sparkles = createLucideIcon("sparkles", __iconNode37);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/swords.js
-var Swords;
+// node_modules/lucide-react/dist/esm/icons/sport-shoe.mjs
+var __iconNode38, SportShoe;
+var init_sport_shoe = __esm({
+  "node_modules/lucide-react/dist/esm/icons/sport-shoe.mjs"() {
+    init_createLucideIcon();
+    __iconNode38 = [
+      ["path", { d: "m15 10.42 4.8-5.07", key: "10at9d" }],
+      ["path", { d: "M19 18h3", key: "nnkd4d" }],
+      [
+        "path",
+        {
+          d: "M9.5 22 21.414 9.415A2 2 0 0 0 21.2 6.4l-5.61-4.208A1 1 0 0 0 14 3v2a2 2 0 0 1-1.394 1.906L8.677 8.053A1 1 0 0 0 8 9c-.155 6.393-2.082 9-4 9a2 2 0 0 0 0 4h14",
+          key: "v410ed"
+        }
+      ]
+    ];
+    SportShoe = createLucideIcon("sport-shoe", __iconNode38);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/swords.mjs
+var __iconNode39, Swords;
 var init_swords = __esm({
-  "node_modules/lucide-react/dist/esm/icons/swords.js"() {
+  "node_modules/lucide-react/dist/esm/icons/swords.mjs"() {
     init_createLucideIcon();
-    Swords = createLucideIcon("Swords", [
+    __iconNode39 = [
       ["polyline", { points: "14.5 17.5 3 6 3 3 6 3 17.5 14.5", key: "1hfsw2" }],
       ["line", { x1: "13", x2: "19", y1: "19", y2: "13", key: "1vrmhu" }],
       ["line", { x1: "16", x2: "20", y1: "16", y2: "20", key: "1bron3" }],
@@ -25952,98 +26132,140 @@ var init_swords = __esm({
       ["line", { x1: "5", x2: "9", y1: "14", y2: "18", key: "1hf58s" }],
       ["line", { x1: "7", x2: "4", y1: "17", y2: "20", key: "pidxm4" }],
       ["line", { x1: "3", x2: "5", y1: "19", y2: "21", key: "1pehsh" }]
-    ]);
+    ];
+    Swords = createLucideIcon("swords", __iconNode39);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/target.js
-var Target;
-var init_target = __esm({
-  "node_modules/lucide-react/dist/esm/icons/target.js"() {
+// node_modules/lucide-react/dist/esm/icons/sword.mjs
+var __iconNode40, Sword;
+var init_sword = __esm({
+  "node_modules/lucide-react/dist/esm/icons/sword.mjs"() {
     init_createLucideIcon();
-    Target = createLucideIcon("Target", [
+    __iconNode40 = [
+      ["path", { d: "m11 19-6-6", key: "s7kpr" }],
+      ["path", { d: "m5 21-2-2", key: "1kw20b" }],
+      ["path", { d: "m8 16-4 4", key: "1oqv8h" }],
+      ["path", { d: "M9.5 17.5 21 6V3h-3L6.5 14.5", key: "pkxemp" }]
+    ];
+    Sword = createLucideIcon("sword", __iconNode40);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/target.mjs
+var __iconNode41, Target;
+var init_target = __esm({
+  "node_modules/lucide-react/dist/esm/icons/target.mjs"() {
+    init_createLucideIcon();
+    __iconNode41 = [
       ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
       ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
       ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
-    ]);
+    ];
+    Target = createLucideIcon("target", __iconNode41);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/trash-2.js
-var Trash2;
+// node_modules/lucide-react/dist/esm/icons/trash-2.mjs
+var __iconNode42, Trash2;
 var init_trash_2 = __esm({
-  "node_modules/lucide-react/dist/esm/icons/trash-2.js"() {
+  "node_modules/lucide-react/dist/esm/icons/trash-2.mjs"() {
     init_createLucideIcon();
-    Trash2 = createLucideIcon("Trash2", [
+    __iconNode42 = [
+      ["path", { d: "M10 11v6", key: "nco0om" }],
+      ["path", { d: "M14 11v6", key: "outv1u" }],
+      ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
       ["path", { d: "M3 6h18", key: "d0wm0j" }],
-      ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
-      ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }],
-      ["line", { x1: "10", x2: "10", y1: "11", y2: "17", key: "1uufr5" }],
-      ["line", { x1: "14", x2: "14", y1: "11", y2: "17", key: "xtxkd" }]
-    ]);
+      ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
+    ];
+    Trash2 = createLucideIcon("trash-2", __iconNode42);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/trash.js
-var Trash;
+// node_modules/lucide-react/dist/esm/icons/trash.mjs
+var __iconNode43, Trash;
 var init_trash = __esm({
-  "node_modules/lucide-react/dist/esm/icons/trash.js"() {
+  "node_modules/lucide-react/dist/esm/icons/trash.mjs"() {
     init_createLucideIcon();
-    Trash = createLucideIcon("Trash", [
+    __iconNode43 = [
+      ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
       ["path", { d: "M3 6h18", key: "d0wm0j" }],
-      ["path", { d: "M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6", key: "4alrt4" }],
-      ["path", { d: "M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2", key: "v07s0e" }]
-    ]);
+      ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
+    ];
+    Trash = createLucideIcon("trash", __iconNode43);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/trophy.js
-var Trophy;
+// node_modules/lucide-react/dist/esm/icons/trophy.mjs
+var __iconNode44, Trophy;
 var init_trophy = __esm({
-  "node_modules/lucide-react/dist/esm/icons/trophy.js"() {
+  "node_modules/lucide-react/dist/esm/icons/trophy.mjs"() {
     init_createLucideIcon();
-    Trophy = createLucideIcon("Trophy", [
-      ["path", { d: "M6 9H4.5a2.5 2.5 0 0 1 0-5H6", key: "17hqa7" }],
-      ["path", { d: "M18 9h1.5a2.5 2.5 0 0 0 0-5H18", key: "lmptdp" }],
+    __iconNode44 = [
+      ["path", { d: "M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978", key: "1n3hpd" }],
+      ["path", { d: "M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978", key: "rfe1zi" }],
+      ["path", { d: "M18 9h1.5a1 1 0 0 0 0-5H18", key: "7xy6bh" }],
       ["path", { d: "M4 22h16", key: "57wxv0" }],
-      ["path", { d: "M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22", key: "1nw9bq" }],
-      ["path", { d: "M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22", key: "1np0yb" }],
-      ["path", { d: "M18 2H6v7a6 6 0 0 0 12 0V2Z", key: "u46fv3" }]
-    ]);
+      ["path", { d: "M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z", key: "1mhfuq" }],
+      ["path", { d: "M6 9H4.5a1 1 0 0 1 0-5H6", key: "tex48p" }]
+    ];
+    Trophy = createLucideIcon("trophy", __iconNode44);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/upload.js
-var Upload;
+// node_modules/lucide-react/dist/esm/icons/upload.mjs
+var __iconNode45, Upload;
 var init_upload = __esm({
-  "node_modules/lucide-react/dist/esm/icons/upload.js"() {
+  "node_modules/lucide-react/dist/esm/icons/upload.mjs"() {
     init_createLucideIcon();
-    Upload = createLucideIcon("Upload", [
-      ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }],
-      ["polyline", { points: "17 8 12 3 7 8", key: "t8dd8p" }],
-      ["line", { x1: "12", x2: "12", y1: "3", y2: "15", key: "widbto" }]
-    ]);
+    __iconNode45 = [
+      ["path", { d: "M12 3v12", key: "1x0j5s" }],
+      ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
+      ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
+    ];
+    Upload = createLucideIcon("upload", __iconNode45);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/user.js
-var User;
+// node_modules/lucide-react/dist/esm/icons/user.mjs
+var __iconNode46, User;
 var init_user = __esm({
-  "node_modules/lucide-react/dist/esm/icons/user.js"() {
+  "node_modules/lucide-react/dist/esm/icons/user.mjs"() {
     init_createLucideIcon();
-    User = createLucideIcon("User", [
+    __iconNode46 = [
       ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
       ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
-    ]);
+    ];
+    User = createLucideIcon("user", __iconNode46);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/wand-sparkles.js
-var WandSparkles;
-var init_wand_sparkles = __esm({
-  "node_modules/lucide-react/dist/esm/icons/wand-sparkles.js"() {
+// node_modules/lucide-react/dist/esm/icons/wand.mjs
+var __iconNode47, Wand;
+var init_wand = __esm({
+  "node_modules/lucide-react/dist/esm/icons/wand.mjs"() {
     init_createLucideIcon();
-    WandSparkles = createLucideIcon("WandSparkles", [
+    __iconNode47 = [
+      ["path", { d: "M15 4V2", key: "z1p9b7" }],
+      ["path", { d: "M15 16v-2", key: "px0unx" }],
+      ["path", { d: "M8 9h2", key: "1g203m" }],
+      ["path", { d: "M20 9h2", key: "19tzq7" }],
+      ["path", { d: "M17.8 11.8 19 13", key: "yihg8r" }],
+      ["path", { d: "M15 9h.01", key: "x1ddxp" }],
+      ["path", { d: "M17.8 6.2 19 5", key: "fd4us0" }],
+      ["path", { d: "m3 21 9-9", key: "1jfql5" }],
+      ["path", { d: "M12.2 6.2 11 5", key: "i3da3b" }]
+    ];
+    Wand = createLucideIcon("wand", __iconNode47);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/wand-sparkles.mjs
+var __iconNode48, WandSparkles;
+var init_wand_sparkles = __esm({
+  "node_modules/lucide-react/dist/esm/icons/wand-sparkles.mjs"() {
+    init_createLucideIcon();
+    __iconNode48 = [
       [
         "path",
         {
@@ -26058,47 +26280,30 @@ var init_wand_sparkles = __esm({
       ["path", { d: "M7 8H3", key: "zfb6yr" }],
       ["path", { d: "M21 16h-4", key: "1cnmox" }],
       ["path", { d: "M11 3H9", key: "1obp7u" }]
-    ]);
+    ];
+    WandSparkles = createLucideIcon("wand-sparkles", __iconNode48);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/wand.js
-var Wand;
-var init_wand = __esm({
-  "node_modules/lucide-react/dist/esm/icons/wand.js"() {
-    init_createLucideIcon();
-    Wand = createLucideIcon("Wand", [
-      ["path", { d: "M15 4V2", key: "z1p9b7" }],
-      ["path", { d: "M15 16v-2", key: "px0unx" }],
-      ["path", { d: "M8 9h2", key: "1g203m" }],
-      ["path", { d: "M20 9h2", key: "19tzq7" }],
-      ["path", { d: "M17.8 11.8 19 13", key: "yihg8r" }],
-      ["path", { d: "M15 9h.01", key: "x1ddxp" }],
-      ["path", { d: "M17.8 6.2 19 5", key: "fd4us0" }],
-      ["path", { d: "m3 21 9-9", key: "1jfql5" }],
-      ["path", { d: "M12.2 6.2 11 5", key: "i3da3b" }]
-    ]);
-  }
-});
-
-// node_modules/lucide-react/dist/esm/icons/x.js
-var X;
+// node_modules/lucide-react/dist/esm/icons/x.mjs
+var __iconNode49, X;
 var init_x = __esm({
-  "node_modules/lucide-react/dist/esm/icons/x.js"() {
+  "node_modules/lucide-react/dist/esm/icons/x.mjs"() {
     init_createLucideIcon();
-    X = createLucideIcon("X", [
+    __iconNode49 = [
       ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
       ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
-    ]);
+    ];
+    X = createLucideIcon("x", __iconNode49);
   }
 });
 
-// node_modules/lucide-react/dist/esm/icons/zap.js
-var Zap;
+// node_modules/lucide-react/dist/esm/icons/zap.mjs
+var __iconNode50, Zap;
 var init_zap = __esm({
-  "node_modules/lucide-react/dist/esm/icons/zap.js"() {
+  "node_modules/lucide-react/dist/esm/icons/zap.mjs"() {
     init_createLucideIcon();
-    Zap = createLucideIcon("Zap", [
+    __iconNode50 = [
       [
         "path",
         {
@@ -26106,16 +26311,25 @@ var init_zap = __esm({
           key: "1xq2db"
         }
       ]
-    ]);
+    ];
+    Zap = createLucideIcon("zap", __iconNode50);
   }
 });
 
-// node_modules/lucide-react/dist/esm/lucide-react.js
+// node_modules/lucide-react/dist/esm/lucide-react.mjs
 var init_lucide_react = __esm({
-  "node_modules/lucide-react/dist/esm/lucide-react.js"() {
+  "node_modules/lucide-react/dist/esm/lucide-react.mjs"() {
+    "use strict";
+    init_chart_no_axes_column_increasing();
+    init_circle_alert();
+    init_circle_check();
+    init_loader_circle();
+    init_pen();
+    init_sparkles();
+    init_wand_sparkles();
     init_backpack();
     init_badge_plus();
-    init_bar_chart();
+    init_biceps_flexed();
     init_book_open();
     init_book();
     init_brain();
@@ -26126,6 +26340,7 @@ var init_lucide_react = __esm({
     init_chevron_up();
     init_coins();
     init_download();
+    init_drama();
     init_eye();
     init_file_code();
     init_heart();
@@ -26140,8 +26355,10 @@ var init_lucide_react = __esm({
     init_save();
     init_scroll_text();
     init_search();
+    init_shield_half();
     init_shield();
     init_skull();
+    init_sport_shoe();
     init_sword();
     init_swords();
     init_target();
@@ -26153,12 +26370,6 @@ var init_lucide_react = __esm({
     init_wand();
     init_x();
     init_zap();
-    init_circle_alert();
-    init_circle_check();
-    init_loader_circle();
-    init_pen();
-    init_sparkles();
-    init_wand_sparkles();
   }
 });
 
@@ -29444,7 +29655,7 @@ var init_bundle_mjs = __esm({
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
-var init_utils2 = __esm({
+var init_utils = __esm({
   "src/app/components/ui/utils.ts"() {
     init_clsx();
     init_bundle_mjs();
@@ -29456,7 +29667,7 @@ var React2, Input;
 var init_input = __esm({
   "src/app/components/ui/input.tsx"() {
     React2 = __toESM(require_react());
-    init_utils2();
+    init_utils();
     Input = React2.forwardRef(
       ({ className, type, ...props }, ref) => {
         return /* @__PURE__ */ React2.createElement(
@@ -29512,9 +29723,6 @@ function composeRefs(...refs) {
     }
   };
 }
-function useComposedRefs(...refs) {
-  return React3.useCallback(composeRefs(...refs), refs);
-}
 var React3;
 var init_dist = __esm({
   "node_modules/@radix-ui/react-compose-refs/dist/index.mjs"() {
@@ -29529,7 +29737,7 @@ var require_react_jsx_runtime_development = __commonJS({
     if (true) {
       (function() {
         "use strict";
-        var React50 = require_react();
+        var React23 = require_react();
         var REACT_ELEMENT_TYPE = /* @__PURE__ */ Symbol.for("react.element");
         var REACT_PORTAL_TYPE = /* @__PURE__ */ Symbol.for("react.portal");
         var REACT_FRAGMENT_TYPE = /* @__PURE__ */ Symbol.for("react.fragment");
@@ -29555,7 +29763,7 @@ var require_react_jsx_runtime_development = __commonJS({
           }
           return null;
         }
-        var ReactSharedInternals = React50.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React23.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function error(format) {
           {
             {
@@ -30183,7 +30391,7 @@ var require_react_jsx_runtime_development = __commonJS({
         {
           propTypesMisspellWarningShown = false;
         }
-        function isValidElement4(object) {
+        function isValidElement2(object) {
           {
             return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
           }
@@ -30250,11 +30458,11 @@ var require_react_jsx_runtime_development = __commonJS({
             if (isArray(node)) {
               for (var i2 = 0; i2 < node.length; i2++) {
                 var child = node[i2];
-                if (isValidElement4(child)) {
+                if (isValidElement2(child)) {
                   validateExplicitKey(child, parentType);
                 }
               }
-            } else if (isValidElement4(node)) {
+            } else if (isValidElement2(node)) {
               if (node._store) {
                 node._store.validated = true;
               }
@@ -30265,7 +30473,7 @@ var require_react_jsx_runtime_development = __commonJS({
                   var iterator = iteratorFn.call(node);
                   var step;
                   while (!(step = iterator.next()).done) {
-                    if (isValidElement4(step.value)) {
+                    if (isValidElement2(step.value)) {
                       validateExplicitKey(step.value, parentType);
                     }
                   }
@@ -30405,11 +30613,11 @@ var require_react_jsx_runtime_development = __commonJS({
             return jsxWithValidation(type, props, key, false);
           }
         }
-        var jsx12 = jsxWithValidationDynamic;
-        var jsxs2 = jsxWithValidationStatic;
+        var jsx4 = jsxWithValidationDynamic;
+        var jsxs = jsxWithValidationStatic;
         exports.Fragment = REACT_FRAGMENT_TYPE;
-        exports.jsx = jsx12;
-        exports.jsxs = jsxs2;
+        exports.jsx = jsx4;
+        exports.jsxs = jsxs;
       })();
     }
   }
@@ -30437,7 +30645,7 @@ function isLazyComponent(element) {
 // @__NO_SIDE_EFFECTS__
 function createSlot(ownerName) {
   const SlotClone = /* @__PURE__ */ createSlotClone(ownerName);
-  const Slot22 = React4.forwardRef((props, forwardedRef) => {
+  const Slot2 = React4.forwardRef((props, forwardedRef) => {
     let { children, ...slotProps } = props;
     if (isLazyComponent(children) && typeof use === "function") {
       children = use(children._payload);
@@ -30458,8 +30666,8 @@ function createSlot(ownerName) {
     }
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SlotClone, { ...slotProps, ref: forwardedRef, children });
   });
-  Slot22.displayName = `${ownerName}.Slot`;
-  return Slot22;
+  Slot2.displayName = `${ownerName}.Slot`;
+  return Slot2;
 }
 // @__NO_SIDE_EFFECTS__
 function createSlotClone(ownerName) {
@@ -30562,17 +30770,17 @@ var init_dist3 = __esm({
       "ul"
     ];
     Primitive = NODES.reduce((primitive, node) => {
-      const Slot3 = createSlot(`Primitive.${node}`);
-      const Node2 = React5.forwardRef((props, forwardedRef) => {
+      const Slot2 = createSlot(`Primitive.${node}`);
+      const Node = React5.forwardRef((props, forwardedRef) => {
         const { asChild, ...primitiveProps } = props;
-        const Comp = asChild ? Slot3 : node;
+        const Comp = asChild ? Slot2 : node;
         if (typeof window !== "undefined") {
           window[/* @__PURE__ */ Symbol.for("radix-ui")] = true;
         }
         return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Comp, { ...primitiveProps, ref: forwardedRef });
       });
-      Node2.displayName = `Primitive.${node}`;
-      return { ...primitive, [node]: Node2 };
+      Node.displayName = `Primitive.${node}`;
+      return { ...primitive, [node]: Node };
     }, {});
   }
 });
@@ -30613,7 +30821,7 @@ var init_label = __esm({
     "use client";
     React7 = __toESM(require_react());
     init_dist4();
-    init_utils2();
+    init_utils();
     Label2 = React7.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React7.createElement(
       Root,
       {
@@ -30695,7 +30903,7 @@ var init_form = __esm({
     React8 = __toESM(require_react());
     init_dist2();
     init_index_esm();
-    init_utils2();
+    init_utils();
     init_label();
     FormFieldContext = React8.createContext(
       {}
@@ -30732,7 +30940,7 @@ var init_form = __esm({
 
 // src/app/components/BasicsStep.tsx
 function NativeSlider({ value, min, max, step = 1, onChange }) {
-  return /* @__PURE__ */ import_react4.default.createElement(
+  return /* @__PURE__ */ import_react5.default.createElement(
     "input",
     {
       type: "range",
@@ -30753,7 +30961,7 @@ function NativeSlider({ value, min, max, step = 1, onChange }) {
 function BasicsStep() {
   const { control, setValue, watch } = useFormContext();
   const formData = watch();
-  const [isUploading, setIsUploading] = import_react4.default.useState(false);
+  const [isUploading, setIsUploading] = import_react5.default.useState(false);
   const handleImageChange = async (e) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -30796,7 +31004,7 @@ function BasicsStep() {
       }
     }
   };
-  return /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", gap: "2rem", alignItems: "flex-start" } }, /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem", flexShrink: 0 } }, /* @__PURE__ */ import_react4.default.createElement("div", { style: { position: "relative" }, className: "group" }, /* @__PURE__ */ import_react4.default.createElement("div", { style: {
+  return /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", gap: "2rem", alignItems: "flex-start" } }, /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem", flexShrink: 0 } }, /* @__PURE__ */ import_react5.default.createElement("div", { style: { position: "relative" }, className: "group" }, /* @__PURE__ */ import_react5.default.createElement("div", { style: {
     width: "12rem",
     height: "12rem",
     borderRadius: "1rem",
@@ -30807,14 +31015,14 @@ function BasicsStep() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center"
-  } }, isUploading ? /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react4.default.createElement(LoaderCircle, { style: { width: "2.5rem", height: "2.5rem", opacity: 0.5, color: "var(--interactive-accent)" }, className: "animate-spin" }), /* @__PURE__ */ import_react4.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, "Uploading...")) : formData.image ? /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, /* @__PURE__ */ import_react4.default.createElement("div", { style: {
+  } }, isUploading ? /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react5.default.createElement(LoaderCircle, { style: { width: "2.5rem", height: "2.5rem", opacity: 0.5, color: "var(--interactive-accent)" }, className: "animate-spin" }), /* @__PURE__ */ import_react5.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, "Uploading...")) : formData.image ? /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement("div", { style: {
     width: "100%",
     height: "100%",
     backgroundImage: `url(${formData.image})`,
     backgroundPosition: `${formData.imageX || 50}% ${formData.imageY || 50}%`,
     backgroundSize: `${formData.imageScale || 100}%`,
     backgroundRepeat: "no-repeat"
-  } }), /* @__PURE__ */ import_react4.default.createElement(
+  } }), /* @__PURE__ */ import_react5.default.createElement(
     "div",
     {
       role: "button",
@@ -30831,8 +31039,8 @@ function BasicsStep() {
         color: "white"
       }
     },
-    /* @__PURE__ */ import_react4.default.createElement(X, { style: { width: "1rem", height: "1rem" } })
-  )) : /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", color: "var(--text-muted)", padding: "1rem", textAlign: "center" } }, /* @__PURE__ */ import_react4.default.createElement(Camera, { style: { width: "2.5rem", height: "2.5rem", opacity: 0.2, marginBottom: "0.5rem" } }), /* @__PURE__ */ import_react4.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" } }, "Upload Portrait")), !formData.image && !isUploading && /* @__PURE__ */ import_react4.default.createElement(
+    /* @__PURE__ */ import_react5.default.createElement(X, { style: { width: "1rem", height: "1rem" } })
+  )) : /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", color: "var(--text-muted)", padding: "1rem", textAlign: "center" } }, /* @__PURE__ */ import_react5.default.createElement(Camera, { style: { width: "2.5rem", height: "2.5rem", opacity: 0.2, marginBottom: "0.5rem" } }), /* @__PURE__ */ import_react5.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" } }, "Upload Portrait")), !formData.image && !isUploading && /* @__PURE__ */ import_react5.default.createElement(
     "input",
     {
       type: "file",
@@ -30840,7 +31048,7 @@ function BasicsStep() {
       style: { position: "absolute", inset: 0, opacity: 0, cursor: "pointer" },
       onChange: handleImageChange
     }
-  ))), formData.image && /* @__PURE__ */ import_react4.default.createElement("div", { style: {
+  ))), formData.image && /* @__PURE__ */ import_react5.default.createElement("div", { style: {
     background: "var(--background-secondary)",
     border: "1px solid var(--background-modifier-border)",
     borderRadius: "0.75rem",
@@ -30849,11 +31057,11 @@ function BasicsStep() {
     flexDirection: "column",
     gap: "0.75rem",
     width: "12rem"
-  } }, /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react4.default.createElement(Move, { style: { width: "0.875rem", height: "0.875rem", color: "var(--interactive-accent)" } }), /* @__PURE__ */ import_react4.default.createElement("span", { style: { fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" } }, "Adjust Image")), [
+  } }, /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react5.default.createElement(Move, { style: { width: "0.875rem", height: "0.875rem", color: "var(--interactive-accent)" } }), /* @__PURE__ */ import_react5.default.createElement("span", { style: { fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" } }, "Adjust Image")), [
     { label: "Horizontal", key: "imageX", min: 0, max: 100, fallback: 50 },
     { label: "Vertical", key: "imageY", min: 0, max: 100, fallback: 50 },
     { label: "Scale", key: "imageScale", min: 50, max: 300, fallback: 100 }
-  ].map(({ label, key, min, max, fallback }) => /* @__PURE__ */ import_react4.default.createElement("div", { key, style: { display: "flex", flexDirection: "column", gap: "0.25rem" } }, /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, /* @__PURE__ */ import_react4.default.createElement("span", null, label), /* @__PURE__ */ import_react4.default.createElement("span", null, formData[key] ?? fallback, "%")), /* @__PURE__ */ import_react4.default.createElement(
+  ].map(({ label, key, min, max, fallback }) => /* @__PURE__ */ import_react5.default.createElement("div", { key, style: { display: "flex", flexDirection: "column", gap: "0.25rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, /* @__PURE__ */ import_react5.default.createElement("span", null, label), /* @__PURE__ */ import_react5.default.createElement("span", null, formData[key] ?? fallback, "%")), /* @__PURE__ */ import_react5.default.createElement(
     NativeSlider,
     {
       value: formData[key] ?? fallback,
@@ -30861,14 +31069,14 @@ function BasicsStep() {
       max,
       onChange: (val) => setValue(key, val)
     }
-  ))))), /* @__PURE__ */ import_react4.default.createElement("div", { style: { flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" } }, /* @__PURE__ */ import_react4.default.createElement(FormField, { control, name: "name", render: ({ field }) => /* @__PURE__ */ import_react4.default.createElement(FormItem, null, /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.25rem" } }, /* @__PURE__ */ import_react4.default.createElement(User, { style: { width: "1.25rem", height: "1.25rem", color: "var(--interactive-accent)" } }), /* @__PURE__ */ import_react4.default.createElement(FormLabel, { style: { fontSize: "1rem", fontWeight: 600 } }, "What is your hero's name?")), /* @__PURE__ */ import_react4.default.createElement(FormControl, null, /* @__PURE__ */ import_react4.default.createElement(Input, { placeholder: "Enter character name...", ...field, style: { fontSize: "1.25rem", height: "3rem" } })), /* @__PURE__ */ import_react4.default.createElement(FormMessage, null)) }), /* @__PURE__ */ import_react4.default.createElement(FormField, { control, name: "level", render: ({ field }) => /* @__PURE__ */ import_react4.default.createElement(FormItem, null, /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.5rem" } }, /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react4.default.createElement(Trophy, { style: { width: "1.25rem", height: "1.25rem", color: "var(--interactive-accent)" } }), /* @__PURE__ */ import_react4.default.createElement(FormLabel, { style: { fontSize: "1rem", fontWeight: 600 } }, "Starting Level")), /* @__PURE__ */ import_react4.default.createElement("span", { style: {
+  ))))), /* @__PURE__ */ import_react5.default.createElement("div", { style: { flex: 1, display: "flex", flexDirection: "column", gap: "1.5rem" } }, /* @__PURE__ */ import_react5.default.createElement(FormField, { control, name: "name", render: ({ field }) => /* @__PURE__ */ import_react5.default.createElement(FormItem, null, /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.25rem" } }, /* @__PURE__ */ import_react5.default.createElement(User, { style: { width: "1.25rem", height: "1.25rem", color: "var(--interactive-accent)" } }), /* @__PURE__ */ import_react5.default.createElement(FormLabel, { style: { fontSize: "1rem", fontWeight: 600 } }, "What is your hero's name?")), /* @__PURE__ */ import_react5.default.createElement(FormControl, null, /* @__PURE__ */ import_react5.default.createElement(Input, { placeholder: "Enter character name...", ...field, style: { fontSize: "1.25rem", height: "3rem" } })), /* @__PURE__ */ import_react5.default.createElement(FormMessage, null)) }), /* @__PURE__ */ import_react5.default.createElement(FormField, { control, name: "level", render: ({ field }) => /* @__PURE__ */ import_react5.default.createElement(FormItem, null, /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.5rem" } }, /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react5.default.createElement(Trophy, { style: { width: "1.25rem", height: "1.25rem", color: "var(--interactive-accent)" } }), /* @__PURE__ */ import_react5.default.createElement(FormLabel, { style: { fontSize: "1rem", fontWeight: 600 } }, "Starting Level")), /* @__PURE__ */ import_react5.default.createElement("span", { style: {
     border: "1px solid var(--background-modifier-border)",
     borderRadius: "0.375rem",
     padding: "0.25rem 0.75rem",
     fontFamily: "monospace",
     fontSize: "1rem",
     fontWeight: 700
-  } }, "Level ", field.value)), /* @__PURE__ */ import_react4.default.createElement(FormControl, null, /* @__PURE__ */ import_react4.default.createElement("div", { style: { padding: "0 0.5rem" } }, /* @__PURE__ */ import_react4.default.createElement(
+  } }, "Level ", field.value)), /* @__PURE__ */ import_react5.default.createElement(FormControl, null, /* @__PURE__ */ import_react5.default.createElement("div", { style: { padding: "0 0.5rem" } }, /* @__PURE__ */ import_react5.default.createElement(
     NativeSlider,
     {
       value: field.value,
@@ -30880,7 +31088,7 @@ function BasicsStep() {
         setValue("subclass", "");
       }
     }
-  ), /* @__PURE__ */ import_react4.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", fontSize: "0.75rem", color: "var(--text-muted)", marginTop: "0.5rem", fontWeight: 500 } }, /* @__PURE__ */ import_react4.default.createElement("span", null, "1"), /* @__PURE__ */ import_react4.default.createElement("span", null, "5"), /* @__PURE__ */ import_react4.default.createElement("span", null, "10"), /* @__PURE__ */ import_react4.default.createElement("span", null, "15"), /* @__PURE__ */ import_react4.default.createElement("span", null, "20")))), /* @__PURE__ */ import_react4.default.createElement(FormMessage, null)) }), /* @__PURE__ */ import_react4.default.createElement("div", { style: {
+  ), /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", fontSize: "0.75rem", color: "var(--text-muted)", marginTop: "0.5rem", fontWeight: 500 } }, /* @__PURE__ */ import_react5.default.createElement("span", null, "1"), /* @__PURE__ */ import_react5.default.createElement("span", null, "5"), /* @__PURE__ */ import_react5.default.createElement("span", null, "10"), /* @__PURE__ */ import_react5.default.createElement("span", null, "15"), /* @__PURE__ */ import_react5.default.createElement("span", null, "20")))), /* @__PURE__ */ import_react5.default.createElement(FormMessage, null)) }), /* @__PURE__ */ import_react5.default.createElement("div", { style: {
     background: "var(--background-secondary)",
     border: "1px solid var(--background-modifier-border)",
     borderRadius: "0.75rem",
@@ -30888,12 +31096,12 @@ function BasicsStep() {
     display: "flex",
     gap: "0.75rem",
     alignItems: "flex-start"
-  } }, /* @__PURE__ */ import_react4.default.createElement(Info, { style: { width: "1.25rem", height: "1.25rem", color: "var(--interactive-accent)", flexShrink: 0, marginTop: "0.125rem" } }), /* @__PURE__ */ import_react4.default.createElement("div", { style: { fontSize: "0.875rem" } }, /* @__PURE__ */ import_react4.default.createElement("p", { style: { fontWeight: 600, color: "var(--interactive-accent)", margin: "0 0 0.25rem" } }, "Level Impact"), /* @__PURE__ */ import_react4.default.createElement("p", { style: { color: "var(--text-muted)", margin: 0 } }, "Your level determines proficiency bonus, spell slots, and class features.")))));
+  } }, /* @__PURE__ */ import_react5.default.createElement(Info, { style: { width: "1.25rem", height: "1.25rem", color: "var(--interactive-accent)", flexShrink: 0, marginTop: "0.125rem" } }), /* @__PURE__ */ import_react5.default.createElement("div", { style: { fontSize: "0.875rem" } }, /* @__PURE__ */ import_react5.default.createElement("p", { style: { fontWeight: 600, color: "var(--interactive-accent)", margin: "0 0 0.25rem" } }, "Level Impact"), /* @__PURE__ */ import_react5.default.createElement("p", { style: { color: "var(--text-muted)", margin: 0 } }, "Your level determines proficiency bonus, spell slots, and class features.")))));
 }
-var import_react4, import_obsidian;
+var import_react5, import_obsidian;
 var init_BasicsStep = __esm({
   "src/app/components/BasicsStep.tsx"() {
-    import_react4 = __toESM(require_react());
+    import_react5 = __toESM(require_react());
     init_index_esm();
     init_input();
     init_lucide_react();
@@ -30924,6 +31132,7 @@ var init_dnd_data = __esm({
     };
     CLASS_DATA = {
       barbarian: {
+        name: "Barbarian",
         hitDie: 12,
         saves: ["str", "con"],
         armorProf: ["light", "medium", "shields"],
@@ -30931,9 +31140,14 @@ var init_dnd_data = __esm({
         skillCount: 2,
         skillPool: ["animal-handling", "athletics", "intimidation", "nature", "perception", "survival"],
         equipment: ["Greataxe", "Two Handaxes", "Explorer's Pack", "Four Javelins"],
-        startingGold: "2d4 x 10"
+        startingGold: "2d4 x 10",
+        icon: Zap,
+        description: "A fierce warrior of primitive background who can enter a battle rage.",
+        primary: ["str"],
+        subclasses: ["Path of the Berserker", "Path of the Totem Warrior"]
       },
       bard: {
+        name: "Bard",
         hitDie: 8,
         saves: ["dex", "cha"],
         armorProf: ["light"],
@@ -30947,9 +31161,14 @@ var init_dnd_data = __esm({
           cantrips: 2,
           spells: 4,
           slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 }
-        }
+        },
+        icon: Music,
+        description: "An inspiring magician whose power echoes the music of creation.",
+        primary: ["cha"],
+        subclasses: ["College of Lore", "College of Valor"]
       },
       cleric: {
+        name: "Cleric",
         hitDie: 8,
         saves: ["wis", "cha"],
         armorProf: ["light", "medium", "shields"],
@@ -30963,9 +31182,14 @@ var init_dnd_data = __esm({
           cantrips: 3,
           spells: "wis-mod-plus-level",
           slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 }
-        }
+        },
+        icon: Heart,
+        description: "A priestly champion who wields divine magic in service of a higher power.",
+        primary: ["wis"],
+        subclasses: ["Life Domain", "Light Domain", "War Domain"]
       },
       druid: {
+        name: "Druid",
         hitDie: 8,
         saves: ["int", "wis"],
         armorProf: ["light", "medium", "shields"],
@@ -30979,9 +31203,14 @@ var init_dnd_data = __esm({
           cantrips: 2,
           spells: "wis-mod-plus-level",
           slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 }
-        }
+        },
+        icon: Heart,
+        description: "A priest of the Old Faith, wielding the powers of nature and adopting animal forms.",
+        primary: ["wis"],
+        subclasses: ["Circle of the Land", "Circle of the Moon"]
       },
       fighter: {
+        name: "Fighter",
         hitDie: 10,
         saves: ["str", "con"],
         armorProf: ["light", "medium", "heavy", "shields"],
@@ -30989,9 +31218,14 @@ var init_dnd_data = __esm({
         skillCount: 2,
         skillPool: ["acrobatics", "animal-handling", "athletics", "history", "insight", "intimidation", "perception", "survival"],
         equipment: ["Chain Mail", "Longsword", "Shield", "Light Crossbow", "Dungeoneer's Pack", "20 Bolts"],
-        startingGold: "5d4 x 10"
+        startingGold: "5d4 x 10",
+        icon: Swords,
+        description: "A master of martial combat, skilled with a variety of weapons and armor.",
+        primary: ["str", "dex"],
+        subclasses: ["Champion", "Battle Master", "Eldritch Knight"]
       },
       monk: {
+        name: "Monk",
         hitDie: 8,
         saves: ["str", "dex"],
         armorProf: [],
@@ -30999,9 +31233,14 @@ var init_dnd_data = __esm({
         skillCount: 2,
         skillPool: ["acrobatics", "athletics", "history", "insight", "religion", "stealth"],
         equipment: ["Shortsword", "Dungeoneer's Pack", "10 Darts"],
-        startingGold: "5d4"
+        startingGold: "5d4",
+        icon: Zap,
+        description: "A master of martial arts, harnessing the power of the body in pursuit of spiritual perfection.",
+        primary: ["dex", "wis"],
+        subclasses: ["Way of the Open Hand", "Way of Shadow", "Way of the Four Elements"]
       },
       paladin: {
+        name: "Paladin",
         hitDie: 10,
         saves: ["wis", "cha"],
         armorProf: ["light", "medium", "heavy", "shields"],
@@ -31016,9 +31255,14 @@ var init_dnd_data = __esm({
           spells: "cha-mod-plus-half-level",
           slots: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
           levelAvailable: 2
-        }
+        },
+        icon: Shield,
+        description: "A holy warrior bound to a sacred oath.",
+        primary: ["str", "cha"],
+        subclasses: ["Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance"]
       },
       ranger: {
+        name: "Ranger",
         hitDie: 10,
         saves: ["str", "dex"],
         armorProf: ["light", "medium", "shields"],
@@ -31033,9 +31277,14 @@ var init_dnd_data = __esm({
           spells: 2,
           slots: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
           levelAvailable: 2
-        }
+        },
+        icon: Target,
+        description: "A warrior who combats threats on the edges of civilization.",
+        primary: ["dex", "wis"],
+        subclasses: ["Hunter", "Beast Master"]
       },
       rogue: {
+        name: "Rogue",
         hitDie: 8,
         saves: ["dex", "int"],
         armorProf: ["light"],
@@ -31043,9 +31292,14 @@ var init_dnd_data = __esm({
         skillCount: 4,
         skillPool: ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight-of-hand", "stealth"],
         equipment: ["Rapier", "Shortbow", "Burglar's Pack", "Leather Armor", "Dagger", "Dagger", "Thieves' Tools", "20 Arrows"],
-        startingGold: "4d4 x 10"
+        startingGold: "4d4 x 10",
+        icon: Skull,
+        description: "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
+        primary: ["dex"],
+        subclasses: ["Thief", "Assassin", "Arcane Trickster"]
       },
       sorcerer: {
+        name: "Sorcerer",
         hitDie: 6,
         saves: ["con", "cha"],
         armorProf: [],
@@ -31059,9 +31313,14 @@ var init_dnd_data = __esm({
           cantrips: 4,
           spells: 2,
           slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 }
-        }
+        },
+        icon: Zap,
+        description: "A spellcaster who draws on inborn magic from a gift or bloodline.",
+        primary: ["cha"],
+        subclasses: ["Draconic Bloodline", "Wild Magic"]
       },
       warlock: {
+        name: "Warlock",
         hitDie: 8,
         saves: ["wis", "cha"],
         armorProf: ["light"],
@@ -31076,9 +31335,14 @@ var init_dnd_data = __esm({
           spells: 2,
           slots: { 1: 1, 2: 0, 3: 0, 4: 0, 5: 0 },
           isPactMagic: true
-        }
+        },
+        icon: Skull,
+        description: "A wielder of magic that is derived from a bargain with an extraplanar entity.",
+        primary: ["cha"],
+        subclasses: ["The Archfey", "The Fiend", "The Great Old One"]
       },
       wizard: {
+        name: "Wizard",
         hitDie: 6,
         saves: ["int", "wis"],
         armorProf: [],
@@ -31092,7 +31356,11 @@ var init_dnd_data = __esm({
           cantrips: 3,
           spells: "int-mod-plus-level",
           slots: { 1: 2, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0 }
-        }
+        },
+        icon: BookOpen,
+        description: "A scholarly magic-user capable of wielding cosom-altering powers.",
+        primary: ["int"],
+        subclasses: ["Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation"]
       }
     };
     SPELL_DATA = {
@@ -31434,12 +31702,12 @@ var init_dnd_data = __esm({
       20: 28
     };
     STATS = [
-      { id: "str", name: "Strength", icon: "\u{1F4AA}", description: "Physical might and athletic training." },
-      { id: "dex", name: "Dexterity", icon: "\u{1F3F9}", description: "Agility, reflexes, and balance." },
-      { id: "con", name: "Constitution", icon: "\u{1F6E1}\uFE0F", description: "Endurance, health, and vital force." },
-      { id: "int", name: "Intelligence", icon: "\u{1F9E0}", description: "Mental acuity, information recall, and analytical skill." },
-      { id: "wis", name: "Wisdom", icon: "\u{1F989}", description: "Awareness, intuition, and insight." },
-      { id: "cha", name: "Charisma", icon: "\u2728", description: "Confidence, eloquence, and leadership." }
+      { id: "str", name: "Strength", icon: "\u{1F4AA}", description: "Physical might and athletic training.", lucid_icon: BicepsFlexed },
+      { id: "dex", name: "Dexterity", icon: "\u{1F3F9}", description: "Agility, reflexes, and balance.", lucid_icon: SportShoe },
+      { id: "con", name: "Constitution", icon: "\u{1F6E1}\uFE0F", description: "Endurance, health, and vital force.", lucid_icon: ShieldHalf },
+      { id: "int", name: "Intelligence", icon: "\u{1F9E0}", description: "Mental acuity, information recall, and analytical skill.", lucid_icon: Brain },
+      { id: "wis", name: "Wisdom", icon: "\u{1F989}", description: "Awareness, intuition, and insight.", lucid_icon: Target },
+      { id: "cha", name: "Charisma", icon: "\u2728", description: "Confidence, eloquence, and leadership.", lucid_icon: Drama }
     ];
   }
 });
@@ -31450,9 +31718,9 @@ function RaceStep() {
   const currentRace = watch("race");
   const currentSubrace = watch("subrace");
   const selectedRace = currentRace ? RACE_DATA[currentRace] : null;
-  return /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem" } }, /* @__PURE__ */ import_react5.default.createElement(FormField, { control, name: "race", render: ({ field }) => /* @__PURE__ */ import_react5.default.createElement(FormItem, null, /* @__PURE__ */ import_react5.default.createElement(FormControl, null, /* @__PURE__ */ import_react5.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.625rem" } }, Object.entries(RACE_DATA).map(([id, data]) => {
+  return /* @__PURE__ */ import_react6.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem" } }, /* @__PURE__ */ import_react6.default.createElement(FormField, { control, name: "race", render: ({ field }) => /* @__PURE__ */ import_react6.default.createElement(FormItem, null, /* @__PURE__ */ import_react6.default.createElement(FormControl, null, /* @__PURE__ */ import_react6.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "0.625rem" } }, Object.entries(RACE_DATA).map(([id, data]) => {
     const isSelected = field.value === id;
-    return /* @__PURE__ */ import_react5.default.createElement(
+    return /* @__PURE__ */ import_react6.default.createElement(
       "div",
       {
         key: id,
@@ -31474,7 +31742,7 @@ function RaceStep() {
           position: "relative"
         }
       },
-      /* @__PURE__ */ import_react5.default.createElement(
+      /* @__PURE__ */ import_react6.default.createElement(
         "img",
         {
           src: data.image,
@@ -31492,11 +31760,11 @@ function RaceStep() {
           }
         }
       ),
-      /* @__PURE__ */ import_react5.default.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ import_react5.default.createElement("div", { style: {
+      /* @__PURE__ */ import_react6.default.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ import_react6.default.createElement("div", { style: {
         fontWeight: 700,
         fontSize: "0.875rem",
         color: "var(--text-normal)"
-      } }, data.name), /* @__PURE__ */ import_react5.default.createElement("div", { style: {
+      } }, data.name), /* @__PURE__ */ import_react6.default.createElement("div", { style: {
         fontSize: "0.7rem",
         color: "var(--text-muted)",
         overflow: "hidden",
@@ -31504,7 +31772,7 @@ function RaceStep() {
         WebkitLineClamp: 2,
         WebkitBoxOrient: "vertical"
       } }, data.description)),
-      isSelected && /* @__PURE__ */ import_react5.default.createElement("div", { style: {
+      isSelected && /* @__PURE__ */ import_react6.default.createElement("div", { style: {
         position: "absolute",
         top: "0.375rem",
         right: "0.375rem",
@@ -31516,15 +31784,15 @@ function RaceStep() {
         alignItems: "center",
         justifyContent: "center",
         flexShrink: 0
-      } }, /* @__PURE__ */ import_react5.default.createElement(Check, { style: { width: "0.6rem", height: "0.6rem", color: "#ffffff" } }))
+      } }, /* @__PURE__ */ import_react6.default.createElement(Check, { style: { width: "0.6rem", height: "0.6rem", color: "#ffffff" } }))
     );
-  }))), /* @__PURE__ */ import_react5.default.createElement(FormMessage, null)) }), selectedRace?.subraces && /* @__PURE__ */ import_react5.default.createElement("div", { style: {
+  }))), /* @__PURE__ */ import_react6.default.createElement(FormMessage, null)) }), selectedRace?.subraces && /* @__PURE__ */ import_react6.default.createElement("div", { style: {
     paddingTop: "1rem",
     borderTop: "1px solid var(--background-modifier-border)",
     display: "flex",
     flexDirection: "column",
     gap: "0.5rem"
-  } }, /* @__PURE__ */ import_react5.default.createElement("label", { style: { fontSize: "0.875rem", fontWeight: 600, color: "var(--text-normal)" } }, "Select Subrace for ", selectedRace.name), /* @__PURE__ */ import_react5.default.createElement(
+  } }, /* @__PURE__ */ import_react6.default.createElement("label", { style: { fontSize: "0.875rem", fontWeight: 600, color: "var(--text-normal)" } }, "Select Subrace for ", selectedRace.name), /* @__PURE__ */ import_react6.default.createElement(
     "select",
     {
       value: currentSubrace || "",
@@ -31545,14 +31813,14 @@ function RaceStep() {
         appearance: "auto"
       }
     },
-    /* @__PURE__ */ import_react5.default.createElement("option", { value: "" }, "Choose a subrace..."),
-    Object.entries(selectedRace.subraces).map(([subId, subData]) => /* @__PURE__ */ import_react5.default.createElement("option", { key: subId, value: subId }, subData.name))
+    /* @__PURE__ */ import_react6.default.createElement("option", { value: "" }, "Choose a subrace..."),
+    Object.entries(selectedRace.subraces).map(([subId, subData]) => /* @__PURE__ */ import_react6.default.createElement("option", { key: subId, value: subId }, subData.name))
   )));
 }
-var import_react5;
+var import_react6;
 var init_RaceStep = __esm({
   "src/app/components/RaceStep.tsx"() {
-    import_react5 = __toESM(require_react());
+    import_react6 = __toESM(require_react());
     init_index_esm();
     init_form();
     init_lucide_react();
@@ -31565,14 +31833,14 @@ function ClassStep() {
   const { watch, setValue, register } = useFormContext();
   const currentClass = watch("class");
   const level = watch("level") || 1;
-  const selectedClass = CLASSES.find((c) => c.id === currentClass);
+  const selectedClass = CLASS_DATA[currentClass];
   const getSubclassLevel = (classId) => {
     if (["cleric", "sorcerer", "warlock"].includes(classId)) return 1;
     if (["druid", "wizard"].includes(classId)) return 2;
     return 3;
   };
   const isSubclassAvailable = selectedClass && level >= getSubclassLevel(selectedClass.id);
-  return /* @__PURE__ */ import_react6.default.createElement(
+  return /* @__PURE__ */ import_react7.default.createElement(
     "div",
     {
       style: {
@@ -31581,7 +31849,7 @@ function ClassStep() {
         gap: "1.5rem"
       }
     },
-    /* @__PURE__ */ import_react6.default.createElement(
+    /* @__PURE__ */ import_react7.default.createElement(
       "div",
       {
         style: {
@@ -31590,19 +31858,18 @@ function ClassStep() {
           gap: "12px"
         }
       },
-      CLASSES.map((cls) => {
+      Object.entries(CLASS_DATA).map(([id, cls]) => {
         const Icon2 = cls.icon;
-        const isSelected = currentClass === cls.id;
-        return /* @__PURE__ */ import_react6.default.createElement(
+        const isSelected = currentClass === id;
+        return /* @__PURE__ */ import_react7.default.createElement(
           "div",
           {
             key: cls.id,
             onClick: () => {
-              setValue("class", cls.id);
+              setValue("class", id);
               setValue("subclass", "");
             },
             style: {
-              // display: 'flex',
               alignItems: "center",
               gap: "0.75rem",
               padding: "0.625rem 0.75rem",
@@ -31612,19 +31879,9 @@ function ClassStep() {
               background: isSelected ? "var(--background-modifier-form-field)" : "var(--background-primary)",
               transition: "border-color 0.15s, background 0.15s",
               position: "relative"
-              // borderRadius: '12px',
-              // border: isSelected
-              //   ? '2px solid var(--interactive-accent)'
-              //   : '1px solid var(--background-modifier-border)',
-              // backgroundColor: isSelected
-              //   ? 'var(--background-modifier-hover)'
-              //   : 'var(--background-primary)',
-              // padding: '16px',
-              // cursor: 'pointer',
-              // transition: 'all 0.15s ease',
             }
           },
-          /* @__PURE__ */ import_react6.default.createElement(
+          /* @__PURE__ */ import_react7.default.createElement(
             "div",
             {
               style: {
@@ -31633,7 +31890,7 @@ function ClassStep() {
                 alignItems: "flex-start"
               }
             },
-            /* @__PURE__ */ import_react6.default.createElement(
+            /* @__PURE__ */ import_react7.default.createElement(
               "div",
               {
                 style: {
@@ -31647,9 +31904,9 @@ function ClassStep() {
                   flexShrink: 0
                 }
               },
-              /* @__PURE__ */ import_react6.default.createElement(Icon2, { size: 22 })
+              /* @__PURE__ */ import_react7.default.createElement(Icon2, { size: 22 })
             ),
-            /* @__PURE__ */ import_react6.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react6.default.createElement(
+            /* @__PURE__ */ import_react7.default.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ import_react7.default.createElement(
               "div",
               {
                 style: {
@@ -31659,8 +31916,8 @@ function ClassStep() {
                   marginBottom: "6px"
                 }
               },
-              /* @__PURE__ */ import_react6.default.createElement("strong", null, cls.name),
-              /* @__PURE__ */ import_react6.default.createElement(
+              /* @__PURE__ */ import_react7.default.createElement("strong", null, cls.name),
+              /* @__PURE__ */ import_react7.default.createElement(
                 "span",
                 {
                   style: {
@@ -31672,9 +31929,9 @@ function ClassStep() {
                     whiteSpace: "nowrap"
                   }
                 },
-                cls.primary
+                cls.primary?.map((statId) => STATS.find((stat) => stat.id === statId)?.name).join(" & ")
               )
-            ), /* @__PURE__ */ import_react6.default.createElement(
+            ), /* @__PURE__ */ import_react7.default.createElement(
               "div",
               {
                 style: {
@@ -31689,7 +31946,7 @@ function ClassStep() {
         );
       })
     ),
-    selectedClass && /* @__PURE__ */ import_react6.default.createElement("div", null, /* @__PURE__ */ import_react6.default.createElement(
+    selectedClass && /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement(
       "div",
       {
         style: {
@@ -31699,7 +31956,7 @@ function ClassStep() {
           marginBottom: "8px"
         }
       },
-      /* @__PURE__ */ import_react6.default.createElement(
+      /* @__PURE__ */ import_react7.default.createElement(
         "label",
         {
           style: {
@@ -31708,7 +31965,7 @@ function ClassStep() {
         },
         "Specialization"
       ),
-      !isSubclassAvailable && /* @__PURE__ */ import_react6.default.createElement(
+      !isSubclassAvailable && /* @__PURE__ */ import_react7.default.createElement(
         "span",
         {
           style: {
@@ -31720,18 +31977,13 @@ function ClassStep() {
         " ",
         getSubclassLevel(selectedClass.id)
       )
-    ), /* @__PURE__ */ import_react6.default.createElement(
+    ), /* @__PURE__ */ import_react7.default.createElement(
       "select",
       {
         ...register("subclass"),
         disabled: !isSubclassAvailable,
         style: {
           width: "100%",
-          // padding: '8px 12px',
-          // borderRadius: '8px',
-          // border:
-          //   '1px solid var(--background-modifier-border)',
-          // background: 'var(--background-primary)',
           padding: "0.5rem 0.75rem",
           borderRadius: "0.375rem",
           border: "1px solid var(--background-modifier-border)",
@@ -31746,10 +31998,10 @@ function ClassStep() {
           appearance: "auto"
         }
       },
-      /* @__PURE__ */ import_react6.default.createElement("option", { value: "" }, isSubclassAvailable ? "Choose specialization..." : `Locked until level ${getSubclassLevel(
+      /* @__PURE__ */ import_react7.default.createElement("option", { value: "" }, isSubclassAvailable ? "Choose specialization..." : `Locked until level ${getSubclassLevel(
         selectedClass.id
       )}`),
-      selectedClass.subclasses.map((sub) => /* @__PURE__ */ import_react6.default.createElement(
+      selectedClass.subclasses.map((sub) => /* @__PURE__ */ import_react7.default.createElement(
         "option",
         {
           key: sub,
@@ -31760,47 +32012,12 @@ function ClassStep() {
     ))
   );
 }
-var import_react6, CLASSES;
+var import_react7;
 var init_ClassStep = __esm({
   "src/app/components/ClassStep.tsx"() {
-    import_react6 = __toESM(require_react());
+    import_react7 = __toESM(require_react());
     init_index_esm();
-    init_lucide_react();
-    CLASSES = [
-      {
-        id: "barbarian",
-        name: "Barbarian",
-        icon: Zap,
-        description: "A fierce warrior of primitive background who can enter a battle rage.",
-        primary: "Strength",
-        subclasses: ["Path of the Berserker", "Path of the Totem Warrior"]
-      },
-      {
-        id: "bard",
-        name: "Bard",
-        icon: Music,
-        description: "An inspiring magician whose power echoes the music of creation.",
-        primary: "Charisma",
-        subclasses: ["College of Lore", "College of Valor"]
-      },
-      {
-        id: "cleric",
-        name: "Cleric",
-        icon: Heart,
-        description: "A priestly champion who wields divine magic in service of a higher power.",
-        primary: "Wisdom",
-        subclasses: ["Life Domain", "Light Domain", "War Domain"]
-      },
-      { id: "druid", name: "Druid", icon: Heart, description: "A priest of the Old Faith, wielding the powers of nature and adopting animal forms.", primary: "Wisdom", subclasses: ["Circle of the Land", "Circle of the Moon"] },
-      { id: "fighter", name: "Fighter", icon: Swords, description: "A master of martial combat, skilled with a variety of weapons and armor.", primary: "Strength or Dexterity", subclasses: ["Champion", "Battle Master", "Eldritch Knight"] },
-      { id: "monk", name: "Monk", icon: Zap, description: "A master of martial arts, harnessing the power of the body in pursuit of spiritual perfection.", primary: "Dexterity & Wisdom", subclasses: ["Way of the Open Hand", "Way of Shadow", "Way of the Four Elements"] },
-      { id: "paladin", name: "Paladin", icon: Shield, description: "A holy warrior bound to a sacred oath.", primary: "Strength & Charisma", subclasses: ["Oath of Devotion", "Oath of the Ancients", "Oath of Vengeance"] },
-      { id: "ranger", name: "Ranger", icon: Target, description: "A warrior who combats threats on the edges of civilization.", primary: "Dexterity & Wisdom", subclasses: ["Hunter", "Beast Master"] },
-      { id: "rogue", name: "Rogue", icon: Skull, description: "A scoundrel who uses stealth and trickery to overcome obstacles and enemies.", primary: "Dexterity", subclasses: ["Thief", "Assassin", "Arcane Trickster"] },
-      { id: "sorcerer", name: "Sorcerer", icon: Zap, description: "A spellcaster who draws on inborn magic from a gift or bloodline.", primary: "Charisma", subclasses: ["Draconic Bloodline", "Wild Magic"] },
-      { id: "warlock", name: "Warlock", icon: Skull, description: "A wielder of magic that is derived from a bargain with an extraplanar entity.", primary: "Charisma", subclasses: ["The Archfey", "The Fiend", "The Great Old One"] },
-      { id: "wizard", name: "Wizard", icon: BookOpen, description: "A scholarly magic-user capable of wielding cosom-altering powers.", primary: "Intelligence", subclasses: ["Abjuration", "Conjuration", "Divination", "Enchantment", "Evocation", "Illusion", "Necromancy", "Transmutation"] }
-    ];
+    init_dnd_data();
   }
 });
 
@@ -31808,17 +32025,17 @@ var init_ClassStep = __esm({
 function StatsStep() {
   const { watch, setValue } = useFormContext();
   const formData = watch();
-  const [tooltip, setTooltip] = import_react7.default.useState(null);
+  const [tooltip, setTooltip] = import_react8.default.useState(null);
   const classInfo = CLASS_DATA[formData.class];
   const primaryAbility = classInfo?.spellcasting?.ability || (["barbarian", "fighter", "paladin"].includes(formData.class) ? "str" : ["rogue", "monk", "ranger"].includes(formData.class) ? "dex" : "int");
   const getASIBonus = () => {
-    let count3 = Math.floor(formData.level / 4);
+    let count = Math.floor(formData.level / 4);
     if (formData.class === "fighter") {
-      if (formData.level >= 6) count3++;
-      if (formData.level >= 14) count3++;
+      if (formData.level >= 6) count++;
+      if (formData.level >= 14) count++;
     }
-    if (formData.class === "rogue" && formData.level >= 10) count3++;
-    return count3 * 2;
+    if (formData.class === "rogue" && formData.level >= 10) count++;
+    return count * 2;
   };
   const totalBudget = 27 + getASIBonus() * 4;
   const calculatePointsUsed = (stats) => Object.values(stats).reduce((acc, val) => acc + (POINT_COSTS[val] || 0), 0);
@@ -31853,7 +32070,7 @@ function StatsStep() {
     flexShrink: 0,
     transition: "background 0.15s, border-color 0.15s"
   });
-  return /* @__PURE__ */ import_react7.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react7.default.createElement("div", { style: {
+  return /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react8.default.createElement("div", { style: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -31862,7 +32079,7 @@ function StatsStep() {
     border: "1px solid var(--background-modifier-border)",
     borderRadius: "0.75rem",
     gap: "1rem"
-  } }, /* @__PURE__ */ import_react7.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" } }, /* @__PURE__ */ import_react7.default.createElement("div", { style: {
+  } }, /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" } }, /* @__PURE__ */ import_react8.default.createElement("div", { style: {
     width: "2.75rem",
     height: "2.75rem",
     borderRadius: "0.625rem",
@@ -31872,7 +32089,7 @@ function StatsStep() {
     alignItems: "center",
     justifyContent: "center",
     fontSize: "1.25rem"
-  } }, formData.class === "fighter" ? "\u2694\uFE0F" : formData.class === "wizard" ? "\u{1F9D9}" : "\u{1F6E1}\uFE0F"), /* @__PURE__ */ import_react7.default.createElement("div", null, /* @__PURE__ */ import_react7.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.9rem", letterSpacing: "-0.01em", color: "var(--interactive-accent)" } }, formData.class), /* @__PURE__ */ import_react7.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", fontWeight: 700, textTransform: "uppercase" } }, "Primary: ", /* @__PURE__ */ import_react7.default.createElement("span", { style: { color: "var(--interactive-accent)" } }, primaryAbility), " ", "\xB7 Budget: ", totalBudget))), /* @__PURE__ */ import_react7.default.createElement("div", { style: {
+  } }, formData.class === "fighter" ? "\u2694\uFE0F" : formData.class === "wizard" ? "\u{1F9D9}" : "\u{1F6E1}\uFE0F"), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.9rem", letterSpacing: "-0.01em", color: "var(--interactive-accent)" } }, formData.class), /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", fontWeight: 700, textTransform: "uppercase" } }, "Primary: ", /* @__PURE__ */ import_react8.default.createElement("span", { style: { color: "var(--interactive-accent)" } }, primaryAbility), " ", "\xB7 Budget: ", totalBudget))), /* @__PURE__ */ import_react8.default.createElement("div", { style: {
     padding: "0.375rem 0.875rem",
     borderRadius: "999px",
     fontWeight: 900,
@@ -31882,7 +32099,7 @@ function StatsStep() {
     background: "var(--background-primary)",
     minWidth: "5rem",
     textAlign: "center"
-  } }, remainingPoints, " Left")), /* @__PURE__ */ import_react7.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.625rem" } }, STATS.map((stat) => {
+  } }, remainingPoints, " Left")), /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.625rem" } }, STATS.map((stat) => {
     const val = formData.stats[stat.id];
     const maxVal = formData.level >= 4 ? 20 : 15;
     const costOfNext = (POINT_COSTS[val + 1] || 0) - (POINT_COSTS[val] || 0);
@@ -31891,7 +32108,7 @@ function StatsStep() {
     const isPrimary = stat.id === primaryAbility;
     const isSave = classInfo?.saves?.includes(stat.id);
     const isTooltipOpen = tooltip === stat.id;
-    return /* @__PURE__ */ import_react7.default.createElement(
+    return /* @__PURE__ */ import_react8.default.createElement(
       "div",
       {
         key: stat.id,
@@ -31906,14 +32123,14 @@ function StatsStep() {
           gap: "0.75rem"
         }
       },
-      /* @__PURE__ */ import_react7.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.25rem", minWidth: 0 } }, /* @__PURE__ */ import_react7.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.375rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react7.default.createElement("span", { style: { fontSize: "0.7rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.04em" } }, stat.icon, " ", stat.name), isPrimary && /* @__PURE__ */ import_react7.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 900, textTransform: "uppercase", background: "var(--interactive-accent)", color: "#fff", padding: "1px 5px", borderRadius: "3px" } }, "Main"), isSave && /* @__PURE__ */ import_react7.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 700, textTransform: "uppercase", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)", padding: "1px 5px", borderRadius: "3px" } }, "Save"), /* @__PURE__ */ import_react7.default.createElement("div", { style: { position: "relative", display: "inline-flex" } }, /* @__PURE__ */ import_react7.default.createElement(
+      /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.25rem", minWidth: 0 } }, /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.375rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "0.7rem", fontWeight: 900, letterSpacing: "0.04em" } }, /* @__PURE__ */ import_react8.default.createElement(stat.lucid_icon, { size: 12.5 })), /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "0.7rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.04em" } }, stat.name), isPrimary && /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 900, textTransform: "uppercase", background: "var(--interactive-accent)", color: "#fff", padding: "1px 5px", borderRadius: "3px" } }, "Main"), isSave && /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 700, textTransform: "uppercase", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)", padding: "1px 5px", borderRadius: "3px" } }, "Save"), /* @__PURE__ */ import_react8.default.createElement("div", { style: { position: "relative", display: "inline-flex" } }, /* @__PURE__ */ import_react8.default.createElement(
         Info,
         {
           style: { width: "0.75rem", height: "0.75rem", color: "var(--text-muted)", cursor: "help" },
           onMouseEnter: () => setTooltip(stat.id),
           onMouseLeave: () => setTooltip(null)
         }
-      ), isTooltipOpen && /* @__PURE__ */ import_react7.default.createElement("div", { style: {
+      ), isTooltipOpen && /* @__PURE__ */ import_react8.default.createElement("div", { style: {
         position: "absolute",
         bottom: "1.25rem",
         left: "50%",
@@ -31928,26 +32145,26 @@ function StatsStep() {
         zIndex: 100,
         boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
         pointerEvents: "none"
-      } }, stat.description))), /* @__PURE__ */ import_react7.default.createElement("div", { style: { display: "flex", alignItems: "baseline", gap: "0.375rem" } }, /* @__PURE__ */ import_react7.default.createElement("span", { style: { fontSize: "2.25rem", fontWeight: 900, lineHeight: 1, fontVariantNumeric: "tabular-nums" } }, val), /* @__PURE__ */ import_react7.default.createElement("span", { style: { fontSize: "1rem", fontWeight: 900, color: "var(--interactive-accent)" } }, getModifier(val)))),
-      /* @__PURE__ */ import_react7.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 } }, /* @__PURE__ */ import_react7.default.createElement(
+      } }, stat.description))), /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", alignItems: "baseline", gap: "0.375rem" } }, /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "2.25rem", fontWeight: 900, lineHeight: 1, fontVariantNumeric: "tabular-nums" } }, val), /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "1rem", fontWeight: 900, color: "var(--interactive-accent)" } }, getModifier(val)))),
+      /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", flexShrink: 0 } }, /* @__PURE__ */ import_react8.default.createElement(
         "div",
         {
           role: "button",
           onClick: () => canDecrease && handleStatChange(stat.id, -1),
           style: iconBtn(canDecrease)
         },
-        /* @__PURE__ */ import_react7.default.createElement(Minus, { style: { width: "0.875rem", height: "0.875rem" } })
-      ), /* @__PURE__ */ import_react7.default.createElement("div", { style: { width: "1.5rem", textAlign: "center", fontSize: "1.2rem", fontWeight: 900, color: "var(--text-muted)", fontVariantNumeric: "tabular-nums" } }, POINT_COSTS[val]), /* @__PURE__ */ import_react7.default.createElement(
+        /* @__PURE__ */ import_react8.default.createElement(Minus, { style: { width: "0.875rem", height: "0.875rem" } })
+      ), /* @__PURE__ */ import_react8.default.createElement("div", { style: { width: "1.5rem", textAlign: "center", fontSize: "1.2rem", fontWeight: 900, color: "var(--text-muted)", fontVariantNumeric: "tabular-nums" } }, POINT_COSTS[val]), /* @__PURE__ */ import_react8.default.createElement(
         "div",
         {
           role: "button",
           onClick: () => canIncrease && handleStatChange(stat.id, 1),
           style: iconBtn(canIncrease)
         },
-        /* @__PURE__ */ import_react7.default.createElement(Plus, { style: { width: "0.875rem", height: "0.875rem" } })
+        /* @__PURE__ */ import_react8.default.createElement(Plus, { style: { width: "0.875rem", height: "0.875rem" } })
       ))
     );
-  })), remainingPoints < 0 && /* @__PURE__ */ import_react7.default.createElement("div", { style: {
+  })), remainingPoints < 0 && /* @__PURE__ */ import_react8.default.createElement("div", { style: {
     display: "flex",
     alignItems: "center",
     gap: "0.5rem",
@@ -31958,12 +32175,12 @@ function StatsStep() {
     color: "#ef4444",
     fontSize: "0.875rem",
     fontWeight: 600
-  } }, /* @__PURE__ */ import_react7.default.createElement(CircleAlert, { style: { width: "1rem", height: "1rem", flexShrink: 0 } }), "You have exceeded your point budget by ", Math.abs(remainingPoints), " points!"));
+  } }, /* @__PURE__ */ import_react8.default.createElement(CircleAlert, { style: { width: "1rem", height: "1rem", flexShrink: 0 } }), "You have exceeded your point budget by ", Math.abs(remainingPoints), " points!"));
 }
-var import_react7;
+var import_react8;
 var init_StatsStep = __esm({
   "src/app/components/StatsStep.tsx"() {
-    import_react7 = __toESM(require_react());
+    import_react8 = __toESM(require_react());
     init_index_esm();
     init_lucide_react();
     init_dnd_data();
@@ -31993,14 +32210,14 @@ function SkillsStep() {
       setValue("skills", [...current, skillId]);
     }
   };
-  import_react8.default.useEffect(() => {
+  import_react9.default.useEffect(() => {
     const current = formData.skills || [];
     const missingAuto = autoSkills.filter((s2) => !current.includes(s2));
     if (missingAuto.length > 0) {
       setValue("skills", Array.from(/* @__PURE__ */ new Set([...current, ...autoSkills])));
     }
   }, [formData.race, formData.background]);
-  return /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react8.default.createElement("div", { style: {
+  return /* @__PURE__ */ import_react9.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react9.default.createElement("div", { style: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -32008,7 +32225,7 @@ function SkillsStep() {
     background: "var(--background-secondary)",
     border: "1px solid var(--background-modifier-border)",
     borderRadius: "0.75rem"
-  } }, /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.875rem", letterSpacing: "0.04em" } }, "Skill Proficiencies"), /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", textTransform: "uppercase", fontWeight: 700 } }, "Choose ", classInfo.skillCount, " from ", formData.class || "your class")), /* @__PURE__ */ import_react8.default.createElement("div", { style: {
+  } }, /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.875rem", letterSpacing: "0.04em" } }, "Skill Proficiencies"), /* @__PURE__ */ import_react9.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", textTransform: "uppercase", fontWeight: 700 } }, "Choose ", classInfo.skillCount, " from ", formData.class || "your class")), /* @__PURE__ */ import_react9.default.createElement("div", { style: {
     padding: "0.375rem 0.875rem",
     borderRadius: "999px",
     fontWeight: 900,
@@ -32018,7 +32235,7 @@ function SkillsStep() {
     background: "var(--background-primary)",
     minWidth: "4.5rem",
     textAlign: "center"
-  } }, remaining, " Left")), (racialSkills.length > 0 || backgroundSkills.length > 0) && /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.5rem" } }, racialSkills.length > 0 && /* @__PURE__ */ import_react8.default.createElement("div", { style: {
+  } }, remaining, " Left")), (racialSkills.length > 0 || backgroundSkills.length > 0) && /* @__PURE__ */ import_react9.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.5rem" } }, racialSkills.length > 0 && /* @__PURE__ */ import_react9.default.createElement("div", { style: {
     display: "flex",
     alignItems: "center",
     gap: "0.375rem",
@@ -32028,7 +32245,7 @@ function SkillsStep() {
     background: "var(--background-modifier-form-field)",
     border: "1px solid var(--interactive-accent)",
     color: "var(--text-normal)"
-  } }, /* @__PURE__ */ import_react8.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem", color: "var(--interactive-accent)", flexShrink: 0 } }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Race: ", /* @__PURE__ */ import_react8.default.createElement("strong", null, racialSkills.join(", ")))), backgroundSkills.length > 0 && /* @__PURE__ */ import_react8.default.createElement("div", { style: {
+  } }, /* @__PURE__ */ import_react9.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem", color: "var(--interactive-accent)", flexShrink: 0 } }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Race: ", /* @__PURE__ */ import_react9.default.createElement("strong", null, racialSkills.join(", ")))), backgroundSkills.length > 0 && /* @__PURE__ */ import_react9.default.createElement("div", { style: {
     display: "flex",
     alignItems: "center",
     gap: "0.375rem",
@@ -32038,15 +32255,15 @@ function SkillsStep() {
     background: "var(--background-modifier-form-field)",
     border: "1px solid var(--background-modifier-border)",
     color: "var(--text-normal)"
-  } }, /* @__PURE__ */ import_react8.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem", color: "var(--text-muted)", flexShrink: 0 } }), /* @__PURE__ */ import_react8.default.createElement("span", null, "Background: ", /* @__PURE__ */ import_react8.default.createElement("strong", null, backgroundSkills.join(", "))))), /* @__PURE__ */ import_react8.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" } }, SKILLS.map((skill) => {
+  } }, /* @__PURE__ */ import_react9.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem", color: "var(--text-muted)", flexShrink: 0 } }), /* @__PURE__ */ import_react9.default.createElement("span", null, "Background: ", /* @__PURE__ */ import_react9.default.createElement("strong", null, backgroundSkills.join(", "))))), /* @__PURE__ */ import_react9.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" } }, SKILLS.map((skill) => {
     const isRacial = racialSkills.includes(skill.id);
     const isBackground = backgroundSkills.includes(skill.id);
     const isAuto = isRacial || isBackground;
     const isFromPool = classSkillPool.includes(skill.id);
     const isSelected = (formData.skills || []).includes(skill.id);
     const isDisabled = !isSelected && remaining === 0 || isAuto || !isFromPool && !isSelected;
-    const Icon2 = skill.icon;
-    return /* @__PURE__ */ import_react8.default.createElement(
+    const Icon2 = STATS.find((stat) => stat.id.toUpperCase() === skill.stat)?.lucid_icon || Info;
+    return /* @__PURE__ */ import_react9.default.createElement(
       "div",
       {
         key: skill.id,
@@ -32065,7 +32282,7 @@ function SkillsStep() {
           transition: "border-color 0.15s, background 0.15s"
         }
       },
-      /* @__PURE__ */ import_react8.default.createElement("div", { style: {
+      /* @__PURE__ */ import_react9.default.createElement("div", { style: {
         width: "1rem",
         height: "1rem",
         borderRadius: "0.25rem",
@@ -32075,8 +32292,8 @@ function SkillsStep() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center"
-      } }, isSelected && /* @__PURE__ */ import_react8.default.createElement(Check, { style: { width: "0.6rem", height: "0.6rem", color: "#fff" } })),
-      /* @__PURE__ */ import_react8.default.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ import_react8.default.createElement("div", { style: {
+      } }, isSelected && /* @__PURE__ */ import_react9.default.createElement(Check, { style: { width: "0.6rem", height: "0.6rem", color: "#fff" } })),
+      /* @__PURE__ */ import_react9.default.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ import_react9.default.createElement("div", { style: {
         fontSize: "0.8rem",
         fontWeight: isSelected ? 700 : 400,
         color: isSelected ? "var(--text-normal)" : "var(--text-muted)",
@@ -32084,8 +32301,8 @@ function SkillsStep() {
         alignItems: "center",
         gap: "0.375rem",
         flexWrap: "wrap"
-      } }, skill.name, isRacial && /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 900, textTransform: "uppercase", background: "var(--interactive-accent)", color: "#fff", padding: "1px 4px", borderRadius: "3px" } }, "Race"), isBackground && /* @__PURE__ */ import_react8.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 900, textTransform: "uppercase", background: "var(--background-modifier-border)", color: "var(--text-muted)", padding: "1px 4px", borderRadius: "3px" } }, "BG")), /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-faint)", fontFamily: "monospace", fontWeight: 700 } }, skill.stat)),
-      /* @__PURE__ */ import_react8.default.createElement(Icon2, { style: {
+      } }, skill.name, isRacial && /* @__PURE__ */ import_react9.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 900, textTransform: "uppercase", background: "var(--interactive-accent)", color: "#fff", padding: "1px 4px", borderRadius: "3px" } }, "Race"), isBackground && /* @__PURE__ */ import_react9.default.createElement("span", { style: { fontSize: "0.55rem", fontWeight: 900, textTransform: "uppercase", background: "var(--background-modifier-border)", color: "var(--text-muted)", padding: "1px 4px", borderRadius: "3px" } }, "BG")), /* @__PURE__ */ import_react9.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-faint)", fontFamily: "monospace", fontWeight: 700 } }, skill.stat)),
+      /* @__PURE__ */ import_react9.default.createElement(Icon2, { style: {
         width: "0.875rem",
         height: "0.875rem",
         flexShrink: 0,
@@ -32094,10 +32311,10 @@ function SkillsStep() {
     );
   })));
 }
-var import_react8;
+var import_react9;
 var init_SkillsStep = __esm({
   "src/app/components/SkillsStep.tsx"() {
-    import_react8 = __toESM(require_react());
+    import_react9 = __toESM(require_react());
     init_index_esm();
     init_lucide_react();
     init_dnd_data();
@@ -32110,8 +32327,8 @@ function DetailsStep() {
   const background = watch("background");
   const traits = watch("traits") || [];
   const feats = watch("feats") || [];
-  const [newTrait, setNewTrait] = import_react9.default.useState("");
-  const [showFeatMenu, setShowFeatMenu] = import_react9.default.useState(false);
+  const [newTrait, setNewTrait] = import_react10.default.useState("");
+  const [showFeatMenu, setShowFeatMenu] = import_react10.default.useState(false);
   const handleAddTrait = () => {
     const trimmed = newTrait.trim();
     if (!trimmed) return;
@@ -32134,7 +32351,7 @@ function DetailsStep() {
       setValue("feats", [...feats, feat]);
     }
   };
-  return /* @__PURE__ */ import_react9.default.createElement(
+  return /* @__PURE__ */ import_react10.default.createElement(
     "div",
     {
       style: {
@@ -32143,7 +32360,7 @@ function DetailsStep() {
         gap: "2rem"
       }
     },
-    /* @__PURE__ */ import_react9.default.createElement(
+    /* @__PURE__ */ import_react10.default.createElement(
       "div",
       {
         style: {
@@ -32152,7 +32369,7 @@ function DetailsStep() {
           gap: "16px"
         }
       },
-      /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
         "label",
         {
           style: {
@@ -32162,15 +32379,15 @@ function DetailsStep() {
           }
         },
         "Background"
-      ), /* @__PURE__ */ import_react9.default.createElement(
+      ), /* @__PURE__ */ import_react10.default.createElement(
         "select",
         {
           ...register("background"),
           style: selectStyle
         },
-        /* @__PURE__ */ import_react9.default.createElement("option", { value: "" }, "Select a background..."),
-        Object.keys(BACKGROUND_DATA).map((bg) => /* @__PURE__ */ import_react9.default.createElement("option", { key: bg, value: bg }, bg.replace("_", " ")))
-      ), background && /* @__PURE__ */ import_react9.default.createElement(
+        /* @__PURE__ */ import_react10.default.createElement("option", { value: "" }, "Select a background..."),
+        Object.keys(BACKGROUND_DATA).map((bg) => /* @__PURE__ */ import_react10.default.createElement("option", { key: bg, value: bg }, bg.replace("_", " ")))
+      ), background && /* @__PURE__ */ import_react10.default.createElement(
         "div",
         {
           style: {
@@ -32185,7 +32402,7 @@ function DetailsStep() {
           ", "
         )
       )),
-      /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
         "label",
         {
           style: {
@@ -32195,14 +32412,14 @@ function DetailsStep() {
           }
         },
         "Alignment"
-      ), /* @__PURE__ */ import_react9.default.createElement(
+      ), /* @__PURE__ */ import_react10.default.createElement(
         "select",
         {
           ...register("alignment"),
           style: selectStyle
         },
-        /* @__PURE__ */ import_react9.default.createElement("option", { value: "" }, "Select alignment..."),
-        ALIGNMENTS.map((alignment) => /* @__PURE__ */ import_react9.default.createElement(
+        /* @__PURE__ */ import_react10.default.createElement("option", { value: "" }, "Select alignment..."),
+        ALIGNMENTS.map((alignment) => /* @__PURE__ */ import_react10.default.createElement(
           "option",
           {
             key: alignment,
@@ -32212,7 +32429,7 @@ function DetailsStep() {
         ))
       ))
     ),
-    /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(
+    /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
       "div",
       {
         style: {
@@ -32225,7 +32442,7 @@ function DetailsStep() {
         }
       },
       "Custom Traits & Abilities"
-    ), /* @__PURE__ */ import_react9.default.createElement(
+    ), /* @__PURE__ */ import_react10.default.createElement(
       "div",
       {
         style: {
@@ -32235,14 +32452,14 @@ function DetailsStep() {
           marginBottom: "12px"
         }
       },
-      traits.map((trait) => /* @__PURE__ */ import_react9.default.createElement(
+      traits.map((trait) => /* @__PURE__ */ import_react10.default.createElement(
         "div",
         {
           key: trait,
           style: chipStyle
         },
-        /* @__PURE__ */ import_react9.default.createElement("span", null, trait),
-        /* @__PURE__ */ import_react9.default.createElement(
+        /* @__PURE__ */ import_react10.default.createElement("span", null, trait),
+        /* @__PURE__ */ import_react10.default.createElement(
           "button",
           {
             type: "button",
@@ -32255,10 +32472,10 @@ function DetailsStep() {
               e.currentTarget.style.color = "var(--text-muted)";
             }
           },
-          /* @__PURE__ */ import_react9.default.createElement(X, { size: 14 })
+          /* @__PURE__ */ import_react10.default.createElement(X, { size: 14 })
         )
       ))
-    ), /* @__PURE__ */ import_react9.default.createElement(
+    ), /* @__PURE__ */ import_react10.default.createElement(
       "div",
       {
         style: {
@@ -32267,7 +32484,7 @@ function DetailsStep() {
           alignItems: "center"
         }
       },
-      /* @__PURE__ */ import_react9.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(
         "input",
         {
           type: "text",
@@ -32289,17 +32506,17 @@ function DetailsStep() {
           }
         }
       ),
-      /* @__PURE__ */ import_react9.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(
         "button",
         {
           type: "button",
           onClick: handleAddTrait,
           style: actionButtonStyle
         },
-        /* @__PURE__ */ import_react9.default.createElement(Plus, { size: 14 })
+        /* @__PURE__ */ import_react10.default.createElement(Plus, { size: 14 })
       )
     )),
-    /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(
+    /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
       "div",
       {
         style: {
@@ -32312,7 +32529,7 @@ function DetailsStep() {
         }
       },
       "Feats"
-    ), /* @__PURE__ */ import_react9.default.createElement(
+    ), /* @__PURE__ */ import_react10.default.createElement(
       "div",
       {
         style: {
@@ -32322,7 +32539,7 @@ function DetailsStep() {
           marginBottom: "12px"
         }
       },
-      feats.map((feat) => /* @__PURE__ */ import_react9.default.createElement(
+      feats.map((feat) => /* @__PURE__ */ import_react10.default.createElement(
         "div",
         {
           key: feat,
@@ -32333,8 +32550,8 @@ function DetailsStep() {
             //   color: 'var(--text-on-accent)',
           }
         },
-        /* @__PURE__ */ import_react9.default.createElement("span", null, feat),
-        /* @__PURE__ */ import_react9.default.createElement(
+        /* @__PURE__ */ import_react10.default.createElement("span", null, feat),
+        /* @__PURE__ */ import_react10.default.createElement(
           "button",
           {
             type: "button",
@@ -32350,17 +32567,17 @@ function DetailsStep() {
               e.currentTarget.style.color = "var(--text-muted)";
             }
           },
-          /* @__PURE__ */ import_react9.default.createElement(X, { size: 14 })
+          /* @__PURE__ */ import_react10.default.createElement(X, { size: 14 })
         )
       ))
-    ), /* @__PURE__ */ import_react9.default.createElement(
+    ), /* @__PURE__ */ import_react10.default.createElement(
       "div",
       {
         style: {
           position: "relative"
         }
       },
-      /* @__PURE__ */ import_react9.default.createElement(
+      /* @__PURE__ */ import_react10.default.createElement(
         "button",
         {
           type: "button",
@@ -32372,10 +32589,10 @@ function DetailsStep() {
             gap: "8px"
           }
         },
-        /* @__PURE__ */ import_react9.default.createElement(Plus, { size: 14 }),
+        /* @__PURE__ */ import_react10.default.createElement(Plus, { size: 14 }),
         "Select Feat"
       ),
-      showFeatMenu && /* @__PURE__ */ import_react9.default.createElement(
+      showFeatMenu && /* @__PURE__ */ import_react10.default.createElement(
         "div",
         {
           style: {
@@ -32395,7 +32612,7 @@ function DetailsStep() {
         },
         FEAT_DATA.map((feat) => {
           const active = feats.includes(feat);
-          return /* @__PURE__ */ import_react9.default.createElement(
+          return /* @__PURE__ */ import_react10.default.createElement(
             "button",
             {
               key: feat,
@@ -32416,7 +32633,7 @@ function DetailsStep() {
         })
       )
     )),
-    /* @__PURE__ */ import_react9.default.createElement("div", null, /* @__PURE__ */ import_react9.default.createElement(
+    /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
       "label",
       {
         htmlFor: "backstory",
@@ -32427,7 +32644,7 @@ function DetailsStep() {
         }
       },
       "Backstory (Optional)"
-    ), /* @__PURE__ */ import_react9.default.createElement(
+    ), /* @__PURE__ */ import_react10.default.createElement(
       "textarea",
       {
         id: "backstory",
@@ -32448,10 +32665,10 @@ function DetailsStep() {
     ))
   );
 }
-var import_react9, ALIGNMENTS, selectStyle, chipStyle, iconButtonStyle, actionButtonStyle;
+var import_react10, ALIGNMENTS, selectStyle, chipStyle, iconButtonStyle, actionButtonStyle;
 var init_DetailsStep = __esm({
   "src/app/components/DetailsStep.tsx"() {
-    import_react9 = __toESM(require_react());
+    import_react10 = __toESM(require_react());
     init_index_esm();
     init_lucide_react();
     init_dnd_data();
@@ -32530,8 +32747,8 @@ var init_DetailsStep = __esm({
 function SpellsStep() {
   const { watch, setValue } = useFormContext();
   const formData = watch();
-  const [expandedSpell, setExpandedSpell] = (0, import_react10.useState)(null);
-  const [activeTab, setActiveTab] = (0, import_react10.useState)("selection");
+  const [expandedSpell, setExpandedSpell] = (0, import_react11.useState)(null);
+  const [activeTab, setActiveTab] = (0, import_react11.useState)("selection");
   const classInfo = CLASS_DATA[formData.class];
   const spellcasting = classInfo?.spellcasting;
   const isSpellcaster = !!spellcasting && formData.level >= (spellcasting.levelAvailable || 1);
@@ -32539,7 +32756,7 @@ function SpellsStep() {
   const subraceInfo = raceInfo.subraces?.[formData.subrace] || {};
   const racialCantrips = [...raceInfo.cantrips || [], ...subraceInfo.cantrips || []];
   if (!isSpellcaster && racialCantrips.length === 0) {
-    return /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "3rem", textAlign: "center", gap: "1rem" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { width: "4rem", height: "4rem", borderRadius: "50%", background: "var(--background-secondary)", display: "flex", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react10.default.createElement(CircleAlert, { style: { width: "2rem", height: "2rem", color: "var(--text-muted)" } })), /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "1.125rem", fontWeight: 700, marginBottom: "0.375rem" } }, "No Spells Available"), /* @__PURE__ */ import_react10.default.createElement("div", { style: { color: "var(--text-muted)", fontSize: "0.875rem" } }, "Neither your race nor your ", formData.class, " class provides spellcasting at level ", formData.level, ".")));
+    return /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "3rem", textAlign: "center", gap: "1rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { width: "4rem", height: "4rem", borderRadius: "50%", background: "var(--background-secondary)", display: "flex", alignItems: "center", justifyContent: "center" } }, /* @__PURE__ */ import_react11.default.createElement(CircleAlert, { style: { width: "2rem", height: "2rem", color: "var(--text-muted)" } })), /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.125rem", fontWeight: 700, marginBottom: "0.375rem" } }, "No Spells Available"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { color: "var(--text-muted)", fontSize: "0.875rem" } }, "Neither your race nor your ", formData.class, " class provides spellcasting at level ", formData.level, ".")));
   }
   const getFinalStat = (s2) => {
     const base = formData.stats?.[s2] || 10;
@@ -32627,7 +32844,7 @@ function SpellsStep() {
     const isSelected = (isCantrip ? formData.cantrips || [] : formData.spells || []).includes(spell.id) || isCantrip && racialCantrips.includes(spell.id);
     const isRacial = isCantrip && racialCantrips.includes(spell.id);
     const isExpanded = expandedSpell === spell.id;
-    return /* @__PURE__ */ import_react10.default.createElement(
+    return /* @__PURE__ */ import_react11.default.createElement(
       "div",
       {
         role: isRacial ? void 0 : "button",
@@ -32641,7 +32858,7 @@ function SpellsStep() {
           transition: "border-color 0.15s"
         }
       },
-      /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "0.625rem 0.75rem", gap: "0.5rem" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.375rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react10.default.createElement("span", { style: { fontWeight: 700, fontSize: "0.8rem" } }, spell.name), isRacial && /* @__PURE__ */ import_react10.default.createElement("span", { style: { fontSize: "0.55rem", background: "var(--background-modifier-border)", padding: "1px 4px", borderRadius: "3px", textTransform: "uppercase", fontWeight: 700 } }, "Race"), isSelected && !isRacial && /* @__PURE__ */ import_react10.default.createElement("span", { style: { width: "0.875rem", height: "0.875rem", borderRadius: "50%", background: "var(--interactive-accent)", display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, /* @__PURE__ */ import_react10.default.createElement(Check, { style: { width: "0.5rem", height: "0.5rem", color: "#fff" } }))), /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", textTransform: "uppercase", fontFamily: "monospace" } }, spell.school)), /* @__PURE__ */ import_react10.default.createElement(
+      /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", padding: "0.625rem 0.75rem", gap: "0.5rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { flex: 1, minWidth: 0 } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.375rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontWeight: 700, fontSize: "0.8rem" } }, spell.name), isRacial && /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontSize: "0.55rem", background: "var(--background-modifier-border)", padding: "1px 4px", borderRadius: "3px", textTransform: "uppercase", fontWeight: 700 } }, "Race"), isSelected && !isRacial && /* @__PURE__ */ import_react11.default.createElement("span", { style: { width: "0.875rem", height: "0.875rem", borderRadius: "50%", background: "var(--interactive-accent)", display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, /* @__PURE__ */ import_react11.default.createElement(Check, { style: { width: "0.5rem", height: "0.5rem", color: "#fff" } }))), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", textTransform: "uppercase", fontFamily: "monospace" } }, spell.school)), /* @__PURE__ */ import_react11.default.createElement(
         "div",
         {
           role: "button",
@@ -32651,12 +32868,12 @@ function SpellsStep() {
           },
           style: { display: "flex", padding: "0.25rem", borderRadius: "0.25rem", cursor: "pointer", color: isExpanded ? "var(--interactive-accent)" : "var(--text-muted)", flexShrink: 0 }
         },
-        isExpanded ? /* @__PURE__ */ import_react10.default.createElement(ChevronUp, { style: { width: "0.75rem", height: "0.75rem" } }) : /* @__PURE__ */ import_react10.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem" } })
+        isExpanded ? /* @__PURE__ */ import_react11.default.createElement(ChevronUp, { style: { width: "0.75rem", height: "0.75rem" } }) : /* @__PURE__ */ import_react11.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem" } })
       )),
-      isExpanded && /* @__PURE__ */ import_react10.default.createElement("div", { style: { padding: "0.625rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, spell.description)
+      isExpanded && /* @__PURE__ */ import_react11.default.createElement("div", { style: { padding: "0.625rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, spell.description)
     );
   };
-  const SectionHeader = ({ emoji, label, color, selected, limit }) => /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: `2px solid var(--background-modifier-border)`, paddingBottom: "0.5rem", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 900, fontSize: "1rem", color } }, /* @__PURE__ */ import_react10.default.createElement("span", null, emoji), " ", label), /* @__PURE__ */ import_react10.default.createElement("span", { style: {
+  const SectionHeader = ({ emoji, label, color, selected, limit }) => /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: `2px solid var(--background-modifier-border)`, paddingBottom: "0.5rem", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 900, fontSize: "1rem", color } }, /* @__PURE__ */ import_react11.default.createElement("span", null, emoji), " ", label), /* @__PURE__ */ import_react11.default.createElement("span", { style: {
     fontSize: "0.7rem",
     fontWeight: 700,
     fontFamily: "monospace",
@@ -32675,7 +32892,7 @@ function SpellsStep() {
     { key: "level8", minLevel: 15, label: "8th Level", emoji: "\u{1F4D2}", color: "#f43f5e" },
     { key: "level9", minLevel: 17, label: "9th Level", emoji: "\u2B50", color: "#ca8a04" }
   ];
-  return /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0", paddingBottom: "3rem" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", gap: "0.375rem", borderBottom: "2px solid var(--background-modifier-border)", marginBottom: "1.5rem" } }, ["selection", "index"].map((tab) => /* @__PURE__ */ import_react10.default.createElement(
+  return /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0", paddingBottom: "3rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", gap: "0.375rem", borderBottom: "2px solid var(--background-modifier-border)", marginBottom: "1.5rem" } }, ["selection", "index"].map((tab) => /* @__PURE__ */ import_react11.default.createElement(
     "div",
     {
       key: tab,
@@ -32695,11 +32912,11 @@ function SpellsStep() {
       }
     },
     tab === "selection" ? "\u2728 Selection" : "\u{1F4D6} Spell Index"
-  ))), activeTab === "selection" && /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem" } }, isSpellcaster && /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.625rem" } }, [
+  ))), activeTab === "selection" && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem" } }, isSpellcaster && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.625rem" } }, [
     { label: "Spell Save DC", value: spellSaveDC },
     { label: "Spell Attack Bonus", value: `+${spellAttackBonus}` },
     { label: "Casting Ability", value: spellAbility.toUpperCase() }
-  ].map((s2) => /* @__PURE__ */ import_react10.default.createElement("div", { key: s2.label, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.625rem", padding: "0.75rem", textAlign: "center" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", marginBottom: "0.25rem" } }, s2.label), /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "1.75rem", fontWeight: 900, color: "var(--interactive-accent)" } }, s2.value)))), isSpellcaster && Object.values(slots).some((v) => v > 0) && /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.08em", marginBottom: "0.5rem" } }, "Available Spell Slots"), /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.375rem" } }, Object.entries(slots).map(([lvl, count3]) => count3 > 0 && /* @__PURE__ */ import_react10.default.createElement("div", { key: lvl, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem", textAlign: "center", minWidth: "3.5rem" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, "Lvl ", lvl), /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "1.25rem", fontWeight: 900 } }, count3))), spellcasting.isPactMagic && /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", alignItems: "center", padding: "0.375rem 0.75rem", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", fontSize: "0.75rem", fontWeight: 700, color: "var(--text-muted)" } }, "Pact Magic"))), (currentCantripLimit > 0 || racialCantrips.length > 0) && /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
+  ].map((s2) => /* @__PURE__ */ import_react11.default.createElement("div", { key: s2.label, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.625rem", padding: "0.75rem", textAlign: "center" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", marginBottom: "0.25rem" } }, s2.label), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.75rem", fontWeight: 900, color: "var(--interactive-accent)" } }, s2.value)))), isSpellcaster && Object.values(slots).some((v) => v > 0) && /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.08em", marginBottom: "0.5rem" } }, "Available Spell Slots"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.375rem" } }, Object.entries(slots).map(([lvl, count]) => count > 0 && /* @__PURE__ */ import_react11.default.createElement("div", { key: lvl, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", padding: "0.5rem 0.75rem", textAlign: "center", minWidth: "3.5rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, "Lvl ", lvl), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.25rem", fontWeight: 900 } }, count))), spellcasting.isPactMagic && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", padding: "0.375rem 0.75rem", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", fontSize: "0.75rem", fontWeight: 700, color: "var(--text-muted)" } }, "Pact Magic"))), (currentCantripLimit > 0 || racialCantrips.length > 0) && /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement(
     SectionHeader,
     {
       emoji: "\u2728",
@@ -32708,7 +32925,7 @@ function SpellsStep() {
       selected: (formData.cantrips || []).length,
       limit: currentCantripLimit
     }
-  ), /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, filteredCantrips.map((spell) => /* @__PURE__ */ import_react10.default.createElement(SpellCard, { key: spell.id, spell, isCantrip: true })))), currentSpellLimit > 0 && /* @__PURE__ */ import_react10.default.createElement("div", null, /* @__PURE__ */ import_react10.default.createElement(
+  ), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, filteredCantrips.map((spell) => /* @__PURE__ */ import_react11.default.createElement(SpellCard, { key: spell.id, spell, isCantrip: true })))), currentSpellLimit > 0 && /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement(
     SectionHeader,
     {
       emoji: "\u{1F4D8}",
@@ -32717,31 +32934,31 @@ function SpellsStep() {
       selected: (formData.spells || []).length,
       limit: currentSpellLimit
     }
-  ), /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, filteredByLevel("level1").map((spell) => /* @__PURE__ */ import_react10.default.createElement(SpellCard, { key: spell.id, spell, isCantrip: false })))), spellLevels.map(({ key, minLevel, label, emoji, color }) => {
+  ), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, filteredByLevel("level1").map((spell) => /* @__PURE__ */ import_react11.default.createElement(SpellCard, { key: spell.id, spell, isCantrip: false })))), spellLevels.map(({ key, minLevel, label, emoji, color }) => {
     const spells = filteredByLevel(key);
     if (formData.level < minLevel || spells.length === 0) return null;
-    return /* @__PURE__ */ import_react10.default.createElement("div", { key }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", borderBottom: "1px solid var(--background-modifier-border)", paddingBottom: "0.5rem", marginBottom: "0.75rem", fontWeight: 900, fontSize: "0.9rem", color } }, /* @__PURE__ */ import_react10.default.createElement("span", null, emoji), " ", label, " Spells"), /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, spells.map((spell) => /* @__PURE__ */ import_react10.default.createElement(SpellCard, { key: spell.id, spell, isCantrip: false }))));
-  })), activeTab === "index" && /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem" } }, ["cantrips", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9"].map((level) => {
+    return /* @__PURE__ */ import_react11.default.createElement("div", { key }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", borderBottom: "1px solid var(--background-modifier-border)", paddingBottom: "0.5rem", marginBottom: "0.75rem", fontWeight: 900, fontSize: "0.9rem", color } }, /* @__PURE__ */ import_react11.default.createElement("span", null, emoji), " ", label, " Spells"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, spells.map((spell) => /* @__PURE__ */ import_react11.default.createElement(SpellCard, { key: spell.id, spell, isCantrip: false }))));
+  })), activeTab === "index" && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem" } }, ["cantrips", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9"].map((level) => {
     const spells = SPELL_DATA[level];
     if (!spells || spells.length === 0) return null;
-    return /* @__PURE__ */ import_react10.default.createElement("div", { key: level }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)", borderBottom: "1px solid var(--background-modifier-border)", paddingBottom: "0.375rem", marginBottom: "0.5rem" } }, level === "cantrips" ? "Cantrips" : `Level ${level.replace("level", "")}`), /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.375rem" } }, spells.map((s2) => {
+    return /* @__PURE__ */ import_react11.default.createElement("div", { key: level }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)", borderBottom: "1px solid var(--background-modifier-border)", paddingBottom: "0.375rem", marginBottom: "0.5rem" } }, level === "cantrips" ? "Cantrips" : `Level ${level.replace("level", "")}`), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.375rem" } }, spells.map((s2) => {
       const isOpen = expandedSpell === s2.id;
-      return /* @__PURE__ */ import_react10.default.createElement("div", { key: s2.id, style: { border: "1px solid var(--background-modifier-border)", borderRadius: "0.375rem", overflow: "hidden" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.375rem 0.625rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react10.default.createElement("span", { style: { fontSize: "0.75rem", fontWeight: 700 } }, s2.name), /* @__PURE__ */ import_react10.default.createElement(
+      return /* @__PURE__ */ import_react11.default.createElement("div", { key: s2.id, style: { border: "1px solid var(--background-modifier-border)", borderRadius: "0.375rem", overflow: "hidden" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.375rem 0.625rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontSize: "0.75rem", fontWeight: 700 } }, s2.name), /* @__PURE__ */ import_react11.default.createElement(
         "div",
         {
           role: "button",
           onClick: () => setExpandedSpell(isOpen ? null : s2.id),
           style: { cursor: "pointer", color: isOpen ? "var(--interactive-accent)" : "var(--text-muted)", display: "flex", padding: "0.125rem" }
         },
-        /* @__PURE__ */ import_react10.default.createElement(Info, { style: { width: "0.7rem", height: "0.7rem" } })
-      )), isOpen && /* @__PURE__ */ import_react10.default.createElement("div", { style: { padding: "0.5rem 0.625rem", fontSize: "0.7rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: "0.375rem" } }, /* @__PURE__ */ import_react10.default.createElement("span", { style: { fontWeight: 700, textTransform: "uppercase", fontSize: "0.6rem" } }, s2.school)), s2.description, /* @__PURE__ */ import_react10.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.25rem", marginTop: "0.5rem" } }, s2.classes.map((c) => /* @__PURE__ */ import_react10.default.createElement("span", { key: c, style: { fontSize: "0.55rem", textTransform: "uppercase", fontWeight: 700, border: "1px solid var(--background-modifier-border)", padding: "1px 4px", borderRadius: "3px", color: "var(--text-muted)" } }, c)))));
+        /* @__PURE__ */ import_react11.default.createElement(Info, { style: { width: "0.7rem", height: "0.7rem" } })
+      )), isOpen && /* @__PURE__ */ import_react11.default.createElement("div", { style: { padding: "0.5rem 0.625rem", fontSize: "0.7rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", marginBottom: "0.375rem" } }, /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontWeight: 700, textTransform: "uppercase", fontSize: "0.6rem" } }, s2.school)), s2.description, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.25rem", marginTop: "0.5rem" } }, s2.classes.map((c) => /* @__PURE__ */ import_react11.default.createElement("span", { key: c, style: { fontSize: "0.55rem", textTransform: "uppercase", fontWeight: 700, border: "1px solid var(--background-modifier-border)", padding: "1px 4px", borderRadius: "3px", color: "var(--text-muted)" } }, c)))));
     })));
   })));
 }
-var import_react10;
+var import_react11;
 var init_SpellsStep = __esm({
   "src/app/components/SpellsStep.tsx"() {
-    import_react10 = __toESM(require_react());
+    import_react11 = __toESM(require_react());
     init_index_esm();
     init_lucide_react();
     init_dnd_data();
@@ -32770,13 +32987,13 @@ function ReviewStep({
   modal
 }) {
   const formContext = useFormContext();
-  const [isSaving, setIsSaving] = (0, import_react11.useState)(false);
-  const [activeTab, setActiveTab] = (0, import_react11.useState)("overview");
-  const [expandedSpell, setExpandedSpell] = (0, import_react11.useState)(null);
-  const [expandedItem, setExpandedItem] = (0, import_react11.useState)(null);
-  const [isEditingGear, setIsEditingGear] = (0, import_react11.useState)(false);
-  const [isEditingMoney, setIsEditingMoney] = (0, import_react11.useState)(false);
-  const [newItemName, setNewItemName] = (0, import_react11.useState)("");
+  const [isSaving, setIsSaving] = (0, import_react12.useState)(false);
+  const [activeTab, setActiveTab] = (0, import_react12.useState)("overview");
+  const [expandedSpell, setExpandedSpell] = (0, import_react12.useState)(null);
+  const [expandedItem, setExpandedItem] = (0, import_react12.useState)(null);
+  const [isEditingGear, setIsEditingGear] = (0, import_react12.useState)(false);
+  const [isEditingMoney, setIsEditingMoney] = (0, import_react12.useState)(false);
+  const [newItemName, setNewItemName] = (0, import_react12.useState)("");
   const formData = formContext ? formContext.watch() : initialFormData;
   const classInfo = CLASS_DATA[formData.class] || CLASS_DATA.fighter;
   const raceInfo = RACE_DATA[formData.race] || RACE_DATA.human;
@@ -32897,44 +33114,44 @@ print(f"Adventure awaits for {my_hero.name}!")
   };
   const SpellCard = ({ spell, isRacial }) => {
     const isExp = expandedSpell === spell.id;
-    return /* @__PURE__ */ import_react11.default.createElement("div", { style: { border: `1px solid ${isExp ? "var(--interactive-accent)" : "var(--background-modifier-border)"}`, borderRadius: "0.5rem", overflow: "hidden", background: "var(--background-primary)" } }, /* @__PURE__ */ import_react11.default.createElement(
+    return /* @__PURE__ */ import_react12.default.createElement("div", { style: { border: `1px solid ${isExp ? "var(--interactive-accent)" : "var(--background-modifier-border)"}`, borderRadius: "0.5rem", overflow: "hidden", background: "var(--background-primary)" } }, /* @__PURE__ */ import_react12.default.createElement(
       "div",
       {
         role: "button",
         onClick: () => setExpandedSpell(isExp ? null : spell.id),
         style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem 0.75rem", cursor: "pointer", background: "var(--background-secondary)" }
       },
-      /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.375rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontWeight: 700, fontSize: "0.8rem" } }, spell.name), isRacial && /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontSize: "0.55rem", background: "var(--background-modifier-border)", padding: "1px 4px", borderRadius: "3px", textTransform: "uppercase", fontWeight: 700 } }, "Racial"), /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontSize: "0.6rem", color: "var(--text-muted)", fontFamily: "monospace", textTransform: "uppercase" } }, spell.school)),
-      /* @__PURE__ */ import_react11.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem", color: isExp ? "var(--interactive-accent)" : "var(--text-muted)", flexShrink: 0 } })
-    ), isExp && /* @__PURE__ */ import_react11.default.createElement("div", { style: { padding: "0.625rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, spell.description));
+      /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.375rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontWeight: 700, fontSize: "0.8rem" } }, spell.name), isRacial && /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontSize: "0.55rem", background: "var(--background-modifier-border)", padding: "1px 4px", borderRadius: "3px", textTransform: "uppercase", fontWeight: 700 } }, "Racial"), /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontSize: "0.6rem", color: "var(--text-muted)", fontFamily: "monospace", textTransform: "uppercase" } }, spell.school)),
+      /* @__PURE__ */ import_react12.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem", color: isExp ? "var(--interactive-accent)" : "var(--text-muted)", flexShrink: 0 } })
+    ), isExp && /* @__PURE__ */ import_react12.default.createElement("div", { style: { padding: "0.625rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, spell.description));
   };
   const ItemRow = ({ item }) => {
     const clean = item.replace(/^(Two|Four|Five|Ten)\s+/i, "").replace(/s$/, "");
     const details = EQUIPMENT_DATA[clean] || EQUIPMENT_DATA[item];
     const isOpen = expandedItem === item;
-    return /* @__PURE__ */ import_react11.default.createElement("div", { style: { border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", overflow: "hidden" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem 0.75rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase" } }, item), details && /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, details.weight, " \xB7 ", details.cost)), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.25rem" } }, isEditingGear && /* @__PURE__ */ import_react11.default.createElement(
+    return /* @__PURE__ */ import_react12.default.createElement("div", { style: { border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", overflow: "hidden" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem 0.75rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase" } }, item), details && /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, details.weight, " \xB7 ", details.cost)), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.25rem" } }, isEditingGear && /* @__PURE__ */ import_react12.default.createElement(
       "div",
       {
         role: "button",
         onClick: () => handleRemoveItem(item),
         style: { cursor: "pointer", color: "var(--text-error)", padding: "0.25rem", display: "flex", borderRadius: "0.25rem" }
       },
-      /* @__PURE__ */ import_react11.default.createElement(Trash2, { style: { width: "0.75rem", height: "0.75rem" } })
-    ), details && /* @__PURE__ */ import_react11.default.createElement(
+      /* @__PURE__ */ import_react12.default.createElement(Trash2, { style: { width: "0.75rem", height: "0.75rem" } })
+    ), details && /* @__PURE__ */ import_react12.default.createElement(
       "div",
       {
         role: "button",
         onClick: () => setExpandedItem(isOpen ? null : item),
         style: { cursor: "pointer", color: isOpen ? "var(--interactive-accent)" : "var(--text-muted)", padding: "0.25rem", display: "flex", borderRadius: "0.25rem" }
       },
-      /* @__PURE__ */ import_react11.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem" } })
-    ))), isOpen && details && /* @__PURE__ */ import_react11.default.createElement("div", { style: { padding: "0.625rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, details.properties));
+      /* @__PURE__ */ import_react12.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem" } })
+    ))), isOpen && details && /* @__PURE__ */ import_react12.default.createElement("div", { style: { padding: "0.625rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6, borderTop: "1px solid var(--background-modifier-border)" } }, details.properties));
   };
-  const SectionHead = ({ icon, label }) => /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 900, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--interactive-accent)", marginBottom: "0.75rem" } }, icon, label);
-  return /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem", paddingBottom: "3rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "0.75rem", paddingBottom: "1rem", borderBottom: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { width: "8rem", height: "8rem", borderRadius: "1.5rem", background: "var(--background-secondary)", border: "3px solid var(--background-modifier-border)", overflow: "hidden", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" } }, formData.image ? /* @__PURE__ */ import_react11.default.createElement("div", { style: { width: "100%", height: "100%", backgroundImage: `url(${formData.image})`, backgroundPosition: `${formData.imageX || 50}% ${formData.imageY || 50}%`, backgroundSize: `${formData.imageScale || 100}%`, backgroundRepeat: "no-repeat" } }) : /* @__PURE__ */ import_react11.default.createElement(User, { style: { width: "3rem", height: "3rem", color: "var(--text-muted)" } }), /* @__PURE__ */ import_react11.default.createElement("div", { style: { position: "absolute", bottom: "0.375rem", right: "0.375rem", background: "var(--interactive-accent)", color: "#fff", fontSize: "0.65rem", fontWeight: 900, padding: "2px 6px", borderRadius: "999px" } }, "LVL ", formData.level)), /* @__PURE__ */ import_react11.default.createElement("h2", { style: { margin: 0, fontSize: "1.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em" } }, formData.name || "Unnamed Adventurer"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" } }, [
+  const SectionHead = ({ icon, label }) => /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 900, fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--interactive-accent)", marginBottom: "0.75rem" } }, icon, label);
+  return /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem", paddingBottom: "3rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "0.75rem", paddingBottom: "1rem", borderBottom: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { width: "8rem", height: "8rem", borderRadius: "1.5rem", background: "var(--background-secondary)", border: "3px solid var(--background-modifier-border)", overflow: "hidden", position: "relative", display: "flex", alignItems: "center", justifyContent: "center" } }, formData.image ? /* @__PURE__ */ import_react12.default.createElement("div", { style: { width: "100%", height: "100%", backgroundImage: `url(${formData.image})`, backgroundPosition: `${formData.imageX || 50}% ${formData.imageY || 50}%`, backgroundSize: `${formData.imageScale || 100}%`, backgroundRepeat: "no-repeat" } }) : /* @__PURE__ */ import_react12.default.createElement(User, { style: { width: "3rem", height: "3rem", color: "var(--text-muted)" } }), /* @__PURE__ */ import_react12.default.createElement("div", { style: { position: "absolute", bottom: "0.375rem", right: "0.375rem", background: "var(--interactive-accent)", color: "#fff", fontSize: "0.65rem", fontWeight: 900, padding: "2px 6px", borderRadius: "999px" } }, "LVL ", formData.level)), /* @__PURE__ */ import_react12.default.createElement("h2", { style: { margin: 0, fontSize: "1.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em" } }, formData.name || "Unnamed Adventurer"), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" } }, [
     `${formData.race}${formData.subrace ? ` (${formData.subrace.replace(/-/g, " ")})` : ""}`,
     `${formData.class}${formData.subclass ? ` \xB7 ${formData.subclass.replace(/-/g, " ")}` : ""}`
-  ].map((label) => /* @__PURE__ */ import_react11.default.createElement("span", { key: label, style: { background: "var(--background-modifier-form-field)", border: "1px solid var(--background-modifier-border)", borderRadius: "999px", padding: "0.2rem 0.75rem", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase" } }, label)))), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", gap: "0", borderBottom: "2px solid var(--background-modifier-border)" } }, TABS.map((tab) => /* @__PURE__ */ import_react11.default.createElement(
+  ].map((label) => /* @__PURE__ */ import_react12.default.createElement("span", { key: label, style: { background: "var(--background-modifier-form-field)", border: "1px solid var(--background-modifier-border)", borderRadius: "999px", padding: "0.2rem 0.75rem", fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase" } }, label)))), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", gap: "0", borderBottom: "2px solid var(--background-modifier-border)" } }, TABS.map((tab) => /* @__PURE__ */ import_react12.default.createElement(
     "div",
     {
       key: tab.id,
@@ -32943,52 +33160,52 @@ print(f"Adventure awaits for {my_hero.name}!")
       style: { padding: "0.5rem 0.875rem", cursor: "pointer", fontSize: "0.7rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.05em", borderBottom: activeTab === tab.id ? "2px solid var(--interactive-accent)" : "2px solid transparent", marginBottom: "-2px", color: activeTab === tab.id ? "var(--interactive-accent)" : "var(--text-muted)", transition: "color 0.15s, border-color 0.15s", whiteSpace: "nowrap" }
     },
     tab.label
-  ))), activeTab === "overview" && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(6,1fr)", gap: "0.5rem" } }, [
+  ))), activeTab === "overview" && /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(6,1fr)", gap: "0.5rem" } }, [
     { emoji: "\u2764\uFE0F", label: "HP", value: hp },
     { emoji: "\u{1F6E1}\uFE0F", label: "AC", value: ac },
     { emoji: "\u{1F3B2}", label: "Hit Die", value: hitDie },
     { emoji: "\u26A1", label: "Init", value: initiative >= 0 ? `+${initiative}` : initiative },
     { emoji: "\u{1F463}", label: "Speed", value: `${speed}ft` },
     { emoji: "\u{1F4B0}", label: "Gold", value: formData.money?.gp || 0 }
-  ].map((s2) => /* @__PURE__ */ import_react11.default.createElement("div", { key: s2.label, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem", padding: "0.75rem 0.5rem", textAlign: "center" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.25rem", marginBottom: "0.125rem" } }, s2.emoji), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.55rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.05em" } }, s2.label), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.375rem", fontWeight: 900, lineHeight: 1.1 } }, s2.value)))), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(BarChart, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Ability Scores" }), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, ["str", "dex", "con", "int", "wis", "cha"].map((stat) => {
+  ].map((s2) => /* @__PURE__ */ import_react12.default.createElement("div", { key: s2.label, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem", padding: "0.75rem 0.5rem", textAlign: "center" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "1.25rem", marginBottom: "0.125rem" } }, s2.emoji), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.55rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", letterSpacing: "0.05em" } }, s2.label), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "1.375rem", fontWeight: 900, lineHeight: 1.1 } }, s2.value)))), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(ChartNoAxesColumnIncreasing, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Ability Scores" }), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "0.5rem" } }, ["str", "dex", "con", "int", "wis", "cha"].map((stat) => {
     const total = getFinalStat(stat);
     const isProf = classInfo.saves.includes(stat);
     const saveMod = getModValue(stat) + (isProf ? proficiencyBonus : 0);
-    return /* @__PURE__ */ import_react11.default.createElement("div", { key: stat, style: { background: "var(--background-secondary)", border: `1px solid ${isProf ? "var(--interactive-accent)" : "var(--background-modifier-border)"}`, borderRadius: "0.5rem", padding: "0.5rem", textAlign: "center" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.6rem", textTransform: "uppercase", fontWeight: 700, color: "var(--text-muted)" } }, stat), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.5rem", fontWeight: 900, lineHeight: 1 } }, total), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 700, color: "var(--interactive-accent)" } }, getModifier(total)), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", marginTop: "0.25rem", padding: "2px", borderRadius: "3px", background: isProf ? "var(--interactive-accent)" : "var(--background-modifier-border)", color: isProf ? "#fff" : "var(--text-muted)" } }, "Save ", saveMod >= 0 ? `+${saveMod}` : saveMod));
-  }))), /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(Sword, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Primary Attacks" }), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.5rem" } }, weapons.length > 0 ? weapons.map((w, idx) => {
+    return /* @__PURE__ */ import_react12.default.createElement("div", { key: stat, style: { background: "var(--background-secondary)", border: `1px solid ${isProf ? "var(--interactive-accent)" : "var(--background-modifier-border)"}`, borderRadius: "0.5rem", padding: "0.5rem", textAlign: "center" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.6rem", textTransform: "uppercase", fontWeight: 700, color: "var(--text-muted)" } }, stat), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "1.5rem", fontWeight: 900, lineHeight: 1 } }, total), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 700, color: "var(--interactive-accent)" } }, getModifier(total)), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", marginTop: "0.25rem", padding: "2px", borderRadius: "3px", background: isProf ? "var(--interactive-accent)" : "var(--background-modifier-border)", color: isProf ? "#fff" : "var(--text-muted)" } }, "Save ", saveMod >= 0 ? `+${saveMod}` : saveMod));
+  }))), /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(Sword, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Primary Attacks" }), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.5rem" } }, weapons.length > 0 ? weapons.map((w, idx) => {
     const hitBonus = getModValue(w.details.stat) + proficiencyBonus;
     const dmgMod = getModValue(w.details.stat);
-    return /* @__PURE__ */ import_react11.default.createElement("div", { key: idx, style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem 0.75rem", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 900, textTransform: "uppercase" } }, w.original), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, w.details.damage, dmgMod !== 0 && (dmgMod > 0 ? `+${dmgMod}` : dmgMod), " ", w.details.type)), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.5rem", fontWeight: 900, color: "var(--interactive-accent)" } }, "+", hitBonus));
-  }) : /* @__PURE__ */ import_react11.default.createElement("div", { style: { textAlign: "center", padding: "1.5rem", color: "var(--text-muted)", fontSize: "0.75rem", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.5rem" } }, "No weapons detected"))))), activeTab === "spells" && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, !isSpellcaster && racialCantrips.length === 0 ? /* @__PURE__ */ import_react11.default.createElement("div", { style: { textAlign: "center", padding: "3rem", color: "var(--text-muted)", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.75rem" } }, /* @__PURE__ */ import_react11.default.createElement(WandSparkles, { style: { width: "3rem", height: "3rem", opacity: 0.2, margin: "0 auto 0.75rem" } }), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase" } }, "No Magic Available")) : /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, isSpellcaster && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "0.5rem" } }, [
+    return /* @__PURE__ */ import_react12.default.createElement("div", { key: idx, style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem 0.75rem", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 900, textTransform: "uppercase" } }, w.original), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, w.details.damage, dmgMod !== 0 && (dmgMod > 0 ? `+${dmgMod}` : dmgMod), " ", w.details.type)), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "1.5rem", fontWeight: 900, color: "var(--interactive-accent)" } }, "+", hitBonus));
+  }) : /* @__PURE__ */ import_react12.default.createElement("div", { style: { textAlign: "center", padding: "1.5rem", color: "var(--text-muted)", fontSize: "0.75rem", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.5rem" } }, "No weapons detected"))))), activeTab === "spells" && /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, !isSpellcaster && racialCantrips.length === 0 ? /* @__PURE__ */ import_react12.default.createElement("div", { style: { textAlign: "center", padding: "3rem", color: "var(--text-muted)", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.75rem" } }, /* @__PURE__ */ import_react12.default.createElement(WandSparkles, { style: { width: "3rem", height: "3rem", opacity: 0.2, margin: "0 auto 0.75rem" } }), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase" } }, "No Magic Available")) : /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, isSpellcaster && /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "0.5rem" } }, [
     { label: "Save DC", value: spellSaveDC },
     { label: "Attack", value: `+${spellAttackBonus}` },
     { label: "Ability", value: spellAbility.toUpperCase() },
     { label: "1st Slots", value: slots[1] || 0 }
-  ].map((s2) => /* @__PURE__ */ import_react11.default.createElement("div", { key: s2.label, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", padding: "0.75rem", textAlign: "center" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, s2.label), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "1.5rem", fontWeight: 900, color: "var(--interactive-accent)" } }, s2.value)))), /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.7rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)", marginBottom: "0.5rem" } }, "\u2728 Cantrips"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" } }, [.../* @__PURE__ */ new Set([...racialCantrips, ...formData.cantrips || []])].map((id) => {
+  ].map((s2) => /* @__PURE__ */ import_react12.default.createElement("div", { key: s2.label, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", padding: "0.75rem", textAlign: "center" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)" } }, s2.label), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "1.5rem", fontWeight: 900, color: "var(--interactive-accent)" } }, s2.value)))), /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.7rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)", marginBottom: "0.5rem" } }, "\u2728 Cantrips"), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" } }, [.../* @__PURE__ */ new Set([...racialCantrips, ...formData.cantrips || []])].map((id) => {
     const s2 = SPELL_DATA.cantrips.find((x) => x.id === id);
     if (!s2) return null;
-    return /* @__PURE__ */ import_react11.default.createElement(SpellCard, { key: id, spell: s2, isRacial: racialCantrips.includes(id) });
-  }), [.../* @__PURE__ */ new Set([...racialCantrips, ...formData.cantrips || []])].length === 0 && /* @__PURE__ */ import_react11.default.createElement("div", { style: { color: "var(--text-muted)", fontSize: "0.75rem", fontStyle: "italic" } }, "None selected"))), /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.7rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)", marginBottom: "0.5rem" } }, "\u{1F4D6} Prepared Spells"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" } }, (formData.spells || []).map((id) => {
+    return /* @__PURE__ */ import_react12.default.createElement(SpellCard, { key: id, spell: s2, isRacial: racialCantrips.includes(id) });
+  }), [.../* @__PURE__ */ new Set([...racialCantrips, ...formData.cantrips || []])].length === 0 && /* @__PURE__ */ import_react12.default.createElement("div", { style: { color: "var(--text-muted)", fontSize: "0.75rem", fontStyle: "italic" } }, "None selected"))), /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.7rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--text-muted)", marginBottom: "0.5rem" } }, "\u{1F4D6} Prepared Spells"), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem" } }, (formData.spells || []).map((id) => {
     const all = [...SPELL_DATA.level1, ...SPELL_DATA.level2 || [], ...SPELL_DATA.level3 || [], ...SPELL_DATA.level4 || [], ...SPELL_DATA.level5 || []];
     const s2 = all.find((x) => x.id === id);
     if (!s2) return null;
-    return /* @__PURE__ */ import_react11.default.createElement(SpellCard, { key: id, spell: s2 });
-  }), (formData.spells || []).length === 0 && /* @__PURE__ */ import_react11.default.createElement("div", { style: { color: "var(--text-muted)", fontSize: "0.75rem", fontStyle: "italic" } }, "No spells prepared"))))), activeTab === "skills" && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(Target, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Skills" }), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.125rem" } }, SKILLS.map((skill) => {
+    return /* @__PURE__ */ import_react12.default.createElement(SpellCard, { key: id, spell: s2 });
+  }), (formData.spells || []).length === 0 && /* @__PURE__ */ import_react12.default.createElement("div", { style: { color: "var(--text-muted)", fontSize: "0.75rem", fontStyle: "italic" } }, "No spells prepared"))))), activeTab === "skills" && /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(Target, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Skills" }), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.125rem" } }, SKILLS.map((skill) => {
     const isProf = formData.skills?.includes(skill.id);
     const mod = getModValue(skill.stat) + (isProf ? proficiencyBonus : 0);
-    return /* @__PURE__ */ import_react11.default.createElement("div", { key: skill.id, style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.375rem 0.5rem", borderRadius: "0.375rem", fontSize: "0.75rem", background: isProf ? "var(--background-modifier-form-field)" : "transparent", border: isProf ? "1px solid var(--interactive-accent)" : "1px solid transparent", marginBottom: "0.125rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { width: "0.5rem", height: "0.5rem", borderRadius: "50%", background: isProf ? "var(--interactive-accent)" : "var(--background-modifier-border)", flexShrink: 0 } }), /* @__PURE__ */ import_react11.default.createElement("span", { style: { textTransform: "capitalize", fontWeight: isProf ? 700 : 400, color: isProf ? "var(--text-normal)" : "var(--text-muted)" } }, skill.id.replace(/-/g, " ")), /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontSize: "0.6rem", color: "var(--text-faint)", textTransform: "uppercase" } }, "(", skill.stat, ")")), /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontFamily: "monospace", fontWeight: 700, color: isProf ? "var(--interactive-accent)" : "var(--text-muted)" } }, mod >= 0 ? `+${mod}` : mod));
-  }))), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(Brain, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Senses" }), [
+    return /* @__PURE__ */ import_react12.default.createElement("div", { key: skill.id, style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.375rem 0.5rem", borderRadius: "0.375rem", fontSize: "0.75rem", background: isProf ? "var(--background-modifier-form-field)" : "transparent", border: isProf ? "1px solid var(--interactive-accent)" : "1px solid transparent", marginBottom: "0.125rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { width: "0.5rem", height: "0.5rem", borderRadius: "50%", background: isProf ? "var(--interactive-accent)" : "var(--background-modifier-border)", flexShrink: 0 } }), /* @__PURE__ */ import_react12.default.createElement("span", { style: { textTransform: "capitalize", fontWeight: isProf ? 700 : 400, color: isProf ? "var(--text-normal)" : "var(--text-muted)" } }, skill.id.replace(/-/g, " ")), /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontSize: "0.6rem", color: "var(--text-faint)", textTransform: "uppercase" } }, "(", skill.stat, ")")), /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontFamily: "monospace", fontWeight: 700, color: isProf ? "var(--interactive-accent)" : "var(--text-muted)" } }, mod >= 0 ? `+${mod}` : mod));
+  }))), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(Brain, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Senses" }), [
     { label: "Proficiency Bonus", value: `+${proficiencyBonus}` },
     { label: "Passive Perception", value: passivePerception }
-  ].map((row) => /* @__PURE__ */ import_react11.default.createElement("div", { key: row.label, style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem", borderRadius: "0.375rem", border: "1px solid var(--background-modifier-border)", marginBottom: "0.5rem" } }, /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontSize: "0.65rem", fontWeight: 700, color: "var(--text-muted)", textTransform: "uppercase" } }, row.label), /* @__PURE__ */ import_react11.default.createElement("span", { style: { fontSize: "1.25rem", fontWeight: 900, color: "var(--interactive-accent)" } }, row.value)))))), activeTab === "traits" && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(ScrollText, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Traits" }), allTraits.length === 0 ? /* @__PURE__ */ import_react11.default.createElement("div", { style: { textAlign: "center", padding: "2rem", color: "var(--text-muted)", fontStyle: "italic", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.5rem" } }, "No traits found") : allTraits.map((trait, idx) => /* @__PURE__ */ import_react11.default.createElement("div", { key: idx, style: { display: "flex", alignItems: "flex-start", gap: "0.5rem", padding: "0.5rem", background: "var(--background-secondary)", borderRadius: "0.5rem", marginBottom: "0.5rem" } }, /* @__PURE__ */ import_react11.default.createElement(CircleCheck, { style: { width: "0.875rem", height: "0.875rem", color: "#10b981", flexShrink: 0, marginTop: "0.125rem" } }), /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase" } }, trait), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, "Source: ", racialTraits.includes(trait) ? "Race" : "Class"))))), /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(Sparkles, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Feats" }), allFeats.length === 0 ? /* @__PURE__ */ import_react11.default.createElement("div", { style: { textAlign: "center", padding: "2rem", color: "var(--text-muted)", fontStyle: "italic", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.5rem" } }, "No feats taken") : allFeats.map((feat, idx) => /* @__PURE__ */ import_react11.default.createElement("div", { key: idx, style: { display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.5rem", background: "var(--background-secondary)", borderRadius: "0.5rem", marginBottom: "0.5rem", border: "1px solid var(--interactive-accent)" } }, /* @__PURE__ */ import_react11.default.createElement(Sparkles, { style: { width: "0.75rem", height: "0.75rem", color: "var(--interactive-accent)", flexShrink: 0 } }), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase" } }, feat))))), activeTab === "inventory" && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(Backpack, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Inventory" }), /* @__PURE__ */ import_react11.default.createElement(
+  ].map((row) => /* @__PURE__ */ import_react12.default.createElement("div", { key: row.label, style: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem", borderRadius: "0.375rem", border: "1px solid var(--background-modifier-border)", marginBottom: "0.5rem" } }, /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontSize: "0.65rem", fontWeight: 700, color: "var(--text-muted)", textTransform: "uppercase" } }, row.label), /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontSize: "1.25rem", fontWeight: 900, color: "var(--interactive-accent)" } }, row.value)))))), activeTab === "traits" && /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(ScrollText, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Traits" }), allTraits.length === 0 ? /* @__PURE__ */ import_react12.default.createElement("div", { style: { textAlign: "center", padding: "2rem", color: "var(--text-muted)", fontStyle: "italic", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.5rem" } }, "No traits found") : allTraits.map((trait, idx) => /* @__PURE__ */ import_react12.default.createElement("div", { key: idx, style: { display: "flex", alignItems: "flex-start", gap: "0.5rem", padding: "0.5rem", background: "var(--background-secondary)", borderRadius: "0.5rem", marginBottom: "0.5rem" } }, /* @__PURE__ */ import_react12.default.createElement(CircleCheck, { style: { width: "0.875rem", height: "0.875rem", color: "#10b981", flexShrink: 0, marginTop: "0.125rem" } }), /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase" } }, trait), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, "Source: ", racialTraits.includes(trait) ? "Race" : "Class"))))), /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(Sparkles, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Feats" }), allFeats.length === 0 ? /* @__PURE__ */ import_react12.default.createElement("div", { style: { textAlign: "center", padding: "2rem", color: "var(--text-muted)", fontStyle: "italic", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.5rem" } }, "No feats taken") : allFeats.map((feat, idx) => /* @__PURE__ */ import_react12.default.createElement("div", { key: idx, style: { display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.5rem", background: "var(--background-secondary)", borderRadius: "0.5rem", marginBottom: "0.5rem", border: "1px solid var(--interactive-accent)" } }, /* @__PURE__ */ import_react12.default.createElement(Sparkles, { style: { width: "0.75rem", height: "0.75rem", color: "var(--interactive-accent)", flexShrink: 0 } }), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.8rem", fontWeight: 700, textTransform: "uppercase" } }, feat))))), activeTab === "inventory" && /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(Backpack, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Inventory" }), /* @__PURE__ */ import_react12.default.createElement(
     "div",
     {
       role: "button",
       onClick: () => setIsEditingGear(!isEditingGear),
       style: { display: "flex", alignItems: "center", gap: "0.25rem", cursor: "pointer", fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", padding: "0.25rem 0.5rem", border: "1px solid var(--background-modifier-border)", borderRadius: "0.375rem" }
     },
-    isEditingGear ? /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(Check, { style: { width: "0.7rem", height: "0.7rem" } }), " Done") : /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(Pen, { style: { width: "0.7rem", height: "0.7rem" } }), " Edit")
-  )), isEditingGear && /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", gap: "0.5rem", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react11.default.createElement(
+    isEditingGear ? /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(Check, { style: { width: "0.7rem", height: "0.7rem" } }), " Done") : /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(Pen, { style: { width: "0.7rem", height: "0.7rem" } }), " Edit")
+  )), isEditingGear && /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", gap: "0.5rem", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react12.default.createElement(
     "input",
     {
       placeholder: "Add new item...",
@@ -32997,59 +33214,59 @@ print(f"Adventure awaits for {my_hero.name}!")
       onKeyDown: (e) => e.key === "Enter" && handleAddItem(),
       style: { flex: 1, padding: "0.375rem 0.625rem", borderRadius: "0.375rem", border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-normal)", fontSize: "0.8rem" }
     }
-  ), /* @__PURE__ */ import_react11.default.createElement(
+  ), /* @__PURE__ */ import_react12.default.createElement(
     "div",
     {
       role: "button",
       onClick: handleAddItem,
       style: { display: "flex", alignItems: "center", justifyContent: "center", width: "2rem", height: "2rem", background: "var(--interactive-accent)", borderRadius: "0.375rem", cursor: "pointer", flexShrink: 0 }
     },
-    /* @__PURE__ */ import_react11.default.createElement(Plus, { style: { width: "0.875rem", height: "0.875rem", color: "#fff" } })
-  )), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.375rem" } }, finalGear.map((item, idx) => /* @__PURE__ */ import_react11.default.createElement(ItemRow, { key: idx, item })))), /* @__PURE__ */ import_react11.default.createElement("div", { style: card }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react11.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react11.default.createElement(Coins, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Currency" }), /* @__PURE__ */ import_react11.default.createElement(
+    /* @__PURE__ */ import_react12.default.createElement(Plus, { style: { width: "0.875rem", height: "0.875rem", color: "#fff" } })
+  )), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "0.375rem" } }, finalGear.map((item, idx) => /* @__PURE__ */ import_react12.default.createElement(ItemRow, { key: idx, item })))), /* @__PURE__ */ import_react12.default.createElement("div", { style: card }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react12.default.createElement(SectionHead, { icon: /* @__PURE__ */ import_react12.default.createElement(Coins, { style: { width: "0.875rem", height: "0.875rem" } }), label: "Currency" }), /* @__PURE__ */ import_react12.default.createElement(
     "div",
     {
       role: "button",
       onClick: () => setIsEditingMoney(!isEditingMoney),
       style: { display: "flex", alignItems: "center", gap: "0.25rem", cursor: "pointer", fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", padding: "0.25rem 0.5rem", border: "1px solid var(--background-modifier-border)", borderRadius: "0.375rem" }
     },
-    isEditingMoney ? /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(Check, { style: { width: "0.7rem", height: "0.7rem" } }), " Done") : /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(Pen, { style: { width: "0.7rem", height: "0.7rem" } }), " Edit")
-  )), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: "0.375rem" } }, [
+    isEditingMoney ? /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(Check, { style: { width: "0.7rem", height: "0.7rem" } }), " Done") : /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(Pen, { style: { width: "0.7rem", height: "0.7rem" } }), " Edit")
+  )), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: "0.375rem" } }, [
     { id: "cp", name: "CP", color: "#c2700f" },
     { id: "sp", name: "SP", color: "#94a3b8" },
     { id: "ep", name: "EP", color: "#059669" },
     { id: "gp", name: "GP", color: "#d97706" },
     { id: "pp", name: "PP", color: "#7c3aed" }
-  ].map((coin) => /* @__PURE__ */ import_react11.default.createElement("div", { key: coin.id, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", padding: "0.5rem", textAlign: "center" } }, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 900, color: coin.color } }, coin.name), isEditingMoney && formContext ? /* @__PURE__ */ import_react11.default.createElement(
+  ].map((coin) => /* @__PURE__ */ import_react12.default.createElement("div", { key: coin.id, style: { background: "var(--background-secondary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.5rem", padding: "0.5rem", textAlign: "center" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 900, color: coin.color } }, coin.name), isEditingMoney && formContext ? /* @__PURE__ */ import_react12.default.createElement(
     "input",
     {
       type: "number",
       style: { width: "100%", textAlign: "center", background: "transparent", border: "none", fontSize: "0.875rem", fontWeight: 900, color: "var(--text-normal)", outline: "none" },
       ...formContext.register(`money.${coin.id}`, { valueAsNumber: true })
     }
-  ) : /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.875rem", fontWeight: 900, marginTop: "0.25rem" } }, formData.money?.[coin.id] || 0)))))), /* @__PURE__ */ import_react11.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginTop: "0.5rem" } }, /* @__PURE__ */ import_react11.default.createElement(
+  ) : /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.875rem", fontWeight: 900, marginTop: "0.25rem" } }, formData.money?.[coin.id] || 0)))))), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginTop: "0.5rem" } }, /* @__PURE__ */ import_react12.default.createElement(
     "div",
     {
       role: "button",
       onClick: handleSaveCharacter,
       style: { display: "flex", alignItems: "center", gap: "0.75rem", padding: "1rem 1.25rem", borderRadius: "0.75rem", cursor: isSaving ? "wait" : "pointer", background: "var(--interactive-accent)", color: "#fff", opacity: isSaving ? 0.7 : 1, transition: "opacity 0.15s" }
     },
-    isSaving ? /* @__PURE__ */ import_react11.default.createElement(LoaderCircle, { style: { width: "1.5rem", height: "1.5rem" }, className: "animate-spin" }) : /* @__PURE__ */ import_react11.default.createElement(Save, { style: { width: "1.5rem", height: "1.5rem" } }),
-    /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.875rem" } }, isSaving ? "Saving..." : "Save Character"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", opacity: 0.8 } }, "Save to vault as JSON"))
-  ), /* @__PURE__ */ import_react11.default.createElement(
+    isSaving ? /* @__PURE__ */ import_react12.default.createElement(LoaderCircle, { style: { width: "1.5rem", height: "1.5rem" }, className: "animate-spin" }) : /* @__PURE__ */ import_react12.default.createElement(Save, { style: { width: "1.5rem", height: "1.5rem" } }),
+    /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.875rem" } }, isSaving ? "Saving..." : "Save Character"), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.65rem", opacity: 0.8 } }, "Save to vault as JSON"))
+  ), /* @__PURE__ */ import_react12.default.createElement(
     "div",
     {
       role: "button",
       onClick: generatePythonScript,
       style: { display: "flex", alignItems: "center", gap: "0.75rem", padding: "1rem 1.25rem", borderRadius: "0.75rem", cursor: "pointer", background: "var(--background-modifier-form-field)", border: "1px solid var(--background-modifier-border)", color: "var(--text-normal)" }
     },
-    /* @__PURE__ */ import_react11.default.createElement(FileCode, { style: { width: "1.5rem", height: "1.5rem", color: "#3b82f6" } }),
-    /* @__PURE__ */ import_react11.default.createElement("div", null, /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.875rem" } }, "Export Code"), /* @__PURE__ */ import_react11.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, "Download .py file"))
+    /* @__PURE__ */ import_react12.default.createElement(FileCode, { style: { width: "1.5rem", height: "1.5rem", color: "#3b82f6" } }),
+    /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.875rem" } }, "Export Code"), /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)" } }, "Download .py file"))
   )));
 }
-var import_react11, import_obsidian2, STORAGE_FILE, TABS, card;
+var import_react12, import_obsidian2, STORAGE_FILE, TABS, card;
 var init_ReviewStep = __esm({
   "src/app/components/ReviewStep.tsx"() {
-    import_react11 = __toESM(require_react());
+    import_react12 = __toESM(require_react());
     import_obsidian2 = require("obsidian");
     init_lucide_react();
     init_dnd_data();
@@ -37061,10 +37278,10 @@ async function loadEditingCharacter(app) {
   }
 }
 function CharacterWizard({ app, modal, editingChar }) {
-  const [currentStep, setCurrentStep] = (0, import_react12.useState)(0);
-  const [initialValues, setInitialValues] = (0, import_react12.useState)(DEFAULT_VALUES);
-  const [ready, setReady] = (0, import_react12.useState)(false);
-  import_react12.default.useEffect(() => {
+  const [currentStep, setCurrentStep] = (0, import_react13.useState)(0);
+  const [initialValues, setInitialValues] = (0, import_react13.useState)(DEFAULT_VALUES);
+  const [ready, setReady] = (0, import_react13.useState)(false);
+  import_react13.default.useEffect(() => {
     if (editingChar) {
       setInitialValues(editingChar);
       setReady(true);
@@ -37081,7 +37298,7 @@ function CharacterWizard({ app, modal, editingChar }) {
   });
   const { handleSubmit, watch, setValue, trigger } = methods;
   const formData = watch();
-  import_react12.default.useEffect(() => {
+  import_react13.default.useEffect(() => {
     const racialTraits = TRAIT_DATA.races[formData.race] || [];
     const classTraits = TRAIT_DATA.classes[formData.class] || [];
     const autoTraits = [.../* @__PURE__ */ new Set([...racialTraits, ...classTraits])];
@@ -37147,69 +37364,69 @@ function CharacterWizard({ app, modal, editingChar }) {
   const renderStep = () => {
     switch (currentStep) {
       case 0:
-        return /* @__PURE__ */ import_react12.default.createElement(BasicsStep, null);
+        return /* @__PURE__ */ import_react13.default.createElement(BasicsStep, null);
       case 1:
-        return /* @__PURE__ */ import_react12.default.createElement(RaceStep, null);
+        return /* @__PURE__ */ import_react13.default.createElement(RaceStep, null);
       case 2:
-        return /* @__PURE__ */ import_react12.default.createElement(ClassStep, null);
+        return /* @__PURE__ */ import_react13.default.createElement(ClassStep, null);
       case 3:
-        return /* @__PURE__ */ import_react12.default.createElement(DetailsStep, null);
+        return /* @__PURE__ */ import_react13.default.createElement(DetailsStep, null);
       case 4:
-        return /* @__PURE__ */ import_react12.default.createElement(StatsStep, null);
+        return /* @__PURE__ */ import_react13.default.createElement(StatsStep, null);
       case 5:
-        return /* @__PURE__ */ import_react12.default.createElement(SkillsStep, null);
+        return /* @__PURE__ */ import_react13.default.createElement(SkillsStep, null);
       case 6:
-        return /* @__PURE__ */ import_react12.default.createElement(SpellsStep, null);
+        return /* @__PURE__ */ import_react13.default.createElement(SpellsStep, null);
       case 7:
-        return /* @__PURE__ */ import_react12.default.createElement(ReviewStep, { formData });
+        return /* @__PURE__ */ import_react13.default.createElement(ReviewStep, { formData });
       default:
         return null;
     }
   };
   if (!ready) {
-    return /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", height: "400px", color: "var(--text-muted)" } }, "Loading...");
+    return /* @__PURE__ */ import_react13.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", height: "400px", color: "var(--text-muted)" } }, "Loading...");
   }
-  return /* @__PURE__ */ import_react12.default.createElement(FormProvider, { ...methods }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { maxWidth: "100%", padding: "1.5rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { marginBottom: "2rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { background: "var(--interactive-accent)", padding: "0.5rem", borderRadius: "0.5rem", display: "flex" } }, /* @__PURE__ */ import_react12.default.createElement(Wand, { style: { width: "1.25rem", height: "1.25rem", color: "var(--text-on-accent)" } })), /* @__PURE__ */ import_react12.default.createElement("div", null, /* @__PURE__ */ import_react12.default.createElement("h2", { style: { margin: 0, fontSize: "1.25rem", fontWeight: 700 } }, "Character Creator"), /* @__PURE__ */ import_react12.default.createElement("p", { style: { margin: 0, fontSize: "0.8rem", color: "var(--text-muted)" } }, "Follow the steps to build your hero"))), /* @__PURE__ */ import_react12.default.createElement("div", { style: { textAlign: "right", fontSize: "0.8rem" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { fontWeight: 600 } }, "Step ", currentStep + 1, " of ", STEPS.length), /* @__PURE__ */ import_react12.default.createElement("div", { style: { color: "var(--text-muted)" } }, STEPS[currentStep].title))), /* @__PURE__ */ import_react12.default.createElement("div", { style: { height: "6px", background: "var(--background-modifier-border)", borderRadius: "999px", overflow: "hidden" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: {
+  return /* @__PURE__ */ import_react13.default.createElement(FormProvider, { ...methods }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { maxWidth: "100%", padding: "1.5rem" } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { marginBottom: "2rem" } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem" } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { background: "var(--interactive-accent)", padding: "0.5rem", borderRadius: "0.5rem", display: "flex" } }, /* @__PURE__ */ import_react13.default.createElement(Wand, { style: { width: "1.25rem", height: "1.25rem", color: "var(--text-on-accent)" } })), /* @__PURE__ */ import_react13.default.createElement("div", null, /* @__PURE__ */ import_react13.default.createElement("h2", { style: { margin: 0, fontSize: "1.25rem", fontWeight: 700 } }, "Character Creator"), /* @__PURE__ */ import_react13.default.createElement("p", { style: { margin: 0, fontSize: "0.8rem", color: "var(--text-muted)" } }, "Follow the steps to build your hero"))), /* @__PURE__ */ import_react13.default.createElement("div", { style: { textAlign: "right", fontSize: "0.8rem" } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { fontWeight: 600 } }, "Step ", currentStep + 1, " of ", STEPS.length), /* @__PURE__ */ import_react13.default.createElement("div", { style: { color: "var(--text-muted)" } }, STEPS[currentStep].title))), /* @__PURE__ */ import_react13.default.createElement("div", { style: { height: "6px", background: "var(--background-modifier-border)", borderRadius: "999px", overflow: "hidden" } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: {
     height: "100%",
     width: `${progress}%`,
     background: "var(--interactive-accent)",
     borderRadius: "999px",
     transition: "width 0.3s ease"
-  } })), /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(8, 1fr)", gap: "0.5rem", marginTop: "1.5rem" } }, STEPS.map((step, index) => {
+  } })), /* @__PURE__ */ import_react13.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(8, 1fr)", gap: "0.5rem", marginTop: "1.5rem" } }, STEPS.map((step, index) => {
     const Icon2 = step.icon;
     const isActive = index === currentStep;
     const isCompleted = index < currentStep;
-    return /* @__PURE__ */ import_react12.default.createElement("div", { key: step.id, style: {
+    return /* @__PURE__ */ import_react13.default.createElement("div", { key: step.id, style: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       gap: "0.375rem",
       color: isActive ? "var(--interactive-accent)" : isCompleted ? "var(--text-accent)" : "var(--text-muted)"
-    } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: {
+    } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: {
       padding: "0.375rem",
       borderRadius: "50%",
       border: `2px solid ${isActive ? "var(--interactive-accent)" : isCompleted ? "var(--text-accent)" : "var(--background-modifier-border)"}`,
       background: isActive ? "var(--interactive-accent)" : "transparent",
       display: "flex"
-    } }, /* @__PURE__ */ import_react12.default.createElement(Icon2, { style: {
+    } }, /* @__PURE__ */ import_react13.default.createElement(Icon2, { style: {
       width: "0.875rem",
       height: "0.875rem",
       color: isActive ? "#ffffff" : "inherit"
-    } })), /* @__PURE__ */ import_react12.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" } }, step.title));
-  }))), /* @__PURE__ */ import_react12.default.createElement("div", { style: {
+    } })), /* @__PURE__ */ import_react13.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" } }, step.title));
+  }))), /* @__PURE__ */ import_react13.default.createElement("div", { style: {
     border: "1px solid var(--background-modifier-border)",
     borderRadius: "0.75rem",
     background: "var(--background-primary)",
     display: "flex",
     flexDirection: "column",
     minHeight: "500px"
-  } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { padding: "1.5rem 1.5rem 0" } }, /* @__PURE__ */ import_react12.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 700, fontSize: "1rem", marginBottom: "0.25rem" } }, import_react12.default.createElement(STEPS[currentStep].icon, { style: { width: "1.1rem", height: "1.1rem", color: "var(--interactive-accent)" } }), STEPS[currentStep].title), /* @__PURE__ */ import_react12.default.createElement("p", { style: { margin: 0, fontSize: "0.8rem", color: "var(--text-muted)" } }, STEPS[currentStep].description)), /* @__PURE__ */ import_react12.default.createElement("div", { style: { padding: "1.5rem", flex: 1 } }, renderStep()), /* @__PURE__ */ import_react12.default.createElement("div", { style: {
+  } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { padding: "1.5rem 1.5rem 0" } }, /* @__PURE__ */ import_react13.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 700, fontSize: "1rem", marginBottom: "0.25rem" } }, import_react13.default.createElement(STEPS[currentStep].icon, { style: { width: "1.1rem", height: "1.1rem", color: "var(--interactive-accent)" } }), STEPS[currentStep].title), /* @__PURE__ */ import_react13.default.createElement("p", { style: { margin: 0, fontSize: "0.8rem", color: "var(--text-muted)" } }, STEPS[currentStep].description)), /* @__PURE__ */ import_react13.default.createElement("div", { style: { padding: "1.5rem", flex: 1 } }, renderStep()), /* @__PURE__ */ import_react13.default.createElement("div", { style: {
     padding: "1rem 1.5rem",
     borderTop: "1px solid var(--background-modifier-border)",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center"
-  } }, /* @__PURE__ */ import_react12.default.createElement(
+  } }, /* @__PURE__ */ import_react13.default.createElement(
     "div",
     {
       role: "button",
@@ -37230,9 +37447,9 @@ function CharacterWizard({ app, modal, editingChar }) {
         transition: "background 0.15s"
       }
     },
-    /* @__PURE__ */ import_react12.default.createElement(ChevronLeft, { style: { width: "1rem", height: "1rem" } }),
+    /* @__PURE__ */ import_react13.default.createElement(ChevronLeft, { style: { width: "1rem", height: "1rem" } }),
     "Back"
-  ), /* @__PURE__ */ import_react12.default.createElement(
+  ), /* @__PURE__ */ import_react13.default.createElement(
     "div",
     {
       role: "button",
@@ -37253,13 +37470,13 @@ function CharacterWizard({ app, modal, editingChar }) {
       }
     },
     currentStep === STEPS.length - 1 ? "Complete Character" : "Next",
-    currentStep !== STEPS.length - 1 && /* @__PURE__ */ import_react12.default.createElement(ChevronRight, { style: { width: "1rem", height: "1rem" } })
+    currentStep !== STEPS.length - 1 && /* @__PURE__ */ import_react13.default.createElement(ChevronRight, { style: { width: "1rem", height: "1rem" } })
   )))));
 }
-var import_react12, import_obsidian3, STEPS, STORAGE_FILE2, DEFAULT_VALUES;
+var import_react13, import_obsidian3, STEPS, STORAGE_FILE2, DEFAULT_VALUES;
 var init_CharacterWizard = __esm({
   "src/app/components/CharacterWizard.tsx"() {
-    import_react12 = __toESM(require_react());
+    import_react13 = __toESM(require_react());
     init_index_esm();
     init_zod();
     import_obsidian3 = require("obsidian");
@@ -37279,7 +37496,7 @@ var init_CharacterWizard = __esm({
       { id: "race", title: "Race", icon: Wand, description: "Choose your lineage" },
       { id: "class", title: "Class", icon: Shield, description: "Choose your calling" },
       { id: "details", title: "Background", icon: ScrollText, description: "Origin and alignment" },
-      { id: "stats", title: "Stats", icon: BarChart, description: "Define your abilities" },
+      { id: "stats", title: "Stats", icon: ChartNoAxesColumnIncreasing, description: "Define your abilities" },
       { id: "skills", title: "Skills", icon: BookOpen, description: "Skill proficiencies" },
       { id: "spells", title: "Spells", icon: BookOpen, description: "Cantrips and magic" },
       { id: "review", title: "Review", icon: CircleCheck, description: "Finalize character" }
@@ -37311,2718 +37528,6 @@ var init_CharacterWizard = __esm({
   }
 });
 
-// src/app/components/ui/card.tsx
-var React18, Card, CardHeader, CardTitle, CardDescription, CardAction, CardContent, CardFooter;
-var init_card = __esm({
-  "src/app/components/ui/card.tsx"() {
-    React18 = __toESM(require_react());
-    init_utils2();
-    Card = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
-      "div",
-      {
-        ref,
-        "data-slot": "card",
-        className: cn(
-          "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border",
-          className
-        ),
-        ...props
-      }
-    ));
-    Card.displayName = "Card";
-    CardHeader = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
-      "div",
-      {
-        ref,
-        "data-slot": "card-header",
-        className: cn(
-          "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
-          className
-        ),
-        ...props
-      }
-    ));
-    CardHeader.displayName = "CardHeader";
-    CardTitle = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
-      "h4",
-      {
-        ref,
-        "data-slot": "card-title",
-        className: cn("leading-none", className),
-        ...props
-      }
-    ));
-    CardTitle.displayName = "CardTitle";
-    CardDescription = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
-      "p",
-      {
-        ref,
-        "data-slot": "card-description",
-        className: cn("text-muted-foreground", className),
-        ...props
-      }
-    ));
-    CardDescription.displayName = "CardDescription";
-    CardAction = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
-      "div",
-      {
-        ref,
-        "data-slot": "card-action",
-        className: cn(
-          "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
-          className
-        ),
-        ...props
-      }
-    ));
-    CardAction.displayName = "CardAction";
-    CardContent = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
-      "div",
-      {
-        ref,
-        "data-slot": "card-content",
-        className: cn("px-6 [&:last-child]:pb-6", className),
-        ...props
-      }
-    ));
-    CardContent.displayName = "CardContent";
-    CardFooter = React18.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React18.createElement(
-      "div",
-      {
-        ref,
-        "data-slot": "card-footer",
-        className: cn("flex items-center px-6 pb-6 [.border-t]:pt-6", className),
-        ...props
-      }
-    ));
-    CardFooter.displayName = "CardFooter";
-  }
-});
-
-// node_modules/class-variance-authority/dist/index.mjs
-var falsyToString, cx, cva;
-var init_dist5 = __esm({
-  "node_modules/class-variance-authority/dist/index.mjs"() {
-    init_clsx();
-    falsyToString = (value) => typeof value === "boolean" ? `${value}` : value === 0 ? "0" : value;
-    cx = clsx;
-    cva = (base, config) => (props) => {
-      var _config_compoundVariants;
-      if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
-      const { variants, defaultVariants } = config;
-      const getVariantClassNames = Object.keys(variants).map((variant) => {
-        const variantProp = props === null || props === void 0 ? void 0 : props[variant];
-        const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
-        if (variantProp === null) return null;
-        const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
-        return variants[variant][variantKey];
-      });
-      const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param) => {
-        let [key, value] = param;
-        if (value === void 0) {
-          return acc;
-        }
-        acc[key] = value;
-        return acc;
-      }, {});
-      const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (_config_compoundVariants = config.compoundVariants) === null || _config_compoundVariants === void 0 ? void 0 : _config_compoundVariants.reduce((acc, param) => {
-        let { class: cvClass, className: cvClassName, ...compoundVariantOptions } = param;
-        return Object.entries(compoundVariantOptions).every((param2) => {
-          let [key, value] = param2;
-          return Array.isArray(value) ? value.includes({
-            ...defaultVariants,
-            ...propsWithoutUndefined
-          }[key]) : {
-            ...defaultVariants,
-            ...propsWithoutUndefined
-          }[key] === value;
-        }) ? [
-          ...acc,
-          cvClass,
-          cvClassName
-        ] : acc;
-      }, []);
-      return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
-    };
-  }
-});
-
-// src/app/components/ui/button.tsx
-var React19, buttonVariants, Button;
-var init_button = __esm({
-  "src/app/components/ui/button.tsx"() {
-    React19 = __toESM(require_react());
-    init_dist2();
-    init_dist5();
-    init_utils2();
-    buttonVariants = cva(
-      "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-      {
-        variants: {
-          variant: {
-            default: "bg-primary text-primary-foreground hover:bg-primary/90",
-            destructive: "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-            outline: "border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-            secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-            ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-            link: "text-primary underline-offset-4 hover:underline"
-          },
-          size: {
-            default: "h-9 px-4 py-2 has-[>svg]:px-3",
-            sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-            lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-            icon: "size-9 rounded-md"
-          }
-        },
-        defaultVariants: {
-          variant: "default",
-          size: "default"
-        }
-      }
-    );
-    Button = React19.forwardRef(({ className, variant, size, asChild = false, ...props }, ref) => {
-      const Comp = asChild ? Slot : "button";
-      return /* @__PURE__ */ React19.createElement(
-        Comp,
-        {
-          "data-slot": "button",
-          ref,
-          className: cn(buttonVariants({ variant, size, className })),
-          ...props
-        }
-      );
-    });
-    Button.displayName = "Button";
-  }
-});
-
-// src/app/components/ui/badge.tsx
-function Badge({
-  className,
-  variant,
-  asChild = false,
-  ...props
-}) {
-  const Comp = asChild ? Slot : "span";
-  return /* @__PURE__ */ React20.createElement(
-    Comp,
-    {
-      "data-slot": "badge",
-      className: cn(badgeVariants({ variant }), className),
-      ...props
-    }
-  );
-}
-var React20, badgeVariants;
-var init_badge = __esm({
-  "src/app/components/ui/badge.tsx"() {
-    React20 = __toESM(require_react());
-    init_dist2();
-    init_dist5();
-    init_utils2();
-    badgeVariants = cva(
-      "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
-      {
-        variants: {
-          variant: {
-            default: "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
-            secondary: "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-            destructive: "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-            outline: "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground"
-          }
-        },
-        defaultVariants: {
-          variant: "default"
-        }
-      }
-    );
-  }
-});
-
-// node_modules/@radix-ui/primitive/dist/index.mjs
-function composeEventHandlers(originalEventHandler, ourEventHandler, { checkForDefaultPrevented = true } = {}) {
-  return function handleEvent(event) {
-    originalEventHandler?.(event);
-    if (checkForDefaultPrevented === false || !event.defaultPrevented) {
-      return ourEventHandler?.(event);
-    }
-  };
-}
-var canUseDOM;
-var init_dist6 = __esm({
-  "node_modules/@radix-ui/primitive/dist/index.mjs"() {
-    canUseDOM = !!(typeof window !== "undefined" && window.document && window.document.createElement);
-  }
-});
-
-// node_modules/@radix-ui/react-context/dist/index.mjs
-function createContext22(rootComponentName, defaultContext) {
-  const Context = React21.createContext(defaultContext);
-  const Provider = (props) => {
-    const { children, ...context } = props;
-    const value = React21.useMemo(() => context, Object.values(context));
-    return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Context.Provider, { value, children });
-  };
-  Provider.displayName = rootComponentName + "Provider";
-  function useContext22(consumerName) {
-    const context = React21.useContext(Context);
-    if (context) return context;
-    if (defaultContext !== void 0) return defaultContext;
-    throw new Error(`\`${consumerName}\` must be used within \`${rootComponentName}\``);
-  }
-  return [Provider, useContext22];
-}
-function createContextScope(scopeName, createContextScopeDeps = []) {
-  let defaultContexts = [];
-  function createContext32(rootComponentName, defaultContext) {
-    const BaseContext = React21.createContext(defaultContext);
-    const index = defaultContexts.length;
-    defaultContexts = [...defaultContexts, defaultContext];
-    const Provider = (props) => {
-      const { scope, children, ...context } = props;
-      const Context = scope?.[scopeName]?.[index] || BaseContext;
-      const value = React21.useMemo(() => context, Object.values(context));
-      return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Context.Provider, { value, children });
-    };
-    Provider.displayName = rootComponentName + "Provider";
-    function useContext22(consumerName, scope) {
-      const Context = scope?.[scopeName]?.[index] || BaseContext;
-      const context = React21.useContext(Context);
-      if (context) return context;
-      if (defaultContext !== void 0) return defaultContext;
-      throw new Error(`\`${consumerName}\` must be used within \`${rootComponentName}\``);
-    }
-    return [Provider, useContext22];
-  }
-  const createScope = () => {
-    const scopeContexts = defaultContexts.map((defaultContext) => {
-      return React21.createContext(defaultContext);
-    });
-    return function useScope(scope) {
-      const contexts = scope?.[scopeName] || scopeContexts;
-      return React21.useMemo(
-        () => ({ [`__scope${scopeName}`]: { ...scope, [scopeName]: contexts } }),
-        [scope, contexts]
-      );
-    };
-  };
-  createScope.scopeName = scopeName;
-  return [createContext32, composeContextScopes(createScope, ...createContextScopeDeps)];
-}
-function composeContextScopes(...scopes) {
-  const baseScope = scopes[0];
-  if (scopes.length === 1) return baseScope;
-  const createScope = () => {
-    const scopeHooks = scopes.map((createScope2) => ({
-      useScope: createScope2(),
-      scopeName: createScope2.scopeName
-    }));
-    return function useComposedScopes(overrideScopes) {
-      const nextScopes = scopeHooks.reduce((nextScopes2, { useScope, scopeName }) => {
-        const scopeProps = useScope(overrideScopes);
-        const currentScope = scopeProps[`__scope${scopeName}`];
-        return { ...nextScopes2, ...currentScope };
-      }, {});
-      return React21.useMemo(() => ({ [`__scope${baseScope.scopeName}`]: nextScopes }), [nextScopes]);
-    };
-  };
-  createScope.scopeName = baseScope.scopeName;
-  return createScope;
-}
-var React21, import_jsx_runtime4;
-var init_dist7 = __esm({
-  "node_modules/@radix-ui/react-context/dist/index.mjs"() {
-    React21 = __toESM(require_react(), 1);
-    import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
-  }
-});
-
-// node_modules/@radix-ui/react-use-layout-effect/dist/index.mjs
-var React22, useLayoutEffect2;
-var init_dist8 = __esm({
-  "node_modules/@radix-ui/react-use-layout-effect/dist/index.mjs"() {
-    React22 = __toESM(require_react(), 1);
-    useLayoutEffect2 = globalThis?.document ? React22.useLayoutEffect : () => {
-    };
-  }
-});
-
-// node_modules/@radix-ui/react-id/dist/index.mjs
-function useId2(deterministicId) {
-  const [id, setId] = React23.useState(useReactId());
-  useLayoutEffect2(() => {
-    if (!deterministicId) setId((reactId) => reactId ?? String(count++));
-  }, [deterministicId]);
-  return deterministicId || (id ? `radix-${id}` : "");
-}
-var React23, useReactId, count;
-var init_dist9 = __esm({
-  "node_modules/@radix-ui/react-id/dist/index.mjs"() {
-    React23 = __toESM(require_react(), 1);
-    init_dist8();
-    useReactId = React23[" useId ".trim().toString()] || (() => void 0);
-    count = 0;
-  }
-});
-
-// node_modules/@radix-ui/react-use-controllable-state/dist/index.mjs
-function useControllableState({
-  prop,
-  defaultProp,
-  onChange = () => {
-  },
-  caller
-}) {
-  const [uncontrolledProp, setUncontrolledProp, onChangeRef] = useUncontrolledState({
-    defaultProp,
-    onChange
-  });
-  const isControlled = prop !== void 0;
-  const value = isControlled ? prop : uncontrolledProp;
-  if (true) {
-    const isControlledRef = React24.useRef(prop !== void 0);
-    React24.useEffect(() => {
-      const wasControlled = isControlledRef.current;
-      if (wasControlled !== isControlled) {
-        const from = wasControlled ? "controlled" : "uncontrolled";
-        const to = isControlled ? "controlled" : "uncontrolled";
-        console.warn(
-          `${caller} is changing from ${from} to ${to}. Components should not switch from controlled to uncontrolled (or vice versa). Decide between using a controlled or uncontrolled value for the lifetime of the component.`
-        );
-      }
-      isControlledRef.current = isControlled;
-    }, [isControlled, caller]);
-  }
-  const setValue = React24.useCallback(
-    (nextValue) => {
-      if (isControlled) {
-        const value2 = isFunction2(nextValue) ? nextValue(prop) : nextValue;
-        if (value2 !== prop) {
-          onChangeRef.current?.(value2);
-        }
-      } else {
-        setUncontrolledProp(nextValue);
-      }
-    },
-    [isControlled, prop, setUncontrolledProp, onChangeRef]
-  );
-  return [value, setValue];
-}
-function useUncontrolledState({
-  defaultProp,
-  onChange
-}) {
-  const [value, setValue] = React24.useState(defaultProp);
-  const prevValueRef = React24.useRef(value);
-  const onChangeRef = React24.useRef(onChange);
-  useInsertionEffect(() => {
-    onChangeRef.current = onChange;
-  }, [onChange]);
-  React24.useEffect(() => {
-    if (prevValueRef.current !== value) {
-      onChangeRef.current?.(value);
-      prevValueRef.current = value;
-    }
-  }, [value, prevValueRef]);
-  return [value, setValue, onChangeRef];
-}
-function isFunction2(value) {
-  return typeof value === "function";
-}
-var React24, React25, useInsertionEffect;
-var init_dist10 = __esm({
-  "node_modules/@radix-ui/react-use-controllable-state/dist/index.mjs"() {
-    React24 = __toESM(require_react(), 1);
-    init_dist8();
-    React25 = __toESM(require_react(), 1);
-    useInsertionEffect = React24[" useInsertionEffect ".trim().toString()] || useLayoutEffect2;
-  }
-});
-
-// node_modules/@radix-ui/react-primitive/node_modules/@radix-ui/react-slot/dist/index.mjs
-// @__NO_SIDE_EFFECTS__
-function createSlot2(ownerName) {
-  const SlotClone = /* @__PURE__ */ createSlotClone2(ownerName);
-  const Slot22 = React26.forwardRef((props, forwardedRef) => {
-    const { children, ...slotProps } = props;
-    const childrenArray = React26.Children.toArray(children);
-    const slottable = childrenArray.find(isSlottable2);
-    if (slottable) {
-      const newElement = slottable.props.children;
-      const newChildren = childrenArray.map((child) => {
-        if (child === slottable) {
-          if (React26.Children.count(newElement) > 1) return React26.Children.only(null);
-          return React26.isValidElement(newElement) ? newElement.props.children : null;
-        } else {
-          return child;
-        }
-      });
-      return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SlotClone, { ...slotProps, ref: forwardedRef, children: React26.isValidElement(newElement) ? React26.cloneElement(newElement, void 0, newChildren) : null });
-    }
-    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SlotClone, { ...slotProps, ref: forwardedRef, children });
-  });
-  Slot22.displayName = `${ownerName}.Slot`;
-  return Slot22;
-}
-// @__NO_SIDE_EFFECTS__
-function createSlotClone2(ownerName) {
-  const SlotClone = React26.forwardRef((props, forwardedRef) => {
-    const { children, ...slotProps } = props;
-    if (React26.isValidElement(children)) {
-      const childrenRef = getElementRef2(children);
-      const props2 = mergeProps2(slotProps, children.props);
-      if (children.type !== React26.Fragment) {
-        props2.ref = forwardedRef ? composeRefs(forwardedRef, childrenRef) : childrenRef;
-      }
-      return React26.cloneElement(children, props2);
-    }
-    return React26.Children.count(children) > 1 ? React26.Children.only(null) : null;
-  });
-  SlotClone.displayName = `${ownerName}.SlotClone`;
-  return SlotClone;
-}
-function isSlottable2(child) {
-  return React26.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER2;
-}
-function mergeProps2(slotProps, childProps) {
-  const overrideProps = { ...childProps };
-  for (const propName in childProps) {
-    const slotPropValue = slotProps[propName];
-    const childPropValue = childProps[propName];
-    const isHandler = /^on[A-Z]/.test(propName);
-    if (isHandler) {
-      if (slotPropValue && childPropValue) {
-        overrideProps[propName] = (...args) => {
-          const result = childPropValue(...args);
-          slotPropValue(...args);
-          return result;
-        };
-      } else if (slotPropValue) {
-        overrideProps[propName] = slotPropValue;
-      }
-    } else if (propName === "style") {
-      overrideProps[propName] = { ...slotPropValue, ...childPropValue };
-    } else if (propName === "className") {
-      overrideProps[propName] = [slotPropValue, childPropValue].filter(Boolean).join(" ");
-    }
-  }
-  return { ...slotProps, ...overrideProps };
-}
-function getElementRef2(element) {
-  let getter = Object.getOwnPropertyDescriptor(element.props, "ref")?.get;
-  let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.ref;
-  }
-  getter = Object.getOwnPropertyDescriptor(element, "ref")?.get;
-  mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.props.ref;
-  }
-  return element.props.ref || element.ref;
-}
-var React26, import_jsx_runtime5, SLOTTABLE_IDENTIFIER2;
-var init_dist11 = __esm({
-  "node_modules/@radix-ui/react-primitive/node_modules/@radix-ui/react-slot/dist/index.mjs"() {
-    React26 = __toESM(require_react(), 1);
-    init_dist();
-    import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
-    SLOTTABLE_IDENTIFIER2 = /* @__PURE__ */ Symbol("radix.slottable");
-  }
-});
-
-// node_modules/@radix-ui/react-primitive/dist/index.mjs
-function dispatchDiscreteCustomEvent(target, event) {
-  if (target) ReactDOM2.flushSync(() => target.dispatchEvent(event));
-}
-var React27, ReactDOM2, import_jsx_runtime6, NODES2, Primitive2;
-var init_dist12 = __esm({
-  "node_modules/@radix-ui/react-primitive/dist/index.mjs"() {
-    React27 = __toESM(require_react(), 1);
-    ReactDOM2 = __toESM(require_react_dom(), 1);
-    init_dist11();
-    import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
-    NODES2 = [
-      "a",
-      "button",
-      "div",
-      "form",
-      "h2",
-      "h3",
-      "img",
-      "input",
-      "label",
-      "li",
-      "nav",
-      "ol",
-      "p",
-      "select",
-      "span",
-      "svg",
-      "ul"
-    ];
-    Primitive2 = NODES2.reduce((primitive, node) => {
-      const Slot3 = createSlot2(`Primitive.${node}`);
-      const Node2 = React27.forwardRef((props, forwardedRef) => {
-        const { asChild, ...primitiveProps } = props;
-        const Comp = asChild ? Slot3 : node;
-        if (typeof window !== "undefined") {
-          window[/* @__PURE__ */ Symbol.for("radix-ui")] = true;
-        }
-        return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Comp, { ...primitiveProps, ref: forwardedRef });
-      });
-      Node2.displayName = `Primitive.${node}`;
-      return { ...primitive, [node]: Node2 };
-    }, {});
-  }
-});
-
-// node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs
-function useCallbackRef(callback) {
-  const callbackRef = React28.useRef(callback);
-  React28.useEffect(() => {
-    callbackRef.current = callback;
-  });
-  return React28.useMemo(() => (...args) => callbackRef.current?.(...args), []);
-}
-var React28;
-var init_dist13 = __esm({
-  "node_modules/@radix-ui/react-use-callback-ref/dist/index.mjs"() {
-    React28 = __toESM(require_react(), 1);
-  }
-});
-
-// node_modules/@radix-ui/react-use-escape-keydown/dist/index.mjs
-function useEscapeKeydown(onEscapeKeyDownProp, ownerDocument = globalThis?.document) {
-  const onEscapeKeyDown = useCallbackRef(onEscapeKeyDownProp);
-  React29.useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        onEscapeKeyDown(event);
-      }
-    };
-    ownerDocument.addEventListener("keydown", handleKeyDown, { capture: true });
-    return () => ownerDocument.removeEventListener("keydown", handleKeyDown, { capture: true });
-  }, [onEscapeKeyDown, ownerDocument]);
-}
-var React29;
-var init_dist14 = __esm({
-  "node_modules/@radix-ui/react-use-escape-keydown/dist/index.mjs"() {
-    React29 = __toESM(require_react(), 1);
-    init_dist13();
-  }
-});
-
-// node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs
-function usePointerDownOutside(onPointerDownOutside, ownerDocument = globalThis?.document) {
-  const handlePointerDownOutside = useCallbackRef(onPointerDownOutside);
-  const isPointerInsideReactTreeRef = React30.useRef(false);
-  const handleClickRef = React30.useRef(() => {
-  });
-  React30.useEffect(() => {
-    const handlePointerDown = (event) => {
-      if (event.target && !isPointerInsideReactTreeRef.current) {
-        let handleAndDispatchPointerDownOutsideEvent2 = function() {
-          handleAndDispatchCustomEvent(
-            POINTER_DOWN_OUTSIDE,
-            handlePointerDownOutside,
-            eventDetail,
-            { discrete: true }
-          );
-        };
-        var handleAndDispatchPointerDownOutsideEvent = handleAndDispatchPointerDownOutsideEvent2;
-        const eventDetail = { originalEvent: event };
-        if (event.pointerType === "touch") {
-          ownerDocument.removeEventListener("click", handleClickRef.current);
-          handleClickRef.current = handleAndDispatchPointerDownOutsideEvent2;
-          ownerDocument.addEventListener("click", handleClickRef.current, { once: true });
-        } else {
-          handleAndDispatchPointerDownOutsideEvent2();
-        }
-      } else {
-        ownerDocument.removeEventListener("click", handleClickRef.current);
-      }
-      isPointerInsideReactTreeRef.current = false;
-    };
-    const timerId = window.setTimeout(() => {
-      ownerDocument.addEventListener("pointerdown", handlePointerDown);
-    }, 0);
-    return () => {
-      window.clearTimeout(timerId);
-      ownerDocument.removeEventListener("pointerdown", handlePointerDown);
-      ownerDocument.removeEventListener("click", handleClickRef.current);
-    };
-  }, [ownerDocument, handlePointerDownOutside]);
-  return {
-    // ensures we check React component tree (not just DOM tree)
-    onPointerDownCapture: () => isPointerInsideReactTreeRef.current = true
-  };
-}
-function useFocusOutside(onFocusOutside, ownerDocument = globalThis?.document) {
-  const handleFocusOutside = useCallbackRef(onFocusOutside);
-  const isFocusInsideReactTreeRef = React30.useRef(false);
-  React30.useEffect(() => {
-    const handleFocus = (event) => {
-      if (event.target && !isFocusInsideReactTreeRef.current) {
-        const eventDetail = { originalEvent: event };
-        handleAndDispatchCustomEvent(FOCUS_OUTSIDE, handleFocusOutside, eventDetail, {
-          discrete: false
-        });
-      }
-    };
-    ownerDocument.addEventListener("focusin", handleFocus);
-    return () => ownerDocument.removeEventListener("focusin", handleFocus);
-  }, [ownerDocument, handleFocusOutside]);
-  return {
-    onFocusCapture: () => isFocusInsideReactTreeRef.current = true,
-    onBlurCapture: () => isFocusInsideReactTreeRef.current = false
-  };
-}
-function dispatchUpdate() {
-  const event = new CustomEvent(CONTEXT_UPDATE);
-  document.dispatchEvent(event);
-}
-function handleAndDispatchCustomEvent(name, handler, detail, { discrete }) {
-  const target = detail.originalEvent.target;
-  const event = new CustomEvent(name, { bubbles: false, cancelable: true, detail });
-  if (handler) target.addEventListener(name, handler, { once: true });
-  if (discrete) {
-    dispatchDiscreteCustomEvent(target, event);
-  } else {
-    target.dispatchEvent(event);
-  }
-}
-var React30, import_jsx_runtime7, DISMISSABLE_LAYER_NAME, CONTEXT_UPDATE, POINTER_DOWN_OUTSIDE, FOCUS_OUTSIDE, originalBodyPointerEvents, DismissableLayerContext, DismissableLayer, BRANCH_NAME, DismissableLayerBranch;
-var init_dist15 = __esm({
-  "node_modules/@radix-ui/react-dismissable-layer/dist/index.mjs"() {
-    "use client";
-    React30 = __toESM(require_react(), 1);
-    init_dist6();
-    init_dist12();
-    init_dist();
-    init_dist13();
-    init_dist14();
-    import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
-    DISMISSABLE_LAYER_NAME = "DismissableLayer";
-    CONTEXT_UPDATE = "dismissableLayer.update";
-    POINTER_DOWN_OUTSIDE = "dismissableLayer.pointerDownOutside";
-    FOCUS_OUTSIDE = "dismissableLayer.focusOutside";
-    DismissableLayerContext = React30.createContext({
-      layers: /* @__PURE__ */ new Set(),
-      layersWithOutsidePointerEventsDisabled: /* @__PURE__ */ new Set(),
-      branches: /* @__PURE__ */ new Set()
-    });
-    DismissableLayer = React30.forwardRef(
-      (props, forwardedRef) => {
-        const {
-          disableOutsidePointerEvents = false,
-          onEscapeKeyDown,
-          onPointerDownOutside,
-          onFocusOutside,
-          onInteractOutside,
-          onDismiss,
-          ...layerProps
-        } = props;
-        const context = React30.useContext(DismissableLayerContext);
-        const [node, setNode] = React30.useState(null);
-        const ownerDocument = node?.ownerDocument ?? globalThis?.document;
-        const [, force] = React30.useState({});
-        const composedRefs = useComposedRefs(forwardedRef, (node2) => setNode(node2));
-        const layers = Array.from(context.layers);
-        const [highestLayerWithOutsidePointerEventsDisabled] = [...context.layersWithOutsidePointerEventsDisabled].slice(-1);
-        const highestLayerWithOutsidePointerEventsDisabledIndex = layers.indexOf(highestLayerWithOutsidePointerEventsDisabled);
-        const index = node ? layers.indexOf(node) : -1;
-        const isBodyPointerEventsDisabled = context.layersWithOutsidePointerEventsDisabled.size > 0;
-        const isPointerEventsEnabled = index >= highestLayerWithOutsidePointerEventsDisabledIndex;
-        const pointerDownOutside = usePointerDownOutside((event) => {
-          const target = event.target;
-          const isPointerDownOnBranch = [...context.branches].some((branch) => branch.contains(target));
-          if (!isPointerEventsEnabled || isPointerDownOnBranch) return;
-          onPointerDownOutside?.(event);
-          onInteractOutside?.(event);
-          if (!event.defaultPrevented) onDismiss?.();
-        }, ownerDocument);
-        const focusOutside = useFocusOutside((event) => {
-          const target = event.target;
-          const isFocusInBranch = [...context.branches].some((branch) => branch.contains(target));
-          if (isFocusInBranch) return;
-          onFocusOutside?.(event);
-          onInteractOutside?.(event);
-          if (!event.defaultPrevented) onDismiss?.();
-        }, ownerDocument);
-        useEscapeKeydown((event) => {
-          const isHighestLayer = index === context.layers.size - 1;
-          if (!isHighestLayer) return;
-          onEscapeKeyDown?.(event);
-          if (!event.defaultPrevented && onDismiss) {
-            event.preventDefault();
-            onDismiss();
-          }
-        }, ownerDocument);
-        React30.useEffect(() => {
-          if (!node) return;
-          if (disableOutsidePointerEvents) {
-            if (context.layersWithOutsidePointerEventsDisabled.size === 0) {
-              originalBodyPointerEvents = ownerDocument.body.style.pointerEvents;
-              ownerDocument.body.style.pointerEvents = "none";
-            }
-            context.layersWithOutsidePointerEventsDisabled.add(node);
-          }
-          context.layers.add(node);
-          dispatchUpdate();
-          return () => {
-            if (disableOutsidePointerEvents && context.layersWithOutsidePointerEventsDisabled.size === 1) {
-              ownerDocument.body.style.pointerEvents = originalBodyPointerEvents;
-            }
-          };
-        }, [node, ownerDocument, disableOutsidePointerEvents, context]);
-        React30.useEffect(() => {
-          return () => {
-            if (!node) return;
-            context.layers.delete(node);
-            context.layersWithOutsidePointerEventsDisabled.delete(node);
-            dispatchUpdate();
-          };
-        }, [node, context]);
-        React30.useEffect(() => {
-          const handleUpdate = () => force({});
-          document.addEventListener(CONTEXT_UPDATE, handleUpdate);
-          return () => document.removeEventListener(CONTEXT_UPDATE, handleUpdate);
-        }, []);
-        return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
-          Primitive2.div,
-          {
-            ...layerProps,
-            ref: composedRefs,
-            style: {
-              pointerEvents: isBodyPointerEventsDisabled ? isPointerEventsEnabled ? "auto" : "none" : void 0,
-              ...props.style
-            },
-            onFocusCapture: composeEventHandlers(props.onFocusCapture, focusOutside.onFocusCapture),
-            onBlurCapture: composeEventHandlers(props.onBlurCapture, focusOutside.onBlurCapture),
-            onPointerDownCapture: composeEventHandlers(
-              props.onPointerDownCapture,
-              pointerDownOutside.onPointerDownCapture
-            )
-          }
-        );
-      }
-    );
-    DismissableLayer.displayName = DISMISSABLE_LAYER_NAME;
-    BRANCH_NAME = "DismissableLayerBranch";
-    DismissableLayerBranch = React30.forwardRef((props, forwardedRef) => {
-      const context = React30.useContext(DismissableLayerContext);
-      const ref = React30.useRef(null);
-      const composedRefs = useComposedRefs(forwardedRef, ref);
-      React30.useEffect(() => {
-        const node = ref.current;
-        if (node) {
-          context.branches.add(node);
-          return () => {
-            context.branches.delete(node);
-          };
-        }
-      }, [context.branches]);
-      return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Primitive2.div, { ...props, ref: composedRefs });
-    });
-    DismissableLayerBranch.displayName = BRANCH_NAME;
-  }
-});
-
-// node_modules/@radix-ui/react-focus-scope/dist/index.mjs
-function focusFirst(candidates, { select = false } = {}) {
-  const previouslyFocusedElement = document.activeElement;
-  for (const candidate of candidates) {
-    focus(candidate, { select });
-    if (document.activeElement !== previouslyFocusedElement) return;
-  }
-}
-function getTabbableEdges(container) {
-  const candidates = getTabbableCandidates(container);
-  const first = findVisible(candidates, container);
-  const last = findVisible(candidates.reverse(), container);
-  return [first, last];
-}
-function getTabbableCandidates(container) {
-  const nodes = [];
-  const walker = document.createTreeWalker(container, NodeFilter.SHOW_ELEMENT, {
-    acceptNode: (node) => {
-      const isHiddenInput = node.tagName === "INPUT" && node.type === "hidden";
-      if (node.disabled || node.hidden || isHiddenInput) return NodeFilter.FILTER_SKIP;
-      return node.tabIndex >= 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
-    }
-  });
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-  return nodes;
-}
-function findVisible(elements, container) {
-  for (const element of elements) {
-    if (!isHidden(element, { upTo: container })) return element;
-  }
-}
-function isHidden(node, { upTo }) {
-  if (getComputedStyle(node).visibility === "hidden") return true;
-  while (node) {
-    if (upTo !== void 0 && node === upTo) return false;
-    if (getComputedStyle(node).display === "none") return true;
-    node = node.parentElement;
-  }
-  return false;
-}
-function isSelectableInput(element) {
-  return element instanceof HTMLInputElement && "select" in element;
-}
-function focus(element, { select = false } = {}) {
-  if (element && element.focus) {
-    const previouslyFocusedElement = document.activeElement;
-    element.focus({ preventScroll: true });
-    if (element !== previouslyFocusedElement && isSelectableInput(element) && select)
-      element.select();
-  }
-}
-function createFocusScopesStack() {
-  let stack = [];
-  return {
-    add(focusScope) {
-      const activeFocusScope = stack[0];
-      if (focusScope !== activeFocusScope) {
-        activeFocusScope?.pause();
-      }
-      stack = arrayRemove(stack, focusScope);
-      stack.unshift(focusScope);
-    },
-    remove(focusScope) {
-      stack = arrayRemove(stack, focusScope);
-      stack[0]?.resume();
-    }
-  };
-}
-function arrayRemove(array, item) {
-  const updatedArray = [...array];
-  const index = updatedArray.indexOf(item);
-  if (index !== -1) {
-    updatedArray.splice(index, 1);
-  }
-  return updatedArray;
-}
-function removeLinks(items) {
-  return items.filter((item) => item.tagName !== "A");
-}
-var React31, import_jsx_runtime8, AUTOFOCUS_ON_MOUNT, AUTOFOCUS_ON_UNMOUNT, EVENT_OPTIONS, FOCUS_SCOPE_NAME, FocusScope, focusScopesStack;
-var init_dist16 = __esm({
-  "node_modules/@radix-ui/react-focus-scope/dist/index.mjs"() {
-    "use client";
-    React31 = __toESM(require_react(), 1);
-    init_dist();
-    init_dist12();
-    init_dist13();
-    import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
-    AUTOFOCUS_ON_MOUNT = "focusScope.autoFocusOnMount";
-    AUTOFOCUS_ON_UNMOUNT = "focusScope.autoFocusOnUnmount";
-    EVENT_OPTIONS = { bubbles: false, cancelable: true };
-    FOCUS_SCOPE_NAME = "FocusScope";
-    FocusScope = React31.forwardRef((props, forwardedRef) => {
-      const {
-        loop = false,
-        trapped = false,
-        onMountAutoFocus: onMountAutoFocusProp,
-        onUnmountAutoFocus: onUnmountAutoFocusProp,
-        ...scopeProps
-      } = props;
-      const [container, setContainer] = React31.useState(null);
-      const onMountAutoFocus = useCallbackRef(onMountAutoFocusProp);
-      const onUnmountAutoFocus = useCallbackRef(onUnmountAutoFocusProp);
-      const lastFocusedElementRef = React31.useRef(null);
-      const composedRefs = useComposedRefs(forwardedRef, (node) => setContainer(node));
-      const focusScope = React31.useRef({
-        paused: false,
-        pause() {
-          this.paused = true;
-        },
-        resume() {
-          this.paused = false;
-        }
-      }).current;
-      React31.useEffect(() => {
-        if (trapped) {
-          let handleFocusIn2 = function(event) {
-            if (focusScope.paused || !container) return;
-            const target = event.target;
-            if (container.contains(target)) {
-              lastFocusedElementRef.current = target;
-            } else {
-              focus(lastFocusedElementRef.current, { select: true });
-            }
-          }, handleFocusOut2 = function(event) {
-            if (focusScope.paused || !container) return;
-            const relatedTarget = event.relatedTarget;
-            if (relatedTarget === null) return;
-            if (!container.contains(relatedTarget)) {
-              focus(lastFocusedElementRef.current, { select: true });
-            }
-          }, handleMutations2 = function(mutations) {
-            const focusedElement = document.activeElement;
-            if (focusedElement !== document.body) return;
-            for (const mutation of mutations) {
-              if (mutation.removedNodes.length > 0) focus(container);
-            }
-          };
-          var handleFocusIn = handleFocusIn2, handleFocusOut = handleFocusOut2, handleMutations = handleMutations2;
-          document.addEventListener("focusin", handleFocusIn2);
-          document.addEventListener("focusout", handleFocusOut2);
-          const mutationObserver = new MutationObserver(handleMutations2);
-          if (container) mutationObserver.observe(container, { childList: true, subtree: true });
-          return () => {
-            document.removeEventListener("focusin", handleFocusIn2);
-            document.removeEventListener("focusout", handleFocusOut2);
-            mutationObserver.disconnect();
-          };
-        }
-      }, [trapped, container, focusScope.paused]);
-      React31.useEffect(() => {
-        if (container) {
-          focusScopesStack.add(focusScope);
-          const previouslyFocusedElement = document.activeElement;
-          const hasFocusedCandidate = container.contains(previouslyFocusedElement);
-          if (!hasFocusedCandidate) {
-            const mountEvent = new CustomEvent(AUTOFOCUS_ON_MOUNT, EVENT_OPTIONS);
-            container.addEventListener(AUTOFOCUS_ON_MOUNT, onMountAutoFocus);
-            container.dispatchEvent(mountEvent);
-            if (!mountEvent.defaultPrevented) {
-              focusFirst(removeLinks(getTabbableCandidates(container)), { select: true });
-              if (document.activeElement === previouslyFocusedElement) {
-                focus(container);
-              }
-            }
-          }
-          return () => {
-            container.removeEventListener(AUTOFOCUS_ON_MOUNT, onMountAutoFocus);
-            setTimeout(() => {
-              const unmountEvent = new CustomEvent(AUTOFOCUS_ON_UNMOUNT, EVENT_OPTIONS);
-              container.addEventListener(AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
-              container.dispatchEvent(unmountEvent);
-              if (!unmountEvent.defaultPrevented) {
-                focus(previouslyFocusedElement ?? document.body, { select: true });
-              }
-              container.removeEventListener(AUTOFOCUS_ON_UNMOUNT, onUnmountAutoFocus);
-              focusScopesStack.remove(focusScope);
-            }, 0);
-          };
-        }
-      }, [container, onMountAutoFocus, onUnmountAutoFocus, focusScope]);
-      const handleKeyDown = React31.useCallback(
-        (event) => {
-          if (!loop && !trapped) return;
-          if (focusScope.paused) return;
-          const isTabKey = event.key === "Tab" && !event.altKey && !event.ctrlKey && !event.metaKey;
-          const focusedElement = document.activeElement;
-          if (isTabKey && focusedElement) {
-            const container2 = event.currentTarget;
-            const [first, last] = getTabbableEdges(container2);
-            const hasTabbableElementsInside = first && last;
-            if (!hasTabbableElementsInside) {
-              if (focusedElement === container2) event.preventDefault();
-            } else {
-              if (!event.shiftKey && focusedElement === last) {
-                event.preventDefault();
-                if (loop) focus(first, { select: true });
-              } else if (event.shiftKey && focusedElement === first) {
-                event.preventDefault();
-                if (loop) focus(last, { select: true });
-              }
-            }
-          }
-        },
-        [loop, trapped, focusScope.paused]
-      );
-      return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(Primitive2.div, { tabIndex: -1, ...scopeProps, ref: composedRefs, onKeyDown: handleKeyDown });
-    });
-    FocusScope.displayName = FOCUS_SCOPE_NAME;
-    focusScopesStack = createFocusScopesStack();
-  }
-});
-
-// node_modules/@radix-ui/react-portal/dist/index.mjs
-var React32, import_react_dom, import_jsx_runtime9, PORTAL_NAME, Portal;
-var init_dist17 = __esm({
-  "node_modules/@radix-ui/react-portal/dist/index.mjs"() {
-    "use client";
-    React32 = __toESM(require_react(), 1);
-    import_react_dom = __toESM(require_react_dom(), 1);
-    init_dist12();
-    init_dist8();
-    import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
-    PORTAL_NAME = "Portal";
-    Portal = React32.forwardRef((props, forwardedRef) => {
-      const { container: containerProp, ...portalProps } = props;
-      const [mounted, setMounted] = React32.useState(false);
-      useLayoutEffect2(() => setMounted(true), []);
-      const container = containerProp || mounted && globalThis?.document?.body;
-      return container ? import_react_dom.default.createPortal(/* @__PURE__ */ (0, import_jsx_runtime9.jsx)(Primitive2.div, { ...portalProps, ref: forwardedRef }), container) : null;
-    });
-    Portal.displayName = PORTAL_NAME;
-  }
-});
-
-// node_modules/@radix-ui/react-presence/dist/index.mjs
-function useStateMachine(initialState, machine) {
-  return React33.useReducer((state, event) => {
-    const nextState = machine[state][event];
-    return nextState ?? state;
-  }, initialState);
-}
-function usePresence(present) {
-  const [node, setNode] = React210.useState();
-  const stylesRef = React210.useRef(null);
-  const prevPresentRef = React210.useRef(present);
-  const prevAnimationNameRef = React210.useRef("none");
-  const initialState = present ? "mounted" : "unmounted";
-  const [state, send] = useStateMachine(initialState, {
-    mounted: {
-      UNMOUNT: "unmounted",
-      ANIMATION_OUT: "unmountSuspended"
-    },
-    unmountSuspended: {
-      MOUNT: "mounted",
-      ANIMATION_END: "unmounted"
-    },
-    unmounted: {
-      MOUNT: "mounted"
-    }
-  });
-  React210.useEffect(() => {
-    const currentAnimationName = getAnimationName(stylesRef.current);
-    prevAnimationNameRef.current = state === "mounted" ? currentAnimationName : "none";
-  }, [state]);
-  useLayoutEffect2(() => {
-    const styles = stylesRef.current;
-    const wasPresent = prevPresentRef.current;
-    const hasPresentChanged = wasPresent !== present;
-    if (hasPresentChanged) {
-      const prevAnimationName = prevAnimationNameRef.current;
-      const currentAnimationName = getAnimationName(styles);
-      if (present) {
-        send("MOUNT");
-      } else if (currentAnimationName === "none" || styles?.display === "none") {
-        send("UNMOUNT");
-      } else {
-        const isAnimating = prevAnimationName !== currentAnimationName;
-        if (wasPresent && isAnimating) {
-          send("ANIMATION_OUT");
-        } else {
-          send("UNMOUNT");
-        }
-      }
-      prevPresentRef.current = present;
-    }
-  }, [present, send]);
-  useLayoutEffect2(() => {
-    if (node) {
-      let timeoutId;
-      const ownerWindow = node.ownerDocument.defaultView ?? window;
-      const handleAnimationEnd = (event) => {
-        const currentAnimationName = getAnimationName(stylesRef.current);
-        const isCurrentAnimation = currentAnimationName.includes(CSS.escape(event.animationName));
-        if (event.target === node && isCurrentAnimation) {
-          send("ANIMATION_END");
-          if (!prevPresentRef.current) {
-            const currentFillMode = node.style.animationFillMode;
-            node.style.animationFillMode = "forwards";
-            timeoutId = ownerWindow.setTimeout(() => {
-              if (node.style.animationFillMode === "forwards") {
-                node.style.animationFillMode = currentFillMode;
-              }
-            });
-          }
-        }
-      };
-      const handleAnimationStart = (event) => {
-        if (event.target === node) {
-          prevAnimationNameRef.current = getAnimationName(stylesRef.current);
-        }
-      };
-      node.addEventListener("animationstart", handleAnimationStart);
-      node.addEventListener("animationcancel", handleAnimationEnd);
-      node.addEventListener("animationend", handleAnimationEnd);
-      return () => {
-        ownerWindow.clearTimeout(timeoutId);
-        node.removeEventListener("animationstart", handleAnimationStart);
-        node.removeEventListener("animationcancel", handleAnimationEnd);
-        node.removeEventListener("animationend", handleAnimationEnd);
-      };
-    } else {
-      send("ANIMATION_END");
-    }
-  }, [node, send]);
-  return {
-    isPresent: ["mounted", "unmountSuspended"].includes(state),
-    ref: React210.useCallback((node2) => {
-      stylesRef.current = node2 ? getComputedStyle(node2) : null;
-      setNode(node2);
-    }, [])
-  };
-}
-function getAnimationName(styles) {
-  return styles?.animationName || "none";
-}
-function getElementRef3(element) {
-  let getter = Object.getOwnPropertyDescriptor(element.props, "ref")?.get;
-  let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.ref;
-  }
-  getter = Object.getOwnPropertyDescriptor(element, "ref")?.get;
-  mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.props.ref;
-  }
-  return element.props.ref || element.ref;
-}
-var React210, React33, Presence;
-var init_dist18 = __esm({
-  "node_modules/@radix-ui/react-presence/dist/index.mjs"() {
-    "use client";
-    React210 = __toESM(require_react(), 1);
-    init_dist();
-    init_dist8();
-    React33 = __toESM(require_react(), 1);
-    Presence = (props) => {
-      const { present, children } = props;
-      const presence = usePresence(present);
-      const child = typeof children === "function" ? children({ present: presence.isPresent }) : React210.Children.only(children);
-      const ref = useComposedRefs(presence.ref, getElementRef3(child));
-      const forceMount = typeof children === "function";
-      return forceMount || presence.isPresent ? React210.cloneElement(child, { ref }) : null;
-    };
-    Presence.displayName = "Presence";
-  }
-});
-
-// node_modules/@radix-ui/react-focus-guards/dist/index.mjs
-function useFocusGuards() {
-  React34.useEffect(() => {
-    const edgeGuards = document.querySelectorAll("[data-radix-focus-guard]");
-    document.body.insertAdjacentElement("afterbegin", edgeGuards[0] ?? createFocusGuard());
-    document.body.insertAdjacentElement("beforeend", edgeGuards[1] ?? createFocusGuard());
-    count2++;
-    return () => {
-      if (count2 === 1) {
-        document.querySelectorAll("[data-radix-focus-guard]").forEach((node) => node.remove());
-      }
-      count2--;
-    };
-  }, []);
-}
-function createFocusGuard() {
-  const element = document.createElement("span");
-  element.setAttribute("data-radix-focus-guard", "");
-  element.tabIndex = 0;
-  element.style.outline = "none";
-  element.style.opacity = "0";
-  element.style.position = "fixed";
-  element.style.pointerEvents = "none";
-  return element;
-}
-var React34, count2;
-var init_dist19 = __esm({
-  "node_modules/@radix-ui/react-focus-guards/dist/index.mjs"() {
-    "use client";
-    React34 = __toESM(require_react(), 1);
-    count2 = 0;
-  }
-});
-
-// node_modules/tslib/tslib.es6.mjs
-function __rest(s2, e) {
-  var t2 = {};
-  for (var p in s2) if (Object.prototype.hasOwnProperty.call(s2, p) && e.indexOf(p) < 0)
-    t2[p] = s2[p];
-  if (s2 != null && typeof Object.getOwnPropertySymbols === "function")
-    for (var i2 = 0, p = Object.getOwnPropertySymbols(s2); i2 < p.length; i2++) {
-      if (e.indexOf(p[i2]) < 0 && Object.prototype.propertyIsEnumerable.call(s2, p[i2]))
-        t2[p[i2]] = s2[p[i2]];
-    }
-  return t2;
-}
-function __spreadArray(to, from, pack) {
-  if (pack || arguments.length === 2) for (var i2 = 0, l = from.length, ar; i2 < l; i2++) {
-    if (ar || !(i2 in from)) {
-      if (!ar) ar = Array.prototype.slice.call(from, 0, i2);
-      ar[i2] = from[i2];
-    }
-  }
-  return to.concat(ar || Array.prototype.slice.call(from));
-}
-var __assign;
-var init_tslib_es6 = __esm({
-  "node_modules/tslib/tslib.es6.mjs"() {
-    __assign = function() {
-      __assign = Object.assign || function __assign2(t2) {
-        for (var s2, i2 = 1, n2 = arguments.length; i2 < n2; i2++) {
-          s2 = arguments[i2];
-          for (var p in s2) if (Object.prototype.hasOwnProperty.call(s2, p)) t2[p] = s2[p];
-        }
-        return t2;
-      };
-      return __assign.apply(this, arguments);
-    };
-  }
-});
-
-// node_modules/react-remove-scroll-bar/dist/es2015/constants.js
-var zeroRightClassName, fullWidthClassName, noScrollbarsClassName, removedBarSizeVariable;
-var init_constants = __esm({
-  "node_modules/react-remove-scroll-bar/dist/es2015/constants.js"() {
-    zeroRightClassName = "right-scroll-bar-position";
-    fullWidthClassName = "width-before-scroll-bar";
-    noScrollbarsClassName = "with-scroll-bars-hidden";
-    removedBarSizeVariable = "--removed-body-scroll-bar-size";
-  }
-});
-
-// node_modules/use-callback-ref/dist/es2015/assignRef.js
-function assignRef(ref, value) {
-  if (typeof ref === "function") {
-    ref(value);
-  } else if (ref) {
-    ref.current = value;
-  }
-  return ref;
-}
-var init_assignRef = __esm({
-  "node_modules/use-callback-ref/dist/es2015/assignRef.js"() {
-  }
-});
-
-// node_modules/use-callback-ref/dist/es2015/useRef.js
-function useCallbackRef2(initialValue, callback) {
-  var ref = (0, import_react13.useState)(function() {
-    return {
-      // value
-      value: initialValue,
-      // last callback
-      callback,
-      // "memoized" public interface
-      facade: {
-        get current() {
-          return ref.value;
-        },
-        set current(value) {
-          var last = ref.value;
-          if (last !== value) {
-            ref.value = value;
-            ref.callback(value, last);
-          }
-        }
-      }
-    };
-  })[0];
-  ref.callback = callback;
-  return ref.facade;
-}
-var import_react13;
-var init_useRef = __esm({
-  "node_modules/use-callback-ref/dist/es2015/useRef.js"() {
-    import_react13 = __toESM(require_react());
-  }
-});
-
-// node_modules/use-callback-ref/dist/es2015/useMergeRef.js
-function useMergeRefs(refs, defaultValue) {
-  var callbackRef = useCallbackRef2(defaultValue || null, function(newValue) {
-    return refs.forEach(function(ref) {
-      return assignRef(ref, newValue);
-    });
-  });
-  useIsomorphicLayoutEffect(function() {
-    var oldValue = currentValues.get(callbackRef);
-    if (oldValue) {
-      var prevRefs_1 = new Set(oldValue);
-      var nextRefs_1 = new Set(refs);
-      var current_1 = callbackRef.current;
-      prevRefs_1.forEach(function(ref) {
-        if (!nextRefs_1.has(ref)) {
-          assignRef(ref, null);
-        }
-      });
-      nextRefs_1.forEach(function(ref) {
-        if (!prevRefs_1.has(ref)) {
-          assignRef(ref, current_1);
-        }
-      });
-    }
-    currentValues.set(callbackRef, refs);
-  }, [refs]);
-  return callbackRef;
-}
-var React35, useIsomorphicLayoutEffect, currentValues;
-var init_useMergeRef = __esm({
-  "node_modules/use-callback-ref/dist/es2015/useMergeRef.js"() {
-    React35 = __toESM(require_react());
-    init_assignRef();
-    init_useRef();
-    useIsomorphicLayoutEffect = typeof window !== "undefined" ? React35.useLayoutEffect : React35.useEffect;
-    currentValues = /* @__PURE__ */ new WeakMap();
-  }
-});
-
-// node_modules/use-callback-ref/dist/es2015/index.js
-var init_es2015 = __esm({
-  "node_modules/use-callback-ref/dist/es2015/index.js"() {
-    init_useMergeRef();
-  }
-});
-
-// node_modules/use-sidecar/dist/es2015/medium.js
-function ItoI(a) {
-  return a;
-}
-function innerCreateMedium(defaults, middleware) {
-  if (middleware === void 0) {
-    middleware = ItoI;
-  }
-  var buffer = [];
-  var assigned = false;
-  var medium = {
-    read: function() {
-      if (assigned) {
-        throw new Error("Sidecar: could not `read` from an `assigned` medium. `read` could be used only with `useMedium`.");
-      }
-      if (buffer.length) {
-        return buffer[buffer.length - 1];
-      }
-      return defaults;
-    },
-    useMedium: function(data) {
-      var item = middleware(data, assigned);
-      buffer.push(item);
-      return function() {
-        buffer = buffer.filter(function(x) {
-          return x !== item;
-        });
-      };
-    },
-    assignSyncMedium: function(cb) {
-      assigned = true;
-      while (buffer.length) {
-        var cbs = buffer;
-        buffer = [];
-        cbs.forEach(cb);
-      }
-      buffer = {
-        push: function(x) {
-          return cb(x);
-        },
-        filter: function() {
-          return buffer;
-        }
-      };
-    },
-    assignMedium: function(cb) {
-      assigned = true;
-      var pendingQueue = [];
-      if (buffer.length) {
-        var cbs = buffer;
-        buffer = [];
-        cbs.forEach(cb);
-        pendingQueue = buffer;
-      }
-      var executeQueue = function() {
-        var cbs2 = pendingQueue;
-        pendingQueue = [];
-        cbs2.forEach(cb);
-      };
-      var cycle = function() {
-        return Promise.resolve().then(executeQueue);
-      };
-      cycle();
-      buffer = {
-        push: function(x) {
-          pendingQueue.push(x);
-          cycle();
-        },
-        filter: function(filter) {
-          pendingQueue = pendingQueue.filter(filter);
-          return buffer;
-        }
-      };
-    }
-  };
-  return medium;
-}
-function createSidecarMedium(options) {
-  if (options === void 0) {
-    options = {};
-  }
-  var medium = innerCreateMedium(null);
-  medium.options = __assign({ async: true, ssr: false }, options);
-  return medium;
-}
-var init_medium = __esm({
-  "node_modules/use-sidecar/dist/es2015/medium.js"() {
-    init_tslib_es6();
-  }
-});
-
-// node_modules/use-sidecar/dist/es2015/exports.js
-function exportSidecar(medium, exported) {
-  medium.useMedium(exported);
-  return SideCar;
-}
-var React36, SideCar;
-var init_exports = __esm({
-  "node_modules/use-sidecar/dist/es2015/exports.js"() {
-    init_tslib_es6();
-    React36 = __toESM(require_react());
-    SideCar = function(_a) {
-      var sideCar = _a.sideCar, rest = __rest(_a, ["sideCar"]);
-      if (!sideCar) {
-        throw new Error("Sidecar: please provide `sideCar` property to import the right car");
-      }
-      var Target3 = sideCar.read();
-      if (!Target3) {
-        throw new Error("Sidecar medium not found");
-      }
-      return React36.createElement(Target3, __assign({}, rest));
-    };
-    SideCar.isSideCarExport = true;
-  }
-});
-
-// node_modules/use-sidecar/dist/es2015/index.js
-var init_es20152 = __esm({
-  "node_modules/use-sidecar/dist/es2015/index.js"() {
-    init_medium();
-    init_exports();
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/medium.js
-var effectCar;
-var init_medium2 = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/medium.js"() {
-    init_es20152();
-    effectCar = createSidecarMedium();
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/UI.js
-var React37, nothing, RemoveScroll;
-var init_UI = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/UI.js"() {
-    init_tslib_es6();
-    React37 = __toESM(require_react());
-    init_constants();
-    init_es2015();
-    init_medium2();
-    nothing = function() {
-      return;
-    };
-    RemoveScroll = React37.forwardRef(function(props, parentRef) {
-      var ref = React37.useRef(null);
-      var _a = React37.useState({
-        onScrollCapture: nothing,
-        onWheelCapture: nothing,
-        onTouchMoveCapture: nothing
-      }), callbacks = _a[0], setCallbacks = _a[1];
-      var forwardProps = props.forwardProps, children = props.children, className = props.className, removeScrollBar = props.removeScrollBar, enabled = props.enabled, shards = props.shards, sideCar = props.sideCar, noRelative = props.noRelative, noIsolation = props.noIsolation, inert = props.inert, allowPinchZoom = props.allowPinchZoom, _b = props.as, Container = _b === void 0 ? "div" : _b, gapMode = props.gapMode, rest = __rest(props, ["forwardProps", "children", "className", "removeScrollBar", "enabled", "shards", "sideCar", "noRelative", "noIsolation", "inert", "allowPinchZoom", "as", "gapMode"]);
-      var SideCar2 = sideCar;
-      var containerRef = useMergeRefs([ref, parentRef]);
-      var containerProps = __assign(__assign({}, rest), callbacks);
-      return React37.createElement(
-        React37.Fragment,
-        null,
-        enabled && React37.createElement(SideCar2, { sideCar: effectCar, removeScrollBar, shards, noRelative, noIsolation, inert, setCallbacks, allowPinchZoom: !!allowPinchZoom, lockRef: ref, gapMode }),
-        forwardProps ? React37.cloneElement(React37.Children.only(children), __assign(__assign({}, containerProps), { ref: containerRef })) : React37.createElement(Container, __assign({}, containerProps, { className, ref: containerRef }), children)
-      );
-    });
-    RemoveScroll.defaultProps = {
-      enabled: true,
-      removeScrollBar: true,
-      inert: false
-    };
-    RemoveScroll.classNames = {
-      fullWidth: fullWidthClassName,
-      zeroRight: zeroRightClassName
-    };
-  }
-});
-
-// node_modules/get-nonce/dist/es2015/index.js
-var currentNonce, getNonce;
-var init_es20153 = __esm({
-  "node_modules/get-nonce/dist/es2015/index.js"() {
-    getNonce = function() {
-      if (currentNonce) {
-        return currentNonce;
-      }
-      if (typeof __webpack_nonce__ !== "undefined") {
-        return __webpack_nonce__;
-      }
-      return void 0;
-    };
-  }
-});
-
-// node_modules/react-style-singleton/dist/es2015/singleton.js
-function makeStyleTag() {
-  if (!document)
-    return null;
-  var tag = document.createElement("style");
-  tag.type = "text/css";
-  var nonce = getNonce();
-  if (nonce) {
-    tag.setAttribute("nonce", nonce);
-  }
-  return tag;
-}
-function injectStyles(tag, css) {
-  if (tag.styleSheet) {
-    tag.styleSheet.cssText = css;
-  } else {
-    tag.appendChild(document.createTextNode(css));
-  }
-}
-function insertStyleTag(tag) {
-  var head = document.head || document.getElementsByTagName("head")[0];
-  head.appendChild(tag);
-}
-var stylesheetSingleton;
-var init_singleton = __esm({
-  "node_modules/react-style-singleton/dist/es2015/singleton.js"() {
-    init_es20153();
-    stylesheetSingleton = function() {
-      var counter = 0;
-      var stylesheet = null;
-      return {
-        add: function(style) {
-          if (counter == 0) {
-            if (stylesheet = makeStyleTag()) {
-              injectStyles(stylesheet, style);
-              insertStyleTag(stylesheet);
-            }
-          }
-          counter++;
-        },
-        remove: function() {
-          counter--;
-          if (!counter && stylesheet) {
-            stylesheet.parentNode && stylesheet.parentNode.removeChild(stylesheet);
-            stylesheet = null;
-          }
-        }
-      };
-    };
-  }
-});
-
-// node_modules/react-style-singleton/dist/es2015/hook.js
-var React38, styleHookSingleton;
-var init_hook = __esm({
-  "node_modules/react-style-singleton/dist/es2015/hook.js"() {
-    React38 = __toESM(require_react());
-    init_singleton();
-    styleHookSingleton = function() {
-      var sheet = stylesheetSingleton();
-      return function(styles, isDynamic) {
-        React38.useEffect(function() {
-          sheet.add(styles);
-          return function() {
-            sheet.remove();
-          };
-        }, [styles && isDynamic]);
-      };
-    };
-  }
-});
-
-// node_modules/react-style-singleton/dist/es2015/component.js
-var styleSingleton;
-var init_component = __esm({
-  "node_modules/react-style-singleton/dist/es2015/component.js"() {
-    init_hook();
-    styleSingleton = function() {
-      var useStyle = styleHookSingleton();
-      var Sheet = function(_a) {
-        var styles = _a.styles, dynamic = _a.dynamic;
-        useStyle(styles, dynamic);
-        return null;
-      };
-      return Sheet;
-    };
-  }
-});
-
-// node_modules/react-style-singleton/dist/es2015/index.js
-var init_es20154 = __esm({
-  "node_modules/react-style-singleton/dist/es2015/index.js"() {
-    init_component();
-    init_singleton();
-    init_hook();
-  }
-});
-
-// node_modules/react-remove-scroll-bar/dist/es2015/utils.js
-var zeroGap, parse, getOffset, getGapWidth;
-var init_utils3 = __esm({
-  "node_modules/react-remove-scroll-bar/dist/es2015/utils.js"() {
-    zeroGap = {
-      left: 0,
-      top: 0,
-      right: 0,
-      gap: 0
-    };
-    parse = function(x) {
-      return parseInt(x || "", 10) || 0;
-    };
-    getOffset = function(gapMode) {
-      var cs = window.getComputedStyle(document.body);
-      var left = cs[gapMode === "padding" ? "paddingLeft" : "marginLeft"];
-      var top = cs[gapMode === "padding" ? "paddingTop" : "marginTop"];
-      var right = cs[gapMode === "padding" ? "paddingRight" : "marginRight"];
-      return [parse(left), parse(top), parse(right)];
-    };
-    getGapWidth = function(gapMode) {
-      if (gapMode === void 0) {
-        gapMode = "margin";
-      }
-      if (typeof window === "undefined") {
-        return zeroGap;
-      }
-      var offsets = getOffset(gapMode);
-      var documentWidth = document.documentElement.clientWidth;
-      var windowWidth = window.innerWidth;
-      return {
-        left: offsets[0],
-        top: offsets[1],
-        right: offsets[2],
-        gap: Math.max(0, windowWidth - documentWidth + offsets[2] - offsets[0])
-      };
-    };
-  }
-});
-
-// node_modules/react-remove-scroll-bar/dist/es2015/component.js
-var React39, Style, lockAttribute, getStyles, getCurrentUseCounter, useLockAttribute, RemoveScrollBar;
-var init_component2 = __esm({
-  "node_modules/react-remove-scroll-bar/dist/es2015/component.js"() {
-    React39 = __toESM(require_react());
-    init_es20154();
-    init_constants();
-    init_utils3();
-    Style = styleSingleton();
-    lockAttribute = "data-scroll-locked";
-    getStyles = function(_a, allowRelative, gapMode, important) {
-      var left = _a.left, top = _a.top, right = _a.right, gap = _a.gap;
-      if (gapMode === void 0) {
-        gapMode = "margin";
-      }
-      return "\n  .".concat(noScrollbarsClassName, " {\n   overflow: hidden ").concat(important, ";\n   padding-right: ").concat(gap, "px ").concat(important, ";\n  }\n  body[").concat(lockAttribute, "] {\n    overflow: hidden ").concat(important, ";\n    overscroll-behavior: contain;\n    ").concat([
-        allowRelative && "position: relative ".concat(important, ";"),
-        gapMode === "margin" && "\n    padding-left: ".concat(left, "px;\n    padding-top: ").concat(top, "px;\n    padding-right: ").concat(right, "px;\n    margin-left:0;\n    margin-top:0;\n    margin-right: ").concat(gap, "px ").concat(important, ";\n    "),
-        gapMode === "padding" && "padding-right: ".concat(gap, "px ").concat(important, ";")
-      ].filter(Boolean).join(""), "\n  }\n  \n  .").concat(zeroRightClassName, " {\n    right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " {\n    margin-right: ").concat(gap, "px ").concat(important, ";\n  }\n  \n  .").concat(zeroRightClassName, " .").concat(zeroRightClassName, " {\n    right: 0 ").concat(important, ";\n  }\n  \n  .").concat(fullWidthClassName, " .").concat(fullWidthClassName, " {\n    margin-right: 0 ").concat(important, ";\n  }\n  \n  body[").concat(lockAttribute, "] {\n    ").concat(removedBarSizeVariable, ": ").concat(gap, "px;\n  }\n");
-    };
-    getCurrentUseCounter = function() {
-      var counter = parseInt(document.body.getAttribute(lockAttribute) || "0", 10);
-      return isFinite(counter) ? counter : 0;
-    };
-    useLockAttribute = function() {
-      React39.useEffect(function() {
-        document.body.setAttribute(lockAttribute, (getCurrentUseCounter() + 1).toString());
-        return function() {
-          var newCounter = getCurrentUseCounter() - 1;
-          if (newCounter <= 0) {
-            document.body.removeAttribute(lockAttribute);
-          } else {
-            document.body.setAttribute(lockAttribute, newCounter.toString());
-          }
-        };
-      }, []);
-    };
-    RemoveScrollBar = function(_a) {
-      var noRelative = _a.noRelative, noImportant = _a.noImportant, _b = _a.gapMode, gapMode = _b === void 0 ? "margin" : _b;
-      useLockAttribute();
-      var gap = React39.useMemo(function() {
-        return getGapWidth(gapMode);
-      }, [gapMode]);
-      return React39.createElement(Style, { styles: getStyles(gap, !noRelative, gapMode, !noImportant ? "!important" : "") });
-    };
-  }
-});
-
-// node_modules/react-remove-scroll-bar/dist/es2015/index.js
-var init_es20155 = __esm({
-  "node_modules/react-remove-scroll-bar/dist/es2015/index.js"() {
-    init_component2();
-    init_constants();
-    init_utils3();
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js
-var passiveSupported, options, nonPassive;
-var init_aggresiveCapture = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/aggresiveCapture.js"() {
-    passiveSupported = false;
-    if (typeof window !== "undefined") {
-      try {
-        options = Object.defineProperty({}, "passive", {
-          get: function() {
-            passiveSupported = true;
-            return true;
-          }
-        });
-        window.addEventListener("test", options, options);
-        window.removeEventListener("test", options, options);
-      } catch (err) {
-        passiveSupported = false;
-      }
-    }
-    nonPassive = passiveSupported ? { passive: false } : false;
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/handleScroll.js
-var alwaysContainsScroll, elementCanBeScrolled, elementCouldBeVScrolled, elementCouldBeHScrolled, locationCouldBeScrolled, getVScrollVariables, getHScrollVariables, elementCouldBeScrolled, getScrollVariables, getDirectionFactor, handleScroll;
-var init_handleScroll = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/handleScroll.js"() {
-    alwaysContainsScroll = function(node) {
-      return node.tagName === "TEXTAREA";
-    };
-    elementCanBeScrolled = function(node, overflow) {
-      if (!(node instanceof Element)) {
-        return false;
-      }
-      var styles = window.getComputedStyle(node);
-      return (
-        // not-not-scrollable
-        styles[overflow] !== "hidden" && // contains scroll inside self
-        !(styles.overflowY === styles.overflowX && !alwaysContainsScroll(node) && styles[overflow] === "visible")
-      );
-    };
-    elementCouldBeVScrolled = function(node) {
-      return elementCanBeScrolled(node, "overflowY");
-    };
-    elementCouldBeHScrolled = function(node) {
-      return elementCanBeScrolled(node, "overflowX");
-    };
-    locationCouldBeScrolled = function(axis, node) {
-      var ownerDocument = node.ownerDocument;
-      var current = node;
-      do {
-        if (typeof ShadowRoot !== "undefined" && current instanceof ShadowRoot) {
-          current = current.host;
-        }
-        var isScrollable = elementCouldBeScrolled(axis, current);
-        if (isScrollable) {
-          var _a = getScrollVariables(axis, current), scrollHeight = _a[1], clientHeight = _a[2];
-          if (scrollHeight > clientHeight) {
-            return true;
-          }
-        }
-        current = current.parentNode;
-      } while (current && current !== ownerDocument.body);
-      return false;
-    };
-    getVScrollVariables = function(_a) {
-      var scrollTop = _a.scrollTop, scrollHeight = _a.scrollHeight, clientHeight = _a.clientHeight;
-      return [
-        scrollTop,
-        scrollHeight,
-        clientHeight
-      ];
-    };
-    getHScrollVariables = function(_a) {
-      var scrollLeft = _a.scrollLeft, scrollWidth = _a.scrollWidth, clientWidth = _a.clientWidth;
-      return [
-        scrollLeft,
-        scrollWidth,
-        clientWidth
-      ];
-    };
-    elementCouldBeScrolled = function(axis, node) {
-      return axis === "v" ? elementCouldBeVScrolled(node) : elementCouldBeHScrolled(node);
-    };
-    getScrollVariables = function(axis, node) {
-      return axis === "v" ? getVScrollVariables(node) : getHScrollVariables(node);
-    };
-    getDirectionFactor = function(axis, direction) {
-      return axis === "h" && direction === "rtl" ? -1 : 1;
-    };
-    handleScroll = function(axis, endTarget, event, sourceDelta, noOverscroll) {
-      var directionFactor = getDirectionFactor(axis, window.getComputedStyle(endTarget).direction);
-      var delta = directionFactor * sourceDelta;
-      var target = event.target;
-      var targetInLock = endTarget.contains(target);
-      var shouldCancelScroll = false;
-      var isDeltaPositive = delta > 0;
-      var availableScroll = 0;
-      var availableScrollTop = 0;
-      do {
-        if (!target) {
-          break;
-        }
-        var _a = getScrollVariables(axis, target), position = _a[0], scroll_1 = _a[1], capacity = _a[2];
-        var elementScroll = scroll_1 - capacity - directionFactor * position;
-        if (position || elementScroll) {
-          if (elementCouldBeScrolled(axis, target)) {
-            availableScroll += elementScroll;
-            availableScrollTop += position;
-          }
-        }
-        var parent_1 = target.parentNode;
-        target = parent_1 && parent_1.nodeType === Node.DOCUMENT_FRAGMENT_NODE ? parent_1.host : parent_1;
-      } while (
-        // portaled content
-        !targetInLock && target !== document.body || // self content
-        targetInLock && (endTarget.contains(target) || endTarget === target)
-      );
-      if (isDeltaPositive && (noOverscroll && Math.abs(availableScroll) < 1 || !noOverscroll && delta > availableScroll)) {
-        shouldCancelScroll = true;
-      } else if (!isDeltaPositive && (noOverscroll && Math.abs(availableScrollTop) < 1 || !noOverscroll && -delta > availableScrollTop)) {
-        shouldCancelScroll = true;
-      }
-      return shouldCancelScroll;
-    };
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/SideEffect.js
-function RemoveScrollSideCar(props) {
-  var shouldPreventQueue = React40.useRef([]);
-  var touchStartRef = React40.useRef([0, 0]);
-  var activeAxis = React40.useRef();
-  var id = React40.useState(idCounter++)[0];
-  var Style2 = React40.useState(styleSingleton)[0];
-  var lastProps = React40.useRef(props);
-  React40.useEffect(function() {
-    lastProps.current = props;
-  }, [props]);
-  React40.useEffect(function() {
-    if (props.inert) {
-      document.body.classList.add("block-interactivity-".concat(id));
-      var allow_1 = __spreadArray([props.lockRef.current], (props.shards || []).map(extractRef), true).filter(Boolean);
-      allow_1.forEach(function(el) {
-        return el.classList.add("allow-interactivity-".concat(id));
-      });
-      return function() {
-        document.body.classList.remove("block-interactivity-".concat(id));
-        allow_1.forEach(function(el) {
-          return el.classList.remove("allow-interactivity-".concat(id));
-        });
-      };
-    }
-    return;
-  }, [props.inert, props.lockRef.current, props.shards]);
-  var shouldCancelEvent = React40.useCallback(function(event, parent) {
-    if ("touches" in event && event.touches.length === 2 || event.type === "wheel" && event.ctrlKey) {
-      return !lastProps.current.allowPinchZoom;
-    }
-    var touch = getTouchXY(event);
-    var touchStart = touchStartRef.current;
-    var deltaX = "deltaX" in event ? event.deltaX : touchStart[0] - touch[0];
-    var deltaY = "deltaY" in event ? event.deltaY : touchStart[1] - touch[1];
-    var currentAxis;
-    var target = event.target;
-    var moveDirection = Math.abs(deltaX) > Math.abs(deltaY) ? "h" : "v";
-    if ("touches" in event && moveDirection === "h" && target.type === "range") {
-      return false;
-    }
-    var selection = window.getSelection();
-    var anchorNode = selection && selection.anchorNode;
-    var isTouchingSelection = anchorNode ? anchorNode === target || anchorNode.contains(target) : false;
-    if (isTouchingSelection) {
-      return false;
-    }
-    var canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
-    if (!canBeScrolledInMainDirection) {
-      return true;
-    }
-    if (canBeScrolledInMainDirection) {
-      currentAxis = moveDirection;
-    } else {
-      currentAxis = moveDirection === "v" ? "h" : "v";
-      canBeScrolledInMainDirection = locationCouldBeScrolled(moveDirection, target);
-    }
-    if (!canBeScrolledInMainDirection) {
-      return false;
-    }
-    if (!activeAxis.current && "changedTouches" in event && (deltaX || deltaY)) {
-      activeAxis.current = currentAxis;
-    }
-    if (!currentAxis) {
-      return true;
-    }
-    var cancelingAxis = activeAxis.current || currentAxis;
-    return handleScroll(cancelingAxis, parent, event, cancelingAxis === "h" ? deltaX : deltaY, true);
-  }, []);
-  var shouldPrevent = React40.useCallback(function(_event) {
-    var event = _event;
-    if (!lockStack.length || lockStack[lockStack.length - 1] !== Style2) {
-      return;
-    }
-    var delta = "deltaY" in event ? getDeltaXY(event) : getTouchXY(event);
-    var sourceEvent = shouldPreventQueue.current.filter(function(e) {
-      return e.name === event.type && (e.target === event.target || event.target === e.shadowParent) && deltaCompare(e.delta, delta);
-    })[0];
-    if (sourceEvent && sourceEvent.should) {
-      if (event.cancelable) {
-        event.preventDefault();
-      }
-      return;
-    }
-    if (!sourceEvent) {
-      var shardNodes = (lastProps.current.shards || []).map(extractRef).filter(Boolean).filter(function(node) {
-        return node.contains(event.target);
-      });
-      var shouldStop = shardNodes.length > 0 ? shouldCancelEvent(event, shardNodes[0]) : !lastProps.current.noIsolation;
-      if (shouldStop) {
-        if (event.cancelable) {
-          event.preventDefault();
-        }
-      }
-    }
-  }, []);
-  var shouldCancel = React40.useCallback(function(name, delta, target, should) {
-    var event = { name, delta, target, should, shadowParent: getOutermostShadowParent(target) };
-    shouldPreventQueue.current.push(event);
-    setTimeout(function() {
-      shouldPreventQueue.current = shouldPreventQueue.current.filter(function(e) {
-        return e !== event;
-      });
-    }, 1);
-  }, []);
-  var scrollTouchStart = React40.useCallback(function(event) {
-    touchStartRef.current = getTouchXY(event);
-    activeAxis.current = void 0;
-  }, []);
-  var scrollWheel = React40.useCallback(function(event) {
-    shouldCancel(event.type, getDeltaXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
-  }, []);
-  var scrollTouchMove = React40.useCallback(function(event) {
-    shouldCancel(event.type, getTouchXY(event), event.target, shouldCancelEvent(event, props.lockRef.current));
-  }, []);
-  React40.useEffect(function() {
-    lockStack.push(Style2);
-    props.setCallbacks({
-      onScrollCapture: scrollWheel,
-      onWheelCapture: scrollWheel,
-      onTouchMoveCapture: scrollTouchMove
-    });
-    document.addEventListener("wheel", shouldPrevent, nonPassive);
-    document.addEventListener("touchmove", shouldPrevent, nonPassive);
-    document.addEventListener("touchstart", scrollTouchStart, nonPassive);
-    return function() {
-      lockStack = lockStack.filter(function(inst) {
-        return inst !== Style2;
-      });
-      document.removeEventListener("wheel", shouldPrevent, nonPassive);
-      document.removeEventListener("touchmove", shouldPrevent, nonPassive);
-      document.removeEventListener("touchstart", scrollTouchStart, nonPassive);
-    };
-  }, []);
-  var removeScrollBar = props.removeScrollBar, inert = props.inert;
-  return React40.createElement(
-    React40.Fragment,
-    null,
-    inert ? React40.createElement(Style2, { styles: generateStyle(id) }) : null,
-    removeScrollBar ? React40.createElement(RemoveScrollBar, { noRelative: props.noRelative, gapMode: props.gapMode }) : null
-  );
-}
-function getOutermostShadowParent(node) {
-  var shadowParent = null;
-  while (node !== null) {
-    if (node instanceof ShadowRoot) {
-      shadowParent = node.host;
-      node = node.host;
-    }
-    node = node.parentNode;
-  }
-  return shadowParent;
-}
-var React40, getTouchXY, getDeltaXY, extractRef, deltaCompare, generateStyle, idCounter, lockStack;
-var init_SideEffect = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/SideEffect.js"() {
-    init_tslib_es6();
-    React40 = __toESM(require_react());
-    init_es20155();
-    init_es20154();
-    init_aggresiveCapture();
-    init_handleScroll();
-    getTouchXY = function(event) {
-      return "changedTouches" in event ? [event.changedTouches[0].clientX, event.changedTouches[0].clientY] : [0, 0];
-    };
-    getDeltaXY = function(event) {
-      return [event.deltaX, event.deltaY];
-    };
-    extractRef = function(ref) {
-      return ref && "current" in ref ? ref.current : ref;
-    };
-    deltaCompare = function(x, y) {
-      return x[0] === y[0] && x[1] === y[1];
-    };
-    generateStyle = function(id) {
-      return "\n  .block-interactivity-".concat(id, " {pointer-events: none;}\n  .allow-interactivity-").concat(id, " {pointer-events: all;}\n");
-    };
-    idCounter = 0;
-    lockStack = [];
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/sidecar.js
-var sidecar_default;
-var init_sidecar = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/sidecar.js"() {
-    init_es20152();
-    init_SideEffect();
-    init_medium2();
-    sidecar_default = exportSidecar(effectCar, RemoveScrollSideCar);
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/Combination.js
-var React41, ReactRemoveScroll, Combination_default;
-var init_Combination = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/Combination.js"() {
-    init_tslib_es6();
-    React41 = __toESM(require_react());
-    init_UI();
-    init_sidecar();
-    ReactRemoveScroll = React41.forwardRef(function(props, ref) {
-      return React41.createElement(RemoveScroll, __assign({}, props, { ref, sideCar: sidecar_default }));
-    });
-    ReactRemoveScroll.classNames = RemoveScroll.classNames;
-    Combination_default = ReactRemoveScroll;
-  }
-});
-
-// node_modules/react-remove-scroll/dist/es2015/index.js
-var init_es20156 = __esm({
-  "node_modules/react-remove-scroll/dist/es2015/index.js"() {
-    init_Combination();
-  }
-});
-
-// node_modules/aria-hidden/dist/es2015/index.js
-var getDefaultParent, counterMap, uncontrolledNodes, markerMap, lockCount, unwrapHost, correctTargets, applyAttributeToOthers, hideOthers;
-var init_es20157 = __esm({
-  "node_modules/aria-hidden/dist/es2015/index.js"() {
-    getDefaultParent = function(originalTarget) {
-      if (typeof document === "undefined") {
-        return null;
-      }
-      var sampleTarget = Array.isArray(originalTarget) ? originalTarget[0] : originalTarget;
-      return sampleTarget.ownerDocument.body;
-    };
-    counterMap = /* @__PURE__ */ new WeakMap();
-    uncontrolledNodes = /* @__PURE__ */ new WeakMap();
-    markerMap = {};
-    lockCount = 0;
-    unwrapHost = function(node) {
-      return node && (node.host || unwrapHost(node.parentNode));
-    };
-    correctTargets = function(parent, targets) {
-      return targets.map(function(target) {
-        if (parent.contains(target)) {
-          return target;
-        }
-        var correctedTarget = unwrapHost(target);
-        if (correctedTarget && parent.contains(correctedTarget)) {
-          return correctedTarget;
-        }
-        console.error("aria-hidden", target, "in not contained inside", parent, ". Doing nothing");
-        return null;
-      }).filter(function(x) {
-        return Boolean(x);
-      });
-    };
-    applyAttributeToOthers = function(originalTarget, parentNode, markerName, controlAttribute) {
-      var targets = correctTargets(parentNode, Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
-      if (!markerMap[markerName]) {
-        markerMap[markerName] = /* @__PURE__ */ new WeakMap();
-      }
-      var markerCounter = markerMap[markerName];
-      var hiddenNodes = [];
-      var elementsToKeep = /* @__PURE__ */ new Set();
-      var elementsToStop = new Set(targets);
-      var keep = function(el) {
-        if (!el || elementsToKeep.has(el)) {
-          return;
-        }
-        elementsToKeep.add(el);
-        keep(el.parentNode);
-      };
-      targets.forEach(keep);
-      var deep = function(parent) {
-        if (!parent || elementsToStop.has(parent)) {
-          return;
-        }
-        Array.prototype.forEach.call(parent.children, function(node) {
-          if (elementsToKeep.has(node)) {
-            deep(node);
-          } else {
-            try {
-              var attr = node.getAttribute(controlAttribute);
-              var alreadyHidden = attr !== null && attr !== "false";
-              var counterValue = (counterMap.get(node) || 0) + 1;
-              var markerValue = (markerCounter.get(node) || 0) + 1;
-              counterMap.set(node, counterValue);
-              markerCounter.set(node, markerValue);
-              hiddenNodes.push(node);
-              if (counterValue === 1 && alreadyHidden) {
-                uncontrolledNodes.set(node, true);
-              }
-              if (markerValue === 1) {
-                node.setAttribute(markerName, "true");
-              }
-              if (!alreadyHidden) {
-                node.setAttribute(controlAttribute, "true");
-              }
-            } catch (e) {
-              console.error("aria-hidden: cannot operate on ", node, e);
-            }
-          }
-        });
-      };
-      deep(parentNode);
-      elementsToKeep.clear();
-      lockCount++;
-      return function() {
-        hiddenNodes.forEach(function(node) {
-          var counterValue = counterMap.get(node) - 1;
-          var markerValue = markerCounter.get(node) - 1;
-          counterMap.set(node, counterValue);
-          markerCounter.set(node, markerValue);
-          if (!counterValue) {
-            if (!uncontrolledNodes.has(node)) {
-              node.removeAttribute(controlAttribute);
-            }
-            uncontrolledNodes.delete(node);
-          }
-          if (!markerValue) {
-            node.removeAttribute(markerName);
-          }
-        });
-        lockCount--;
-        if (!lockCount) {
-          counterMap = /* @__PURE__ */ new WeakMap();
-          counterMap = /* @__PURE__ */ new WeakMap();
-          uncontrolledNodes = /* @__PURE__ */ new WeakMap();
-          markerMap = {};
-        }
-      };
-    };
-    hideOthers = function(originalTarget, parentNode, markerName) {
-      if (markerName === void 0) {
-        markerName = "data-aria-hidden";
-      }
-      var targets = Array.from(Array.isArray(originalTarget) ? originalTarget : [originalTarget]);
-      var activeParentNode = parentNode || getDefaultParent(originalTarget);
-      if (!activeParentNode) {
-        return function() {
-          return null;
-        };
-      }
-      targets.push.apply(targets, Array.from(activeParentNode.querySelectorAll("[aria-live], script")));
-      return applyAttributeToOthers(targets, activeParentNode, markerName, "aria-hidden");
-    };
-  }
-});
-
-// node_modules/@radix-ui/react-dialog/node_modules/@radix-ui/react-slot/dist/index.mjs
-// @__NO_SIDE_EFFECTS__
-function createSlot3(ownerName) {
-  const SlotClone = /* @__PURE__ */ createSlotClone3(ownerName);
-  const Slot22 = React42.forwardRef((props, forwardedRef) => {
-    const { children, ...slotProps } = props;
-    const childrenArray = React42.Children.toArray(children);
-    const slottable = childrenArray.find(isSlottable3);
-    if (slottable) {
-      const newElement = slottable.props.children;
-      const newChildren = childrenArray.map((child) => {
-        if (child === slottable) {
-          if (React42.Children.count(newElement) > 1) return React42.Children.only(null);
-          return React42.isValidElement(newElement) ? newElement.props.children : null;
-        } else {
-          return child;
-        }
-      });
-      return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SlotClone, { ...slotProps, ref: forwardedRef, children: React42.isValidElement(newElement) ? React42.cloneElement(newElement, void 0, newChildren) : null });
-    }
-    return /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(SlotClone, { ...slotProps, ref: forwardedRef, children });
-  });
-  Slot22.displayName = `${ownerName}.Slot`;
-  return Slot22;
-}
-// @__NO_SIDE_EFFECTS__
-function createSlotClone3(ownerName) {
-  const SlotClone = React42.forwardRef((props, forwardedRef) => {
-    const { children, ...slotProps } = props;
-    if (React42.isValidElement(children)) {
-      const childrenRef = getElementRef4(children);
-      const props2 = mergeProps3(slotProps, children.props);
-      if (children.type !== React42.Fragment) {
-        props2.ref = forwardedRef ? composeRefs(forwardedRef, childrenRef) : childrenRef;
-      }
-      return React42.cloneElement(children, props2);
-    }
-    return React42.Children.count(children) > 1 ? React42.Children.only(null) : null;
-  });
-  SlotClone.displayName = `${ownerName}.SlotClone`;
-  return SlotClone;
-}
-function isSlottable3(child) {
-  return React42.isValidElement(child) && typeof child.type === "function" && "__radixId" in child.type && child.type.__radixId === SLOTTABLE_IDENTIFIER3;
-}
-function mergeProps3(slotProps, childProps) {
-  const overrideProps = { ...childProps };
-  for (const propName in childProps) {
-    const slotPropValue = slotProps[propName];
-    const childPropValue = childProps[propName];
-    const isHandler = /^on[A-Z]/.test(propName);
-    if (isHandler) {
-      if (slotPropValue && childPropValue) {
-        overrideProps[propName] = (...args) => {
-          const result = childPropValue(...args);
-          slotPropValue(...args);
-          return result;
-        };
-      } else if (slotPropValue) {
-        overrideProps[propName] = slotPropValue;
-      }
-    } else if (propName === "style") {
-      overrideProps[propName] = { ...slotPropValue, ...childPropValue };
-    } else if (propName === "className") {
-      overrideProps[propName] = [slotPropValue, childPropValue].filter(Boolean).join(" ");
-    }
-  }
-  return { ...slotProps, ...overrideProps };
-}
-function getElementRef4(element) {
-  let getter = Object.getOwnPropertyDescriptor(element.props, "ref")?.get;
-  let mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.ref;
-  }
-  getter = Object.getOwnPropertyDescriptor(element, "ref")?.get;
-  mayWarn = getter && "isReactWarning" in getter && getter.isReactWarning;
-  if (mayWarn) {
-    return element.props.ref;
-  }
-  return element.props.ref || element.ref;
-}
-var React42, import_jsx_runtime10, SLOTTABLE_IDENTIFIER3;
-var init_dist20 = __esm({
-  "node_modules/@radix-ui/react-dialog/node_modules/@radix-ui/react-slot/dist/index.mjs"() {
-    React42 = __toESM(require_react(), 1);
-    init_dist();
-    import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1);
-    SLOTTABLE_IDENTIFIER3 = /* @__PURE__ */ Symbol("radix.slottable");
-  }
-});
-
-// node_modules/@radix-ui/react-dialog/dist/index.mjs
-function getState(open) {
-  return open ? "open" : "closed";
-}
-var React43, import_jsx_runtime11, DIALOG_NAME, createDialogContext, createDialogScope, DialogProvider, useDialogContext, Dialog, TRIGGER_NAME, DialogTrigger, PORTAL_NAME2, PortalProvider, usePortalContext, DialogPortal, OVERLAY_NAME, DialogOverlay, Slot2, DialogOverlayImpl, CONTENT_NAME, DialogContent, DialogContentModal, DialogContentNonModal, DialogContentImpl, TITLE_NAME, DialogTitle, DESCRIPTION_NAME, DialogDescription, CLOSE_NAME, DialogClose, TITLE_WARNING_NAME, WarningProvider, useWarningContext, TitleWarning, DESCRIPTION_WARNING_NAME, DescriptionWarning, Root2, Trigger, Portal2, Overlay, Content, Title, Description, Close;
-var init_dist21 = __esm({
-  "node_modules/@radix-ui/react-dialog/dist/index.mjs"() {
-    "use client";
-    React43 = __toESM(require_react(), 1);
-    init_dist6();
-    init_dist();
-    init_dist7();
-    init_dist9();
-    init_dist10();
-    init_dist15();
-    init_dist16();
-    init_dist17();
-    init_dist18();
-    init_dist12();
-    init_dist19();
-    init_es20156();
-    init_es20157();
-    init_dist20();
-    import_jsx_runtime11 = __toESM(require_jsx_runtime(), 1);
-    DIALOG_NAME = "Dialog";
-    [createDialogContext, createDialogScope] = createContextScope(DIALOG_NAME);
-    [DialogProvider, useDialogContext] = createDialogContext(DIALOG_NAME);
-    Dialog = (props) => {
-      const {
-        __scopeDialog,
-        children,
-        open: openProp,
-        defaultOpen,
-        onOpenChange,
-        modal = true
-      } = props;
-      const triggerRef = React43.useRef(null);
-      const contentRef = React43.useRef(null);
-      const [open, setOpen] = useControllableState({
-        prop: openProp,
-        defaultProp: defaultOpen ?? false,
-        onChange: onOpenChange,
-        caller: DIALOG_NAME
-      });
-      return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-        DialogProvider,
-        {
-          scope: __scopeDialog,
-          triggerRef,
-          contentRef,
-          contentId: useId2(),
-          titleId: useId2(),
-          descriptionId: useId2(),
-          open,
-          onOpenChange: setOpen,
-          onOpenToggle: React43.useCallback(() => setOpen((prevOpen) => !prevOpen), [setOpen]),
-          modal,
-          children
-        }
-      );
-    };
-    Dialog.displayName = DIALOG_NAME;
-    TRIGGER_NAME = "DialogTrigger";
-    DialogTrigger = React43.forwardRef(
-      (props, forwardedRef) => {
-        const { __scopeDialog, ...triggerProps } = props;
-        const context = useDialogContext(TRIGGER_NAME, __scopeDialog);
-        const composedTriggerRef = useComposedRefs(forwardedRef, context.triggerRef);
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-          Primitive2.button,
-          {
-            type: "button",
-            "aria-haspopup": "dialog",
-            "aria-expanded": context.open,
-            "aria-controls": context.contentId,
-            "data-state": getState(context.open),
-            ...triggerProps,
-            ref: composedTriggerRef,
-            onClick: composeEventHandlers(props.onClick, context.onOpenToggle)
-          }
-        );
-      }
-    );
-    DialogTrigger.displayName = TRIGGER_NAME;
-    PORTAL_NAME2 = "DialogPortal";
-    [PortalProvider, usePortalContext] = createDialogContext(PORTAL_NAME2, {
-      forceMount: void 0
-    });
-    DialogPortal = (props) => {
-      const { __scopeDialog, forceMount, children, container } = props;
-      const context = useDialogContext(PORTAL_NAME2, __scopeDialog);
-      return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(PortalProvider, { scope: __scopeDialog, forceMount, children: React43.Children.map(children, (child) => /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Portal, { asChild: true, container, children: child }) })) });
-    };
-    DialogPortal.displayName = PORTAL_NAME2;
-    OVERLAY_NAME = "DialogOverlay";
-    DialogOverlay = React43.forwardRef(
-      (props, forwardedRef) => {
-        const portalContext = usePortalContext(OVERLAY_NAME, props.__scopeDialog);
-        const { forceMount = portalContext.forceMount, ...overlayProps } = props;
-        const context = useDialogContext(OVERLAY_NAME, props.__scopeDialog);
-        return context.modal ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Presence, { present: forceMount || context.open, children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(DialogOverlayImpl, { ...overlayProps, ref: forwardedRef }) }) : null;
-      }
-    );
-    DialogOverlay.displayName = OVERLAY_NAME;
-    Slot2 = createSlot3("DialogOverlay.RemoveScroll");
-    DialogOverlayImpl = React43.forwardRef(
-      (props, forwardedRef) => {
-        const { __scopeDialog, ...overlayProps } = props;
-        const context = useDialogContext(OVERLAY_NAME, __scopeDialog);
-        return (
-          // Make sure `Content` is scrollable even when it doesn't live inside `RemoveScroll`
-          // ie. when `Overlay` and `Content` are siblings
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Combination_default, { as: Slot2, allowPinchZoom: true, shards: [context.contentRef], children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-            Primitive2.div,
-            {
-              "data-state": getState(context.open),
-              ...overlayProps,
-              ref: forwardedRef,
-              style: { pointerEvents: "auto", ...overlayProps.style }
-            }
-          ) })
-        );
-      }
-    );
-    CONTENT_NAME = "DialogContent";
-    DialogContent = React43.forwardRef(
-      (props, forwardedRef) => {
-        const portalContext = usePortalContext(CONTENT_NAME, props.__scopeDialog);
-        const { forceMount = portalContext.forceMount, ...contentProps } = props;
-        const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Presence, { present: forceMount || context.open, children: context.modal ? /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(DialogContentModal, { ...contentProps, ref: forwardedRef }) : /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(DialogContentNonModal, { ...contentProps, ref: forwardedRef }) });
-      }
-    );
-    DialogContent.displayName = CONTENT_NAME;
-    DialogContentModal = React43.forwardRef(
-      (props, forwardedRef) => {
-        const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-        const contentRef = React43.useRef(null);
-        const composedRefs = useComposedRefs(forwardedRef, context.contentRef, contentRef);
-        React43.useEffect(() => {
-          const content = contentRef.current;
-          if (content) return hideOthers(content);
-        }, []);
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-          DialogContentImpl,
-          {
-            ...props,
-            ref: composedRefs,
-            trapFocus: context.open,
-            disableOutsidePointerEvents: true,
-            onCloseAutoFocus: composeEventHandlers(props.onCloseAutoFocus, (event) => {
-              event.preventDefault();
-              context.triggerRef.current?.focus();
-            }),
-            onPointerDownOutside: composeEventHandlers(props.onPointerDownOutside, (event) => {
-              const originalEvent = event.detail.originalEvent;
-              const ctrlLeftClick = originalEvent.button === 0 && originalEvent.ctrlKey === true;
-              const isRightClick = originalEvent.button === 2 || ctrlLeftClick;
-              if (isRightClick) event.preventDefault();
-            }),
-            onFocusOutside: composeEventHandlers(
-              props.onFocusOutside,
-              (event) => event.preventDefault()
-            )
-          }
-        );
-      }
-    );
-    DialogContentNonModal = React43.forwardRef(
-      (props, forwardedRef) => {
-        const context = useDialogContext(CONTENT_NAME, props.__scopeDialog);
-        const hasInteractedOutsideRef = React43.useRef(false);
-        const hasPointerDownOutsideRef = React43.useRef(false);
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-          DialogContentImpl,
-          {
-            ...props,
-            ref: forwardedRef,
-            trapFocus: false,
-            disableOutsidePointerEvents: false,
-            onCloseAutoFocus: (event) => {
-              props.onCloseAutoFocus?.(event);
-              if (!event.defaultPrevented) {
-                if (!hasInteractedOutsideRef.current) context.triggerRef.current?.focus();
-                event.preventDefault();
-              }
-              hasInteractedOutsideRef.current = false;
-              hasPointerDownOutsideRef.current = false;
-            },
-            onInteractOutside: (event) => {
-              props.onInteractOutside?.(event);
-              if (!event.defaultPrevented) {
-                hasInteractedOutsideRef.current = true;
-                if (event.detail.originalEvent.type === "pointerdown") {
-                  hasPointerDownOutsideRef.current = true;
-                }
-              }
-              const target = event.target;
-              const targetIsTrigger = context.triggerRef.current?.contains(target);
-              if (targetIsTrigger) event.preventDefault();
-              if (event.detail.originalEvent.type === "focusin" && hasPointerDownOutsideRef.current) {
-                event.preventDefault();
-              }
-            }
-          }
-        );
-      }
-    );
-    DialogContentImpl = React43.forwardRef(
-      (props, forwardedRef) => {
-        const { __scopeDialog, trapFocus, onOpenAutoFocus, onCloseAutoFocus, ...contentProps } = props;
-        const context = useDialogContext(CONTENT_NAME, __scopeDialog);
-        const contentRef = React43.useRef(null);
-        const composedRefs = useComposedRefs(forwardedRef, contentRef);
-        useFocusGuards();
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_jsx_runtime11.Fragment, { children: [
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-            FocusScope,
-            {
-              asChild: true,
-              loop: true,
-              trapped: trapFocus,
-              onMountAutoFocus: onOpenAutoFocus,
-              onUnmountAutoFocus: onCloseAutoFocus,
-              children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-                DismissableLayer,
-                {
-                  role: "dialog",
-                  id: context.contentId,
-                  "aria-describedby": context.descriptionId,
-                  "aria-labelledby": context.titleId,
-                  "data-state": getState(context.open),
-                  ...contentProps,
-                  ref: composedRefs,
-                  onDismiss: () => context.onOpenChange(false)
-                }
-              )
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_jsx_runtime11.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(TitleWarning, { titleId: context.titleId }),
-            /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(DescriptionWarning, { contentRef, descriptionId: context.descriptionId })
-          ] })
-        ] });
-      }
-    );
-    TITLE_NAME = "DialogTitle";
-    DialogTitle = React43.forwardRef(
-      (props, forwardedRef) => {
-        const { __scopeDialog, ...titleProps } = props;
-        const context = useDialogContext(TITLE_NAME, __scopeDialog);
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Primitive2.h2, { id: context.titleId, ...titleProps, ref: forwardedRef });
-      }
-    );
-    DialogTitle.displayName = TITLE_NAME;
-    DESCRIPTION_NAME = "DialogDescription";
-    DialogDescription = React43.forwardRef(
-      (props, forwardedRef) => {
-        const { __scopeDialog, ...descriptionProps } = props;
-        const context = useDialogContext(DESCRIPTION_NAME, __scopeDialog);
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(Primitive2.p, { id: context.descriptionId, ...descriptionProps, ref: forwardedRef });
-      }
-    );
-    DialogDescription.displayName = DESCRIPTION_NAME;
-    CLOSE_NAME = "DialogClose";
-    DialogClose = React43.forwardRef(
-      (props, forwardedRef) => {
-        const { __scopeDialog, ...closeProps } = props;
-        const context = useDialogContext(CLOSE_NAME, __scopeDialog);
-        return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(
-          Primitive2.button,
-          {
-            type: "button",
-            ...closeProps,
-            ref: forwardedRef,
-            onClick: composeEventHandlers(props.onClick, () => context.onOpenChange(false))
-          }
-        );
-      }
-    );
-    DialogClose.displayName = CLOSE_NAME;
-    TITLE_WARNING_NAME = "DialogTitleWarning";
-    [WarningProvider, useWarningContext] = createContext22(TITLE_WARNING_NAME, {
-      contentName: CONTENT_NAME,
-      titleName: TITLE_NAME,
-      docsSlug: "dialog"
-    });
-    TitleWarning = ({ titleId }) => {
-      const titleWarningContext = useWarningContext(TITLE_WARNING_NAME);
-      const MESSAGE = `\`${titleWarningContext.contentName}\` requires a \`${titleWarningContext.titleName}\` for the component to be accessible for screen reader users.
-
-If you want to hide the \`${titleWarningContext.titleName}\`, you can wrap it with our VisuallyHidden component.
-
-For more information, see https://radix-ui.com/primitives/docs/components/${titleWarningContext.docsSlug}`;
-      React43.useEffect(() => {
-        if (titleId) {
-          const hasTitle = document.getElementById(titleId);
-          if (!hasTitle) console.error(MESSAGE);
-        }
-      }, [MESSAGE, titleId]);
-      return null;
-    };
-    DESCRIPTION_WARNING_NAME = "DialogDescriptionWarning";
-    DescriptionWarning = ({ contentRef, descriptionId }) => {
-      const descriptionWarningContext = useWarningContext(DESCRIPTION_WARNING_NAME);
-      const MESSAGE = `Warning: Missing \`Description\` or \`aria-describedby={undefined}\` for {${descriptionWarningContext.contentName}}.`;
-      React43.useEffect(() => {
-        const describedById = contentRef.current?.getAttribute("aria-describedby");
-        if (descriptionId && describedById) {
-          const hasDescription = document.getElementById(descriptionId);
-          if (!hasDescription) console.warn(MESSAGE);
-        }
-      }, [MESSAGE, contentRef, descriptionId]);
-      return null;
-    };
-    Root2 = Dialog;
-    Trigger = DialogTrigger;
-    Portal2 = DialogPortal;
-    Overlay = DialogOverlay;
-    Content = DialogContent;
-    Title = DialogTitle;
-    Description = DialogDescription;
-    Close = DialogClose;
-  }
-});
-
-// src/app/components/ui/dialog.tsx
-function Dialog2({
-  ...props
-}) {
-  return /* @__PURE__ */ React44.createElement(Root2, { "data-slot": "dialog", ...props });
-}
-function DialogHeader({ className, ...props }) {
-  return /* @__PURE__ */ React44.createElement(
-    "div",
-    {
-      "data-slot": "dialog-header",
-      className: cn("flex flex-col gap-2 text-center sm:text-left", className),
-      ...props
-    }
-  );
-}
-var React44, DialogTrigger2, DialogPortal2, DialogOverlay2, DialogContent2, DialogTitle2, DialogDescription2;
-var init_dialog = __esm({
-  "src/app/components/ui/dialog.tsx"() {
-    "use client";
-    React44 = __toESM(require_react());
-    init_dist21();
-    init_lucide_react();
-    init_utils2();
-    DialogTrigger2 = Trigger;
-    DialogPortal2 = Portal2;
-    DialogOverlay2 = React44.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React44.createElement(
-      Overlay,
-      {
-        ref,
-        className: cn(
-          "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
-          className
-        ),
-        ...props
-      }
-    ));
-    DialogOverlay2.displayName = Overlay.displayName;
-    DialogContent2 = React44.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ React44.createElement(DialogPortal2, null, /* @__PURE__ */ React44.createElement(DialogOverlay2, null), /* @__PURE__ */ React44.createElement(
-      Content,
-      {
-        ref,
-        className: cn(
-          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 sm:max-w-lg",
-          className
-        ),
-        ...props
-      },
-      children,
-      /* @__PURE__ */ React44.createElement(Close, { className: "ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4" }, /* @__PURE__ */ React44.createElement(X, null), /* @__PURE__ */ React44.createElement("span", { className: "sr-only" }, "Close"))
-    )));
-    DialogContent2.displayName = Content.displayName;
-    DialogTitle2 = React44.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React44.createElement(
-      Title,
-      {
-        ref,
-        "data-slot": "dialog-title",
-        className: cn("text-lg leading-none font-semibold", className),
-        ...props
-      }
-    ));
-    DialogTitle2.displayName = Title.displayName;
-    DialogDescription2 = React44.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ React44.createElement(
-      Description,
-      {
-        ref,
-        "data-slot": "dialog-description",
-        className: cn("text-muted-foreground text-sm", className),
-        ...props
-      }
-    ));
-    DialogDescription2.displayName = Description.displayName;
-  }
-});
-
 // src/app/components/CharacterLibrary.tsx
 async function loadCharacters3(app) {
   try {
@@ -40039,9 +37544,32 @@ async function saveCharacters3(app, chars) {
   if (file) await app.vault.modify(file, content);
   else await app.vault.create(STORAGE_FILE3, content);
 }
-function LibraryCharacterSheet({ char, app }) {
+function CharacterSheet({ char, app, onClose }) {
   const methods = useForm({ defaultValues: char });
-  return /* @__PURE__ */ import_react14.default.createElement(FormProvider, { ...methods }, /* @__PURE__ */ import_react14.default.createElement(ReviewStep, { formData: char, app }));
+  return /* @__PURE__ */ import_react14.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react14.default.createElement(
+    "div",
+    {
+      role: "button",
+      onClick: onClose,
+      style: {
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.375rem",
+        cursor: "pointer",
+        marginTop: "1.5rem",
+        marginBottom: "1rem",
+        fontSize: "0.8rem",
+        fontWeight: 700,
+        color: "var(--text-muted)",
+        padding: "0.375rem 0.625rem",
+        border: "1px solid var(--background-modifier-border)",
+        borderRadius: "0.375rem",
+        background: "var(--background-modifier-form-field)"
+      }
+    },
+    /* @__PURE__ */ import_react14.default.createElement(ChevronLeft, { style: { width: "0.875rem", height: "0.875rem" } }),
+    "Back to Library"
+  ), /* @__PURE__ */ import_react14.default.createElement(FormProvider, { ...methods }, /* @__PURE__ */ import_react14.default.createElement(ReviewStep, { formData: char, app })));
 }
 function CharacterLibrary({
   app,
@@ -40050,6 +37578,7 @@ function CharacterLibrary({
   const [characters, setCharacters] = import_react14.default.useState([]);
   const [search, setSearch] = import_react14.default.useState("");
   const [loading, setLoading] = import_react14.default.useState(true);
+  const [viewing, setViewing] = import_react14.default.useState(null);
   const fileInputRef = import_react14.default.useRef(null);
   import_react14.default.useEffect(() => {
     loadCharacters3(app).then((chars) => {
@@ -40071,7 +37600,7 @@ function CharacterLibrary({
     document.body.appendChild(a);
     a.click();
     a.remove();
-    new import_obsidian4.Notice("\u2705 Library exported to characters.json");
+    new import_obsidian4.Notice("\u2705 Library exported");
   };
   const handleImport = (event) => {
     const file = event.target.files?.[0];
@@ -40102,34 +37631,81 @@ function CharacterLibrary({
   const filtered = characters.filter(
     (c) => c.name?.toLowerCase().includes(search.toLowerCase()) || c.class?.toLowerCase().includes(search.toLowerCase()) || c.race?.toLowerCase().includes(search.toLowerCase())
   );
+  const iconBtn = (hoverRed = false) => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "2rem",
+    height: "2rem",
+    borderRadius: "0.375rem",
+    cursor: "pointer",
+    border: "1px solid var(--background-modifier-border)",
+    background: "var(--background-modifier-form-field)",
+    color: "var(--text-muted)",
+    flexShrink: 0
+  });
   if (loading) return /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", height: "400px", color: "var(--text-muted)" } }, "Loading characters...");
-  return /* @__PURE__ */ import_react14.default.createElement("div", { className: "max-w-screen-2xl mx-auto p-4 md:p-8 space-y-8" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" }, /* @__PURE__ */ import_react14.default.createElement("div", null, /* @__PURE__ */ import_react14.default.createElement("h1", { className: "text-4xl font-black uppercase tracking-tight" }, "Hero Library"), /* @__PURE__ */ import_react14.default.createElement("p", { className: "text-muted-foreground" }, "Manage your roster of adventurers")), /* @__PURE__ */ import_react14.default.createElement("div", { className: "flex flex-wrap gap-2" }, /* @__PURE__ */ import_react14.default.createElement("input", { type: "file", ref: fileInputRef, onChange: handleImport, accept: ".json", className: "hidden" }), /* @__PURE__ */ import_react14.default.createElement(Button, { variant: "outline", onClick: () => fileInputRef.current?.click(), className: "gap-2" }, /* @__PURE__ */ import_react14.default.createElement(Upload, { className: "w-4 h-4" }), " Import JSON"), /* @__PURE__ */ import_react14.default.createElement(Button, { variant: "outline", onClick: handleExport, className: "gap-2" }, /* @__PURE__ */ import_react14.default.createElement(Download, { className: "w-4 h-4" }), " Export JSON"), /* @__PURE__ */ import_react14.default.createElement(Button, { onClick: () => onEdit(null), className: "gap-2" }, /* @__PURE__ */ import_react14.default.createElement(Plus, { className: "w-4 h-4" }), " Create New Hero"))), /* @__PURE__ */ import_react14.default.createElement("div", { className: "relative" }, /* @__PURE__ */ import_react14.default.createElement(Search, { className: "absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" }), /* @__PURE__ */ import_react14.default.createElement(
-    Input,
+  if (viewing) {
+    return /* @__PURE__ */ import_react14.default.createElement(CharacterSheet, { char: viewing, app, onClose: () => setViewing(null) });
+  }
+  return /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem", padding: "0.5rem" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react14.default.createElement("div", null, /* @__PURE__ */ import_react14.default.createElement("h1", { style: { margin: 0, fontSize: "1.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em" } }, "Hero Library"), /* @__PURE__ */ import_react14.default.createElement("p", { style: { margin: "0.25rem 0 0", color: "var(--text-muted)", fontSize: "0.875rem" } }, "Manage your roster of adventurers")), /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", gap: "0.5rem", flexWrap: "wrap" } }, /* @__PURE__ */ import_react14.default.createElement("input", { type: "file", ref: fileInputRef, onChange: handleImport, accept: ".json", style: { display: "none" } }), [
+    { label: "Import JSON", icon: /* @__PURE__ */ import_react14.default.createElement(Upload, { style: { width: "0.875rem", height: "0.875rem" } }), onClick: () => fileInputRef.current?.click() },
+    { label: "Export JSON", icon: /* @__PURE__ */ import_react14.default.createElement(Download, { style: { width: "0.875rem", height: "0.875rem" } }), onClick: handleExport }
+  ].map((btn) => /* @__PURE__ */ import_react14.default.createElement(
+    "div",
+    {
+      key: btn.label,
+      role: "button",
+      onClick: btn.onClick,
+      style: { display: "flex", alignItems: "center", gap: "0.375rem", padding: "0.5rem 0.875rem", borderRadius: "0.5rem", cursor: "pointer", fontSize: "0.8rem", fontWeight: 600, border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-normal)" }
+    },
+    btn.icon,
+    " ",
+    btn.label
+  )), /* @__PURE__ */ import_react14.default.createElement(
+    "div",
+    {
+      role: "button",
+      onClick: () => onEdit(null),
+      style: { display: "flex", alignItems: "center", gap: "0.375rem", padding: "0.5rem 0.875rem", borderRadius: "0.5rem", cursor: "pointer", fontSize: "0.8rem", fontWeight: 700, background: "var(--interactive-accent)", color: "#fff", border: "none" }
+    },
+    /* @__PURE__ */ import_react14.default.createElement(Plus, { style: { width: "0.875rem", height: "0.875rem" } }),
+    " Create New Hero"
+  ))), /* @__PURE__ */ import_react14.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react14.default.createElement(Search, { style: { position: "absolute", left: "0.75rem", top: "50%", transform: "translateY(-50%)", width: "1rem", height: "1rem", color: "var(--text-muted)", pointerEvents: "none" } }), /* @__PURE__ */ import_react14.default.createElement(
+    "input",
     {
       placeholder: "Search by name, race, or class...",
-      className: "pl-10 h-12",
       value: search,
-      onChange: (e) => setSearch(e.target.value)
+      onChange: (e) => setSearch(e.target.value),
+      style: { width: "100%", padding: "0.625rem 0.75rem 0.625rem 2.25rem", borderRadius: "0.5rem", border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-normal)", fontSize: "0.875rem", outline: "none", boxSizing: "border-box" }
     }
-  )), filtered.length > 0 ? /* @__PURE__ */ import_react14.default.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" }, filtered.map((char) => /* @__PURE__ */ import_react14.default.createElement(Card, { key: char.id, className: "group overflow-hidden border-2 hover:border-primary/40 transition-all" }, /* @__PURE__ */ import_react14.default.createElement(CardHeader, { className: "bg-secondary/20 border-b pb-4" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "flex justify-between items-start" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center overflow-hidden border border-primary/20" }, char.image ? /* @__PURE__ */ import_react14.default.createElement("div", { className: "w-full h-full", style: {
-    backgroundImage: `url(${char.image})`,
-    backgroundPosition: `${char.imageX || 50}% ${char.imageY || 50}%`,
-    backgroundSize: `${char.imageScale || 100}%`,
-    backgroundRepeat: "no-repeat"
-  } }) : /* @__PURE__ */ import_react14.default.createElement(User, { className: "w-6 h-6 text-primary" })), /* @__PURE__ */ import_react14.default.createElement("div", { className: "flex gap-1" }, /* @__PURE__ */ import_react14.default.createElement(Dialog2, null, /* @__PURE__ */ import_react14.default.createElement(DialogTrigger2, { asChild: true }, /* @__PURE__ */ import_react14.default.createElement(Button, { variant: "ghost", size: "icon", className: "h-8 w-8 hover:bg-primary/10 hover:text-primary" }, /* @__PURE__ */ import_react14.default.createElement(Eye, { className: "w-4 h-4" }))), /* @__PURE__ */ import_react14.default.createElement(DialogContent2, { className: "max-w-[95vw] lg:max-w-[900px] w-full max-h-[90vh] overflow-y-auto" }, /* @__PURE__ */ import_react14.default.createElement(DialogHeader, null, /* @__PURE__ */ import_react14.default.createElement(DialogTitle2, null, "Character Sheet: ", char.name), /* @__PURE__ */ import_react14.default.createElement(DialogDescription2, null, "Level ", char.level, " ", char.race, " ", char.class)), /* @__PURE__ */ import_react14.default.createElement(LibraryCharacterSheet, { char, app }))), /* @__PURE__ */ import_react14.default.createElement(Button, { variant: "ghost", size: "icon", onClick: () => onEdit(char), className: "h-8 w-8 hover:bg-primary/10 hover:text-primary" }, /* @__PURE__ */ import_react14.default.createElement(Pencil, { className: "w-4 h-4" })), /* @__PURE__ */ import_react14.default.createElement(Button, { variant: "ghost", size: "icon", onClick: () => handleDelete(char.id), className: "h-8 w-8 hover:bg-destructive/10 hover:text-destructive" }, /* @__PURE__ */ import_react14.default.createElement(Trash, { className: "w-4 h-4" })))), /* @__PURE__ */ import_react14.default.createElement(CardTitle, { className: "mt-4 text-xl font-bold uppercase truncate" }, char.name || "Unnamed"), /* @__PURE__ */ import_react14.default.createElement(CardDescription, null, "Level ", char.level, " ", char.race, " ", char.class)), /* @__PURE__ */ import_react14.default.createElement(CardContent, { className: "p-4 bg-background" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "grid grid-cols-6 gap-1 mb-4" }, char.stats && Object.entries(char.stats).map(([stat, val]) => /* @__PURE__ */ import_react14.default.createElement("div", { key: stat, className: "text-center p-1 rounded bg-secondary/30 border border-secondary" }, /* @__PURE__ */ import_react14.default.createElement("div", { className: "text-[7px] uppercase font-bold text-muted-foreground leading-none mb-1" }, stat), /* @__PURE__ */ import_react14.default.createElement("div", { className: "text-xs font-black" }, val)))), /* @__PURE__ */ import_react14.default.createElement("div", { className: "flex flex-wrap gap-1" }, char.skills?.slice(0, 4).map((s2) => /* @__PURE__ */ import_react14.default.createElement(Badge, { key: s2, variant: "outline", className: "text-[9px] px-1 capitalize" }, s2.replace(/-/g, " "))), (char.skills?.length || 0) > 4 && /* @__PURE__ */ import_react14.default.createElement(Badge, { variant: "outline", className: "text-[9px] px-1" }, "+", (char.skills?.length || 0) - 4)))))) : /* @__PURE__ */ import_react14.default.createElement("div", { className: "text-center py-20 bg-secondary/10 rounded-xl border-2 border-dashed" }, /* @__PURE__ */ import_react14.default.createElement(User, { className: "w-12 h-12 mx-auto text-muted-foreground opacity-20 mb-4" }), /* @__PURE__ */ import_react14.default.createElement("h3", { className: "text-xl font-bold text-muted-foreground" }, "No characters found"), /* @__PURE__ */ import_react14.default.createElement("p", { className: "text-muted-foreground text-sm" }, "Create your first hero to see them here!"), /* @__PURE__ */ import_react14.default.createElement(Button, { variant: "outline", className: "mt-6", onClick: () => onEdit(null) }, "Start Creating")));
+  )), filtered.length > 0 ? /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1rem" } }, filtered.map((char) => /* @__PURE__ */ import_react14.default.createElement("div", { key: char.id, style: { border: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem", overflow: "hidden", background: "var(--background-primary)", display: "flex", flexDirection: "column" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { padding: "0.875rem", background: "var(--background-secondary)", borderBottom: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { width: "3rem", height: "3rem", borderRadius: "0.75rem", background: "var(--background-modifier-form-field)", border: "1px solid var(--background-modifier-border)", overflow: "hidden", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" } }, char.image ? /* @__PURE__ */ import_react14.default.createElement("div", { style: { width: "100%", height: "100%", backgroundImage: `url(${char.image})`, backgroundPosition: `${char.imageX || 50}% ${char.imageY || 50}%`, backgroundSize: `${char.imageScale || 100}%`, backgroundRepeat: "no-repeat" } }) : /* @__PURE__ */ import_react14.default.createElement(User, { style: { width: "1.5rem", height: "1.5rem", color: "var(--text-muted)" } })), /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", gap: "0.25rem" } }, /* @__PURE__ */ import_react14.default.createElement("div", { role: "button", onClick: () => setViewing(char), style: iconBtn(), title: "View sheet" }, /* @__PURE__ */ import_react14.default.createElement(Eye, { style: { width: "0.875rem", height: "0.875rem" } })), /* @__PURE__ */ import_react14.default.createElement("div", { role: "button", onClick: () => onEdit(char), style: iconBtn(), title: "Edit" }, /* @__PURE__ */ import_react14.default.createElement(Pencil, { style: { width: "0.875rem", height: "0.875rem" } })), /* @__PURE__ */ import_react14.default.createElement(
+    "div",
+    {
+      role: "button",
+      onClick: () => handleDelete(char.id),
+      style: { ...iconBtn(), color: "var(--text-error)", borderColor: "var(--text-error)" },
+      title: "Delete"
+    },
+    /* @__PURE__ */ import_react14.default.createElement(Trash, { style: { width: "0.875rem", height: "0.875rem" } })
+  ))), /* @__PURE__ */ import_react14.default.createElement("div", { style: { fontWeight: 900, fontSize: "1.1rem", textTransform: "uppercase", letterSpacing: "-0.01em", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" } }, char.name || "Unnamed"), /* @__PURE__ */ import_react14.default.createElement("div", { style: { fontSize: "0.75rem", color: "var(--interactive-accent)", fontWeight: 700, textTransform: "uppercase" } }, "Level ", char.level, " ", char.race, " ", char.class)), /* @__PURE__ */ import_react14.default.createElement("div", { style: { padding: "0.875rem", display: "flex", flexDirection: "column", gap: "0.75rem" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "0.25rem" } }, STATS.map((statDef) => /* @__PURE__ */ import_react14.default.createElement("div", { key: statDef.id, style: { textAlign: "center", padding: "6px 2px", background: "var(--background-modifier-form-field)", borderRadius: "6px", border: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react14.default.createElement("div", { style: { fontSize: "12px", marginBottom: "2px" } }, /* @__PURE__ */ import_react14.default.createElement(statDef.lucid_icon, { size: 14 })), /* @__PURE__ */ import_react14.default.createElement("div", { style: { fontSize: "13px", fontWeight: 900 } }, char.stats?.[statDef.id] || 10), /* @__PURE__ */ import_react14.default.createElement("div", { style: { fontSize: "8px", fontWeight: 700, textTransform: "uppercase", color: "var(--text-faint)" } }, statDef.id)))), /* @__PURE__ */ import_react14.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.25rem" } }, char.skills?.slice(0, 4).map((s2) => /* @__PURE__ */ import_react14.default.createElement("span", { key: s2, style: { fontSize: "0.65rem", padding: "1px 6px", borderRadius: "999px", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)", textTransform: "capitalize", background: "var(--background-secondary)" } }, s2.replace(/-/g, " "))), (char.skills?.length || 0) > 4 && /* @__PURE__ */ import_react14.default.createElement("span", { style: { fontSize: "0.65rem", padding: "1px 6px", borderRadius: "999px", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)", background: "var(--background-secondary)" } }, "+", (char.skills?.length || 0) - 4)))))) : /* @__PURE__ */ import_react14.default.createElement("div", { style: { textAlign: "center", padding: "5rem 2rem", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.75rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react14.default.createElement(User, { style: { width: "3rem", height: "3rem", margin: "0 auto 1rem", opacity: 0.2, color: "var(--text-muted)" } }), /* @__PURE__ */ import_react14.default.createElement("div", { style: { fontWeight: 700, fontSize: "1.125rem", color: "var(--text-muted)", marginBottom: "0.375rem" } }, "No characters found"), /* @__PURE__ */ import_react14.default.createElement("div", { style: { fontSize: "0.875rem", color: "var(--text-muted)", marginBottom: "1.5rem" } }, "Create your first hero to see them here!"), /* @__PURE__ */ import_react14.default.createElement(
+    "div",
+    {
+      role: "button",
+      onClick: () => onEdit(null),
+      style: { display: "inline-flex", alignItems: "center", gap: "0.375rem", padding: "0.5rem 1rem", borderRadius: "0.5rem", cursor: "pointer", fontSize: "0.875rem", fontWeight: 600, border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-normal)" }
+    },
+    "Start Creating"
+  )));
 }
 var import_react14, import_obsidian4, STORAGE_FILE3;
 var init_CharacterLibrary = __esm({
   "src/app/components/CharacterLibrary.tsx"() {
     import_react14 = __toESM(require_react());
-    init_card();
-    init_button();
-    init_badge();
-    init_input();
     import_obsidian4 = require("obsidian");
     init_lucide_react();
-    init_dialog();
     init_ReviewStep();
+    init_dnd_data();
     init_index_esm();
     STORAGE_FILE3 = "dnd-characters.json";
   }
@@ -40198,7 +37774,7 @@ function App({
         return null;
     }
   }
-  return /* @__PURE__ */ import_react17.default.createElement("div", { className: "min-h-screen bg-background text-foreground" }, /* @__PURE__ */ import_react17.default.createElement("nav", { style: {
+  return /* @__PURE__ */ import_react17.default.createElement("div", { className: "bg-background text-foreground" }, /* @__PURE__ */ import_react17.default.createElement("nav", { style: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
@@ -40339,9 +37915,10 @@ var init_main = __esm({
     CharacterCreatorModal = class extends import_obsidian6.Modal {
       root = null;
       onOpen() {
-        this.containerEl.addClass("dnd-character-modal");
-        const container = this.contentEl.createDiv();
-        this.root = (0, import_client.createRoot)(container);
+        this.modalEl.addClass("dnd-character-modal");
+        this.contentEl.empty();
+        this.contentEl.addClass("dnd-character-modal-content");
+        this.root = (0, import_client.createRoot)(this.contentEl);
         this.root.render(
           /* @__PURE__ */ import_react18.default.createElement(App, { app: this.app, modal: this })
         );
@@ -40434,59 +38011,68 @@ react-dom/cjs/react-dom.development.js:
    * @license Modernizr 3.0.0pre (Custom Build) | MIT
    *)
 
-lucide-react/dist/esm/shared/src/utils.js:
-lucide-react/dist/esm/defaultAttributes.js:
-lucide-react/dist/esm/Icon.js:
-lucide-react/dist/esm/createLucideIcon.js:
-lucide-react/dist/esm/icons/backpack.js:
-lucide-react/dist/esm/icons/badge-plus.js:
-lucide-react/dist/esm/icons/bar-chart.js:
-lucide-react/dist/esm/icons/book-open.js:
-lucide-react/dist/esm/icons/book.js:
-lucide-react/dist/esm/icons/brain.js:
-lucide-react/dist/esm/icons/camera.js:
-lucide-react/dist/esm/icons/check.js:
-lucide-react/dist/esm/icons/chevron-left.js:
-lucide-react/dist/esm/icons/chevron-right.js:
-lucide-react/dist/esm/icons/chevron-up.js:
-lucide-react/dist/esm/icons/circle-alert.js:
-lucide-react/dist/esm/icons/circle-check.js:
-lucide-react/dist/esm/icons/coins.js:
-lucide-react/dist/esm/icons/download.js:
-lucide-react/dist/esm/icons/eye.js:
-lucide-react/dist/esm/icons/file-code.js:
-lucide-react/dist/esm/icons/heart.js:
-lucide-react/dist/esm/icons/info.js:
-lucide-react/dist/esm/icons/library.js:
-lucide-react/dist/esm/icons/loader-circle.js:
-lucide-react/dist/esm/icons/minus.js:
-lucide-react/dist/esm/icons/move.js:
-lucide-react/dist/esm/icons/music.js:
-lucide-react/dist/esm/icons/package.js:
-lucide-react/dist/esm/icons/pen.js:
-lucide-react/dist/esm/icons/pencil.js:
-lucide-react/dist/esm/icons/plus.js:
-lucide-react/dist/esm/icons/save.js:
-lucide-react/dist/esm/icons/scroll-text.js:
-lucide-react/dist/esm/icons/search.js:
-lucide-react/dist/esm/icons/shield.js:
-lucide-react/dist/esm/icons/skull.js:
-lucide-react/dist/esm/icons/sparkles.js:
-lucide-react/dist/esm/icons/sword.js:
-lucide-react/dist/esm/icons/swords.js:
-lucide-react/dist/esm/icons/target.js:
-lucide-react/dist/esm/icons/trash-2.js:
-lucide-react/dist/esm/icons/trash.js:
-lucide-react/dist/esm/icons/trophy.js:
-lucide-react/dist/esm/icons/upload.js:
-lucide-react/dist/esm/icons/user.js:
-lucide-react/dist/esm/icons/wand-sparkles.js:
-lucide-react/dist/esm/icons/wand.js:
-lucide-react/dist/esm/icons/x.js:
-lucide-react/dist/esm/icons/zap.js:
-lucide-react/dist/esm/lucide-react.js:
+lucide-react/dist/esm/shared/src/utils/mergeClasses.mjs:
+lucide-react/dist/esm/shared/src/utils/toKebabCase.mjs:
+lucide-react/dist/esm/shared/src/utils/toCamelCase.mjs:
+lucide-react/dist/esm/shared/src/utils/toPascalCase.mjs:
+lucide-react/dist/esm/defaultAttributes.mjs:
+lucide-react/dist/esm/shared/src/utils/hasA11yProp.mjs:
+lucide-react/dist/esm/context.mjs:
+lucide-react/dist/esm/Icon.mjs:
+lucide-react/dist/esm/createLucideIcon.mjs:
+lucide-react/dist/esm/icons/backpack.mjs:
+lucide-react/dist/esm/icons/badge-plus.mjs:
+lucide-react/dist/esm/icons/biceps-flexed.mjs:
+lucide-react/dist/esm/icons/book-open.mjs:
+lucide-react/dist/esm/icons/book.mjs:
+lucide-react/dist/esm/icons/brain.mjs:
+lucide-react/dist/esm/icons/camera.mjs:
+lucide-react/dist/esm/icons/chart-no-axes-column-increasing.mjs:
+lucide-react/dist/esm/icons/check.mjs:
+lucide-react/dist/esm/icons/chevron-left.mjs:
+lucide-react/dist/esm/icons/chevron-right.mjs:
+lucide-react/dist/esm/icons/chevron-up.mjs:
+lucide-react/dist/esm/icons/circle-alert.mjs:
+lucide-react/dist/esm/icons/circle-check.mjs:
+lucide-react/dist/esm/icons/coins.mjs:
+lucide-react/dist/esm/icons/download.mjs:
+lucide-react/dist/esm/icons/drama.mjs:
+lucide-react/dist/esm/icons/eye.mjs:
+lucide-react/dist/esm/icons/file-code.mjs:
+lucide-react/dist/esm/icons/heart.mjs:
+lucide-react/dist/esm/icons/info.mjs:
+lucide-react/dist/esm/icons/library.mjs:
+lucide-react/dist/esm/icons/loader-circle.mjs:
+lucide-react/dist/esm/icons/minus.mjs:
+lucide-react/dist/esm/icons/move.mjs:
+lucide-react/dist/esm/icons/music.mjs:
+lucide-react/dist/esm/icons/package.mjs:
+lucide-react/dist/esm/icons/pen.mjs:
+lucide-react/dist/esm/icons/pencil.mjs:
+lucide-react/dist/esm/icons/plus.mjs:
+lucide-react/dist/esm/icons/save.mjs:
+lucide-react/dist/esm/icons/scroll-text.mjs:
+lucide-react/dist/esm/icons/search.mjs:
+lucide-react/dist/esm/icons/shield-half.mjs:
+lucide-react/dist/esm/icons/shield.mjs:
+lucide-react/dist/esm/icons/skull.mjs:
+lucide-react/dist/esm/icons/sparkles.mjs:
+lucide-react/dist/esm/icons/sport-shoe.mjs:
+lucide-react/dist/esm/icons/swords.mjs:
+lucide-react/dist/esm/icons/sword.mjs:
+lucide-react/dist/esm/icons/target.mjs:
+lucide-react/dist/esm/icons/trash-2.mjs:
+lucide-react/dist/esm/icons/trash.mjs:
+lucide-react/dist/esm/icons/trophy.mjs:
+lucide-react/dist/esm/icons/upload.mjs:
+lucide-react/dist/esm/icons/user.mjs:
+lucide-react/dist/esm/icons/wand.mjs:
+lucide-react/dist/esm/icons/wand-sparkles.mjs:
+lucide-react/dist/esm/icons/x.mjs:
+lucide-react/dist/esm/icons/zap.mjs:
+lucide-react/dist/esm/lucide-react.mjs:
   (**
-   * @license lucide-react v0.400.0 - ISC
+   * @license lucide-react v1.17.0 - ISC
    *
    * This source code is licensed under the ISC license.
    * See the LICENSE file in the root directory of this source tree.

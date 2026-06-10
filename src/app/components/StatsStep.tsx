@@ -133,8 +133,11 @@ export function StatsStep() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', minWidth: 0 }}>
                 {/* Name row */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.04em' }}>
+                    <stat.lucid_icon size={12.5}/>
+                  </span>
                   <span style={{ fontSize: '0.7rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                    {stat.icon} {stat.name}
+                     {stat.name}
                   </span>
                   {isPrimary && (
                     <span style={{ fontSize: '0.55rem', fontWeight: 900, textTransform: 'uppercase', background: 'var(--interactive-accent)', color: '#fff', padding: '1px 5px', borderRadius: '3px' }}>

@@ -8,18 +8,28 @@ export class CharacterCreatorModal extends Modal {
 	root: Root | null = null;
 
 	onOpen() {
-		//React container
-		// this.modalEl.addClass("dnd-character-modal");
-		this.containerEl.addClass("dnd-character-modal");
-		const container = this.contentEl.createDiv();
+		// //React container
+		// this.containerEl.addClass("dnd-character-modal");
+		// const container = this.contentEl.createDiv();
 		
 
-		this.root = createRoot(container);
+		// this.root = createRoot(container);
 
-		this.root.render(
-			<App app={this.app} modal={this} />
-		);
-	}
+		// this.root.render(
+		// 	<App app={this.app} modal={this} />
+		// );
+
+        this.modalEl.addClass("dnd-character-modal");
+        
+        this.contentEl.empty();
+        this.contentEl.addClass("dnd-character-modal-content");
+
+        this.root = createRoot(this.contentEl);
+        this.root.render(
+            <App app={this.app} modal={this} />
+        );
+    }
+
 
 	onClose() {
 		this.root?.unmount();
