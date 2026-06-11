@@ -25796,12 +25796,30 @@ var init_file_code = __esm({
   }
 });
 
+// node_modules/lucide-react/dist/esm/icons/flame.mjs
+var __iconNode20, Flame;
+var init_flame = __esm({
+  "node_modules/lucide-react/dist/esm/icons/flame.mjs"() {
+    init_createLucideIcon();
+    __iconNode20 = [
+      [
+        "path",
+        {
+          d: "M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4",
+          key: "1slcih"
+        }
+      ]
+    ];
+    Flame = createLucideIcon("flame", __iconNode20);
+  }
+});
+
 // node_modules/lucide-react/dist/esm/icons/heart.mjs
-var __iconNode20, Heart;
+var __iconNode21, Heart;
 var init_heart = __esm({
   "node_modules/lucide-react/dist/esm/icons/heart.mjs"() {
     init_createLucideIcon();
-    __iconNode20 = [
+    __iconNode21 = [
       [
         "path",
         {
@@ -25810,65 +25828,65 @@ var init_heart = __esm({
         }
       ]
     ];
-    Heart = createLucideIcon("heart", __iconNode20);
+    Heart = createLucideIcon("heart", __iconNode21);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/info.mjs
-var __iconNode21, Info;
+var __iconNode22, Info;
 var init_info = __esm({
   "node_modules/lucide-react/dist/esm/icons/info.mjs"() {
     init_createLucideIcon();
-    __iconNode21 = [
+    __iconNode22 = [
       ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
       ["path", { d: "M12 16v-4", key: "1dtifu" }],
       ["path", { d: "M12 8h.01", key: "e9boi3" }]
     ];
-    Info = createLucideIcon("info", __iconNode21);
+    Info = createLucideIcon("info", __iconNode22);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/library.mjs
-var __iconNode22, Library;
+var __iconNode23, Library;
 var init_library = __esm({
   "node_modules/lucide-react/dist/esm/icons/library.mjs"() {
     init_createLucideIcon();
-    __iconNode22 = [
+    __iconNode23 = [
       ["path", { d: "m16 6 4 14", key: "ji33uf" }],
       ["path", { d: "M12 6v14", key: "1n7gus" }],
       ["path", { d: "M8 8v12", key: "1gg7y9" }],
       ["path", { d: "M4 4v16", key: "6qkkli" }]
     ];
-    Library = createLucideIcon("library", __iconNode22);
+    Library = createLucideIcon("library", __iconNode23);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/loader-circle.mjs
-var __iconNode23, LoaderCircle;
+var __iconNode24, LoaderCircle;
 var init_loader_circle = __esm({
   "node_modules/lucide-react/dist/esm/icons/loader-circle.mjs"() {
     init_createLucideIcon();
-    __iconNode23 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
-    LoaderCircle = createLucideIcon("loader-circle", __iconNode23);
+    __iconNode24 = [["path", { d: "M21 12a9 9 0 1 1-6.219-8.56", key: "13zald" }]];
+    LoaderCircle = createLucideIcon("loader-circle", __iconNode24);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/minus.mjs
-var __iconNode24, Minus;
+var __iconNode25, Minus;
 var init_minus = __esm({
   "node_modules/lucide-react/dist/esm/icons/minus.mjs"() {
     init_createLucideIcon();
-    __iconNode24 = [["path", { d: "M5 12h14", key: "1ays0h" }]];
-    Minus = createLucideIcon("minus", __iconNode24);
+    __iconNode25 = [["path", { d: "M5 12h14", key: "1ays0h" }]];
+    Minus = createLucideIcon("minus", __iconNode25);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/move.mjs
-var __iconNode25, Move;
+var __iconNode26, Move;
 var init_move = __esm({
   "node_modules/lucide-react/dist/esm/icons/move.mjs"() {
     init_createLucideIcon();
-    __iconNode25 = [
+    __iconNode26 = [
       ["path", { d: "M12 2v20", key: "t6zp3m" }],
       ["path", { d: "m15 19-3 3-3-3", key: "11eu04" }],
       ["path", { d: "m19 9 3 3-3 3", key: "1mg7y2" }],
@@ -25876,30 +25894,30 @@ var init_move = __esm({
       ["path", { d: "m5 9-3 3 3 3", key: "j64kie" }],
       ["path", { d: "m9 5 3-3 3 3", key: "l8vdw6" }]
     ];
-    Move = createLucideIcon("move", __iconNode25);
+    Move = createLucideIcon("move", __iconNode26);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/music.mjs
-var __iconNode26, Music;
+var __iconNode27, Music;
 var init_music = __esm({
   "node_modules/lucide-react/dist/esm/icons/music.mjs"() {
     init_createLucideIcon();
-    __iconNode26 = [
+    __iconNode27 = [
       ["path", { d: "M9 18V5l12-2v13", key: "1jmyc2" }],
       ["circle", { cx: "6", cy: "18", r: "3", key: "fqmcym" }],
       ["circle", { cx: "18", cy: "16", r: "3", key: "1hluhg" }]
     ];
-    Music = createLucideIcon("music", __iconNode26);
+    Music = createLucideIcon("music", __iconNode27);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/package.mjs
-var __iconNode27, Package;
+var __iconNode28, Package;
 var init_package = __esm({
   "node_modules/lucide-react/dist/esm/icons/package.mjs"() {
     init_createLucideIcon();
-    __iconNode27 = [
+    __iconNode28 = [
       [
         "path",
         {
@@ -25911,16 +25929,16 @@ var init_package = __esm({
       ["polyline", { points: "3.29 7 12 12 20.71 7", key: "ousv84" }],
       ["path", { d: "m7.5 4.27 9 5.15", key: "1c824w" }]
     ];
-    Package = createLucideIcon("package", __iconNode27);
+    Package = createLucideIcon("package", __iconNode28);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/pen.mjs
-var __iconNode28, Pen;
+var __iconNode29, Pen;
 var init_pen = __esm({
   "node_modules/lucide-react/dist/esm/icons/pen.mjs"() {
     init_createLucideIcon();
-    __iconNode28 = [
+    __iconNode29 = [
       [
         "path",
         {
@@ -25929,16 +25947,16 @@ var init_pen = __esm({
         }
       ]
     ];
-    Pen = createLucideIcon("pen", __iconNode28);
+    Pen = createLucideIcon("pen", __iconNode29);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/pencil.mjs
-var __iconNode29, Pencil;
+var __iconNode30, Pencil;
 var init_pencil = __esm({
   "node_modules/lucide-react/dist/esm/icons/pencil.mjs"() {
     init_createLucideIcon();
-    __iconNode29 = [
+    __iconNode30 = [
       [
         "path",
         {
@@ -25948,29 +25966,29 @@ var init_pencil = __esm({
       ],
       ["path", { d: "m15 5 4 4", key: "1mk7zo" }]
     ];
-    Pencil = createLucideIcon("pencil", __iconNode29);
+    Pencil = createLucideIcon("pencil", __iconNode30);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/plus.mjs
-var __iconNode30, Plus;
+var __iconNode31, Plus;
 var init_plus = __esm({
   "node_modules/lucide-react/dist/esm/icons/plus.mjs"() {
     init_createLucideIcon();
-    __iconNode30 = [
+    __iconNode31 = [
       ["path", { d: "M5 12h14", key: "1ays0h" }],
       ["path", { d: "M12 5v14", key: "s699le" }]
     ];
-    Plus = createLucideIcon("plus", __iconNode30);
+    Plus = createLucideIcon("plus", __iconNode31);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/save.mjs
-var __iconNode31, Save;
+var __iconNode32, Save;
 var init_save = __esm({
   "node_modules/lucide-react/dist/esm/icons/save.mjs"() {
     init_createLucideIcon();
-    __iconNode31 = [
+    __iconNode32 = [
       [
         "path",
         {
@@ -25981,16 +25999,16 @@ var init_save = __esm({
       ["path", { d: "M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7", key: "1ydtos" }],
       ["path", { d: "M7 3v4a1 1 0 0 0 1 1h7", key: "t51u73" }]
     ];
-    Save = createLucideIcon("save", __iconNode31);
+    Save = createLucideIcon("save", __iconNode32);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/scroll-text.mjs
-var __iconNode32, ScrollText;
+var __iconNode33, ScrollText;
 var init_scroll_text = __esm({
   "node_modules/lucide-react/dist/esm/icons/scroll-text.mjs"() {
     init_createLucideIcon();
-    __iconNode32 = [
+    __iconNode33 = [
       ["path", { d: "M15 12h-5", key: "r7krc0" }],
       ["path", { d: "M15 8h-5", key: "1khuty" }],
       ["path", { d: "M19 17V5a2 2 0 0 0-2-2H4", key: "zz82l3" }],
@@ -26002,29 +26020,29 @@ var init_scroll_text = __esm({
         }
       ]
     ];
-    ScrollText = createLucideIcon("scroll-text", __iconNode32);
+    ScrollText = createLucideIcon("scroll-text", __iconNode33);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/search.mjs
-var __iconNode33, Search;
+var __iconNode34, Search;
 var init_search = __esm({
   "node_modules/lucide-react/dist/esm/icons/search.mjs"() {
     init_createLucideIcon();
-    __iconNode33 = [
+    __iconNode34 = [
       ["path", { d: "m21 21-4.34-4.34", key: "14j7rj" }],
       ["circle", { cx: "11", cy: "11", r: "8", key: "4ej97u" }]
     ];
-    Search = createLucideIcon("search", __iconNode33);
+    Search = createLucideIcon("search", __iconNode34);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/shield-half.mjs
-var __iconNode34, ShieldHalf;
+var __iconNode35, ShieldHalf;
 var init_shield_half = __esm({
   "node_modules/lucide-react/dist/esm/icons/shield-half.mjs"() {
     init_createLucideIcon();
-    __iconNode34 = [
+    __iconNode35 = [
       [
         "path",
         {
@@ -26034,16 +26052,16 @@ var init_shield_half = __esm({
       ],
       ["path", { d: "M12 22V2", key: "zs6s6o" }]
     ];
-    ShieldHalf = createLucideIcon("shield-half", __iconNode34);
+    ShieldHalf = createLucideIcon("shield-half", __iconNode35);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/shield.mjs
-var __iconNode35, Shield;
+var __iconNode36, Shield;
 var init_shield = __esm({
   "node_modules/lucide-react/dist/esm/icons/shield.mjs"() {
     init_createLucideIcon();
-    __iconNode35 = [
+    __iconNode36 = [
       [
         "path",
         {
@@ -26052,16 +26070,16 @@ var init_shield = __esm({
         }
       ]
     ];
-    Shield = createLucideIcon("shield", __iconNode35);
+    Shield = createLucideIcon("shield", __iconNode36);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/skull.mjs
-var __iconNode36, Skull;
+var __iconNode37, Skull;
 var init_skull = __esm({
   "node_modules/lucide-react/dist/esm/icons/skull.mjs"() {
     init_createLucideIcon();
-    __iconNode36 = [
+    __iconNode37 = [
       ["path", { d: "m12.5 17-.5-1-.5 1h1z", key: "3me087" }],
       [
         "path",
@@ -26073,16 +26091,16 @@ var init_skull = __esm({
       ["circle", { cx: "15", cy: "12", r: "1", key: "1tmaij" }],
       ["circle", { cx: "9", cy: "12", r: "1", key: "1vctgf" }]
     ];
-    Skull = createLucideIcon("skull", __iconNode36);
+    Skull = createLucideIcon("skull", __iconNode37);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/sparkles.mjs
-var __iconNode37, Sparkles;
+var __iconNode38, Sparkles;
 var init_sparkles = __esm({
   "node_modules/lucide-react/dist/esm/icons/sparkles.mjs"() {
     init_createLucideIcon();
-    __iconNode37 = [
+    __iconNode38 = [
       [
         "path",
         {
@@ -26094,16 +26112,16 @@ var init_sparkles = __esm({
       ["path", { d: "M22 4h-4", key: "gwowj6" }],
       ["circle", { cx: "4", cy: "20", r: "2", key: "6kqj1y" }]
     ];
-    Sparkles = createLucideIcon("sparkles", __iconNode37);
+    Sparkles = createLucideIcon("sparkles", __iconNode38);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/sport-shoe.mjs
-var __iconNode38, SportShoe;
+var __iconNode39, SportShoe;
 var init_sport_shoe = __esm({
   "node_modules/lucide-react/dist/esm/icons/sport-shoe.mjs"() {
     init_createLucideIcon();
-    __iconNode38 = [
+    __iconNode39 = [
       ["path", { d: "m15 10.42 4.8-5.07", key: "10at9d" }],
       ["path", { d: "M19 18h3", key: "nnkd4d" }],
       [
@@ -26114,16 +26132,16 @@ var init_sport_shoe = __esm({
         }
       ]
     ];
-    SportShoe = createLucideIcon("sport-shoe", __iconNode38);
+    SportShoe = createLucideIcon("sport-shoe", __iconNode39);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/swords.mjs
-var __iconNode39, Swords;
+var __iconNode40, Swords;
 var init_swords = __esm({
   "node_modules/lucide-react/dist/esm/icons/swords.mjs"() {
     init_createLucideIcon();
-    __iconNode39 = [
+    __iconNode40 = [
       ["polyline", { points: "14.5 17.5 3 6 3 3 6 3 17.5 14.5", key: "1hfsw2" }],
       ["line", { x1: "13", x2: "19", y1: "19", y2: "13", key: "1vrmhu" }],
       ["line", { x1: "16", x2: "20", y1: "16", y2: "20", key: "1bron3" }],
@@ -26133,75 +26151,75 @@ var init_swords = __esm({
       ["line", { x1: "7", x2: "4", y1: "17", y2: "20", key: "pidxm4" }],
       ["line", { x1: "3", x2: "5", y1: "19", y2: "21", key: "1pehsh" }]
     ];
-    Swords = createLucideIcon("swords", __iconNode39);
+    Swords = createLucideIcon("swords", __iconNode40);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/sword.mjs
-var __iconNode40, Sword;
+var __iconNode41, Sword;
 var init_sword = __esm({
   "node_modules/lucide-react/dist/esm/icons/sword.mjs"() {
     init_createLucideIcon();
-    __iconNode40 = [
+    __iconNode41 = [
       ["path", { d: "m11 19-6-6", key: "s7kpr" }],
       ["path", { d: "m5 21-2-2", key: "1kw20b" }],
       ["path", { d: "m8 16-4 4", key: "1oqv8h" }],
       ["path", { d: "M9.5 17.5 21 6V3h-3L6.5 14.5", key: "pkxemp" }]
     ];
-    Sword = createLucideIcon("sword", __iconNode40);
+    Sword = createLucideIcon("sword", __iconNode41);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/target.mjs
-var __iconNode41, Target;
+var __iconNode42, Target;
 var init_target = __esm({
   "node_modules/lucide-react/dist/esm/icons/target.mjs"() {
     init_createLucideIcon();
-    __iconNode41 = [
+    __iconNode42 = [
       ["circle", { cx: "12", cy: "12", r: "10", key: "1mglay" }],
       ["circle", { cx: "12", cy: "12", r: "6", key: "1vlfrh" }],
       ["circle", { cx: "12", cy: "12", r: "2", key: "1c9p78" }]
     ];
-    Target = createLucideIcon("target", __iconNode41);
+    Target = createLucideIcon("target", __iconNode42);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/trash-2.mjs
-var __iconNode42, Trash2;
+var __iconNode43, Trash2;
 var init_trash_2 = __esm({
   "node_modules/lucide-react/dist/esm/icons/trash-2.mjs"() {
     init_createLucideIcon();
-    __iconNode42 = [
+    __iconNode43 = [
       ["path", { d: "M10 11v6", key: "nco0om" }],
       ["path", { d: "M14 11v6", key: "outv1u" }],
       ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
       ["path", { d: "M3 6h18", key: "d0wm0j" }],
       ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
     ];
-    Trash2 = createLucideIcon("trash-2", __iconNode42);
+    Trash2 = createLucideIcon("trash-2", __iconNode43);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/trash.mjs
-var __iconNode43, Trash;
+var __iconNode44, Trash;
 var init_trash = __esm({
   "node_modules/lucide-react/dist/esm/icons/trash.mjs"() {
     init_createLucideIcon();
-    __iconNode43 = [
+    __iconNode44 = [
       ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
       ["path", { d: "M3 6h18", key: "d0wm0j" }],
       ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
     ];
-    Trash = createLucideIcon("trash", __iconNode43);
+    Trash = createLucideIcon("trash", __iconNode44);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/trophy.mjs
-var __iconNode44, Trophy;
+var __iconNode45, Trophy;
 var init_trophy = __esm({
   "node_modules/lucide-react/dist/esm/icons/trophy.mjs"() {
     init_createLucideIcon();
-    __iconNode44 = [
+    __iconNode45 = [
       ["path", { d: "M10 14.66v1.626a2 2 0 0 1-.976 1.696A5 5 0 0 0 7 21.978", key: "1n3hpd" }],
       ["path", { d: "M14 14.66v1.626a2 2 0 0 0 .976 1.696A5 5 0 0 1 17 21.978", key: "rfe1zi" }],
       ["path", { d: "M18 9h1.5a1 1 0 0 0 0-5H18", key: "7xy6bh" }],
@@ -26209,43 +26227,43 @@ var init_trophy = __esm({
       ["path", { d: "M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z", key: "1mhfuq" }],
       ["path", { d: "M6 9H4.5a1 1 0 0 1 0-5H6", key: "tex48p" }]
     ];
-    Trophy = createLucideIcon("trophy", __iconNode44);
+    Trophy = createLucideIcon("trophy", __iconNode45);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/upload.mjs
-var __iconNode45, Upload;
+var __iconNode46, Upload;
 var init_upload = __esm({
   "node_modules/lucide-react/dist/esm/icons/upload.mjs"() {
     init_createLucideIcon();
-    __iconNode45 = [
+    __iconNode46 = [
       ["path", { d: "M12 3v12", key: "1x0j5s" }],
       ["path", { d: "m17 8-5-5-5 5", key: "7q97r8" }],
       ["path", { d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4", key: "ih7n3h" }]
     ];
-    Upload = createLucideIcon("upload", __iconNode45);
+    Upload = createLucideIcon("upload", __iconNode46);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/user.mjs
-var __iconNode46, User;
+var __iconNode47, User;
 var init_user = __esm({
   "node_modules/lucide-react/dist/esm/icons/user.mjs"() {
     init_createLucideIcon();
-    __iconNode46 = [
+    __iconNode47 = [
       ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
       ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
     ];
-    User = createLucideIcon("user", __iconNode46);
+    User = createLucideIcon("user", __iconNode47);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/wand.mjs
-var __iconNode47, Wand;
+var __iconNode48, Wand;
 var init_wand = __esm({
   "node_modules/lucide-react/dist/esm/icons/wand.mjs"() {
     init_createLucideIcon();
-    __iconNode47 = [
+    __iconNode48 = [
       ["path", { d: "M15 4V2", key: "z1p9b7" }],
       ["path", { d: "M15 16v-2", key: "px0unx" }],
       ["path", { d: "M8 9h2", key: "1g203m" }],
@@ -26256,16 +26274,16 @@ var init_wand = __esm({
       ["path", { d: "m3 21 9-9", key: "1jfql5" }],
       ["path", { d: "M12.2 6.2 11 5", key: "i3da3b" }]
     ];
-    Wand = createLucideIcon("wand", __iconNode47);
+    Wand = createLucideIcon("wand", __iconNode48);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/wand-sparkles.mjs
-var __iconNode48, WandSparkles;
+var __iconNode49, WandSparkles;
 var init_wand_sparkles = __esm({
   "node_modules/lucide-react/dist/esm/icons/wand-sparkles.mjs"() {
     init_createLucideIcon();
-    __iconNode48 = [
+    __iconNode49 = [
       [
         "path",
         {
@@ -26281,29 +26299,62 @@ var init_wand_sparkles = __esm({
       ["path", { d: "M21 16h-4", key: "1cnmox" }],
       ["path", { d: "M11 3H9", key: "1obp7u" }]
     ];
-    WandSparkles = createLucideIcon("wand-sparkles", __iconNode48);
+    WandSparkles = createLucideIcon("wand-sparkles", __iconNode49);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/weight.mjs
+var __iconNode50, Weight;
+var init_weight = __esm({
+  "node_modules/lucide-react/dist/esm/icons/weight.mjs"() {
+    init_createLucideIcon();
+    __iconNode50 = [
+      ["circle", { cx: "12", cy: "5", r: "3", key: "rqqgnr" }],
+      [
+        "path",
+        {
+          d: "M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z",
+          key: "56o5sh"
+        }
+      ]
+    ];
+    Weight = createLucideIcon("weight", __iconNode50);
+  }
+});
+
+// node_modules/lucide-react/dist/esm/icons/wind.mjs
+var __iconNode51, Wind;
+var init_wind = __esm({
+  "node_modules/lucide-react/dist/esm/icons/wind.mjs"() {
+    init_createLucideIcon();
+    __iconNode51 = [
+      ["path", { d: "M12.8 19.6A2 2 0 1 0 14 16H2", key: "148xed" }],
+      ["path", { d: "M17.5 8a2.5 2.5 0 1 1 2 4H2", key: "1u4tom" }],
+      ["path", { d: "M9.8 4.4A2 2 0 1 1 11 8H2", key: "75valh" }]
+    ];
+    Wind = createLucideIcon("wind", __iconNode51);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/x.mjs
-var __iconNode49, X;
+var __iconNode52, X;
 var init_x = __esm({
   "node_modules/lucide-react/dist/esm/icons/x.mjs"() {
     init_createLucideIcon();
-    __iconNode49 = [
+    __iconNode52 = [
       ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
       ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
     ];
-    X = createLucideIcon("x", __iconNode49);
+    X = createLucideIcon("x", __iconNode52);
   }
 });
 
 // node_modules/lucide-react/dist/esm/icons/zap.mjs
-var __iconNode50, Zap;
+var __iconNode53, Zap;
 var init_zap = __esm({
   "node_modules/lucide-react/dist/esm/icons/zap.mjs"() {
     init_createLucideIcon();
-    __iconNode50 = [
+    __iconNode53 = [
       [
         "path",
         {
@@ -26312,7 +26363,7 @@ var init_zap = __esm({
         }
       ]
     ];
-    Zap = createLucideIcon("zap", __iconNode50);
+    Zap = createLucideIcon("zap", __iconNode53);
   }
 });
 
@@ -26343,6 +26394,7 @@ var init_lucide_react = __esm({
     init_drama();
     init_eye();
     init_file_code();
+    init_flame();
     init_heart();
     init_info();
     init_library();
@@ -26368,6 +26420,8 @@ var init_lucide_react = __esm({
     init_upload();
     init_user();
     init_wand();
+    init_weight();
+    init_wind();
     init_x();
     init_zap();
   }
@@ -31019,8 +31073,8 @@ function BasicsStep() {
     width: "100%",
     height: "100%",
     backgroundImage: `url(${formData.image})`,
-    backgroundPosition: `${formData.imageX || 50}% ${formData.imageY || 50}%`,
-    backgroundSize: `${formData.imageScale || 100}%`,
+    backgroundPosition: `${formData.imageX ?? 50}% ${formData.imageY ?? 50}%`,
+    backgroundSize: `${formData.imageScale ?? 100}%`,
     backgroundRepeat: "no-repeat"
   } }), /* @__PURE__ */ import_react5.default.createElement(
     "div",
@@ -32028,6 +32082,7 @@ function StatsStep() {
   const [tooltip, setTooltip] = import_react8.default.useState(null);
   const classInfo = CLASS_DATA[formData.class];
   const primaryAbility = classInfo?.spellcasting?.ability || (["barbarian", "fighter", "paladin"].includes(formData.class) ? "str" : ["rogue", "monk", "ranger"].includes(formData.class) ? "dex" : "int");
+  const ClassIcon = CLASS_DATA[formData.class].icon;
   const getASIBonus = () => {
     let count = Math.floor(formData.level / 4);
     if (formData.class === "fighter") {
@@ -32089,7 +32144,7 @@ function StatsStep() {
     alignItems: "center",
     justifyContent: "center",
     fontSize: "1.25rem"
-  } }, formData.class === "fighter" ? "\u2694\uFE0F" : formData.class === "wizard" ? "\u{1F9D9}" : "\u{1F6E1}\uFE0F"), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.9rem", letterSpacing: "-0.01em", color: "var(--interactive-accent)" } }, formData.class), /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", fontWeight: 700, textTransform: "uppercase" } }, "Primary: ", /* @__PURE__ */ import_react8.default.createElement("span", { style: { color: "var(--interactive-accent)" } }, primaryAbility), " ", "\xB7 Budget: ", totalBudget))), /* @__PURE__ */ import_react8.default.createElement("div", { style: {
+  } }, /* @__PURE__ */ import_react8.default.createElement(ClassIcon, { size: 30, style: { color: "var(--text-muted)" } })), /* @__PURE__ */ import_react8.default.createElement("div", null, /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontWeight: 900, textTransform: "uppercase", fontSize: "0.9rem", letterSpacing: "-0.01em", color: "var(--interactive-accent)" } }, formData.class), /* @__PURE__ */ import_react8.default.createElement("div", { style: { fontSize: "0.65rem", color: "var(--text-muted)", fontWeight: 700, textTransform: "uppercase" } }, "Primary: ", /* @__PURE__ */ import_react8.default.createElement("span", { style: { color: "var(--interactive-accent)" } }, primaryAbility), " ", "\xB7 Budget: ", totalBudget))), /* @__PURE__ */ import_react8.default.createElement("div", { style: {
     padding: "0.375rem 0.875rem",
     borderRadius: "999px",
     fontWeight: 900,
@@ -32970,8 +33025,10 @@ async function loadCharacters(app) {
   try {
     const file = app.vault.getAbstractFileByPath(STORAGE_FILE);
     if (!file) return [];
+    console.log("Hi there");
     return JSON.parse(await app.vault.read(file));
   } catch {
+    console.log("bye there");
     return [];
   }
 }
@@ -37283,12 +37340,12 @@ function CharacterWizard({ app, modal, editingChar }) {
   const [ready, setReady] = (0, import_react13.useState)(false);
   import_react13.default.useEffect(() => {
     if (editingChar) {
-      setInitialValues(editingChar);
+      methods.reset(editingChar);
       setReady(true);
       return;
     }
     loadEditingCharacter(app).then((editing) => {
-      if (editing) setInitialValues(editing);
+      if (editing) methods.reset(editing);
       setReady(true);
     });
   }, []);
@@ -37712,43 +37769,157 @@ var init_CharacterLibrary = __esm({
 });
 
 // src/app/components/SpellIndex.tsx
-function SpellIndex({
-  app,
-  modal
-}) {
-  return (
-    // <div className="character-creator">
-    /* @__PURE__ */ import_react15.default.createElement("div", { className: "min-h-screen bg-background text-foreground selection:bg-primary/10" }, /* @__PURE__ */ import_react15.default.createElement("h1", null, "SpellIndex"))
-  );
+function SpellIndex({ app, modal }) {
+  const [search, setSearch] = (0, import_react15.useState)("");
+  const [selectedClass, setSelectedClass] = (0, import_react15.useState)("all");
+  const [popover, setPopover] = (0, import_react15.useState)(null);
+  const filterSpells = (levelSpells) => levelSpells.filter((s2) => {
+    const matchSearch = s2.name.toLowerCase().includes(search.toLowerCase()) || s2.description.toLowerCase().includes(search.toLowerCase());
+    const matchClass = selectedClass === "all" || s2.classes.includes(selectedClass);
+    return matchSearch && matchClass;
+  });
+  return /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem", padding: "0.5rem" } }, /* @__PURE__ */ import_react15.default.createElement("div", null, /* @__PURE__ */ import_react15.default.createElement("h1", { style: { margin: 0, fontSize: "1.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em", display: "flex", alignItems: "center", gap: "0.625rem" } }, /* @__PURE__ */ import_react15.default.createElement(Book, { style: { width: "1.5rem", height: "1.5rem", color: "var(--interactive-accent)" } }), "Spell Library"), /* @__PURE__ */ import_react15.default.createElement("p", { style: { margin: "0.25rem 0 0", color: "var(--text-muted)", fontSize: "0.875rem" } }, "Filter by class or search for specific effects")), /* @__PURE__ */ import_react15.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react15.default.createElement(Search, { style: { position: "absolute", left: "0.75rem", top: "50%", transform: "translateY(-50%)", width: "1rem", height: "1rem", color: "var(--text-muted)", pointerEvents: "none" } }), /* @__PURE__ */ import_react15.default.createElement(
+    "input",
+    {
+      placeholder: "Search spells by name or description...",
+      value: search,
+      onChange: (e) => setSearch(e.target.value),
+      style: { width: "100%", padding: "0.625rem 0.75rem 0.625rem 2.25rem", borderRadius: "0.5rem", border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-normal)", fontSize: "0.875rem", outline: "none", boxSizing: "border-box" }
+    }
+  )), /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.375rem" } }, ALL_CLASSES.map((c) => /* @__PURE__ */ import_react15.default.createElement(
+    "div",
+    {
+      key: c,
+      role: "button",
+      onClick: () => setSelectedClass(c),
+      style: {
+        padding: "0.25rem 0.75rem",
+        borderRadius: "999px",
+        fontSize: "0.7rem",
+        fontWeight: 700,
+        textTransform: "capitalize",
+        cursor: "pointer",
+        border: "1px solid var(--background-modifier-border)",
+        background: selectedClass === c ? "var(--interactive-accent)" : "var(--background-modifier-form-field)",
+        color: selectedClass === c ? "#fff" : "var(--text-muted)"
+      }
+    },
+    c
+  ))), /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "2rem", paddingBottom: "2rem" } }, ALL_LEVELS.map((lvl) => {
+    const levelSpells = SPELL_DATA[lvl] || [];
+    const filtered = filterSpells(levelSpells);
+    if (filtered.length === 0) return null;
+    const label = lvl === "cantrips" ? "Cantrips" : `Level ${lvl.replace("level", "")}`;
+    return /* @__PURE__ */ import_react15.default.createElement("div", { key: lvl }, /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.75rem" } }, /* @__PURE__ */ import_react15.default.createElement("h2", { style: { margin: 0, fontSize: "1.125rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--interactive-accent)" } }, label), /* @__PURE__ */ import_react15.default.createElement("div", { style: { flex: 1, height: "1px", background: "var(--background-modifier-border)" } }), /* @__PURE__ */ import_react15.default.createElement("span", { style: { fontSize: "0.7rem", fontWeight: 700, padding: "0.125rem 0.5rem", borderRadius: "999px", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)" } }, filtered.length, " spells")), /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem" } }, filtered.map((spell) => {
+      const Icon2 = SCHOOL_ICONS[spell.school] || Book;
+      const color = SCHOOL_COLORS[spell.school] || "var(--interactive-accent)";
+      const key = `${lvl}-${spell.id}`;
+      const open = popover === key;
+      return /* @__PURE__ */ import_react15.default.createElement(
+        "div",
+        {
+          key: spell.id,
+          style: { border: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem", background: "var(--background-primary)", overflow: "visible", position: "relative", display: "flex", flexDirection: "column" }
+        },
+        /* @__PURE__ */ import_react15.default.createElement("div", { style: { padding: "0.75rem", borderBottom: "1px solid var(--background-modifier-border)", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem" } }, /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.5rem", minWidth: 0 } }, /* @__PURE__ */ import_react15.default.createElement("div", { style: { width: "2rem", height: "2rem", borderRadius: "0.375rem", background: `${color}22`, border: `1px solid ${color}44`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 } }, /* @__PURE__ */ import_react15.default.createElement(Icon2, { style: { width: "1rem", height: "1rem", color } })), /* @__PURE__ */ import_react15.default.createElement("div", { style: { minWidth: 0 } }, /* @__PURE__ */ import_react15.default.createElement("div", { style: { fontWeight: 700, fontSize: "0.8rem", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" } }, spell.name), /* @__PURE__ */ import_react15.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", color } }, spell.school))), /* @__PURE__ */ import_react15.default.createElement(
+          "div",
+          {
+            role: "button",
+            onClick: () => setPopover(open ? null : key),
+            style: { width: "1.5rem", height: "1.5rem", borderRadius: "0.25rem", cursor: "pointer", border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-muted)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }
+          },
+          /* @__PURE__ */ import_react15.default.createElement(Info, { style: { width: "0.75rem", height: "0.75rem" } })
+        )),
+        /* @__PURE__ */ import_react15.default.createElement("div", { style: { padding: "0.625rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.5, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", flex: 1 } }, spell.description),
+        /* @__PURE__ */ import_react15.default.createElement("div", { style: { padding: "0 0.75rem 0.625rem", display: "flex", flexWrap: "wrap", gap: "0.2rem" } }, spell.classes.slice(0, 3).map((c) => /* @__PURE__ */ import_react15.default.createElement("span", { key: c, style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "capitalize", color: "var(--interactive-accent)", opacity: 0.7 } }, c)), spell.classes.length > 3 && /* @__PURE__ */ import_react15.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 700, color: "var(--interactive-accent)", opacity: 0.7 } }, "+", spell.classes.length - 3)),
+        open && /* @__PURE__ */ import_react15.default.createElement("div", { style: { position: "absolute", top: "100%", right: 0, zIndex: 50, width: "18rem", background: "var(--background-primary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem", boxShadow: "0 4px 20px rgba(0,0,0,0.15)", padding: "0.875rem", marginTop: "0.25rem" } }, /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem", paddingBottom: "0.5rem", borderBottom: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react15.default.createElement("span", { style: { fontWeight: 900, fontSize: "0.8rem", textTransform: "uppercase" } }, spell.name), /* @__PURE__ */ import_react15.default.createElement("span", { style: { fontSize: "0.6rem", fontWeight: 700, textTransform: "uppercase", padding: "0.125rem 0.4rem", borderRadius: "999px", background: `${color}22`, color } }, spell.school)), /* @__PURE__ */ import_react15.default.createElement("p", { style: { margin: "0 0 0.625rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6 } }, spell.description), /* @__PURE__ */ import_react15.default.createElement("div", { style: { display: "flex", flexWrap: "wrap", gap: "0.25rem" } }, spell.classes.map((c) => /* @__PURE__ */ import_react15.default.createElement("span", { key: c, style: { fontSize: "0.65rem", padding: "1px 6px", borderRadius: "999px", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)", textTransform: "capitalize", background: "var(--background-secondary)" } }, c))))
+      );
+    })));
+  })));
 }
-var import_react15;
+var import_react15, SCHOOL_ICONS, SCHOOL_COLORS, ALL_LEVELS, ALL_CLASSES;
 var init_SpellIndex = __esm({
   "src/app/components/SpellIndex.tsx"() {
     import_react15 = __toESM(require_react());
+    init_dnd_data();
+    init_lucide_react();
+    SCHOOL_ICONS = {
+      "Abjuration": Shield,
+      "Conjuration": Wind,
+      "Divination": Eye,
+      "Enchantment": Brain,
+      "Evocation": Flame,
+      "Illusion": Zap,
+      "Necromancy": Skull,
+      "Transmutation": Sparkles
+    };
+    SCHOOL_COLORS = {
+      "Abjuration": "#3b82f6",
+      "Conjuration": "#8b5cf6",
+      "Divination": "#06b6d4",
+      "Enchantment": "#ec4899",
+      "Evocation": "#ef4444",
+      "Illusion": "#6366f1",
+      "Necromancy": "#6b7280",
+      "Transmutation": "#f59e0b"
+    };
+    ALL_LEVELS = ["cantrips", "level1", "level2", "level3", "level4", "level5", "level6", "level7", "level8", "level9"];
+    ALL_CLASSES = ["all", "bard", "cleric", "druid", "paladin", "ranger", "sorcerer", "warlock", "wizard"];
   }
 });
 
 // src/app/components/EquipmentIndex.tsx
-function EquipmentIndex({
-  app,
-  modal
-}) {
-  return (
-    // <div className="character-creator">
-    /* @__PURE__ */ import_react16.default.createElement("div", { className: "min-h-screen bg-background text-foreground selection:bg-primary/10" }, /* @__PURE__ */ import_react16.default.createElement("h1", null, "EquipmentIndex"))
+function EquipmentIndex({ app, modal }) {
+  const [search, setSearch] = (0, import_react16.useState)("");
+  const [popover, setPopover] = (0, import_react16.useState)(null);
+  const filteredItems = Object.entries(EQUIPMENT_DATA).filter(
+    ([name, data]) => name.toLowerCase().includes(search.toLowerCase()) || data.description && data.description.toLowerCase().includes(search.toLowerCase()) || data.properties.toLowerCase().includes(search.toLowerCase())
   );
+  return /* @__PURE__ */ import_react16.default.createElement("div", { style: { display: "flex", flexDirection: "column", gap: "1.5rem", padding: "0.5rem" } }, /* @__PURE__ */ import_react16.default.createElement("div", null, /* @__PURE__ */ import_react16.default.createElement("h1", { style: { margin: 0, fontSize: "1.75rem", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em", display: "flex", alignItems: "center", gap: "0.625rem" } }, /* @__PURE__ */ import_react16.default.createElement(Package, { style: { width: "1.5rem", height: "1.5rem", color: "var(--interactive-accent)" } }), "Equipment Index"), /* @__PURE__ */ import_react16.default.createElement("p", { style: { margin: "0.25rem 0 0", color: "var(--text-muted)", fontSize: "0.875rem" } }, "Weapons, armour, and adventuring gear")), /* @__PURE__ */ import_react16.default.createElement("div", { style: { position: "relative" } }, /* @__PURE__ */ import_react16.default.createElement(Search, { style: { position: "absolute", left: "0.75rem", top: "50%", transform: "translateY(-50%)", width: "1rem", height: "1rem", color: "var(--text-muted)", pointerEvents: "none" } }), /* @__PURE__ */ import_react16.default.createElement(
+    "input",
+    {
+      placeholder: "Search items by name, property, or description...",
+      value: search,
+      onChange: (e) => setSearch(e.target.value),
+      style: { width: "100%", padding: "0.625rem 0.75rem 0.625rem 2.25rem", borderRadius: "0.5rem", border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-normal)", fontSize: "0.875rem", outline: "none", boxSizing: "border-box" }
+    }
+  )), search && /* @__PURE__ */ import_react16.default.createElement("div", { style: { fontSize: "0.8rem", color: "var(--text-muted)" } }, filteredItems.length, " item", filteredItems.length !== 1 ? "s" : "", " found"), filteredItems.length > 0 ? /* @__PURE__ */ import_react16.default.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.75rem", paddingBottom: "2rem" } }, filteredItems.map(([name, data]) => {
+    const open = popover === name;
+    return /* @__PURE__ */ import_react16.default.createElement(
+      "div",
+      {
+        key: name,
+        style: { border: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem", background: "var(--background-primary)", position: "relative", display: "flex", flexDirection: "column", overflow: "visible" }
+      },
+      /* @__PURE__ */ import_react16.default.createElement("div", { style: { padding: "0.875rem", background: "var(--background-secondary)", borderBottom: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem 0.75rem 0 0", display: "flex", justifyContent: "space-between", alignItems: "flex-start" } }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { minWidth: 0 } }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { fontWeight: 900, fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "-0.01em", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" } }, name), /* @__PURE__ */ import_react16.default.createElement("div", { style: { display: "flex", alignItems: "center", gap: "0.75rem", marginTop: "0.25rem" } }, /* @__PURE__ */ import_react16.default.createElement("span", { style: { display: "flex", alignItems: "center", gap: "0.2rem", fontSize: "0.7rem", fontWeight: 700, color: "var(--text-muted)" } }, /* @__PURE__ */ import_react16.default.createElement(Coins, { style: { width: "0.75rem", height: "0.75rem", color: "#ca8a04" } }), data.cost), /* @__PURE__ */ import_react16.default.createElement("span", { style: { display: "flex", alignItems: "center", gap: "0.2rem", fontSize: "0.7rem", fontWeight: 700, color: "var(--text-muted)" } }, /* @__PURE__ */ import_react16.default.createElement(Weight, { style: { width: "0.75rem", height: "0.75rem" } }), data.weight))), /* @__PURE__ */ import_react16.default.createElement(
+        "div",
+        {
+          role: "button",
+          onClick: () => setPopover(open ? null : name),
+          style: { width: "1.75rem", height: "1.75rem", borderRadius: "0.375rem", cursor: "pointer", border: "1px solid var(--background-modifier-border)", background: "var(--background-modifier-form-field)", color: "var(--text-muted)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }
+        },
+        /* @__PURE__ */ import_react16.default.createElement(Info, { style: { width: "0.875rem", height: "0.875rem" } })
+      )),
+      /* @__PURE__ */ import_react16.default.createElement("div", { style: { margin: "0.625rem 0.75rem 0", padding: "0.375rem 0.625rem", background: "var(--background-modifier-form-field)", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.375rem", fontSize: "0.7rem", fontStyle: "italic", color: "var(--interactive-accent)", lineHeight: 1.4 } }, data.properties),
+      /* @__PURE__ */ import_react16.default.createElement("div", { style: { padding: "0.5rem 0.75rem 0.75rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.5, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" } }, data.description || "No description available."),
+      open && /* @__PURE__ */ import_react16.default.createElement("div", { style: { position: "absolute", top: "100%", right: 0, zIndex: 50, width: "18rem", background: "var(--background-primary)", border: "1px solid var(--background-modifier-border)", borderRadius: "0.75rem", boxShadow: "0 4px 20px rgba(0,0,0,0.15)", padding: "0.875rem", marginTop: "0.25rem" } }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem", paddingBottom: "0.5rem", borderBottom: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react16.default.createElement("span", { style: { fontWeight: 900, fontSize: "0.8rem", textTransform: "uppercase" } }, name), /* @__PURE__ */ import_react16.default.createElement("div", { style: { display: "flex", gap: "0.25rem" } }, /* @__PURE__ */ import_react16.default.createElement("span", { style: { fontSize: "0.65rem", padding: "1px 6px", borderRadius: "999px", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)", background: "var(--background-secondary)" } }, data.cost), /* @__PURE__ */ import_react16.default.createElement("span", { style: { fontSize: "0.65rem", padding: "1px 6px", borderRadius: "999px", border: "1px solid var(--background-modifier-border)", color: "var(--text-muted)", background: "var(--background-secondary)" } }, data.weight))), /* @__PURE__ */ import_react16.default.createElement("p", { style: { margin: "0 0 0.625rem", fontSize: "0.75rem", color: "var(--text-muted)", lineHeight: 1.6 } }, data.description || "No detailed description available."), /* @__PURE__ */ import_react16.default.createElement("div", { style: { paddingTop: "0.5rem", borderTop: "1px solid var(--background-modifier-border)" } }, /* @__PURE__ */ import_react16.default.createElement("div", { style: { fontSize: "0.65rem", fontWeight: 700, textTransform: "uppercase", color: "var(--text-muted)", marginBottom: "0.25rem" } }, "Properties"), /* @__PURE__ */ import_react16.default.createElement("div", { style: { fontSize: "0.75rem", fontStyle: "italic", color: "var(--interactive-accent)" } }, data.properties)))
+    );
+  })) : /* @__PURE__ */ import_react16.default.createElement("div", { style: { textAlign: "center", padding: "5rem 2rem", border: "1px dashed var(--background-modifier-border)", borderRadius: "0.75rem", background: "var(--background-secondary)" } }, /* @__PURE__ */ import_react16.default.createElement(Package, { style: { width: "3rem", height: "3rem", margin: "0 auto 1rem", opacity: 0.2, color: "var(--text-muted)" } }), /* @__PURE__ */ import_react16.default.createElement("div", { style: { fontWeight: 700, fontSize: "1.125rem", color: "var(--text-muted)" } }, "No items found"), /* @__PURE__ */ import_react16.default.createElement("div", { style: { fontSize: "0.875rem", color: "var(--text-muted)", marginTop: "0.375rem" } }, "Try a different search term")));
 }
 var import_react16;
 var init_EquipmentIndex = __esm({
   "src/app/components/EquipmentIndex.tsx"() {
     import_react16 = __toESM(require_react());
+    init_dnd_data();
+    init_lucide_react();
   }
 });
 
 // src/app/App.tsx
 function App({
   app,
-  modal
+  modal,
+  plugin
 }) {
   const [page, setPage] = (0, import_react17.useState)("creator");
   const editingCharRef = import_react17.default.useRef(null);
@@ -37904,7 +38075,7 @@ __export(main_exports, {
   default: () => MyPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian6, import_react18, import_client, CharacterCreatorModal, MyPlugin;
+var import_obsidian6, import_react18, import_client, DEFAULT_SETTINGS, CharacterCreatorModal, MyPlugin, CharacterSettingTab;
 var init_main = __esm({
   "src/main.tsx"() {
     import_obsidian6 = require("obsidian");
@@ -37912,15 +38083,23 @@ var init_main = __esm({
     import_client = __toESM(require_client());
     init_App();
     init_commands_search_help();
+    DEFAULT_SETTINGS = {
+      characterFolder: "Characters"
+    };
     CharacterCreatorModal = class extends import_obsidian6.Modal {
       root = null;
+      plugin;
+      constructor(app, plugin) {
+        super(app);
+        this.plugin = plugin;
+      }
       onOpen() {
         this.modalEl.addClass("dnd-character-modal");
         this.contentEl.empty();
         this.contentEl.addClass("dnd-character-modal-content");
         this.root = (0, import_client.createRoot)(this.contentEl);
         this.root.render(
-          /* @__PURE__ */ import_react18.default.createElement(App, { app: this.app, modal: this })
+          /* @__PURE__ */ import_react18.default.createElement(App, { app: this.app, modal: this, plugin: this.plugin })
         );
       }
       onClose() {
@@ -37928,6 +38107,7 @@ var init_main = __esm({
       }
     };
     MyPlugin = class extends import_obsidian6.Plugin {
+      settings;
       checkForCharacterTrigger(editor) {
         const cursor = editor.getCursor();
         const line = editor.getLine(cursor.line);
@@ -37936,10 +38116,12 @@ var init_main = __esm({
             cursor.line,
             line.replace("/character", "")
           );
-          new CharacterCreatorModal(this.app).open();
+          new CharacterCreatorModal(this.app, this).open();
         }
       }
       async onload() {
+        await this.loadSettings();
+        this.addSettingTab(new CharacterSettingTab(this.app, this));
         this.registerEvent(
           this.app.workspace.on("editor-change", (editor) => {
             this.checkForCharacterTrigger(editor);
@@ -37952,12 +38134,55 @@ var init_main = __esm({
           id: "open-character-creator",
           name: "Open Character Creator",
           callback: () => {
-            new CharacterCreatorModal(this.app).open();
+            new CharacterCreatorModal(this.app, this).open();
           }
         });
         this.addRibbonIcon("flame-kindling", "Character Creator", () => {
-          new CharacterCreatorModal(this.app).open();
+          new CharacterCreatorModal(this.app, this).open();
         });
+      }
+      async loadSettings() {
+        this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+      }
+      async saveSettings() {
+        await this.saveData(this.settings);
+      }
+      async getCharactersFromFolder() {
+        const folderPath = this.settings.characterFolder;
+        const folder = this.app.vault.getAbstractFileByPath(folderPath);
+        if (!folder || !(folder instanceof import_obsidian6.TFolder)) return [];
+        const characters = [];
+        for (const child of folder.children) {
+          if (child instanceof import_obsidian6.TFile && child.extension === "md") {
+            const cache = this.app.metadataCache.getFileCache(child);
+            if (cache?.frontmatter?.dnd_character) {
+              characters.push({
+                ...cache.frontmatter.dnd_character,
+                path: child.path,
+                name: child.basename
+              });
+            }
+          }
+        }
+        return characters;
+      }
+    };
+    CharacterSettingTab = class extends import_obsidian6.PluginSettingTab {
+      plugin;
+      constructor(app, plugin) {
+        super(app, plugin);
+        this.plugin = plugin;
+      }
+      display() {
+        const { containerEl } = this;
+        containerEl.empty();
+        containerEl.createEl("h2", { text: "D&D Character Creator Settings" });
+        new import_obsidian6.Setting(containerEl).setName("Character Folder").setDesc("The folder where your character sheets (Markdown files) are stored.").addText(
+          (text) => text.setPlaceholder("Characters").setValue(this.plugin.settings.characterFolder).onChange(async (value) => {
+            this.plugin.settings.characterFolder = value;
+            await this.plugin.saveSettings();
+          })
+        );
       }
     };
   }
@@ -38039,6 +38264,7 @@ lucide-react/dist/esm/icons/download.mjs:
 lucide-react/dist/esm/icons/drama.mjs:
 lucide-react/dist/esm/icons/eye.mjs:
 lucide-react/dist/esm/icons/file-code.mjs:
+lucide-react/dist/esm/icons/flame.mjs:
 lucide-react/dist/esm/icons/heart.mjs:
 lucide-react/dist/esm/icons/info.mjs:
 lucide-react/dist/esm/icons/library.mjs:
@@ -38068,6 +38294,8 @@ lucide-react/dist/esm/icons/upload.mjs:
 lucide-react/dist/esm/icons/user.mjs:
 lucide-react/dist/esm/icons/wand.mjs:
 lucide-react/dist/esm/icons/wand-sparkles.mjs:
+lucide-react/dist/esm/icons/weight.mjs:
+lucide-react/dist/esm/icons/wind.mjs:
 lucide-react/dist/esm/icons/x.mjs:
 lucide-react/dist/esm/icons/zap.mjs:
 lucide-react/dist/esm/lucide-react.mjs:

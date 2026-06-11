@@ -86,8 +86,8 @@ export function BasicsStep() {
                 <div style={{
                   width: '100%', height: '100%',
                   backgroundImage: `url(${formData.image})`,
-                  backgroundPosition: `${formData.imageX || 50}% ${formData.imageY || 50}%`,
-                  backgroundSize: `${formData.imageScale || 100}%`,
+                  backgroundPosition: `${formData.imageX ?? 50}% ${formData.imageY ?? 50}%`,
+                  backgroundSize: `${formData.imageScale ?? 100}%`,
                   backgroundRepeat: 'no-repeat',
                 }} />
                 <div

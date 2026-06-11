@@ -14,6 +14,9 @@ export function StatsStep() {
     ['rogue', 'monk', 'ranger'].includes(formData.class)         ? 'dex' : 'int'
   );
 
+  const ClassIcon = CLASS_DATA[formData.class].icon;
+  
+
   const getASIBonus = () => {
     let count = Math.floor(formData.level / 4);
     if (formData.class === 'fighter') {
@@ -58,7 +61,6 @@ export function StatsStep() {
     flexShrink: 0,
     transition: 'background 0.15s, border-color 0.15s',
   });
-
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
@@ -79,7 +81,10 @@ export function StatsStep() {
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: '1.25rem',
           }}>
-            {formData.class === 'fighter' ? '⚔️' : formData.class === 'wizard' ? '🧙' : '🛡️'}
+            <ClassIcon size={30} style={{color: 'var(--text-muted)'}}  />
+            {/* <Info size={30}/> */}
+            {/* {formData.class === 'fighter' ? '⚔️' : formData.class === 'wizard' ? '🧙' : '🛡️'} */}
+            
           </div>
           <div>
             <div style={{ fontWeight: 900, textTransform: 'uppercase', fontSize: '0.9rem', letterSpacing: '-0.01em', color: 'var(--interactive-accent)' }}>

@@ -13,6 +13,7 @@ import { SpellsStep } from './SpellsStep';
 import { ReviewStep } from './ReviewStep';
 import { characterSchema, type CharacterFormData } from '../utils/schema';
 import { TRAIT_DATA } from '../utils/dnd-data';
+import { TFile } from 'obsidian';
 
 const STEPS = [
   { id: 'basics',  title: 'Basics',     icon: User,         description: 'Identity and power level' },
@@ -33,10 +34,12 @@ async function loadCharacters(app: any): Promise<any[]> {
     if (!file) return [];
     const content = await app.vault.read(file);
     return JSON.parse(content);
+    
   } catch {
     return [];
   }
 }
+
 
 async function saveCharacters(app: any, chars: any[]) {
   const content = JSON.stringify(chars, null, 2);
@@ -60,6 +63,44 @@ async function loadEditingCharacter(app: any): Promise<any | null> {
     return null;
   }
 }
+
+// async function saveToMarkdown(app: any, plugin: any, data: any) {
+//     const folderPath = plugin.settings.characterFolder;
+    
+//     // 1. Create folder if it doesn't exist
+//     if (!app.vault.getAbstractFileByPath(folderPath)) {
+//         await app.vault.createFolder(folderPath);
+//     }
+
+//     // 2. Sanitize filename (remove characters like / \ : * ? " < > |)
+//     const sanitizedName = data.name.replace(/[\\/:*?"<>|]/g, '-');
+//     const filePath = `${folderPath}/${sanitizedName}.md`;
+    
+//     // 3. Prepare content (JSON data inside YAML frontmatter)
+//     const fileContent = `---
+// dnd_character:
+// ${JSON.stringify(data, null, 2).split('\n').map(line => '  ' + line).join('\n')}
+// ---
+
+// # ${data.name}
+// **Level ${data.level} ${data.race} ${data.class}**
+
+// ## Backstory
+// ${data.backstory || "No backstory provided."}
+
+// ---
+// *Created with D&D Character Creator*
+// `;
+
+//     // 4. Create or Modify file
+//     const existingFile = app.vault.getAbstractFileByPath(filePath);
+//     if (existingFile instanceof TFile) {
+//         await app.vault.modify(existingFile, fileContent);
+//     } else {
+//         await app.vault.create(filePath, fileContent);
+//     }
+// }
+
 
 const DEFAULT_VALUES = {
   name: '',
@@ -93,12 +134,14 @@ export function CharacterWizard({ app, modal, editingChar }: { app: any; modal: 
   // Load editing character from vault on mount
   React.useEffect(() => {
   if (editingChar) {
-    setInitialValues(editingChar);
+    // setInitialValues(editingChar);
+    methods.reset(editingChar);
     setReady(true);
     return;
   }
   loadEditingCharacter(app).then((editing) => {
-    if (editing) setInitialValues(editing);
+    // if (editing) setInitialValues(editing);
+    if (editing) methods.reset(editing);
     setReady(true);
   });
 }, []);

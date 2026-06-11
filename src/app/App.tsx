@@ -15,10 +15,12 @@ type Page = "creator" | "library" | "spells" | "equipment";
 
 export default function App({
     app,
-    modal
+    modal,
+    plugin 
 }: {
     app: any;
     modal: any;
+    plugin: any;
 }) {
     const [page, setPage] = useState<Page>("creator");
     const editingCharRef = React.useRef<any>(null);
@@ -31,6 +33,7 @@ export default function App({
                 return <CharacterWizard app={app} modal={modal} editingChar={editingCharRef.current} />;
             // case "creator":
             // 	return <CharacterWizard app={app} modal={modal} />;
+            
 
             case "library":
                 return <CharacterLibrary app={app} onEdit={(char) => {

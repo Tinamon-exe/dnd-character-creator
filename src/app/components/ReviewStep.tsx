@@ -15,8 +15,11 @@ async function loadCharacters(app: any): Promise<any[]> {
   try {
     const file = app.vault.getAbstractFileByPath(STORAGE_FILE);
     if (!file) return [];
+    console.log('Hi there');
     return JSON.parse(await app.vault.read(file));
-  } catch { return []; }
+  } catch { 
+    console.log('bye there');
+    return []; }
 }
 
 async function saveCharacters(app: any, chars: any[]) {
